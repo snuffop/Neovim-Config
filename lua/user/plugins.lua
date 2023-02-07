@@ -55,11 +55,10 @@ return packer.startup(function(use)
   use { "lewis6991/impatient.nvim", commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6" }
   use { "lukas-reineke/indent-blankline.nvim", commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" }
   use { "goolord/alpha-nvim", commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31" }
-	use {"folke/which-key.nvim"}
+	use { "folke/which-key.nvim" }
 
 	-- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
-  use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }
   use { 'Mofiqul/dracula.nvim', commit = "798274ba3c454a9aa3cd71f95a86ea55cbbbb142" }
 
 	-- Cmp 
@@ -80,31 +79,49 @@ return packer.startup(function(use)
   use { "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" }
 	use { "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
   use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
+  
+  -- Markdown 
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
 
   -- Ranger
   use { "kevinhwang91/rnvimr" }
 
+  -- Surround
+  use({
+    "kylechui/nvim-surround",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  })
 	-- Telescope
 	use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
 
   -- VIM Wiki Taskwiki etc
 
-  use { "vimwiki/vimwiki" }
+  use { "vimwiki/vimwiki", branch = 'dev', commit = "fea8bee382b2051b0137fd2cacf0862823ee69b3"}
   use { "tools-life/taskwiki" }
-  use { "powerman/vim-plugin-AnsiEsc" }
   use { "mattn/calendar-vim" }
   use { "powerman/vim-plugin-AnsiEsc" }
   use { "majutsushi/tagbar" }
   use { "blindFS/vim-taskwarrior" }
 
 	-- Treesitter
+
 	use {
 		"nvim-treesitter/nvim-treesitter",
 		commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
 	}
+  use { "nvim-treesitter/nvim-treesitter-textobjects" }
 
 	-- Git
+
 	use { "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" }
+
+  -- Wakatime
+
+  use { "wakatime/vim-wakatime" }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

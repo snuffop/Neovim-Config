@@ -102,7 +102,7 @@ local mappings = {
     s = { "<cmd>up<CR>", "Save" },
    },
 
-  g = {
+  ["g"] = {
     name = "Git",
     g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
@@ -139,6 +139,15 @@ local mappings = {
       "Workspace Diagnostics",
     },
     f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
+
+    h = {
+      name = "+help",
+      b = {
+        name = "+bindings",
+        t = { "<cmd>Whichkey<cr>", "WhichkKey Top Level"},
+      },
+    },
+
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
     j = {
@@ -158,7 +167,17 @@ local mappings = {
       "Workspace Symbols",
     },
   },
-  
+
+  o = {
+    name = "+open",
+    m = {
+      name = "+my",
+      g = { "<cmd>edit $HOME/Nextcloud/vimwiki/tasks.md<cr>", "Open My Task"},
+      j = { "<cmd>edit $HOME/Nextcloud/vimwiki/joyent/index.md<cr>", "Open My Task"},
+      G = { "<cmd>edit $HOME/Nextcloud/vimwiki/joyent/gage/index.md", "Open Gage"},
+    },
+  },
+
   ["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
   P = {
     name = "Packer",

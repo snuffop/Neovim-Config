@@ -54,6 +54,7 @@ vim.cmd([[
         let g:vimwiki_list = [{'path':'$HOME/Nextcloud/vimwiki/', 'syntax':'markdown', 'ext':'.md'}]
         let g:vimwiki_ext2syntax = { '.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown' }
         let g:vimwiki_markdown_link_ext = 1
+        let g:vimwiki_listsyms = '✗○◐●✓'
 
         let g:vimwiki_taskwiki_markup_syntax = 'markdown'
         let g:taskwiki_dont_fold = 1
