@@ -48,3 +48,13 @@ vim.opt.iskeyword:append "-"                           -- hyphenated words recog
 vim.opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")  -- separate vim plugins from neovim in case vim still in use
 
+-- Vimwiki options
+
+vim.cmd([[ 
+        let g:vimwiki_list = [{'path':'$HOME/Nextcloud/vimwiki/', 'syntax':'markdown', 'ext':'.md'}]
+        let g:vimwiki_ext2syntax = { '.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown' }
+        let g:vimwiki_markdown_link_ext = 1
+
+        let g:vimwiki_taskwiki_markup_syntax = 'markdown'
+        let g:taskwiki_dont_fold = 1
+]])
