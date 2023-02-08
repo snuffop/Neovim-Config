@@ -69,6 +69,9 @@ return packer.startup(function(use)
 	use { "hrsh7th/cmp-nvim-lsp", commit = "3cf38d9c957e95c397b66f91967758b31be4abe6" }
 	use { "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" }
 
+  -- HOP
+  use { 'phaazon/hop.nvim', branch = 'v2' }
+
 	-- Snippets
   use { "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" } --snippet engine
   use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" } -- a bunch of snippets to use
@@ -81,25 +84,26 @@ return packer.startup(function(use)
   use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
   
   -- Markdown 
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+  use ({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use { "ellisonleao/glow.nvim" }
 
   -- Ranger
   use { "kevinhwang91/rnvimr" }
 
   -- Surround
-  use({
-    "kylechui/nvim-surround",
-    config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
-    end
-  })
+  use { "kylechui/nvim-surround" }
+
+  -- Tmux
+  use { "numToStr/Navigator.nvim" }
+
 	-- Telescope
 	use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
+  use { "nvim-telescope/telescope-media-files.nvim" }
+  use { "nvim-telescope/telescope-fzy-native.nvim" }
+  use { "nvim-telescope/telescope-packer.nvim" }
+  use { "jvgrootveld/telescope-zoxide" }
 
   -- VIM Wiki Taskwiki etc
-
   use { "vimwiki/vimwiki", branch = 'dev', commit = "fea8bee382b2051b0137fd2cacf0862823ee69b3"}
   use { "tools-life/taskwiki" }
   use { "mattn/calendar-vim" }
@@ -108,19 +112,13 @@ return packer.startup(function(use)
   use { "blindFS/vim-taskwarrior" }
 
 	-- Treesitter
-
-	use {
-		"nvim-treesitter/nvim-treesitter",
-		commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
-	}
+	use { "nvim-treesitter/nvim-treesitter", commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac", }
   use { "nvim-treesitter/nvim-treesitter-textobjects" }
 
 	-- Git
-
 	use { "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" }
 
   -- Wakatime
-
   use { "wakatime/vim-wakatime" }
 
 	-- Automatically set up your configuration after cloning packer.nvim

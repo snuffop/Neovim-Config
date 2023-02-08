@@ -3,6 +3,12 @@ if not status_ok then
   return
 end
 
+telescope.load_extension('media_files')
+telescope.load_extension('fzy_native')
+telescope.load_extension('packer')
+telescope.load_extension('zoxide')
+
+
 local actions = require "telescope.actions"
 
 telescope.setup {
@@ -87,10 +93,29 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
+    media_files = {
+      filetypes = {"png", "webp", "jpg", "jpeg"},
+      find_cmd = "rg"
+    },
+    fzy_native = {
+      override_generic_sorter = true,
+      overrid_file_sorter = true,
+    },
+    zoxide = {
+      prompt_title = "[ Walking on the shoulders of TJ ]",
+      mappings = {
+        default = {
+          after_action = function(selection)
+            print("Update to (" .. selection.z_score .. ") " .. selection.path)
+          end
+        },
+      },
+    },
+    packer = {
+      theme = "ivy",
+      layout_config = {
+        height = .5
+      }
+    },
   },
 }

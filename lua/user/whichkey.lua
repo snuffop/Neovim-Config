@@ -93,13 +93,19 @@ local mappings = {
 
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 
+  ["e"] = {
+    name = "+edit",
+    e = { "<cmd>NvimTreeToggle<cr>", "Neotree Explorer" },
+  },
+
   ["f"] = {
     name = "+file",
-    e = { "<cmd>NvimTreeToggle<cr>", "Neotree Explorer" },
-    f = {"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files"},
-    n = { "<cmd>ene <BAR> startinseert <CR>", "New File"},
-    r = { "<cmd>RnvimrToggle<CR>", "Save" },
-    s = { "<cmd>up<CR>", "Save" },
+    f     = {"<cmd>lua require('telescope.builtin').git_files()<cr>", "Find files"},
+    F     = {"<cmd>lua require('telescope.builtin').fine_files()<cr>", "Find files"},
+    ["~"] = {"<cmd>lua require('telescope.builtin').find_files({ cwd = (os.getenv(\"$HOME\")) })<cr>", "Find files ~"},
+    n     = { "<cmd>ene <BAR> startinseert <CR>", "New File"},
+    r     = { "<cmd>RnvimrToggle<CR>", "Ranger" },
+    s     = { "<cmd>up<CR>", "Save" },
    },
 
   ["g"] = {
@@ -127,7 +133,7 @@ local mappings = {
 
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 
-  l = {
+  ["l"] = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
     d = {
@@ -168,17 +174,23 @@ local mappings = {
     },
   },
 
-  o = {
+  ["o"] = {
     name = "+open",
     m = {
       name = "+my",
-      g = { "<cmd>edit $HOME/Nextcloud/vimwiki/tasks.md<cr>", "Open My Task"},
-      j = { "<cmd>edit $HOME/Nextcloud/vimwiki/joyent/index.md<cr>", "Open My Task"},
-      G = { "<cmd>edit $HOME/Nextcloud/vimwiki/joyent/gage/index.md", "Open Gage"},
+      ["0"] = { "<cmd>edit $HOME/Nextcloud/vimwiki/QuickNote.md<cr>", "Inbox file" },
+      g = { "<cmd>edit $HOME/Nextcloud/vimwiki/tasks.md<cr>", "Open My Task" },
+      j = { "<cmd>edit $HOME/Nextcloud/vimwiki/joyent/index.md<cr>", "Open My Task" },
+      G = { "<cmd>edit $HOME/Nextcloud/vimwiki/joyent/gage/index.md", "Open Gage" },
     },
   },
 
-  ["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+  ["p"] = { 
+    name = "+project",
+    p = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+    s = { "<cmd>Telescope live_grep<cr>", "Projects" },
+  },
+
   P = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -190,7 +202,7 @@ local mappings = {
 
   ["q"] = { "<cmd>q!<CR>", "Quit" },
 
-  s = {
+  ["s"] = {
     name = "+search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
@@ -202,7 +214,15 @@ local mappings = {
     C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
 
-  t = {
+  ["T"] = {
+    name = "+telescope",
+    c = {"<cmd>Telescope commands<cr>", "Commands" },
+    p = {"<cmd>Telescope packer<cr>", "Telescope Packer" },
+    t = {"<cmd>Telescope<cr>", "Telescope" },
+    z = {"<cmd>Telescope zoxide list<cr>", "Zoxide" },
+  },
+
+  ["t"] = {
     name = "+terminal",
     n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
     u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
@@ -212,6 +232,7 @@ local mappings = {
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },
+
 }
 
 which_key.setup(setup)
