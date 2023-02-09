@@ -12,7 +12,7 @@ neogit.setup({
 	-- Disabling `auto_refresh` will make it so you have to manually refresh the status after you open it.
 	auto_refresh = true,
 	disable_builtin_notifications = false,
-	use_magit_keybindings = true,
+	use_magit_keybindings = false,
 	-- Change the default way of opening neogit
 	kind = "tab",
 	-- The time after which an output console is shown for slow running commands
