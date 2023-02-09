@@ -235,6 +235,14 @@ local mappings = {
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },
 
+  ["w"] = {
+    name = "+vimwiki",
+    T = { "<cmd>lua require('telescope').extensions.vimwiki.vimwiki()<cr>", "Telesope vimwiki" },
+    S = { "<cmd>lua require('telescope').extensions.vimwiki.live_grep()<cr>", "live grep vimwiki" },
+
+
+  }
+
 }
 
 which_key.setup(setup)
