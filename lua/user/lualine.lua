@@ -97,7 +97,7 @@ lualine.setup({
 		lualine_z = {},
 	},
 	tabline = {
-    lualine_a = { buffers },
+    lualine_a = { 'tabs' },
   },
 	extensions = {},
 })

@@ -11,12 +11,12 @@ neogit.setup {
 }
 
 
-local dv_status_ok, diffview = pcall(require "diffview.actions")
+local dv_status_ok, actions = pcall(require "diffview.actions")
 if not dv_status_ok then
   return
 end
 
-diffview.setup({
+actions.setup({
   diff_binaries = false,    -- Show diffs for binaries
   enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
   git_cmd = { "git" },      -- The git executable followed by default args.
