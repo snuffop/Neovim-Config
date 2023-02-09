@@ -57,7 +57,7 @@ return packer.startup(function(use)
   use { "goolord/alpha-nvim", commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31" }
 	use { "folke/which-key.nvim" }
 
-	-- Colorschemes
+  -- Colorschemes,
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
   use { 'Mofiqul/dracula.nvim', commit = "798274ba3c454a9aa3cd71f95a86ea55cbbbb142" }
 
@@ -96,13 +96,17 @@ return packer.startup(function(use)
   -- Tmux
   use { "alexghergh/nvim-tmux-navigation" }
 
-
 	-- Telescope
 	use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
   use { "nvim-telescope/telescope-media-files.nvim" }
   use { "nvim-telescope/telescope-fzy-native.nvim" }
   use { "nvim-telescope/telescope-packer.nvim" }
+
   use { "jvgrootveld/telescope-zoxide" }
+  use { "ElPiloto/telescope-vimwiki.nvim" }
+  use { 'dhruvmanila/telescope-bookmarks.nvim', tag = '*',
+    requires = { 'kkharji/sqlite.lua'},
+  }
 
   -- VIM Wiki Taskwiki etc
   use { "vimwiki/vimwiki", branch = 'dev', commit = "fea8bee382b2051b0137fd2cacf0862823ee69b3"}

@@ -7,7 +7,8 @@ telescope.load_extension('media_files')
 telescope.load_extension('fzy_native')
 telescope.load_extension('packer')
 telescope.load_extension('zoxide')
-
+telescope.load_extension('bookmarks')
+telescope.load_extension('vimwiki')
 
 local actions = require "telescope.actions"
 
@@ -116,6 +117,10 @@ telescope.setup {
       layout_config = {
         height = .5
       }
+    },
+    bookmarks = {
+      selected_browser = "buku",
+      buku_include_tags = true,
     },
   },
 }
