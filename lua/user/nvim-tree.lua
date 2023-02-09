@@ -8,14 +8,19 @@ if not config_status_ok then
   return
 end
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
+  sort_by = "case_sensitive",
   update_focused_file = {
     enable = true,
     update_cwd = true,
   },
   renderer = {
+    group_empty = true,
     root_folder_modifier = ":t",
     icons = {
       glyphs = {
@@ -54,13 +59,14 @@ nvim_tree.setup {
     },
   },
   view = {
-    width = 50,
+    width = 35,
     side = "left",
     mappings = {
       list = {
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
         { key = "h", cb = tree_cb "close_node" },
         { key = "v", cb = tree_cb "vsplit" },
+        { key = "H", cb = tree_cb "collapse_all"}
       },
     },
   },

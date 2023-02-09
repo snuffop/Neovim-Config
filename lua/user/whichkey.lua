@@ -89,6 +89,8 @@ local mappings = {
   ["b"] = {
     name = "+buffers",
     b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers"},
+    n = { "<cmd>bNext<cr>", "Next Buffer" },
+    p = { "<cmd>bprevious<cr>", "Next Previous" },
   },
 
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
