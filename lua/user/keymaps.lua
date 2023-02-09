@@ -59,8 +59,3 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 
-keymap("n", "<C-h>", "<CMD>NavigatorLeft<CR>", opts)
-keymap("n", "<C-l>", "<CMD>NavigatorRight<CR>", opts)
-keymap("n", "<C-k>", "<CMD>NavigatorUp<CR>", opts)
-keymap("n", "<C-j>", "<CMD>NavigatorDown<CR>", opts)
-keymap("n", "<C-p>", "<CMD>NavigatorPrevious<CR>", opts)

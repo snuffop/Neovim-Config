@@ -94,7 +94,8 @@ return packer.startup(function(use)
   use { "kylechui/nvim-surround" }
 
   -- Tmux
-  use { "numToStr/Navigator.nvim" }
+  use { "alexghergh/nvim-tmux-navigation" }
+
 
 	-- Telescope
 	use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }

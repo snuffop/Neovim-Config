@@ -101,7 +101,7 @@ local mappings = {
   ["f"] = {
     name = "+file",
     f     = {"<cmd>lua require('telescope.builtin').git_files()<cr>", "Find files"},
-    F     = {"<cmd>lua require('telescope.builtin').fine_files()<cr>", "Find files"},
+    F     = {"<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files"},
     ["~"] = {"<cmd>lua require('telescope.builtin').find_files({ cwd = (os.getenv(\"$HOME\")) })<cr>", "Find files ~"},
     n     = { "<cmd>ene <BAR> startinseert <CR>", "New File"},
     r     = { "<cmd>RnvimrToggle<CR>", "Ranger" },
