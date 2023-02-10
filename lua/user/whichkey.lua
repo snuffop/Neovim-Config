@@ -229,7 +229,7 @@ local mappings = {
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-    s = { "<cmd>vim.opt.spell = not(vim.opt.spell:get())<cr>", "Toggle Spelling" },
+    s = { "<cmd>lua vim.opt.spell = not(vim.opt.spell:get())<cr>", "Toggle Spelling" },
 
   },
 
