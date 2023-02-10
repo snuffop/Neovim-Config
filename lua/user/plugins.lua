@@ -117,6 +117,10 @@ return packer.startup(function(use)
   use { "majutsushi/tagbar" }
   use { "blindFS/vim-taskwarrior" }
 
+  use { "nvim-orgmode/orgmode" }
+  use { "akinsho/org-bullets.nvim" }
+  use { "mickael-menu/zk-nvim" }
+
 	-- Treesitter
 	use { "nvim-treesitter/nvim-treesitter", commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac", }
   use { "nvim-treesitter/nvim-treesitter-textobjects" }
