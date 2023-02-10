@@ -231,13 +231,18 @@ local mappings = {
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },
 
-  ["w"] = {
-    name = "+vimwiki",
-    T = { "<cmd>lua require('telescope').extensions.vimwiki.vimwiki()<cr>", "Telesope vimwiki" },
-    S = { "<cmd>lua require('telescope').extensions.vimwiki.live_grep()<cr>", "live grep vimwiki" },
-
-
-  }
+  ["z"] = {
+    name = "+telekasten",
+    b = { "<cmd>lua require('telekasten').show_backlinks()<CR>", "Backlinks" },
+    c = { "<cmd>lua require('telekasten').show_calendar()<CR>", "Show Calendar" },
+    d = { "<cmd>lua require('telekasten').find_daily_notes()<CR>", "Find Daily Notes" },
+    f = { "<cmd>lua require('telekasten').find_notes()<CR>", "Find Notes" },
+    g = { "<cmd>lua require('telekasten').search_notes()<CR>", "Search Notes" },
+    l = { "<cmd>lua require('telekasten').follow_link()<CR>", "Follow Link" },
+    n = { "<cmd>lua require('telekasten').new_note()<CR>", "New Note" },
+    t = { "<cmd>lua require('telekasten').goto_today()<CR>", "Today" },
+    z = { "<cmd>lua require('telekasten').panel()<CR>", "Panel" },
+  },
 
 }
 

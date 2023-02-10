@@ -111,11 +111,9 @@ return packer.startup(function(use)
   use { "keyvchan/telescope-find-pickers.nvim" }
   use { "benfowler/telescope-luasnip.nvim" }
 
-  -- VIM Wiki Taskwiki etc
-  use { "vimwiki/vimwiki", branch = 'dev', commit = "fea8bee382b2051b0137fd2cacf0862823ee69b3"}
-  use { "tools-life/taskwiki" }
+  -- Telekasten
+  use { 'renerocksai/telekasten.nvim' }
   use { "mattn/calendar-vim" }
-  use { "powerman/vim-plugin-AnsiEsc" }
   use { "majutsushi/tagbar" }
   use { "blindFS/vim-taskwarrior" }
 
