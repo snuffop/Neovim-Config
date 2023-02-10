@@ -100,14 +100,16 @@ return packer.startup(function(use)
 	-- Telescope
 	use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
   use { "nvim-telescope/telescope-media-files.nvim" }
-  use { "nvim-telescope/telescope-fzy-native.nvim" }
+  use { "nvim-telescope/telescope-fzf-native.nvim", run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" }
   use { "nvim-telescope/telescope-packer.nvim" }
-
+  use { "nvim-telescope/telescope-file-browser.nvim" }
+  use { "LinArcX/telescope-env.nvim" }
   use { "jvgrootveld/telescope-zoxide" }
   use { "ElPiloto/telescope-vimwiki.nvim" }
-  use { "dhruvmanila/telescope-bookmarks.nvim", tag = "*",
-    requires = { "kkharji/sqlite.lua"},
-  }
+  use { "ghassan0/telescope-glyph.nvim" }
+  use { "adoyle-h/lsp-toggle.nvim" }
+  use { "keyvchan/telescope-find-pickers.nvim" }
+  use { "benfowler/telescope-luasnip.nvim" }
 
   -- VIM Wiki Taskwiki etc
   use { "vimwiki/vimwiki", branch = 'dev', commit = "fea8bee382b2051b0137fd2cacf0862823ee69b3"}

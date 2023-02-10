@@ -3,22 +3,29 @@ if not status_ok then
   return
 end
 
+require('lsp-toggle').setup {
+  create_cmds = true, -- Whether to create user commands
+  telescope = true, -- Whether to load telescope extensions
+}
+
 telescope.load_extension('media_files')
-telescope.load_extension('fzy_native')
+telescope.load_extension('fzf')
+telescope.load_extension('file_browser')
 telescope.load_extension('packer')
 telescope.load_extension('zoxide')
-telescope.load_extension('bookmarks')
 telescope.load_extension('vimwiki')
+telescope.load_extension('find_pickers')
+telescope.load_extension('glyph')
+telescope.load_extension('env')
+telescope.load_extension('luasnip')
 
 local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
-
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
@@ -50,7 +57,6 @@ telescope.setup {
         ["<C-l>"] = actions.complete_tag,
         ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
       },
-
       n = {
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
@@ -98,9 +104,12 @@ telescope.setup {
       filetypes = {"png", "webp", "jpg", "jpeg"},
       find_cmd = "rg"
     },
-    fzy_native = {
-      override_generic_sorter = true,
-      overrid_file_sorter = true,
+    fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = true,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                       -- the default case_mode is "smart_case"
     },
     zoxide = {
       prompt_title = "[ Walking on the shoulders of TJ ]",
@@ -118,9 +127,30 @@ telescope.setup {
         height = .5
       }
     },
-    bookmarks = {
-      selected_browser = "buku",
-      buku_include_tags = true,
+    file_browser = {
+      theme = "ivy",
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+          -- your custom insert mode mappings
+        },
+        ["n"] = {
+          -- your custom normal mode mappings
+        },
+      },
+    },
+    glyph = {
+      action = function(glyph)
+        -- argument glyph is a table.
+        -- {name="", value="", category="", description=""}
+
+        vim.fn.setreg("*", glyph.value)
+        print([[Press p or "*p to paste this glyph]] .. glyph.value)
+
+        -- insert glyph when picked
+        -- vim.api.nvim_put({ glyph.value }, 'c', false, true)
+      end,
     },
   },
 }
