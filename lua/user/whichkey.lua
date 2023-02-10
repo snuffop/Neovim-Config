@@ -166,10 +166,10 @@ local mappings = {
     name = "+open",
     m = {
       name = "+my",
-      ["0"] = { "<cmd>edit $HOME/Nextcloud/vimwiki/QuickNote.md<cr>", "Inbox file" },
-      g = { "<cmd>edit $HOME/Nextcloud/vimwiki/tasks.md<cr>", "Open My Task" },
-      j = { "<cmd>edit $HOME/Nextcloud/vimwiki/joyent/index.md<cr>", "Open My Task" },
-      G = { "<cmd>edit $HOME/Nextcloud/vimwiki/joyent/gage/index.md", "Open Gage" },
+      ["0"] = { "<cmd>edit $HOME/Nextcloud/zk/0INBOX.md<cr>", "Inbox file" },
+      q = { "<cmd>edit $HOME/Nextcloud/zk/QuickNote.md<cr>", "Inbox file" },
+      j = { "<cmd>edit $HOME/Nextcloud/zk/joyent/index.md<cr>", "Open My Task" },
+      G = { "<cmd>edit $HOME/Nextcloud/zk/joyent/gage/index.md", "Open Gage" },
     },
   },
 
@@ -221,7 +221,7 @@ local mappings = {
   },
 
   ["t"] = {
-    name = "+terminal",
+    name = "+terminal / +toggle",
     n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
     u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
     t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
@@ -229,19 +229,17 @@ local mappings = {
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+    s = { "<cmd>vim.opt.spell = not(vim.opt.spell:get())<cr>", "Toggle Spelling" },
+
   },
 
   ["z"] = {
-    name = "+telekasten",
-    b = { "<cmd>lua require('telekasten').show_backlinks()<CR>", "Backlinks" },
-    c = { "<cmd>lua require('telekasten').show_calendar()<CR>", "Show Calendar" },
-    d = { "<cmd>lua require('telekasten').find_daily_notes()<CR>", "Find Daily Notes" },
-    f = { "<cmd>lua require('telekasten').find_notes()<CR>", "Find Notes" },
-    g = { "<cmd>lua require('telekasten').search_notes()<CR>", "Search Notes" },
-    l = { "<cmd>lua require('telekasten').follow_link()<CR>", "Follow Link" },
-    n = { "<cmd>lua require('telekasten').new_note()<CR>", "New Note" },
-    t = { "<cmd>lua require('telekasten').goto_today()<CR>", "Today" },
-    z = { "<cmd>lua require('telekasten').panel()<CR>", "Panel" },
+    name = "+Zettelkasten",
+    n = { "<cmd>ZkNew<CR>", "New note" },
+    z = { "<cmd>ZkNotes<CR>", "Search notes" },
+    b = { "<cmd>ZkBacklinks<CR>", "Backlinks" },
+    l = { "<cmd>ZkLinks<CR>", "Pick link" },
+    t = { "<cmd>ZkTags<CR>", "Tags" },
   },
 
 }

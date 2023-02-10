@@ -111,15 +111,15 @@ return packer.startup(function(use)
   use { "keyvchan/telescope-find-pickers.nvim" }
   use { "benfowler/telescope-luasnip.nvim" }
 
-  -- Telekasten
-  use { 'renerocksai/telekasten.nvim' }
+  -- Zettelkasten
   use { "mattn/calendar-vim" }
   use { "majutsushi/tagbar" }
   use { "blindFS/vim-taskwarrior" }
-
+  use { "mickael-menu/zk-nvim" }
+ 
+  -- orgmode compatability
   use { "nvim-orgmode/orgmode" }
   use { "akinsho/org-bullets.nvim" }
-  use { "mickael-menu/zk-nvim" }
 
 	-- Treesitter
 	use { "nvim-treesitter/nvim-treesitter", commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac", }
