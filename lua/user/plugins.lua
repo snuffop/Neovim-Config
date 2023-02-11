@@ -85,6 +85,9 @@ return packer.startup(function(use)
   use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
   
   -- Markdown 
+  use { "godlygeek/tabular" }
+  use { "elzr/vim-json" }
+  use { "plasticboy/vim-markdown" }
   use ({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
   use { "ellisonleao/glow.nvim" }
 
@@ -132,6 +135,9 @@ return packer.startup(function(use)
       "sindrets/diffview.nvim"  -- Diff view Pacage 
     }
   }
+  
+  -- Todois
+  use { 'romgrk/todoist.nvim' }
 
   -- Wakatime
   use { "wakatime/vim-wakatime" }

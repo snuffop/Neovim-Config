@@ -46,3 +46,11 @@ vim.opt.shortmess:append "c"                           -- don't give |ins-comple
 vim.opt.iskeyword:append "-"                           -- hyphenated words recognized by searches
 vim.opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")  -- separate vim plugins from neovim in case vim still in use
+
+vim.cmd([[ 
+  let g:vim_markdown_folding_disabled = 1
+  let g:vim_markdown_conceal = 1
+  let g:vim_markdown_frontmatter = 1  " for YAML format
+  let g:vim_markdown_toml_frontmatter = 1  " for TOML format
+  let g:vim_markdown_json_frontmatter = 1  " for JSON format
+]])
