@@ -8,6 +8,8 @@ return {
 
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
+  'rafamadriz/friendly-snippets',
+
   -- Wakatime 
   'wakatime/vim-wakatime',
 

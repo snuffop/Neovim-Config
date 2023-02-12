@@ -9,6 +9,7 @@ return {
     "nvim-telescope/telescope-file-browser.nvim",
     "nvim-telescope/telescope-fzf-native.nvim",
     "nvim-telescope/telescope-media-files.nvim",
+    "jvgrootveld/telescope-zoxide"
   },
   config = function ()
     require('telescope').setup {
@@ -23,11 +24,13 @@ return {
     }
     -- Enable telescope fzf native, if installed
     pcall(require('telescope').load_extension, 'env')
-    pcall(require('telescope').load_extension, 'file-browser')
+    pcall(require('telescope').load_extension, 'file_browser')
     pcall(require('telescope').load_extension, 'find_pickers')
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'glyph')
-    pcall(require('telescope').load_extension, 'media-files')
+    pcall(require('telescope').load_extension, 'media_files')
+    pcall(require('telescope').load_extension, 'zoxide')
+    pcall(require('telescope').load_extension, 'luasnip')
   end
 }
 
