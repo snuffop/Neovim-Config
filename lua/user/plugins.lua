@@ -76,14 +76,13 @@ return packer.startup(function(use)
   use { "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" } --snippet engine
   use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" } -- a bunch of snippets to use
 
-
 	-- LSP
 	use { "neovim/nvim-lspconfig", commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" } -- enable LSP
   use { "williamboman/mason.nvim", commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12"} -- simple to use language server installer
   use { "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" }
 	use { "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
   use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
-  
+ 
   -- Markdown 
   use { "godlygeek/tabular" }
   use { "elzr/vim-json" }
@@ -114,12 +113,6 @@ return packer.startup(function(use)
   use { "keyvchan/telescope-find-pickers.nvim" }
   use { "benfowler/telescope-luasnip.nvim" }
 
-  -- Zettelkasten
-  use { "mattn/calendar-vim" }
-  use { "majutsushi/tagbar" }
-  use { "blindFS/vim-taskwarrior" }
-  use { "mickael-menu/zk-nvim" }
- 
   -- orgmode compatability
   use { "nvim-orgmode/orgmode" }
   use { "akinsho/org-bullets.nvim" }
@@ -136,12 +129,17 @@ return packer.startup(function(use)
     }
   }
   
-  -- Todois
+  -- Todoist
   use { 'romgrk/todoist.nvim' }
 
   -- Wakatime
   use { "wakatime/vim-wakatime" }
 
+  -- Zettelkasten
+  use { "mattn/calendar-vim" }
+  use { "majutsushi/tagbar" }
+  use { "mickael-menu/zk-nvim" }
+ 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
