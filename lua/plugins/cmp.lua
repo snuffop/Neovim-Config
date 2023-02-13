@@ -38,9 +38,7 @@ return {
         { name = 'luasnip' }, -- For luasnip users.
         { name = 'path'},
         { name = 'spell'},
-      }, 
-        {
-          { name = 'buffer' },
+        { name = 'buffer' },
         })
     }
 
@@ -78,3 +76,4 @@ return {
     -- }
   end
 }
+
