@@ -115,6 +115,10 @@ local mappings = {
     r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
     s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
     u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk", },
+
+ -------------------------------------------------------------------------------- 
+  -- T -- 
+ -------------------------------------------------------------------------------- 
   ["t"] = {
     name = "Telescope",
     s = { "<cmd>Telescope git_status<cr>", "Telescope status" },
@@ -157,8 +161,28 @@ local mappings = {
     q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    t = {"<cmd>Telescope ToggleLSP<cr>", "LSP" },
+    T = {"<cmd>Telescope ToggleLSP<cr>", "LSP" },
     w = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics", },
+    ["t"] = {
+      name = "+trouble",
+      t = { "<cmd>TroubleToggle<cr>", "trouble" },
+      w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "workspace" },
+      d = { "<cmd>TroubleToggle document_diagnostics<cr>", "document" },
+      q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
+      l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+      r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
+    },
+  },
+
+ -------------------------------------------------------------------------------- 
+  -- N -- 
+ -------------------------------------------------------------------------------- 
+["n"] = {
+    name = "+notes",
+    j = {
+      name = "+nb",
+      j = { "<cmd>e `='~/Nextcloud/Notebook/default/journal/' . expand(strftime('%Y-%m-%d')) . '.md'` <CR>", "Today's Journal" },
+    },
   },
 
  -------------------------------------------------------------------------------- 

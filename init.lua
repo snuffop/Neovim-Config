@@ -1,4 +1,5 @@
 -- Marty's Neovim Configuration Based on the nvim kickstart
+require "config.options"
 
 -- Load up lazy vim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -24,7 +25,6 @@ require('lazy').setup('plugins')
 vim.cmd[[colorscheme dracula]]
 
 require "config.keymaps"
-require "config.options"
 require "config.autocommands"
 
 -- [[ Highlight on yank ]]

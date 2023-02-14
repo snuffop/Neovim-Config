@@ -1,6 +1,7 @@
 -- https://github.com/mickael-menu/zk-nvim
 return {
   "mickael-menu/zk-nvim",
+  lazy = true,
   dependencies = {
     "mattn/calendar-vim",
     "majutsushi/tagbar",

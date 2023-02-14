@@ -6,6 +6,8 @@ return {
   dependencies = {
     'nvim-treesitter/nvim-treesitter-textobjects',
   },
+  cmd = { "TSInstall", "TSUninstall", "TSUpdate", "TSInstallInfo", "TSInstallSync", "TSInstallFromGrammar" },
+  event = "User FileOpened",
   config = function ()
     -- [[ Configure Treesitter ]]
     -- See `:help nvim-treesitter`

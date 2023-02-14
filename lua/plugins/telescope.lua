@@ -11,6 +11,7 @@ return {
     "nvim-telescope/telescope-media-files.nvim",
     "jvgrootveld/telescope-zoxide"
   },
+  lazy = true,
   config = function ()
     require('telescope').setup {
       defaults = {

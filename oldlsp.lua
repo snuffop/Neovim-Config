@@ -1,6 +1,7 @@
-return {
+
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
+    lazy = true,
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
@@ -104,12 +105,8 @@ return {
         end,
       }
 
+      -- Turn on lsp status information
       require('fidget').setup()
+
     end
   },
-
-  {
-    'rafamadriz/friendly-snippets',
-    lazy = true,
-  },
-}

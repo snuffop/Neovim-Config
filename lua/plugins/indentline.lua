@@ -1,5 +1,6 @@
 return {
 	'lukas-reineke/indent-blankline.nvim', -- Add indentation guides even on blank lines
+	lazy = true,
 	config = function ()
 		vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
 		vim.g.indent_blankline_filetype_exclude = {
@@ -61,9 +62,9 @@ return {
 			show_current_context = true,
 			show_current_context_start = true,
 			char_highlight_list = {
-			  "IndentBlanklineIndent1",
-			  "IndentBlanklineIndent2",
-			  "IndentBlanklineIndent3",
+				"IndentBlanklineIndent1",
+				"IndentBlanklineIndent2",
+				"IndentBlanklineIndent3",
 			},
 			char = '┊',
 			show_trailing_blankline_indent = false,

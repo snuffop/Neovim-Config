@@ -1,6 +1,6 @@
 return {
   "numToStr/Comment.nvim",
-
+  lazy = true,
   config = function ()
     require("Comment").setup{}
     pre_hook = function(ctx)

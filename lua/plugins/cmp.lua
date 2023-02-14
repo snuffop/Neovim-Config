@@ -11,7 +11,7 @@ return {
     'saadparwaiz1/cmp_luasnip',
     'f3fora/cmp-spell',
   },
-
+  lazy = true,
   config = function ()
     local cmp = require'cmp'
     cmp.setup {
@@ -34,11 +34,16 @@ return {
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       }),
       sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' }, -- For luasnip users.
         { name = 'path'},
-        { name = 'spell'},
+        { name = 'luasnip' }, -- For luasnip users.
+        { name = 'nvim_lua' },
         { name = 'buffer' },
+        { name = 'calc' },
+        { name = 'treesitter' },
+        { name = 'crates' },
+        { name = 'tmux' },
+        { name = 'spell'},
+        { name = 'nvim_lsp' },
         })
     }
 
@@ -69,7 +74,7 @@ return {
         })
     })
     -- Set up lspconfig.
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
     -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
     -- require('lspconfig').lua.setup {
     --   capabilities = capabilities

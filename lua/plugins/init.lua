@@ -1,19 +1,22 @@
 return {
-
-  -- Git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-  'lewis6991/gitsigns.nvim',
-  'sindrets/diffview.nvim',
-
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-
-  'rafamadriz/friendly-snippets',
+  {
+    'tpope/vim-sleuth',
+    lazy = true,
+  },
 
   -- Wakatime 
-  'wakatime/vim-wakatime',
+
+  {'wakatime/vim-wakatime'},
 
   -- Todoist
-  'romgrk/todoist.nvim',
+  {
+    'romgrk/todoist.nvim',
+    cmd = "Todoist"
+  },
+
+  {
+    "metakirby5/codi.vim",
+    cmd = "Codi",
+  },
 }
 
