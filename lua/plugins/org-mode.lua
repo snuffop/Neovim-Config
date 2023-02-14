@@ -25,7 +25,7 @@ return {
       org_default_notes_file = '~/Nextcloud/Notes/org/0mobile.org',
     })
 
-    require('org-bullets').setup()
+    require('org-bullets').setup{}
 
   end
 }
