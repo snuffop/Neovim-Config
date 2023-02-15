@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Load the leader before the plugins
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+vim.keymap.set({ 'n', 'v' }, ',', '<Nop>', { silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
