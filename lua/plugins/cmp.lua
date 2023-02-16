@@ -42,6 +42,7 @@ return {
         { name = 'tmux' },
         { name = 'spell'},
         { name = 'nvim_lsp' },
+        { name = 'neorg'},
         })
     }
 
