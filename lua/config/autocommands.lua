@@ -28,10 +28,5 @@ vim.cmd [[
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
 
-  augroup templates
-    autocmd!
-    autocmd BufNewFile */journal/*.md 0r ~/.config/nvim/templates/journal-md.skeleton
-  augroup end
-
 ]]
 

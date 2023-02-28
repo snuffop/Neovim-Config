@@ -71,12 +71,14 @@ local mappings = {
 
   ["b"] = {
     name = "+buffers",
+    D = { "<cmd>bdelete!<cr>", "Delete buffer w\\o save"},
     W = { "<cmd>noautocmd w<cr>", "Save without formatting (noautocmd)" },
-    p = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
-    e = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close" },
     b = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
+    d = { "<cmd>bdelete<cr>", "Delete buffer"},
+    e = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close" },
     j = { "<cmd>BufferLinePick<cr>", "Jump" },
     n = { "<cmd>BufferLineCycleNext<cr>", "Next" },
+    p = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
   },
 
  -------------------------------------------------------------------------------- 
@@ -270,7 +272,11 @@ local mappings = {
  -------------------------------------------------------------------------------- 
   ["z"] = {
     name = "+Zettelkasten",
-    n = { "<cmd>ZkNew<CR>", "New note" },
+    a = { ":'<,'>lua vim.lsp.buf.range_code_action()<CR>", "Code Action" },
+    k = { "<Cmd>lua vim.lsp.buf.hover()<CR>", "Preview linked note" },
+    n = { "<Cmd>ZkNew { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>", "New Note" },
+    N = { ":'<,'>ZkNewFromTitleSelection { dir = vim.fn.expand('%:p:h') }<CR>", "New from title selection" },
+    C = { ":'<,'>ZkNewFromContentSelection { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>", "New from content selection"},
     z = { "<cmd>ZkNotes<CR>", "Search notes" },
     b = { "<cmd>ZkBacklinks<CR>", "Backlinks" },
     l = { "<cmd>ZkLinks<CR>", "Pick link" },
@@ -283,23 +289,3 @@ wk.register(mappings, wkopts)
  -------------------------------------------------------------------------------- 
   -- end which-key mappings -- 
  -------------------------------------------------------------------------------- 
-
-local neorg_callbacks = require("neorg.callbacks")
-
-neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, keybinds)
-    -- Map all the below keybinds only when the "norg" mode is active
-    keybinds.map_event_to_mode("norg", {
-        n = { -- Bind keys in normal mode
-            { "<C-s>", "core.integrations.telescope.find_linkable" },
-        },
-
-        i = { -- Bind in insert mode
-            { "<C-l>", "core.integrations.telescope.insert_link" },
-        },
-    }, {
-        silent = true,
-        noremap = true,
-    })
-end)
-  
-

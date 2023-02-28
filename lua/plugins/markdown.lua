@@ -17,8 +17,13 @@ return {
     "elzr/vim-json",
     ft = "markdown",
   },
+
   {
-    "plasticboy/vim-markdown",
+    "godlygeek/tabular"
+  },
+
+  {
+    "preservim/vim-markdown",
     ft = "markdown",
     config = function ()
       vim.cmd([[
