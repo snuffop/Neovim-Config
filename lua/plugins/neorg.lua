@@ -23,10 +23,9 @@ return {
       ["core.norg.dirman"] = { -- Manages Neorg workspaces
         config = {
           workspaces = {
-            default = "~/Nextcloud/neorg/default",
-            joyent = "~/Nextcloud/neorg/joyent",
+            default = "~/Nextcloud/Neorg",
           },
-          index = 'index.norg'
+          default_workspace = "default",
         },
       },
     },

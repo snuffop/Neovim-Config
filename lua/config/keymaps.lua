@@ -62,12 +62,23 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 local mappings = {
 
+ -------------------------------------------------------------------------------- 
+  -- Misc -- 
+ -------------------------------------------------------------------------------- 
   ["/"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+
+ -------------------------------------------------------------------------------- 
+  -- A -- 
+ -------------------------------------------------------------------------------- 
 
   ["a"] = {
     name = "+application",
     a = { "<cmd>Alpha<cr>", "Alpha" },
   },
+
+ -------------------------------------------------------------------------------- 
+  -- B -- 
+ -------------------------------------------------------------------------------- 
 
   ["b"] = {
     name = "+buffers",
@@ -84,6 +95,7 @@ local mappings = {
  -------------------------------------------------------------------------------- 
   -- E -- 
  -------------------------------------------------------------------------------- 
+
   ["e"] = {
     name = "+edit",
     e = { "<cmd>NvimTreeToggle<cr>", "Neotree Explorer" },
@@ -92,6 +104,7 @@ local mappings = {
  -------------------------------------------------------------------------------- 
   -- F -- 
  -------------------------------------------------------------------------------- 
+
   ["f"] = {
     name = "+file",
     g  = { "<cmd>lua require('telescope.builtin').git_files()<cr>", "Telescope git_files"},
@@ -105,6 +118,7 @@ local mappings = {
  -------------------------------------------------------------------------------- 
   -- G -- 
  -------------------------------------------------------------------------------- 
+
   ["g"] = {
     name = "Git",
     R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
@@ -116,30 +130,18 @@ local mappings = {
     p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
     r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
     s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-    u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk", },
-
- -------------------------------------------------------------------------------- 
-  -- T -- 
- -------------------------------------------------------------------------------- 
-  ["t"] = {
-    name = "Telescope",
-    s = { "<cmd>Telescope git_status<cr>", "Telescope status" },
-    b = { "<cmd>Telescope git_branches<cr>", "Telescope branch" },
-    c = { "<cmd>Telescope git_commits<cr>", "Telescope commit" },
-    B = { "<cmd>Telescope git_bcommits<cr>", "Telescope bcommit" },
-    S = { "<cmd>Telescope git_stash<cr>", "Telescop stash" },
-    f = { "<cmd>Telescope git_flie<cr>", "Telescope files" },
-    },
+    u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk"},
   },
+
 
  -------------------------------------------------------------------------------- 
   -- H -- 
  -------------------------------------------------------------------------------- 
+
   ["h"] = {
     name = "+help",
     h = { "<cmd>Telescope help_tags<CR>", "Telescope Help" },
     H = { "<cmd>help<CR>", "Telescope Help" },
-
     ["b"] = {
       name = "+bindings",
       t = { "<cmd>WhichKey<cr>", "WhichkKey Top Level"},
@@ -147,8 +149,21 @@ local mappings = {
   },
 
  -------------------------------------------------------------------------------- 
+  -- I -- 
+ -------------------------------------------------------------------------------- 
+
+ -------------------------------------------------------------------------------- 
+  -- J -- 
+ -------------------------------------------------------------------------------- 
+
+ -------------------------------------------------------------------------------- 
+  -- K -- 
+ -------------------------------------------------------------------------------- 
+
+ -------------------------------------------------------------------------------- 
   -- L -- 
  -------------------------------------------------------------------------------- 
+
   ["l"] = {
     name = "LSP",
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
@@ -176,42 +191,54 @@ local mappings = {
     },
   },
 
+ -------------------------------------------------------------------------------- 
+  -- M -- 
+ -------------------------------------------------------------------------------- 
+
+ -------------------------------------------------------------------------------- 
+  -- N -- 
+ -------------------------------------------------------------------------------- 
+
+  ["n"] = {
+    name = "Notes/Neorg",
+    n = {"<cmd>Neorg keybind norg core.norg.dirman.new.note<cr>", "New Note"},
+    j = {
+      name = "journal",
+      j = {"<cmd>Neorg journal today<cr>", "Today's Journal"},
+      t = {"<cmd>Neorg journal tomorrow<cr>", "tomorrow's Journal"},
+      y = {"<cmd>Neorg journal yesterday<cr>", "Yesterday's Journal"},
+    },
+  },
 
  -------------------------------------------------------------------------------- 
   -- O -- 
  -------------------------------------------------------------------------------- 
+
   ["o"] = {
     name = "+open",
     m = {
       name = "+my",
-      ["0"] = { "<cmd>edit $HOME/Nextcloud/zk/0INBOX.md<cr>", "Inbox file" },
-      q = { "<cmd>edit $HOME/Nextcloud/zk/QuickNote.md<cr>", "Inbox file" },
-      j = { "<cmd>edit $HOME/Nextcloud/zk/joyent/index.md<cr>", "Open My Task" },
-      G = { "<cmd>edit $HOME/Nextcloud/zk/joyent/gage/index.md", "Open Gage" },
+      ["0"] = { "<cmd>edit $HOME/Nextcloud/Notes/zk/0INBOX.md<cr>",     "Inbox file" },
+      q = { "<cmd>edit $HOME/Nextcloud/Notes/zk/QuickNote.md<cr>",      "Inbox file" },
+      j = { "<cmd>edit $HOME/Nextcloud/Notes/zk/joyent/index.md<cr>",   "Open My Task" },
+      G = { "<cmd>edit $HOME/Nextcloud/Notes/zk/joyent/gage/index.md",  "Open Gage" },
     },
   },
 
  -------------------------------------------------------------------------------- 
   -- P -- 
  -------------------------------------------------------------------------------- 
+
   ["p"] = { 
     name = "+project",
     p = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
     s = { "<cmd>Telescope live_grep<cr>", "Projects" },
   },
 
-  P = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
-  },
-
  -------------------------------------------------------------------------------- 
   -- Q -- 
  -------------------------------------------------------------------------------- 
+
   ["q"] = { "<cmd>q!<CR>", "Quit" },
 
  -------------------------------------------------------------------------------- 
@@ -221,6 +248,7 @@ local mappings = {
  -------------------------------------------------------------------------------- 
   -- S -- 
  -------------------------------------------------------------------------------- 
+
   ["s"] = {
     name = "+search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -236,6 +264,7 @@ local mappings = {
  -------------------------------------------------------------------------------- 
   -- T -- 
  -------------------------------------------------------------------------------- 
+
   ["T"] = {
     name = "+telescope",
     a = {"<cmd>Telescope autocommands<cr>", "autoommands" },
@@ -268,8 +297,9 @@ local mappings = {
   },
 
  -------------------------------------------------------------------------------- 
-  -- z -- 
+  -- Z -- 
  -------------------------------------------------------------------------------- 
+
   ["z"] = {
     name = "+Zettelkasten",
     a = { ":'<,'>lua vim.lsp.buf.range_code_action()<CR>", "Code Action" },
@@ -280,6 +310,7 @@ local mappings = {
     z = { "<cmd>ZkNotes<CR>", "Search notes" },
     b = { "<cmd>ZkBacklinks<CR>", "Backlinks" },
     l = { "<cmd>ZkLinks<CR>", "Pick link" },
+    i = { "<cmd>ZkInsertLink<CR>", "Insert Link"},
     t = { "<cmd>ZkTags<CR>", "Tags" },
   },
 }
