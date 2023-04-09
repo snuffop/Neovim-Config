@@ -201,7 +201,12 @@ local mappings = {
 
   ["n"] = {
     name = "Notes/Neorg",
-    n = {"<cmd>Neorg keybind norg core.norg.dirman.new.note<cr>", "New Note"},
+    n = {"<cmd>Telescope neorg find_norg_files<cr>", "Find Notes"},
+    l = {"<cmd>Telescope neorg find_linkable<cr>", "Linkable Notes"},
+    s = {"<cmd>Telescope neorg find_linkable<cr>", "Search Headings"},
+    N = {"<cmd>Neorg keybind norg core.norg.dirman.new.note<cr>", "New Note"},
+    w = {"<cmd>Telescope neorg switch_workspace<cr>", "Switch Workspace"},
+    r = {"<cmd>Neorg return<cr>", "Neorg Return"},
     j = {
       name = "journal",
       j = {"<cmd>Neorg journal today<cr>", "Today's Journal"},
@@ -258,7 +263,6 @@ local mappings = {
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
 
  -------------------------------------------------------------------------------- 
@@ -268,8 +272,11 @@ local mappings = {
   ["T"] = {
     name = "+telescope",
     a = {"<cmd>Telescope autocommands<cr>", "autoommands" },
-    c = {"<cmd>Telescope commands<cr>", "Commands" },
-    C = {"<cmd>Telescope command_history<cr>", "Command History" },
+    c = {
+      name = "+command",
+      c = {"<cmd>Telescope commands<cr>", "Commands" },
+      h = {"<cmd>Telescope command_history<cr>", "Command History" },
+    },
     e = {"<cmd>Telescope env<cr>", "Environment" },
     f = {"<cmd>Telescope find_pickers<cr>", "list pickers" },
     F = {"<cmd>Telescope filetypes<cr>", "filetypes" },

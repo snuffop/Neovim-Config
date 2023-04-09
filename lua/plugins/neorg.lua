@@ -9,7 +9,13 @@ return {
       ["core.norg.manoeuvre"] = {},
       ["core.export"] = {},
       ["core.export.markdown"] = {},
+      ["core.keybinds"] = {
+        config = {
+          default_keybinds = false,
+        }
+      },
       ["core.integrations.telescope"] = {},
+
       ["core.norg.completion"] = {
         config = {
           engine = "nvim-cmp"
