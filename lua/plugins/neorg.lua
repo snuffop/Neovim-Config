@@ -5,8 +5,16 @@ return {
   opts = {
     load = {
       ["core.defaults"] = {}, -- Loads default behaviour
-      ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-      ["core.norg.manoeuvre"] = {},
+      ["core.dirman"] = { -- Manages Neorg workspaces
+        config = {
+          workspaces = {
+            default = "~/Nextcloud/Neorg",
+          },
+          default_workspace = "default",
+        },
+      },
+      ["core.concealer"] = {}, -- Adds pretty icons to your documents
+      ["core.manoeuvre"] = {},
       ["core.export"] = {},
       ["core.export.markdown"] = {},
       ["core.keybinds"] = {
@@ -15,24 +23,16 @@ return {
         }
       },
       ["core.integrations.telescope"] = {},
-
-      ["core.norg.completion"] = {
+      ["core.integrations.treesitter"] = {},
+      ["core.completion"] = {
         config = {
           engine = "nvim-cmp"
         }
       },
-      ["core.norg.journal"] = {
+      ["core.journal"] = {
         config = {
           workspace = 'default',
         }
-      },
-      ["core.norg.dirman"] = { -- Manages Neorg workspaces
-        config = {
-          workspaces = {
-            default = "~/Nextcloud/Neorg",
-          },
-          default_workspace = "default",
-        },
       },
     },
   },

@@ -307,19 +307,6 @@ local mappings = {
   -- Z -- 
  -------------------------------------------------------------------------------- 
 
-  ["z"] = {
-    name = "+Zettelkasten",
-    a = { ":'<,'>lua vim.lsp.buf.range_code_action()<CR>", "Code Action" },
-    k = { "<Cmd>lua vim.lsp.buf.hover()<CR>", "Preview linked note" },
-    n = { "<Cmd>ZkNew { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>", "New Note" },
-    N = { ":'<,'>ZkNewFromTitleSelection { dir = vim.fn.expand('%:p:h') }<CR>", "New from title selection" },
-    C = { ":'<,'>ZkNewFromContentSelection { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>", "New from content selection"},
-    z = { "<cmd>ZkNotes<CR>", "Search notes" },
-    b = { "<cmd>ZkBacklinks<CR>", "Backlinks" },
-    l = { "<cmd>ZkLinks<CR>", "Pick link" },
-    i = { "<cmd>ZkInsertLink<CR>", "Insert Link"},
-    t = { "<cmd>ZkTags<CR>", "Tags" },
-  },
 }
 
 wk.register(mappings, wkopts)
