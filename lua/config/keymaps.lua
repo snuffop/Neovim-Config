@@ -106,7 +106,7 @@ local mappings = {
     f  = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files"},
     b  = { "<cmd>Telescope file_browser<cr>", "Find files"},
     -- N  = { "<cmd>ene <BAR> startinseert <CR>", "New File"},
-    -- r  = { "<cmd>RnvimrToggle<CR>", "Ranger" },
+    r  = { "<cmd>Ranger<CR>", "Ranger" },
     s  = { "<cmd>up<CR>", "Save" },
    },
 
