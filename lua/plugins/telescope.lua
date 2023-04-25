@@ -22,6 +22,19 @@ return {
           },
         },
       },
+      extensions = {
+        fzf = {
+          fuzzy = true,
+          override_generic_sorter = true,
+          override_file_sorter = true,
+          case_mode = "smart_case",
+        },
+        menufacture = {
+          mappings = {
+            main_menu = { [{ "i", "n" }] = "<C-e>" },
+          },
+        },
+      },
     }
     -- Enable telescope fzf native, if installed
     pcall(require('telescope').load_extension, 'env')

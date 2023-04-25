@@ -11,7 +11,7 @@ return {
       ["core.export.markdown"] = {},
       ["core.keybinds"] = {
         config = {
-          default_keybinds = false,
+          default_keybinds = true,
         }
       },
       ["core.integrations.telescope"] = {},
@@ -38,6 +38,7 @@ return {
   },
   dependencies = {
     { "nvim-lua/plenary.nvim" },
-    { "nvim-neorg/neorg-telescope"},
+    { "nvim-neorg/neorg-telescope", dependencies = { "nvim-telescope/telescope.nvim" } },
+    "nvim-treesitter/nvim-treesitter",
   },
 }

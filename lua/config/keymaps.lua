@@ -66,6 +66,7 @@ local mappings = {
   -- Misc -- 
  -------------------------------------------------------------------------------- 
   ["/"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  [" "] = { "<cmd>source $MYVIMRC<cr>", "Reload Config" },
 
  -------------------------------------------------------------------------------- 
   -- A -- 
@@ -193,23 +194,34 @@ local mappings = {
  -------------------------------------------------------------------------------- 
   -- N -- 
  -------------------------------------------------------------------------------- 
-  --
-  -- ["n"] = {
-  --   name = "Notes/Neorg",
   --   n = {"<cmd>Telescope neorg find_norg_files<cr>", "Find Notes"},
   --   l = {"<cmd>Telescope neorg find_linkable<cr>", "Linkable Notes"},
   --   s = {"<cmd>Telescope neorg find_linkable<cr>", "Search Headings"},
   --   N = {"<cmd>Neorg keybind norg core.norg.dirman.new.note<cr>", "New Note"},
   --   w = {"<cmd>Telescope neorg switch_workspace<cr>", "Switch Workspace"},
   --   r = {"<cmd>Neorg return<cr>", "Neorg Return"},
-  --   j = {
-  --     name = "journal",
-  --     j = {"<cmd>Neorg journal today<cr>", "Today's Journal"},
-  --     t = {"<cmd>Neorg journal tomorrow<cr>", "tomorrow's Journal"},
-  --     y = {"<cmd>Neorg journal yesterday<cr>", "Yesterday's Journal"},
-  --   },
   -- },
-
+  --
+  ["n"] = {
+    name = "Notes/Neorg",
+    N = {"<cmd>Neorg keybind norg core.norg.dirman.new.note<cr>", "New Note"},
+    U = {"<cmd>Neorg upgrade current-directory<cr>", "[U]pgrades Current Directory" },
+    f = {"<cmd>norm ggVG=<cr>", "Formats a Neorg File" },
+    l = {"<cmd>Telescope neorg find_linkable<cr>", "Linkable Notes"},
+    n = {"<cmd>Telescope neorg find_norg_files<cr>", "Find Notes"},
+    r = {"<cmd>Neorg return<cr>", "Neorg Return"},
+    t = {"<cmd>Neorg tangle current-file<cr>", "[T]angle Code to file" },
+    u = {"<cmd>Neorg upgrade current-file<cr>", "[U]pgrades Current File" },
+    w = {"<cmd>Telescope neorg switch_workspace<cr>", "Switch Workspace"},
+    j = {
+      name = "journal",
+      j = {"<cmd>Neorg journal today<cr>", "Today's [j]ournal"},
+      t = {"<cmd>Neorg journal tomorrow<cr>", "[t]omorrow's Journal"},
+      y = {"<cmd>Neorg journal yesterday<cr>", "[y]esterday's Journal"},
+      T = {"<cmd>Neorg journal template<cr>",  "[T]emplate Journal" },
+      c = {"<cmd>Neorg journal custom<cr>",  "[C]ustom Journal" },
+    },
+  },
  -------------------------------------------------------------------------------- 
   -- O -- 
  -------------------------------------------------------------------------------- 
