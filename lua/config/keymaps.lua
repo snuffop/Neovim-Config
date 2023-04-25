@@ -55,10 +55,10 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
-keymap('n', '<c-j>', '<c-w>j', opts)
-keymap('n', '<c-h>', '<c-w>h', opts)
-keymap('n', '<c-k>', '<c-w>k', opts)
-keymap('n', '<c-l>', '<c-w>l', opts)
+-- keymap('n', '<c-j>', '<c-w>j', opts)
+-- keymap('n', '<c-h>', '<c-w>h', opts)
+-- keymap('n', '<c-k>', '<c-w>k', opts)
+-- keymap('n', '<c-l>', '<c-w>l', opts)
 
 local mappings = {
 
