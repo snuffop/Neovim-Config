@@ -24,6 +24,7 @@ return {
       })
     end,
   },
+
   {
     "Mofiqul/dracula.nvim",
     config = function ()
