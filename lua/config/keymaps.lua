@@ -82,10 +82,8 @@ local mappings = {
     W = { "<cmd>noautocmd w<cr>", "Save without formatting (noautocmd)" },
     b = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
     d = { "<cmd>bdelete<cr>", "Delete buffer"},
-    e = { "<cmd>BufferLinePickClose<cr>", "Pick which buffer to close" },
-    j = { "<cmd>BufferLinePick<cr>", "Jump" },
-    n = { "<cmd>BufferLineCycleNext<cr>", "Next" },
-    p = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
+    n = { "<cmd>bnext<cr>", "Next" },
+    p = { "<cmd>bprevious<cr>", "Previous" },
   },
 
  -------------------------------------------------------------------------------- 
