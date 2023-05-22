@@ -1,1 +1,1 @@
-vim
+Marty's Neovim Configuration

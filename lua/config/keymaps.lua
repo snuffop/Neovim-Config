@@ -113,19 +113,10 @@ local mappings = {
   -- G -- 
  -------------------------------------------------------------------------------- 
 
-  -- ["g"] = {
-  --   name = "Git",
-  --   R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-  --   b = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-  --   d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff", },
-  --   g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-  --   j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-  --   k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-  --   p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-  --   r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-  --   s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-  --   u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk"},
-  -- },
+  ["g"] = {
+    name = "Git",
+    s = { "<cmd>Gstatus<cr>", "Git Fugative Status" },
+  },
 
 
  -------------------------------------------------------------------------------- 
