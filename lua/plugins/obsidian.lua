@@ -29,7 +29,7 @@ return {
     dir = "~/Nextcloud/Obsidian/",  -- no need to call 'vim.fn.expand' here
 
     -- Optional, if you keep notes in a specific subdirectory of your vault.
-    notes_subdir = "notes",
+    notes_subdir = "notes/",
 
     -- Optional, if you keep daily notes in a separate directory.
     daily_notes = {
