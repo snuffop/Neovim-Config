@@ -11,6 +11,7 @@ return {
       "Gwrite",
       "Ggrep",
       "GMove",
+      "Gstatus",
       "GDelete",
       "GBrowse",
       "GRemove",
@@ -20,4 +21,10 @@ return {
     },
     ft = {"fugitive"}
   },
+
+  {
+    "lewis6991/gitsigns.nvim",
+  }
 }
+
+
