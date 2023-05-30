@@ -115,6 +115,8 @@ local mappings = {
 
   ["g"] = {
     name = "Git",
+    g = { "<cmd>Git<cr>", "Fugative Git Status"},
+
     ["s"] = {
       name = "Signs",
       R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
