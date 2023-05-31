@@ -5,9 +5,6 @@ return {
   -- Vim Table mode
   {'dhruvasagar/vim-table-mode'},
 
-  -- Ranger
-  {'francoiscabrol/ranger.vim'},
-  {'rbgrouleff/bclose.vim'},  -- dependency for ranger
 
   -- Vim Matchup
   {

@@ -90,10 +90,7 @@ local mappings = {
   -- E -- 
  -------------------------------------------------------------------------------- 
 
-  -- ["e"] = {
-  --   name = "+edit",
-  --   e = { "<cmd>NvimTreeToggle<cr>", "Neotree Explorer" },
-  -- },
+  ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 
  -------------------------------------------------------------------------------- 
   -- F -- 
@@ -105,7 +102,8 @@ local mappings = {
     f  = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files"},
     b  = { "<cmd>Telescope file_browser<cr>", "Find files"},
     -- N  = { "<cmd>ene <BAR> startinseert <CR>", "New File"},
-    r  = { "<cmd>Ranger<CR>", "Ranger" },
+    -- r  = { "<cmd>Ranger<CR>", "Ranger" },
+    r  = { "<cmd>RnvimrToggle<CR>", "Ranger" },
     s  = { "<cmd>up<CR>", "Save" },
    },
 
@@ -115,7 +113,8 @@ local mappings = {
 
   ["g"] = {
     name = "Git",
-    g = { "<cmd>Git<cr>", "Fugative Git Status"},
+    g = { "<cmd>LazyGit<cr>", "LazyGit" },
+    f = { "<cmd>Git<cr>", "Fugative Git Status"},
 
     ["s"] = {
       name = "Signs",
@@ -196,14 +195,7 @@ local mappings = {
  -------------------------------------------------------------------------------- 
   -- N -- 
  -------------------------------------------------------------------------------- 
-  --   n = {"<cmd>Telescope neorg find_norg_files<cr>", "Find Notes"},
-  --   l = {"<cmd>Telescope neorg find_linkable<cr>", "Linkable Notes"},
-  --   s = {"<cmd>Telescope neorg find_linkable<cr>", "Search Headings"},
-  --   N = {"<cmd>Neorg keybind norg core.norg.dirman.new.note<cr>", "New Note"},
-  --   w = {"<cmd>Telescope neorg switch_workspace<cr>", "Switch Workspace"},
-  --   r = {"<cmd>Neorg return<cr>", "Neorg Return"},
-  -- },
-  --
+
   ["n"] = {
     name = "Notes/Neorg",
     N = {"<cmd>Neorg keybind norg core.norg.dirman.new.note<cr>", "New Note"},
@@ -224,6 +216,7 @@ local mappings = {
       c = {"<cmd>Neorg journal custom<cr>",  "[C]ustom Journal" },
     },
   },
+ 
  -------------------------------------------------------------------------------- 
   -- O -- 
  -------------------------------------------------------------------------------- 

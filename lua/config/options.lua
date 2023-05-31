@@ -19,7 +19,7 @@ vim.opt.termguicolors = true                            -- set term gui colors (
 vim.opt.timeoutlen = 300                                -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.undofile = true                                 -- enable persistent undo
 vim.opt.updatetime = 300                                -- faster completion (4000ms default)
-vim.opt.writebackup = false                             -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+vim.opt.writebackup = false                             -- if a file is being edited by another program (or was written to file while editing with another program)
 vim.opt.expandtab = true                                -- convert tabs to spaces
 vim.opt.shiftwidth = 2                                  -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 2                                     -- insert 2 spaces for a tab
@@ -37,9 +37,8 @@ vim.opt.whichwrap = "bs<>[]hl"                          -- which "horizontal" ke
 -- vim.opt.shortmess = "ilmnrx"                        -- flags to shorten vim messages see :help 'shortmess'
 vim.opt.shortmess:append "c"                           -- don't give |ins-completion-menu| messages
 vim.opt.iskeyword:append "-"                           -- hyphenated words recognized by searches
-vim.opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
+vim.opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth'
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")  -- separate vim plugins from neovim in case vim still in use
 
 vim.g.ranger_map_keys = 0
--- vim.g.NERDTreeHijackNetrw = 0 
 vim.g.ranger_replace_netrw = 1 
