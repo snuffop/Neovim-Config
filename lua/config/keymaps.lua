@@ -1,6 +1,5 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
-local term_opts = { silent = true }
 local wk = require("which-key")
 local wkopts = {
   mode = "n",
@@ -198,9 +197,8 @@ local mappings = {
 
   ["n"] = {
     name = "Notes/Neorg",
-    N = {"<cmd>Neorg keybind norg core.norg.dirman.new.note<cr>", "New Note"},
+    N = {"<cmd>Neorg keybind norg core.dirman.new.note<cr>", "New Note"},
     U = {"<cmd>Neorg upgrade current-directory<cr>", "[U]pgrades Current Directory" },
-    f = {"<cmd>norm ggVG=<cr>", "Formats a Neorg File" },
     l = {"<cmd>Telescope neorg find_linkable<cr>", "Linkable Notes"},
     n = {"<cmd>Telescope neorg find_norg_files<cr>", "Find Notes"},
     r = {"<cmd>Neorg return<cr>", "Neorg Return"},
@@ -216,7 +214,7 @@ local mappings = {
       c = {"<cmd>Neorg journal custom<cr>",  "[C]ustom Journal" },
     },
   },
- 
+
  -------------------------------------------------------------------------------- 
   -- O -- 
  -------------------------------------------------------------------------------- 
@@ -225,10 +223,9 @@ local mappings = {
     name = "+open",
     m = {
       name = "+my",
-      ["0"] = { "<cmd>edit $HOME/Nextcloud/Notes/zk/0INBOX.md<cr>",     "Inbox file" },
-      q = { "<cmd>edit $HOME/Nextcloud/Notes/zk/QuickNote.md<cr>",      "Inbox file" },
-      j = { "<cmd>edit $HOME/Nextcloud/Notes/zk/joyent/index.md<cr>",   "Open My Task" },
-      G = { "<cmd>edit $HOME/Nextcloud/Notes/zk/joyent/gage/index.md",  "Open Gage" },
+      ["0"] = { "<cmd>edit $HOME/Nextcloud/Notes/org/orgzly/0mobile.org<cr>",     "Orgzly Inbox file" },
+      j = { "<cmd>edit $HOME/Nextcloud/Joyent/index.norg<cr>",                    "Open My Task" },
+      G = { "<cmd>edit $HOME/Nextcloud/Joyent/Gage/index.norg<cr>",               "Open Gage" },
     },
   },
 
@@ -236,11 +233,11 @@ local mappings = {
   -- P -- 
  -------------------------------------------------------------------------------- 
 
-  -- ["p"] = { 
-  --   name = "+project",
-  --   p = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-  --   s = { "<cmd>Telescope live_grep<cr>", "Projects" },
-  -- },
+  ["p"] = { 
+    name = "+project",
+    p = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+    s = { "<cmd>Telescope live_grep<cr>", "Projects" },
+  },
 
  -------------------------------------------------------------------------------- 
   -- Q -- 

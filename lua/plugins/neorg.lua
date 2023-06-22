@@ -30,6 +30,7 @@ return {
         config = {
           workspaces = {
             default = "~/Nextcloud/Neorg",
+            joyent = "~/Nextcloud/Neorg/Joyent"
           },
           default_workspace = "default",
         },

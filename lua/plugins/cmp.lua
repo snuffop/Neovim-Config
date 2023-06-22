@@ -43,6 +43,7 @@ return {
         { name = 'spell'},
         { name = 'nvim_lsp' },
         { name = 'neorg'},
+        { name = 'orgmode'},
         })
     }
 
