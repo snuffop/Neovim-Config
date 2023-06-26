@@ -7,8 +7,8 @@ return {
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP
-      "j-hui/fidget.nvim",
-      tag = 'legacy',
+      -- "j-hui/fidget.nvim",
+      -- tag = 'legacy',
 
       -- Additional lua configuration, makes nvim stuff amazing
       'folke/neodev.nvim',
@@ -105,7 +105,7 @@ return {
         end,
       }
 
-      require('fidget').setup()
+      -- require('fidget').setup()
     end
   },
 
