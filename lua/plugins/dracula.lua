@@ -28,6 +28,7 @@ return {
           visual = "#3E4452",
           gutter_fg = "#4B5263",
           nontext = "#3B4048",
+          background_colour = "#000000",
         },
         -- show the '~' characters after the end of buffers
         show_end_of_buffer = true, -- default false

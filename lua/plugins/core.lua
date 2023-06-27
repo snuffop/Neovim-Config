@@ -19,6 +19,11 @@ return {
       end,
     },
   },
+
+  require("notify").setup({
+    background_colour = "#000000",
+  }),
+
   -- change trouble config
   {
     "folke/trouble.nvim",
