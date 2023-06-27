@@ -1,7 +1,8 @@
 return {
   "epwalsh/obsidian.nvim",
   lazy = true,
-  event = { "BufReadPre " .. vim.fn.expand "~" .. "/Nextcloud/Obsidian/**.md" },
+  cmd = "ObsidianToday",
+  event = { "BufReadPre " .. vim.fn.expand("~") .. "/Nextcloud/Obsidian/**.md" },
   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand':
   -- event = { "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md" },
   dependencies = {
@@ -12,17 +13,17 @@ return {
     "preservim/vim-markdown",
   },
   opts = {
-    dir = "~/Nextcloud/Obsidian/",  -- no need to call 'vim.fn.expand' here
+    dir = "~/Nextcloud/Obsidian/", -- no need to call 'vim.fn.expand' here
     notes_subdir = "notes",
 
     daily_notes = {
       folder = "notes/dailies",
-      date_format = "%Y-%m-%d"
+      date_format = "%Y-%m-%d",
     },
 
     -- Optional, completion.
     completion = {
-      nvim_cmp = true,  -- if using nvim-cmp, otherwise set to false
+      nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
     },
 
     -- Optional, customize how names/IDs for new notes are created.
@@ -63,7 +64,7 @@ return {
 
     follow_url_func = function(url)
       -- vim.fn.jobstart({"open", url})  -- Mac OS
-      vim.fn.jobstart({"xdg-open", url})  -- linux
+      vim.fn.jobstart({ "xdg-open", url }) -- linux
     end,
 
     use_advanced_uri = true,
