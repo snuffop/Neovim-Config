@@ -104,6 +104,7 @@ local mappings = {
     -- r  = { "<cmd>Ranger<CR>", "Ranger" },
     r  = { "<cmd>RnvimrToggle<CR>", "Ranger" },
     s  = { "<cmd>up<CR>", "Save" },
+    z  = { "<cmd>Telescope zoxide list<cr>", "Zoxide"},
    },
 
  -------------------------------------------------------------------------------- 
