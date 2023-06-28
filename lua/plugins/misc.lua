@@ -5,7 +5,6 @@ return {
   -- Vim Table mode
   {'dhruvasagar/vim-table-mode'},
 
-
   -- Vim Matchup
   {
     'andymass/vim-matchup',
@@ -16,14 +15,15 @@ return {
   },
 
   -- Vim Surround
-  { 
+  {
     "kylechui/nvim-surround",
+    lazy = false,
     config = function ()
       require("nvim-surround").setup({
 
       })
     end,
-  },    
+  },
 
   -- Comment
   {
