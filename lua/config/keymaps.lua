@@ -49,6 +49,7 @@ local mappings = {
   ["g"] = {
     f = { "<cmd>Git<cr>", "Fugative Git Status" },
     n = { "<cmd>Neogit<cr>", "Neogit" },
+    m = { "<cmd>MergetoolToggle<cr>", "Mergetool" },
   },
 
   ["n"] = {
