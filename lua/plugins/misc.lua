@@ -1,6 +1,9 @@
 return {
   -- Wakatime 
-  {'wakatime/vim-wakatime'},
+  {
+    'wakatime/vim-wakatime',
+    lazy = false,
+  },
 
   -- Vim Table mode
   {'dhruvasagar/vim-table-mode'},
