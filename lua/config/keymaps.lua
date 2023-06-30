@@ -21,6 +21,7 @@ local wkopts = {
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
+--
 local nvim_tmux_nav = require('nvim-tmux-navigation')
 
 nvim_tmux_nav.setup {
@@ -53,11 +54,6 @@ local mappings = {
   },
 
   ["n"] = {
-    name = "Notes/Neorg",
-    N = { "<cmd>Neorg keybind norg core.dirman.new.note<cr>", "New Note" },
-    U = { "<cmd>Neorg upgrade current-directory<cr>", "[U]pgrades Current Directory" },
-    l = { "<cmd>Telescope neorg find_linkable<cr>", "Linkable Notes" },
-    n = { "<cmd>Telescope neorg find_norg_files<cr>", "Find Notes" },
     o = {
       name = "Obsidian",
       C = { "<cmd>ObsidianCheckHealth<cr>", "Check Health" },
@@ -73,26 +69,6 @@ local mappings = {
       t = { "<cmd>ObsidianToday<cr>", "Today" },
       y = { "<cmd>ObsidianYesterday<cr>", "Yesterday" },
     },
-    r = { "<cmd>Neorg return<cr>", "Neorg Return" },
-    t = { "<cmd>Neorg tangle current-file<cr>", "[T]angle Code to file" },
-    u = { "<cmd>Neorg upgrade current-file<cr>", "[U]pgrades Current File" },
-    w = { "<cmd>Telescope neorg switch_workspace<cr>", "Switch Workspace" },
-    j = {
-      name = "journal",
-      j = { "<cmd>Neorg journal today<cr>", "Today's [j]ournal" },
-      t = { "<cmd>Neorg journal tomorrow<cr>", "[t]omorrow's Journal" },
-      y = { "<cmd>Neorg journal yesterday<cr>", "[y]esterday's Journal" },
-      T = { "<cmd>Neorg journal template<cr>", "[T]emplate Journal" },
-      c = { "<cmd>Neorg journal custom<cr>", "[C]ustom Journal" },
-    },
-    z = {
-      name = "ZettelKasten",
-      n = { "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", "Notes" },
-      t = { "<Cmd>ZkTags<CR>", "Tags" },
-      N = { "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", "New Note" },
-      s = { "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", "Search" },
-      -- s = { ":'<,'>ZkMatch<CR>" , "Visual"},
-    }
   },
 
   ["s"] = {

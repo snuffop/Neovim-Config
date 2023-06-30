@@ -1,9 +1,20 @@
 return {
+  {
+    'is0n/fm-nvim',
+    lazy = false,
+    config = function()
+    require('fm-nvim').setup({
+      mappings = {
+        ESC        = ":q<CR>"
+      },
+    })
+  end,
+  },
 
   -- Ranger
   -- {'francoiscabrol/ranger.vim'},
   -- {'rbgrouleff/bclose.vim'},  -- dependency for ranger
-  
+
   {
     "kevinhwang91/rnvimr",
     cmd = "RnvimrToggle",
@@ -14,6 +25,5 @@ return {
       vim.g.rnvimr_enable_ex = 1
       vim.g.rnvimr_hide_gitignore = 1
     end,
-  },
+  }
 }
-
