@@ -85,6 +85,14 @@ local mappings = {
       T = { "<cmd>Neorg journal template<cr>", "[T]emplate Journal" },
       c = { "<cmd>Neorg journal custom<cr>", "[C]ustom Journal" },
     },
+    z = {
+      name = "ZettelKasten",
+      n = { "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", "Notes" },
+      t = { "<Cmd>ZkTags<CR>", "Tags" },
+      N = { "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", "New Note" },
+      s = { "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", "Search" },
+      -- s = { ":'<,'>ZkMatch<CR>" , "Visual"},
+    }
   },
 
   ["s"] = {

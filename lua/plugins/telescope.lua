@@ -47,6 +47,7 @@ return {
       pcall(require("telescope").load_extension, "media_files")
       pcall(require("telescope").load_extension, "zoxide")
       pcall(require("telescope").load_extension, "luasnip")
+      pcall(require("telescope").load_extension, "zk")
     end,
     keys = {
       -- add a keymap to browse plugin files

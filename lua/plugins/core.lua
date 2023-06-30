@@ -63,6 +63,7 @@ return {
         tsserver = {},
         ansiblels = {},
         grammarly = {},
+        zk = {},
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
@@ -87,7 +88,10 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
-      highlight = { enable = true },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = { "markdown" }
+      },
       indent = { enable = true },
       ensure_installed = {
         "bash",
@@ -112,6 +116,7 @@ return {
         "vim",
         "vimdoc",
         "yaml",
+        "zk",
       },
       incremental_selection = {
         enable = true,
