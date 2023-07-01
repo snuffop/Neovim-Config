@@ -1,9 +1,22 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+-- Modes
+--   normal_mode = "n",
+--   insert_mode = "i",
+--   visual_mode = "v",
+--   visual_block_mode = "x",
+--   term_mode = "t",
+--   command_mode = "c",
 --
-local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
+
+vim.keymap.set('n', "<C-h>", "<cmd>TmuxNavigateLeft<cr>")
+vim.keymap.set('n', "<C-j>", "<cmd>TmuxNavigateDown<cr>")
+vim.keymap.set('n', "<C-k>", "<cmd>TmuxNavigateUp<cr>")
+vim.keymap.set('n', "<C-l>", "<cmd>TmuxNavigateRight<cr>")
+
+-- Whichkey additions 
+
 local wk = require("which-key")
 local wkopts = {
   mode = "n",
@@ -14,28 +27,17 @@ local wkopts = {
   nowait = true,
 }
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
---
-local nvim_tmux_nav = require('nvim-tmux-navigation')
-
-nvim_tmux_nav.setup {
-  disable_when_zoomed = true -- defaults to false
-}
-vim.keymap.set('n', "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
-vim.keymap.set('n', "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
-vim.keymap.set('n', "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
-vim.keymap.set('n', "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
-vim.keymap.set('n', "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
-vim.keymap.set('n', "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
-
-
 local mappings = {
+
+  ["a"] = {
+    name = "+Application",
+    m = {
+      name = "+markdown",
+      m = { "<cmd>MarkdownPreview<cr>", "Preview"},
+      s = { "<cmd>MarkdownPreviewStop<cr>", "Preview Stop"},
+      t = { "<cmd>MarkdownPreviewToggle<cr>", "Preview Toggle"},
+    },
+  },
 
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Nvim Tree" },
 
@@ -51,6 +53,23 @@ local mappings = {
     f = { "<cmd>Git<cr>", "Fugative Git Status" },
     n = { "<cmd>Neogit<cr>", "Neogit" },
     m = { "<cmd>MergetoolToggle<cr>", "Mergetool" },
+  },
+
+  ["m"] = {
+    name = " Harpoon",
+    m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark file" },
+    t = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Toggle UI" },
+    a = { ":lua require('harpoon.ui').nav_file(1)<cr>", "Goto mark 1" },
+    s = { ":lua require('harpoon.ui').nav_file(2)<cr>", "Goto mark 2" },
+    d = { ":lua require('harpoon.ui').nav_file(3)<cr>", "Goto mark 3" },
+    f = { ":lua require('harpoon.ui').nav_file(4)<cr>", "Goto mark 4" },
+    g = { ":lua require('harpoon.ui').nav_file(5)<cr>", "Goto mark 5" },
+    q = { ":lua require('harpoon.ui').nav_file(6)<cr>", "Goto mark 6" },
+    w = { ":lua require('harpoon.ui').nav_file(7)<cr>", "Goto mark 7" },
+    e = { ":lua require('harpoon.ui').nav_file(8)<cr>", "Goto mark 8" },
+    r = { ":lua require('harpoon.ui').nav_file(9)<cr>", "Goto mark 9" },
+    n = { ":lua require('harpoon.ui').nav_next()<cr>", "Next file" },
+    p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Prev file" },
   },
 
   ["n"] = {
@@ -78,14 +97,11 @@ local mappings = {
     y = { "<cmd>Telescope glyph<cr>", "Glyph" },
   },
 
-  ["a"] = {
-    name = "+Application",
-    m = {
-      name = "+markdown",
-      m = { "<cmd>MarkdownPreview<cr>", "Preview"},
-      s = { "<cmd>MarkdownPreviewStop<cr>", "Preview Stop"},
-      t = { "<cmd>MarkdownPreviewToggle<cr>", "Preview Toggle"},
-    },
+  ["w"] = {
+    h = { '<C-w>|', 'Maximize window horizontally (|)' },
+    v = { '<C-w>_', 'Maximize window vertically (_)' },
+    ['='] = { '<C-w>=', 'Resize windows equally' },
+    s = { ":lua require('telescope-tabs').list_tabs()<cr>", 'Search Tabs' },
   },
 }
 

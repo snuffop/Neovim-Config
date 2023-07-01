@@ -1,7 +1,7 @@
 return {
   {
     'is0n/fm-nvim',
-    lazy = false,
+    cmd = "Ranger",
     config = function()
     require('fm-nvim').setup({
       mappings = {
