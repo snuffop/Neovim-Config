@@ -1,17 +1,23 @@
 return {
+  { "nvim-neo-tree/neo-tree.nvim", enabled = false, },
+  { import = "lazyvim.plugins.extras.lang.json" },
+
   {
     "LazyVim/LazyVim",
+    version = false,
     opts = {
       colorscheme = "dracula",
     },
   },
 
   {
-    "ThePrimeagen/harpoon"
+    "ThePrimeagen/harpoon",
+    lazy = false,
   },
 
   {
     'phaazon/hop.nvim',
+    lazy = false,
     branch = 'v2',
     config = function()
       require('hop').setup()
@@ -20,17 +26,13 @@ return {
 
   {
     'AckslD/nvim-trevJ.lua',
+    lazy = false,
     config = 'require("trevj").setup()',
     init = function()
       vim.keymap.set('n', '<leader>j', function()
         require('trevj').format_at_cursor()
       end)
     end,
-  },
-
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    enabled = false,
   },
 
   {
@@ -100,12 +102,10 @@ return {
       },
     },
   },
-
   -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
   -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
   { import = "lazyvim.plugins.extras.lang.typescript" },
 
-  -- add more treesitter parsers
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -150,10 +150,6 @@ return {
     },
   },
 
-  -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
-  { import = "lazyvim.plugins.extras.lang.json" },
-
-  -- add any tools you want to have installed below
   {
     "williamboman/mason.nvim",
     opts = {
@@ -178,57 +174,5 @@ return {
       local nls = require("null-ls")
       table.insert(opts.sources, nls.builtins.formatting.prettierd)
     end,
-  },
-
-  {
-    "folke/which-key.nvim",
-    opts = function(_, opts)
-      if require("lazyvim.util").has("noice.nvim") then
-        opts.defaults["<leader>sn"] = { name = "+noice" }
-      end
-    end,
-  },
-
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = {
-      lsp = {
-        override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
-        },
-      },
-      routes = {
-        {
-          filter = {
-            event = "msg_show",
-            any = {
-              { find = "%d+L, %d+B" },
-              { find = "; after #%d+" },
-              { find = "; before #%d+" },
-            },
-          },
-          view = "mini",
-        },
-      },
-      presets = {
-        bottom_search = true,
-        command_palette = true,
-        long_message_to_split = true,
-        inc_rename = true,
-      },
-    },
-    -- stylua: ignore
-    keys = {
-      { "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c", desc = "Redirect Cmdline" },
-      { "<leader>snl", function() require("noice").cmd("last") end, desc = "Noice Last Message" },
-      { "<leader>snh", function() require("noice").cmd("history") end, desc = "Noice History" },
-      { "<leader>sna", function() require("noice").cmd("all") end, desc = "Noice All" },
-      { "<leader>snd", function() require("noice").cmd("dismiss") end, desc = "Dismiss All" },
-      { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll forward", mode = {"i", "n", "s"} },
-      { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll backward", mode = {"i", "n", "s"}},
-    },
   },
 }

@@ -17,6 +17,23 @@ vim.keymap.set('n', "<C-l>", "<cmd>TmuxNavigateRight<cr>")
 
 -- Whichkey additions 
 
+local function map(mode, lhs, rhs, opts)
+  local keys = require("lazy.core.handler").handlers.keys
+  ---@cast keys LazyKeysHandler
+  -- do not create the keymap if a lazy keys handler exists
+  if not keys.active[keys.parse({ lhs, mode = mode }).id] then
+    opts = opts or {}
+    opts.silent = opts.silent ~= false
+    if opts.remap and not vim.g.vscode then
+      opts.remap = nil
+    end
+    vim.keymap.set(mode, lhs, rhs, opts)
+  end
+end
+
+map("n", "<leader><tab>n", "<cmd>tabnew<cr>", { desc = "Tab New " })
+map("n", "<leader><tab><tab>", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+
 local wk = require("which-key")
 local wkopts = {
   mode = "n",
@@ -57,7 +74,7 @@ local mappings = {
 
   ["m"] = {
     name = " Harpoon",
-    m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark file" },
+m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark file" },
     t = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Toggle UI" },
     a = { ":lua require('harpoon.ui').nav_file(1)<cr>", "Goto mark 1" },
     s = { ":lua require('harpoon.ui').nav_file(2)<cr>", "Goto mark 2" },
@@ -102,7 +119,7 @@ local mappings = {
     v = { '<C-w>_', 'Maximize window vertically (_)' },
     ['='] = { '<C-w>=', 'Resize windows equally' },
     s = { ":lua require('telescope-tabs').list_tabs()<cr>", 'Search Tabs' },
-  },
+},
 }
 
 wk.register(mappings, wkopts)
