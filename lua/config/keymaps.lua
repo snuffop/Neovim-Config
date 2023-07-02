@@ -17,12 +17,12 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
+vim.keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- dunno how to get working in whichkey
+
 vim.keymap.set('n', "<C-h>", "<cmd>TmuxNavigateLeft<cr>")
 vim.keymap.set('n', "<C-j>", "<cmd>TmuxNavigateDown<cr>")
 vim.keymap.set('n', "<C-k>", "<cmd>TmuxNavigateUp<cr>")
 vim.keymap.set('n', "<C-l>", "<cmd>TmuxNavigateRight<cr>")
-
-vim.keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- dunno how to get working in whichkey
 
 -- vim.keymap.set("n", "J", "mzJ`z")
 -- vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -56,14 +56,6 @@ vim.keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 -- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 -- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 -- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
---
---
--- vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
--- vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
---
--- vim.keymap.set("n", "<leader><leader>", function()
---     vim.cmd("so")
--- end)
 
 -- Whichkey additions 
 
@@ -114,9 +106,10 @@ local mappings = {
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Nvim Tree" },
 
   ["f"] = {
-    s = { "<cmd>up<cr><esc>", "Save File" },
     a = { "<cmd>RnvimrToggle<cr>", "Ranger Vim" },
     e = { "<cmd>NvimTreeToggle<cr>", "Nvim Tree" },
+    s = { "<cmd>up<cr><esc>", "Save File" },
+    v = { "<cmd>Explore<cr>", "Netrw" },
     z = { "<cmd>Telescope zoxide list<cr>", "Zoxide" },
   },
 
@@ -126,7 +119,7 @@ local mappings = {
     m = { "<cmd>MergetoolToggle<cr>", "Mergetool" },
   },
 
-  ["h"] = {
+  ["m"] = {
     name = " Harpoon",
     m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark file" },
     t = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Toggle UI" },

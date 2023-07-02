@@ -103,8 +103,8 @@ return {
   cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFileToggle" },
   event = "User DirOpened",
   config = function()
-    vim.g.loaded_netrw = 1
-    vim.g.loaded_netrwPlugin = 1
+    vim.g.loaded_netrw = 0
+    vim.g.loaded_netrwPlugin = 0
     require("nvim-tree").setup({
       on_attach = on_attach,
       sort_by = "case_sensitive",
