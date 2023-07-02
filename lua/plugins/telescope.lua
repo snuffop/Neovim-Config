@@ -42,12 +42,13 @@ return {
       pcall(require("telescope").load_extension, "file_browser")
       pcall(require("telescope").load_extension, "find_pickers")
       pcall(require("telescope").load_extension, "fzf")
-      pcall(require("telescope").load_extension, "lazygit")
       pcall(require("telescope").load_extension, "glyph")
-      pcall(require("telescope").load_extension, "media_files")
-      pcall(require("telescope").load_extension, "zoxide")
+      pcall(require("telescope").load_extension, "lazygit")
       pcall(require("telescope").load_extension, "luasnip")
+      pcall(require("telescope").load_extension, "media_files")
+      pcall(require("telescope").load_extension, "noice")
       pcall(require("telescope").load_extension, "zk")
+      pcall(require("telescope").load_extension, "zoxide")
     end,
     keys = {
       -- add a keymap to browse plugin files

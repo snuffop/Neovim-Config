@@ -30,7 +30,30 @@ return {
           path = 1,
           },
         },
-        lualine_x = {'encoding', 'fileformat', 'filetype'},
+        lualine_x = {
+          'encoding',
+          'fileformat',
+          'filetype',
+          {
+            require("noice").api.status.message.get_hl,
+            cond = require("noice").api.status.message.has,
+          },
+          {
+            require("noice").api.status.command.get,
+            cond = require("noice").api.status.command.has,
+            color = { fg = "#ff9e64" },
+          },
+          {
+            require("noice").api.status.mode.get,
+            cond = require("noice").api.status.mode.has,
+            color = { fg = "#ff9e64" },
+          },
+          {
+            require("noice").api.status.search.get,
+            cond = require("noice").api.status.search.has,
+            color = { fg = "#ff9e64" },
+          },
+        },
         lualine_y = {'progress'},
         lualine_z = {'location'}
       },
@@ -47,5 +70,6 @@ return {
       inactive_winbar = {},
       extensions = {}
     }
-  end
+  end,
+  requires = {"nvim-web-devicons"},
 }

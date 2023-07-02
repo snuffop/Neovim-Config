@@ -13,14 +13,14 @@ return {
       routes = {
         {
           filter = {
-            event = "msg_show",
+            event = "msg_showmode",
             any = {
               { find = "%d+L, %d+B" },
               { find = "; after #%d+" },
               { find = "; before #%d+" },
             },
           },
-          view = "mini",
+          view = "notify",
         },
       },
       presets = {
@@ -41,4 +41,5 @@ return {
       { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll backward", mode = {"i", "n", "s"}},
     },
   },
+
 }

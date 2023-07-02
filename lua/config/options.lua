@@ -10,4 +10,5 @@ vim.opt.linebreak = true
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true
+vim.opt.cmdheight = 1
 vim.opt.winbar = "%=%m %f"
