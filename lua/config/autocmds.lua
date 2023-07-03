@@ -10,6 +10,14 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "todo" },
+  callback = function()
+    vim.b.current_syntax = "todo"
+    vim.b.foldmethod = "indent"
+  end,
+})
+
 vim.api.nvim_create_autocmd({'UIEnter'}, {
     callback = function(event)
         local client = vim.api.nvim_get_chan_info(vim.v.event.chan).client

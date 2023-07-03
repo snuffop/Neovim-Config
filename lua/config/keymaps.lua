@@ -65,11 +65,17 @@ local mappings = {
 
   ["a"] = {
     name = "+Application",
+
     m = {
       name = "+markdown",
       m = { "<cmd>MarkdownPreview<cr>", "Preview"},
       s = { "<cmd>MarkdownPreviewStop<cr>", "Preview Stop"},
       t = { "<cmd>MarkdownPreviewToggle<cr>", "Preview Toggle"},
+    },
+    t = {
+      name = "+todotxt",
+      t = { "<cmd>ToDoTxtTasksToggle<cr>", "Todotxt Toggle" },
+      n = { "<cmd>ToDoTxtCapture<cr>", "Todotxt New" },
     },
   },
 
@@ -82,6 +88,7 @@ local mappings = {
 
   ["f"] = {
     a = { "<cmd>RnvimrToggle<cr>", "Ranger Vim" },
+    b = { "<cmd>Telescope file_browser<cr>", "Telescope file_browser" },
     e = { "<cmd>NvimTreeToggle<cr>", "Nvim Tree" },
     s = { "<cmd>up<cr><esc>", "Save File" },
     v = { "<cmd>Explore<cr>", "Netrw" },

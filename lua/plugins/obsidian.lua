@@ -24,6 +24,7 @@ return {
     -- Optional, completion.
     completion = {
       nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
+      new_notes_location = "notes_subdir"
     },
 
     -- Optional, customize how names/IDs for new notes are created.
