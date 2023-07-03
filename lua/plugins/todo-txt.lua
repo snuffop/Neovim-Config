@@ -4,7 +4,7 @@ return {
   lazy = false,
   config = function ()
     require("todotxt-nvim").setup({
-      todo_file = "/home/marty/Nextcloud/Obsidian/todo/todo.txt",
+      todo_file = "/home/marty/Nextcloud/Task/todo.txt",
     })
   end,
 }
