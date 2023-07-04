@@ -41,26 +41,33 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
     use { "wbthomason/packer.nvim" } -- Have packer manage itself
-    use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
-    use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
-    use { "numToStr/Comment.nvim" }
     use { "JoosepAlviste/nvim-ts-context-commentstring" }
-    use { "kyazdani42/nvim-web-devicons" }
-    use { "kyazdani42/nvim-tree.lua" }
-    use { "akinsho/bufferline.nvim" }
-    use { "moll/vim-bbye" }
-    use { "nvim-lualine/lualine.nvim" }
-    use { "akinsho/toggleterm.nvim" }
     use { "ahmedkhalf/project.nvim" }
+    use { "akinsho/bufferline.nvim" }
+    use { "akinsho/toggleterm.nvim" }
+    use { "arnarg/todotxt.nvim" }
+    use { "christoomey/vim-tmux-navigator" }
+    use { "dhruvasagar/vim-table-mode" }
+    use { "folke/which-key.nvim"}
+    use { "goolord/alpha-nvim" }
+    use { "kevinhwang91/rnvimr" }  -- Ranger
+    use { "kyazdani42/nvim-tree.lua" }
+    use { "kyazdani42/nvim-web-devicons" }
+    use { "kylechui/nvim-surround" }
     use { "lewis6991/impatient.nvim" }
     use { "lukas-reineke/indent-blankline.nvim" }
-    use { "goolord/alpha-nvim" }
-    use { "folke/which-key.nvim"}
+    use { "moll/vim-bbye" }
+    use { "numToStr/Comment.nvim" }
+    use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
+    use { "nvim-lualine/lualine.nvim" }
+    use { "nvim-treesitter/nvim-treesitter" }
     use { "theprimeagen/harpoon"}
+    use { "wakatime/vim-wakatime" }
+    use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
+
+    
 
     -- Colorschemes
-    use { "folke/tokyonight.nvim" }
-    use { "lunarvim/darkplus.nvim" }
     use { "Mofiqul/dracula.nvim" }
 
     -- Cmp 
@@ -97,9 +104,19 @@ return packer.startup(function(use)
             {'L3MON4D3/LuaSnip'},
             {'rafamadriz/friendly-snippets'},
         }
-    } 
-    -- use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
-    --  use { "RRethy/vim-illuminate" }
+    }
+
+    -- Obsidian
+    use { 
+        "epwalsh/obsidian.nvim",
+        requires = {
+            {"nvim-lua/plenary.nvim"},
+            {"hrsh7th/nvim-cmp"},
+            {"nvim-telescope/telescope.nvim"},
+            {"godlygeek/tabular"},
+            {"preservim/vim-markdown"},
+        }
+    }
 
     -- Telescope
     use { "nvim-telescope/telescope.nvim",
@@ -119,29 +136,6 @@ return packer.startup(function(use)
             local ts_update = require('nvim-treesitter.install').up20230704({ with_sync = true })
             ts_update()
         end,
-    }
-
-    -- Treesitter
-    use {
-        "nvim-treesitter/nvim-treesitter",
-    }
-
-    -- Tmux Navigation
-    use { "christoomey/vim-tmux-navigator" }
-
-    -- Ranger
-    use { "kevinhwang91/rnvimr" }
-
-    -- Obsidian
-    use { 
-        "epwalsh/obsidian.nvim",
-        requires = {
-            {"nvim-lua/plenary.nvim"},
-            {"hrsh7th/nvim-cmp"},
-            {"nvim-telescope/telescope.nvim"},
-            {"godlygeek/tabular"},
-            {"preservim/vim-markdown"},
-        }
     }
 
     -- Git
