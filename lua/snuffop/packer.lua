@@ -65,7 +65,10 @@ return packer.startup(function(use)
     use { "wakatime/vim-wakatime" }
     use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
 
-    
+    --Noice
+    use { "folke/noice.nvim" }
+    use { "MunifTanjim/nui.nvim" }
+    use { "rcarriga/nvim-notify" }
 
     -- Colorschemes
     use { "Mofiqul/dracula.nvim" }

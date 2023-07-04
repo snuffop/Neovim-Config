@@ -88,6 +88,17 @@ local mappings = {
     a = {
         name = "+Application",
         a = {"<cmd>Alpha<cr>", "Alpha" },
+        n = {
+            name = "+Noice",
+            l = { "<cmd>Noice last<cr>",  "Noice Last Message" },
+            h = { "<cmd>Noice history<cr>",  "Noice History" },
+            a = { "<cmd>Noice all<cr>",  "Noice All" },
+            e = { "<cmd>Noice dismiss<cr>",  "Noice Dismiss All" },
+        },
+        t = {
+            name  = "+ToDotxt",
+            t = { "<cmd>ToDoTxtTasksToggle<cr>", "Toggle Window" },
+        }
     },
 
     b = {
@@ -108,6 +119,7 @@ local mappings = {
         b = { "<cmd>Telescope file_browser<cr>", "Telescope file_browser" },
         e = { "<cmd>NvimTreeToggle<cr>", "Nvim Tree" },
         f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files", },
+        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         s = { "<cmd>up<cr><esc>", "Save File" },
         v = { "<cmd>Explore<cr>", "Netrw" },
         z = { "<cmd>Telescope zoxide list<cr>", "Zoxide" },
@@ -124,7 +136,7 @@ local mappings = {
         S = { "<cmd>PackerStatus<cr>", "Status" },
         c = { "<cmd>PackerCompile<cr>", "Compile" },
         i = { "<cmd>PackerInstall<cr>", "Install" },
-        p = { "<cmd>Telescope packercr>", "Telescope" },
+        p = { "<cmd>Telescope packer<cr>", "Telescope" },
         s = { "<cmd>PackerSync<cr>", "Sync" },
         u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
@@ -148,38 +160,24 @@ local mappings = {
 
     l = {
         name = "LSP",
+        I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+        S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols", },
         a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-        d = {
-            "<cmd>Telescope diagnostics bufnr=0<cr>",
-            "Document Diagnostics",
-        },
-        w = {
-            "<cmd>Telescope diagnostics<cr>",
-            "Workspace Diagnostics",
-        },
+        d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics", },
         f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
         i = { "<cmd>LspInfo<cr>", "Info" },
-        I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-        j = {
-            "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-            "Next Diagnostic",
-        },
-        k = {
-            "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-            "Prev Diagnostic",
-        },
+        j = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Next Diagnostic", },
+        k = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic", },
         l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+        m = { "<cmd>Mason<cr>", "Mason" },
         q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
         r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-        S = {
-            "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-            "Workspace Symbols",
-        },
+        w = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics", },
     },
 
     m = {
-        name = " Harpoon",
+        name = "+Harpoon",
         m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark file" },
         t = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Toggle UI" },
         a = { ":lua require('harpoon.ui').nav_file(1)<cr>", "Goto mark 1" },
@@ -232,7 +230,6 @@ local mappings = {
         f = { "<cmd>Telescope find_pickers<cr>", "list pickers" },
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         y = { "<cmd>Telescope glyph<cr>", "Glyph" },
     },
 
@@ -262,3 +259,6 @@ local mappings = {
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
+
+
+
