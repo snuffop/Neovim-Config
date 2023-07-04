@@ -3,6 +3,15 @@ if not status_ok then
   return
 end
 
+pcall(require("telescope").load_extension "packer")
+pcall(require("telescope").load_extension "env")
+pcall(require("telescope").load_extension "file_browser")
+pcall(require("telescope").load_extension "find_pickers")
+pcall(require("telescope").load_extension "glyph")
+pcall(require("telescope").load_extension "luasnip")
+pcall(require("telescope").load_extension "media_files")
+pcall(require("telescope").load_extension "zoxide")
+
 local actions = require "telescope.actions"
 
 telescope.setup {
