@@ -3,7 +3,7 @@ if not status_ok then
   return
 end 
 
-local setup = {
+dracula.setup = {
   -- customize dracula color palette
   colors = {
     --   bg = "#282A36",
@@ -46,3 +46,4 @@ local setup = {
     -- Nothing = {} -- clear highlight of Nothing
   },
 }
+

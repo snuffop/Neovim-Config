@@ -68,6 +68,9 @@ return packer.startup(function(use)
     use { "mbbill/undotree" } -- undo tree
     use { "folke/trouble.nvim" }
 
+    -- Ansible 
+    use { 'pearofducks/ansible-vim' }
+
     --Noice
     use { "folke/noice.nvim" }
     use { "MunifTanjim/nui.nvim" }
@@ -75,6 +78,7 @@ return packer.startup(function(use)
 
     -- Colorschemes
     use { "Mofiqul/dracula.nvim" }
+    use { "marko-cerovac/material.nvim" }
 
     -- Cmp 
     use { "hrsh7th/nvim-cmp" } -- The completion plugin

@@ -3,5 +3,4 @@
 require 'snuffop.options'
 require 'snuffop.keymaps'
 require 'snuffop.packer'
-require 'snuffop.colorscheme'
 

@@ -31,3 +31,8 @@ noice.setup{
         inc_rename = true,
     },
 }
+
+
+require("notify").setup({
+    background_colour = "#282A36",
+})
