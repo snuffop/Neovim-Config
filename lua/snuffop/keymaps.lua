@@ -39,8 +39,8 @@ keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
 -- Yank to clipboard
-keymap({"n","v"}, "<leader>y", '+y', opts)
-keymap("n", "<leader>Y", '+Y', opts)
+keymap({"n","v"}, "<leader>y", '"+yy', opts)
+keymap("n", "<leader>Y", '"+Y', opts)
 
 keymap("n", "<leader>d", '_d', opts)
 

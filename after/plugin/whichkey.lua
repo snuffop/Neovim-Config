@@ -230,6 +230,7 @@ local mappings = {
         f = { "<cmd>Telescope find_pickers<cr>", "list pickers" },
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+        o = { "<cmd>Telescope vim_options<cr>", "Options" },
         y = { "<cmd>Telescope glyph<cr>", "Glyph" },
     },
 
@@ -243,6 +244,8 @@ local mappings = {
         h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
         v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
     },
+
+    u = { "<cmd>UndotreeToggle<cr>", "undo tree" },
 
     w = {
         name = "+Windows",
@@ -259,6 +262,4 @@ local mappings = {
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
-
-
 

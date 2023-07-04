@@ -64,6 +64,9 @@ return packer.startup(function(use)
     use { "theprimeagen/harpoon"}
     use { "wakatime/vim-wakatime" }
     use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
+    use { "fladson/vim-kitty" } -- Kitty Syntax
+    use { "mbbill/undotree" } -- undo tree
+    use { "folke/trouble.nvim" }
 
     --Noice
     use { "folke/noice.nvim" }
