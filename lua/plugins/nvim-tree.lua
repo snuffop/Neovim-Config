@@ -95,66 +95,67 @@ local function on_attach(bufnr)
 end
 
 return {
-  "nvim-tree/nvim-tree.lua",
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
-  tag = "nightly",
-  cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFileToggle" },
-  event = "User DirOpened",
-  config = function()
-    vim.g.loaded_netrw = 0
-    vim.g.loaded_netrwPlugin = 0
-    require("nvim-tree").setup({
-      on_attach = on_attach,
-      sort_by = "case_sensitive",
-      update_focused_file = {
-        enable = true,
-        update_cwd = true,
-      },
-      renderer = {
-        group_empty = true,
-        root_folder_modifier = ":t",
-        icons = {
-          glyphs = {
-            default = "",
-            symlink = "",
-            folder = {
-              arrow_open = "",
-              arrow_closed = "",
-              default = "",
-              open = "",
-              empty = "",
-              empty_open = "",
-              symlink = "",
-              symlink_open = "",
+    "nvim-tree/nvim-tree.lua",
+    dependencies = {
+        "nvim-tree/nvim-web-devicons",
+    },
+    tag = "nightly",
+    cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFileToggle" },
+    event = "User DirOpened",
+    config = function()
+        vim.g.loaded_netrw = 0
+        vim.g.loaded_netrwPlugin = 0
+        require("nvim-tree").setup({
+            on_attach = on_attach,
+            sort_by = "case_sensitive",
+            update_focused_file = {
+                enable = true,
+                update_cwd = true,
+                update_root = true,
             },
-            git = {
-              unstaged = "",
-              staged = "S",
-              unmerged = "",
-              renamed = "➜",
-              untracked = "U",
-              deleted = "",
-              ignored = "◌",
+            renderer = {
+                group_empty = true,
+                root_folder_modifier = ":t",
+                icons = {
+                    glyphs = {
+                        default = "",
+                        symlink = "",
+                        folder = {
+                            arrow_open = "",
+                            arrow_closed = "",
+                            default = "",
+                            open = "",
+                            empty = "",
+                            empty_open = "",
+                            symlink = "",
+                            symlink_open = "",
+                        },
+                        git = {
+                            unstaged = "",
+                            staged = "S",
+                            unmerged = "",
+                            renamed = "➜",
+                            untracked = "U",
+                            deleted = "",
+                            ignored = "◌",
+                        },
+                    },
+                },
             },
-          },
-        },
-      },
-      diagnostics = {
-        enable = true,
-        show_on_dirs = true,
-        icons = {
-          hint = "",
-          info = "",
-          warning = "",
-          error = "",
-        },
-      },
-      view = {
-        width = 45,
-        side = "left",
-      },
-    })
-  end,
+            diagnostics = {
+                enable = true,
+                show_on_dirs = true,
+                icons = {
+                    hint = "",
+                    info = "",
+                    warning = "",
+                    error = "",
+                },
+            },
+            view = {
+                width = 45,
+                side = "left",
+            },
+        })
+    end,
 }
