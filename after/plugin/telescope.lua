@@ -97,3 +97,4 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
+
