@@ -101,26 +101,36 @@ return packer.startup(function(use)
 	-- use { "jose-elias-alvarez/null-ls.nvim" } -- for formatters and linters
  --  use { "RRethy/vim-illuminate" }
 
-	-- Telescope
+  -- Telescope
   use { "nvim-telescope/telescope.nvim",
+    requires = {      
+      {"nvim-lua/plenary.nvim"},
+      {"LinArcX/telescope-env.nvim"},
+      {"ghassan0/telescope-glyph.nvim"},
+      {"keyvchan/telescope-find-pickers.nvim"},
+      {"nvim-telescope/telescope-file-browser.nvim"},
+      {"nvim-telescope/telescope-fzf-native.nvim"},
+      {"nvim-telescope/telescope-media-files.nvim"},
+      {"jvgrootveld/telescope-zoxide"},
+    },
     run = function()
       local ts_update = require('nvim-treesitter.install').up20230704({ with_sync = true })
       ts_update()
     end,
   }
 
-	-- Treesitter
-	use {
-		"nvim-treesitter/nvim-treesitter",
-	}
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+  }
 
-	-- Git
-	use { "lewis6991/gitsigns.nvim" }
+  -- Git
+  use { "lewis6991/gitsigns.nvim" }
   use { "tpope/vim-fugitive" }
 
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if PACKER_BOOTSTRAP then
-		require("packer").sync()
-	end
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if PACKER_BOOTSTRAP then
+    require("packer").sync()
+  end
 end)
