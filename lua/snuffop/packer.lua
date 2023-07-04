@@ -126,6 +126,9 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
     }
 
+    -- Tmux Navigation
+    use { "christoomey/vim-tmux-navigator" }
+
     -- Ranger
     use { "kevinhwang91/rnvimr" }
 

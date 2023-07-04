@@ -18,6 +18,8 @@ vim.g.maplocalleader = ","
 --   term_mode = "t",
 --   command_mode = "c",
 
+keymap("n", "<leader><leader>", function() vim.cmd("so") end)
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -39,9 +41,17 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
+-- Yank to clipboard
+keymap({"n","v"}, "<leader>y", '+y', opts)
+keymap("n", "<leader>Y", '+Y', opts)
+
+keymap("n", "<leader>d", '_d', opts)
+
 -- Insert --
 -- Press jk fast to exit insert mode 
 keymap("i", "jk", "<ESC>", opts)
+keymap("i", "jj", "<ESC>", opts)
+keymap("i", "kk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 
 -- Visual --
@@ -68,3 +78,8 @@ keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- TmuxNavigate
+vim.keymap.set('n', "<C-h>", "<cmd>TmuxNavigateLeft<cr>")
+vim.keymap.set('n', "<C-j>", "<cmd>TmuxNavigateDown<cr>")
+vim.keymap.set('n', "<C-k>", "<cmd>TmuxNavigateUp<cr>")
+vim.keymap.set('n', "<C-l>", "<cmd>TmuxNavigateRight<cr>")
