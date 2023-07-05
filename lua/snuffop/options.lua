@@ -1,7 +1,6 @@
 vim.opt.backup = false
 vim.opt.expandtab = true
 vim.opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
-vim.opt.guicursor = ""
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.isfname:append("@-@")
@@ -23,3 +22,6 @@ vim.opt.updatetime = 50
 vim.opt.wrap = false
 
 vim.cmd 'colorscheme dracula'
+
+
+
