@@ -3,6 +3,12 @@ if not status_ok then
   return
 end
 
+-- vim-markdown settings
+
+vim.g.vim_markdown_folding_disabled = 1
+vim.g.vim_markdown_frontmatter = 1
+vim.g.vim_markdown_new_list_item_indent = 0
+
 obsidian.setup{
   dir = "~/Nextcloud/Obsidian/", -- no need to call 'vim.fn.expand' here
   notes_subdir = "notes",
@@ -74,3 +80,4 @@ obsidian.setup{
     end
   end, { noremap = false, expr = true })
 }
+

@@ -45,9 +45,12 @@ return packer.startup(function(use)
     use { "ahmedkhalf/project.nvim" }
     use { "akinsho/bufferline.nvim" }
     use { "akinsho/toggleterm.nvim" }
+    use { "alker0/chezmoi.vim" } -- chezmoi syntax
     use { "arnarg/todotxt.nvim" }
     use { "christoomey/vim-tmux-navigator" }
     use { "dhruvasagar/vim-table-mode" }
+    use { "fladson/vim-kitty" } -- Kitty Syntax
+    use { "folke/trouble.nvim" }
     use { "folke/which-key.nvim"}
     use { "goolord/alpha-nvim" }
     use { "kevinhwang91/rnvimr" }  -- Ranger
@@ -56,6 +59,7 @@ return packer.startup(function(use)
     use { "kylechui/nvim-surround" }
     use { "lewis6991/impatient.nvim" }
     use { "lukas-reineke/indent-blankline.nvim" }
+    use { "mbbill/undotree" } -- undo tree
     use { "moll/vim-bbye" }
     use { "numToStr/Comment.nvim" }
     use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
@@ -64,9 +68,7 @@ return packer.startup(function(use)
     use { "theprimeagen/harpoon"}
     use { "wakatime/vim-wakatime" }
     use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
-    use { "fladson/vim-kitty" } -- Kitty Syntax
-    use { "mbbill/undotree" } -- undo tree
-    use { "folke/trouble.nvim" }
+    use { "tomiis4/Hypersonic.nvim" } -- REGEX Build and test
 
     -- Ansible 
     use { 'pearofducks/ansible-vim' }
@@ -151,6 +153,7 @@ return packer.startup(function(use)
     -- Git
     use { "lewis6991/gitsigns.nvim" }
     use { "tpope/vim-fugitive" }
+
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

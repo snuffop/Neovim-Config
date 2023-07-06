@@ -22,6 +22,3 @@ vim.opt.updatetime = 50
 vim.opt.wrap = false
 
 vim.cmd 'colorscheme dracula'
-
-
-
