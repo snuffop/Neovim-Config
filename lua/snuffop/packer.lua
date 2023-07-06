@@ -70,6 +70,19 @@ return packer.startup(function(use)
     use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
     use { "tomiis4/Hypersonic.nvim" } -- REGEX Build and test
 
+    -- neorg 
+    use {
+        "nvim-neorg/neorg",
+        run = ":Neorg sync-parsers",
+        after = {
+            'nvim-treesitter',
+        },
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-neorg/neorg-telescope" },
+        },
+    }
+
     -- Ansible 
     use { 'pearofducks/ansible-vim' }
 

@@ -222,6 +222,7 @@ local mappings = {
         B = { "<cmd>Telescope builtin<cr>", "Builtin" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
         F = { "<cmd>Telescope filetypes<cr>", "filetypes" },
+        H = { "<cmd>Telescope highlights<cr>", "highlights" },
         M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
         R = { "<cmd>Telescope registers<cr>", "Registers" },
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -231,6 +232,8 @@ local mappings = {
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         o = { "<cmd>Telescope vim_options<cr>", "Options" },
+        r = { "<cmd>Telescope resume<cr>", "Resume" },
+        q = { "<cmd>Telescope quickfix<cr>", "Resume" },
         y = { "<cmd>Telescope glyph<cr>", "Glyph" },
     },
 
