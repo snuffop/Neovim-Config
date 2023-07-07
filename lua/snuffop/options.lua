@@ -1,3 +1,5 @@
+-- Options
+
 vim.opt.backup = false
 vim.opt.expandtab = true
 vim.opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
@@ -20,5 +22,11 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.updatetime = 50
 vim.opt.wrap = false
+vim.opt.foldlevel = 20
 
+-- colorscheme
 vim.cmd 'colorscheme dracula'
+
+--  Whichkey
+vim.opt.timeout = true
+vim.opt.timeoutlen = 300

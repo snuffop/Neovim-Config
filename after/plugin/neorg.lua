@@ -8,15 +8,22 @@ neorg.setup {
         ["core.defaults"] = {}, -- Loads default behaviour
         ["core.concealer"] = {}, -- Adds pretty icons to your documents
         ["core.manoeuvre"] = {},
-        ["core.export"] = {},
-        ["core.export.markdown"] = {},
+        ["core.summary"] = {},
+        ["core.export"] = {
+            config = {
+                export_dir = { "~/Nextcloud/Neorg/export" },
+            }
+        },
+        ["core.export.markdown"] = {
+            config = {
+                extension = "md"
+            }
+        },
         ["core.keybinds"] = {
             config = {
                 default_keybinds = true,
             }
         },
-        ["core.integrations.telescope"] = {},
-
         ["core.completion"] = {
             config = {
                 engine = "nvim-cmp"
@@ -24,18 +31,37 @@ neorg.setup {
         },
         ["core.journal"] = {
             config = {
-                workspace = 'default',
+                journal_folder = "journals",
+                workspace = 'notes',
             }
         },
         ["core.dirman"] = {
             config = {
                 workspaces = {
-                    default = "~/Nextcloud/Neorg/notes",
+                    notes = "~/Nextcloud/Neorg/notes",
                     joyent = "~/Nextcloud/Neorg/joyent"
                 },
-                default_workspace = "default",
+                default_workspace = "notes",
             },
         },
+        ["core.integrations.telescope"] = {},
     },
 }
 
+local neorg_callbacks = require("neorg.callbacks")
+
+neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, keybinds)
+    -- Map all the below keybinds only when the "norg" mode is active
+    keybinds.map_event_to_mode("norg", {
+        n = { -- Bind keys in normal mode
+            { "<C-s>", "core.integrations.telescope.find_linkable" },
+        },
+
+        i = { -- Bind in insert mode
+            { "<C-l>", "core.integrations.telescope.insert_link" },
+        },
+    }, {
+        silent = true,
+        noremap = true,
+    })
+end)
