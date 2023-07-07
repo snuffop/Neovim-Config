@@ -99,6 +99,7 @@ local mappings = {
         name = "+File",
         a = { "<cmd>RnvimrToggle<cr>", "Ranger Vim" },
         b = { "<cmd>Telescope file_browser<cr>", "Telescope file_browser" },
+        c = { "<cmd>lua require('telescope.builtin').find_files({cwd = '~/.config/nvim/'})<cr>", "Find Config Files" },
         e = { "<cmd>NvimTreeToggle<cr>", "Nvim Tree" },
         f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files", },
         r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
@@ -210,6 +211,11 @@ local mappings = {
             g = { "<cmd>ObsidianSearch<cr>", "Search" },
             t = { "<cmd>ObsidianToday<cr>", "Today" },
             y = { "<cmd>ObsidianYesterday<cr>", "Yesterday" },
+        },
+        w = {
+            name = "Workspace",
+            n = { "<cmd>Neorg workspace notes<cr>", "Notes workspace" },
+            j = { "<cmd>Neorg workspace joyent<cr>", "Joyent workspace" },
         },
     },
 

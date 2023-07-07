@@ -83,6 +83,13 @@ return packer.startup(function(use)
         },
     }
 
+    -- Orgmode
+
+    use {'nvim-treesitter/nvim-treesitter'}
+    use {'nvim-orgmode/orgmode', config = function()
+        require('orgmode').setup{}
+    end
+}
     -- Ansible 
     use { 'pearofducks/ansible-vim' }
 
