@@ -46,7 +46,7 @@ return packer.startup(function(use)
     use { "akinsho/bufferline.nvim" }
     use { "akinsho/toggleterm.nvim" }
     use { "alker0/chezmoi.vim" } -- chezmoi syntax
-    use { "arnarg/todotxt.nvim" }
+    -- use { "arnarg/todotxt.nvim" }
     use { "christoomey/vim-tmux-navigator" }
     use { "dhruvasagar/vim-table-mode" }
     use { "fladson/vim-kitty" } -- Kitty Syntax
@@ -172,9 +172,6 @@ return packer.startup(function(use)
     -- Git
     use { "lewis6991/gitsigns.nvim" }
     use { "tpope/vim-fugitive" }
-
-    -- Todoist
-    use { "romgrk/todoist.nvim" }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
