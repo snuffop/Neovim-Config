@@ -23,6 +23,7 @@ vim.opt.undofile = true
 vim.opt.updatetime = 50
 vim.opt.wrap = false
 vim.opt.foldlevel = 20
+vim.opt.conceallevel = 2
 
 -- colorscheme
 vim.cmd 'colorscheme dracula'
