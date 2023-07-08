@@ -85,7 +85,6 @@ return packer.startup(function(use)
 
     -- Orgmode
 
-    use {'nvim-treesitter/nvim-treesitter'}
     use {'nvim-orgmode/orgmode', config = function()
         require('orgmode').setup{}
     end
@@ -174,6 +173,8 @@ return packer.startup(function(use)
     use { "lewis6991/gitsigns.nvim" }
     use { "tpope/vim-fugitive" }
 
+    -- Todoist
+    use { "romgrk/todoist.nvim" }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
