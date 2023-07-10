@@ -84,105 +84,108 @@ return packer.startup(function(use)
 
     -- Orgmode
 
-    use {'nvim-orgmode/orgmode', config = function()
-        require('orgmode').setup{}
+    use {
+        'nvim-orgmode/orgmode', config = function()
+            require('orgmode').setup{}
+        end
+    }
+    -- Ansible 
+    use { 'pearofducks/ansible-vim' }
+
+    --Noice
+    use { "folke/noice.nvim" }
+    use { "MunifTanjim/nui.nvim" }
+    use { "rcarriga/nvim-notify" }
+
+    -- Colorschemes
+    use { "Mofiqul/dracula.nvim" }
+
+    -- Cmp 
+    use { "hrsh7th/nvim-cmp" } -- The completion plugin
+    use { "hrsh7th/cmp-buffer" } -- buffer completions
+    use { "hrsh7th/cmp-path" } -- path completions
+    use { "hrsh7th/cmp-cmdline" } -- path completions
+    use { "hrsh7th/cmp-nvim-lsp" }
+    use { "hrsh7th/cmp-nvim-lua" }
+    use { "saadparwaiz1/cmp_luasnip" } -- snippet completions
+
+    -- Snippets
+    use {
+        "L3MON4D3/LuaSnip",
+        run = "make install_jsregexp",
+    } --snippet engine
+    use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
+
+    -- LSP
+
+    use  {'neovim/nvim-lspconfig'}
+    use  {'williamboman/mason.nvim'}
+    use  {'williamboman/mason-lspconfig.nvim'}
+
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v1.x',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
+
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-buffer'},
+            {'hrsh7th/cmp-path'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-nvim-lua'},
+
+            -- Snippets
+            {'L3MON4D3/LuaSnip'},
+            {'rafamadriz/friendly-snippets'},
+        }
+    }
+
+    -- Obsidian
+    use {
+        "epwalsh/obsidian.nvim",
+        requires = {
+            {"nvim-lua/plenary.nvim"},
+            {"hrsh7th/nvim-cmp"},
+            {"nvim-telescope/telescope.nvim"},
+            {"godlygeek/tabular"},
+            {"preservim/vim-markdown"},
+        }
+    }
+
+    -- Telescope
+    use {
+        "nvim-telescope/telescope.nvim",
+        requires = {
+            { "nvim-lua/plenary.nvim"},
+            { "LinArcX/telescope-env.nvim"},
+            { "ghassan0/telescope-glyph.nvim"},
+            { "keyvchan/telescope-find-pickers.nvim"},
+            { "nvim-telescope/telescope-file-browser.nvim"},
+            { "nvim-telescope/telescope-fzf-native.nvim"},
+            { "nvim-telescope/telescope-packer.nvim"},
+            { "nvim-telescope/telescope-media-files.nvim"},
+            { "benfowler/telescope-luasnip.nvim"},
+            { "jvgrootveld/telescope-zoxide"},
+        },
+        run = function()
+            local ts_update = require('nvim-treesitter.install').up20230704({ with_sync = true })
+            ts_update()
+        end,
+    }
+
+    -- Git
+    use { "lewis6991/gitsigns.nvim" }
+    use { "tpope/vim-fugitive" }
+
+
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if PACKER_BOOTSTRAP then
+        require("packer").sync()
     end
-}
--- Ansible 
-use { 'pearofducks/ansible-vim' }
-
---Noice
-use { "folke/noice.nvim" }
-use { "MunifTanjim/nui.nvim" }
-use { "rcarriga/nvim-notify" }
-
--- Colorschemes
-use { "Mofiqul/dracula.nvim" }
-
--- Cmp 
-use { "hrsh7th/nvim-cmp" } -- The completion plugin
-use { "hrsh7th/cmp-buffer" } -- buffer completions
-use { "hrsh7th/cmp-path" } -- path completions
-use { "hrsh7th/cmp-cmdline" } -- path completions
-use { "hrsh7th/cmp-nvim-lsp" }
-use { "hrsh7th/cmp-nvim-lua" }
-use { "saadparwaiz1/cmp_luasnip" } -- snippet completions
-
--- Snippets
-use {
-    "L3MON4D3/LuaSnip",
-    run = "make install_jsregexp",
-} --snippet engine
-use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
-
--- LSP
-
-use  {'neovim/nvim-lspconfig'}
-use  {'williamboman/mason.nvim'}
-use  {'williamboman/mason-lspconfig.nvim'}
-
-use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v1.x',
-    requires = {
-        -- LSP Support
-        {'neovim/nvim-lspconfig'},
-        {'williamboman/mason.nvim'},
-        {'williamboman/mason-lspconfig.nvim'},
-
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},
-        {'hrsh7th/cmp-buffer'},
-        {'hrsh7th/cmp-path'},
-        {'saadparwaiz1/cmp_luasnip'},
-        {'hrsh7th/cmp-nvim-lsp'},
-        {'hrsh7th/cmp-nvim-lua'},
-
-        -- Snippets
-        {'L3MON4D3/LuaSnip'},
-        {'rafamadriz/friendly-snippets'},
-    }
-}
-
--- Obsidian
-use {
-    "epwalsh/obsidian.nvim",
-    requires = {
-        {"nvim-lua/plenary.nvim"},
-        {"hrsh7th/nvim-cmp"},
-        {"nvim-telescope/telescope.nvim"},
-        {"godlygeek/tabular"},
-        {"preservim/vim-markdown"},
-    }
-}
-
--- Telescope
-use { "nvim-telescope/telescope.nvim",
-requires = {
-    { "nvim-lua/plenary.nvim"},
-    { "LinArcX/telescope-env.nvim"},
-    { "ghassan0/telescope-glyph.nvim"},
-    { "keyvchan/telescope-find-pickers.nvim"},
-    { "nvim-telescope/telescope-file-browser.nvim"},
-    { "nvim-telescope/telescope-fzf-native.nvim"},
-    { "nvim-telescope/telescope-packer.nvim"},
-    { "nvim-telescope/telescope-media-files.nvim"},
-    { "benfowler/telescope-luasnip.nvim"},
-    { "jvgrootveld/telescope-zoxide"},
-},
-run = function()
-    local ts_update = require('nvim-treesitter.install').up20230704({ with_sync = true })
-    ts_update()
-end,
-}
-
--- Git
-use { "lewis6991/gitsigns.nvim" }
-use { "tpope/vim-fugitive" }
-
--- Automatically set up your configuration after cloning packer.nvim
--- Put this at the end after all plugins
-if PACKER_BOOTSTRAP then
-    require("packer").sync()
-end
 end)
