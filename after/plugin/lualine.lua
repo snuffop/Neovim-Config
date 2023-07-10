@@ -33,7 +33,7 @@ local mode = {
 
 local filetype = {
     "filetype",
-    icons_enabled = false,
+    icons_enabled = true,
     icon = nil,
 }
 
@@ -67,7 +67,6 @@ lualine.setup({
         section_separators = { left = '', right = ''},
         disabled_filetypes = {
             statusline = {},
-            winbar = {},
         },
         ignore_focus = {},
         always_divide_middle = true,
@@ -82,7 +81,8 @@ lualine.setup({
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diff', 'diagnostics'},
         lualine_c = {
-            {'filename',
+            {
+                'filename',
                 file_status = true,
                 path = 1,
             },
@@ -91,25 +91,6 @@ lualine.setup({
             'encoding',
             'fileformat',
             'filetype',
-            -- {
-            --     require("noice").api.status.message.get_hl,
-            --     cond = require("noice").api.status.message.has,
-            -- },
-            -- {
-            --     require("noice").api.status.command.get,
-            --     cond = require("noice").api.status.command.has,
-            --     color = { fg = "#ff9e64" },
-            -- },
-            -- {
-            --     require("noice").api.status.mode.get,
-            --     cond = require("noice").api.status.mode.has,
-            --     color = { fg = "#ff9e64" },
-            -- },
-            -- {
-            --     require("noice").api.status.search.get,
-            --     cond = require("noice").api.status.search.has,
-            --     color = { fg = "#ff9e64" },
-            -- },
         },
         lualine_y = {'progress'}
     },
@@ -128,7 +109,32 @@ lualine.setup({
         lualine_z = {}
     },
     tabline = {},
-    winbar = {},
-    inactive_winbar = {},
-    extensions = {}
+
+    winbar = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {
+            {
+                'filename',
+                file_status = true,
+                path = 1,
+            },
+        },
+    },
+
+    inactive_winbar = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {'filename'},
+    },
+    extensions = {
+        'nvim-tree',
+        'fzf',
+    }
 })

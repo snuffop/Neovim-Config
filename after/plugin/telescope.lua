@@ -3,14 +3,7 @@ if not status_ok then
   return
 end
 
-pcall(require("telescope").load_extension "packer")
-pcall(require("telescope").load_extension "env")
-pcall(require("telescope").load_extension "file_browser")
-pcall(require("telescope").load_extension "find_pickers")
-pcall(require("telescope").load_extension "glyph")
-pcall(require("telescope").load_extension "luasnip")
-pcall(require("telescope").load_extension "media_files")
-pcall(require("telescope").load_extension "zoxide")
+
 
 local actions = require "telescope.actions"
 
@@ -20,8 +13,9 @@ telescope.setup {
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = {
-        "smart"
+        -- "smart"
         -- shorten = { len = 2, exclude = {2, -2} },
+        shorten = { len = 12 },
     },
 
     mappings = {
@@ -116,3 +110,12 @@ telescope.setup {
   },
 }
 
+require('telescope').load_extension("packer")
+require('telescope').load_extension("env")
+require('telescope').load_extension("file_browser")
+require('telescope').load_extension("find_pickers")
+require('telescope').load_extension("glyph")
+require('telescope').load_extension("luasnip")
+require('telescope').load_extension("media_files")
+require('telescope').load_extension("zoxide")
+require('telescope').load_extension('fzf')

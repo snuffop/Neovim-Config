@@ -6,7 +6,7 @@ end
 dracula.setup = {
   -- customize dracula color palette
   colors = {
-      bg = "#282A36",
+    --   bg = "#282A36",
     --   fg = "#F8F8F2",
     --   selection = "#44475A",
     --   comment = "#6272A4",
@@ -29,21 +29,14 @@ dracula.setup = {
     --   gutter_fg = "#4B5263",
     --   nontext = "#3B4048",
     --   background_colour = "#000000",
+    -- background_colour = "#282A36",
   },
-  -- show the '~' characters after the end of buffers
   show_end_of_buffer = true, -- default false
-  -- use transparent background
   transparent_bg = true, -- default false
-  -- set custom lualine background color
-  lualine_bg_color = "#44475a", -- default nil
-  -- set italic comment
+  lualine_bg_color = "#282A36", -- default nil
   italic_comment = true, -- default false
-  -- overrides the default highlights see `:h synIDattr`
   overrides = {
-    -- Examples
-    -- NonText = { fg = dracula.colors().white }, -- set NonText fg to white
-    -- NvimTreeIndentMarker = { link = "NonText" }, -- link to NonText highlight
-    -- Nothing = {} -- clear highlight of Nothing
-  },
+		VertSplit = { fg = dracula.colors().selection },
+	},
 }
 
