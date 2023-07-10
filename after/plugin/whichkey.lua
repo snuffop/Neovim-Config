@@ -77,6 +77,15 @@ local mappings = {
             a = { "<cmd>Noice all<cr>",  "Noice All" },
             e = { "<cmd>Noice dismiss<cr>",  "Noice Dismiss All" },
         },
+        p = {
+            name = "Packer",
+            S = { "<cmd>PackerStatus<cr>", "Status" },
+            c = { "<cmd>PackerCompile<cr>", "Compile" },
+            i = { "<cmd>PackerInstall<cr>", "Install" },
+            p = { "<cmd>Telescope packer<cr>", "Telescope" },
+            s = { "<cmd>PackerSync<cr>", "Sync" },
+            u = { "<cmd>PackerUpdate<cr>", "Update" },
+        },
         t = {
             name  = "+ToDotxt",
             t = { "<cmd>ToDoTxtTasksToggle<cr>", "Toggle Window" },
@@ -114,15 +123,6 @@ local mappings = {
         f = { "<cmd>lua require('telescope.builtin').git_files()<cr>", "Project files", },
     },
 
-    P = {
-        name = "Packer",
-        S = { "<cmd>PackerStatus<cr>", "Status" },
-        c = { "<cmd>PackerCompile<cr>", "Compile" },
-        i = { "<cmd>PackerInstall<cr>", "Install" },
-        p = { "<cmd>Telescope packer<cr>", "Telescope" },
-        s = { "<cmd>PackerSync<cr>", "Sync" },
-        u = { "<cmd>PackerUpdate<cr>", "Update" },
-    },
 
     g = {
         name = "Git",
@@ -183,7 +183,6 @@ local mappings = {
         c = { "<cmd>Neorg toggle-concealer<cr>", "Neorg concealer toggle" },
         F = { "<cmd>Telescope neorg search_headings<cr>", "Search Headings" },
         f = { "<cmd>Telescope neorg find_linkable<cr>", "Search linkable" },
-        s = { "<cmd>Neorg generate-workspace-summary<cr>", "Neorg Summary" },
         j = {
             name = "Neorg Journal",
             j = {"<cmd>Neorg journal today<cr>", "Today" },
@@ -194,6 +193,7 @@ local mappings = {
         },
         x  = {
             name = "Neorg tool",
+            s = { "<cmd>Neorg generate-workspace-summary<cr>", "Neorg Summary" },
             i = {"<cmd>Neorg inject-metadata<cr>", "Inject Metadata" },
             u = {"<cmd>Neorg update-metadata<cr>", "Update Metadata" },
         },
@@ -211,6 +211,10 @@ local mappings = {
             g = { "<cmd>ObsidianSearch<cr>", "Search" },
             t = { "<cmd>ObsidianToday<cr>", "Today" },
             y = { "<cmd>ObsidianYesterday<cr>", "Yesterday" },
+        },
+        t = {
+            name = "Toggle",
+            c = { "<cmd>Neorg toggle-concealer<cr>", "Toggle Concealer" },
         },
         w = {
             name = "Workspace",

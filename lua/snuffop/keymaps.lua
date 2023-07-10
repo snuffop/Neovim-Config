@@ -24,6 +24,10 @@ vim.keymap.set('n', "<C-j>", "<cmd>TmuxNavigateDown<cr>")
 vim.keymap.set('n', "<C-k>", "<cmd>TmuxNavigateUp<cr>")
 vim.keymap.set('n', "<C-l>", "<cmd>TmuxNavigateRight<cr>")
 
+-- Spelling
+keymap("n", "<F3>", ":set spell!<CR>", opts)
+keymap("i", "<F3>", "<C-O>:set spell!<CR>", opts)
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
