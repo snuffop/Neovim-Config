@@ -49,7 +49,6 @@ return packer.startup(function(use)
     use { "arnarg/todotxt.nvim" }
     use { "christoomey/vim-tmux-navigator" }
     use { "dhruvasagar/vim-table-mode" }
-    -- use { "fladson/vim-kitty" } -- Kitty Syntax
     use { "folke/trouble.nvim" }
     use { "folke/which-key.nvim"}
     use { "goolord/alpha-nvim" }
@@ -108,7 +107,6 @@ use { "hrsh7th/cmp-cmdline" } -- path completions
 use { "hrsh7th/cmp-nvim-lsp" }
 use { "hrsh7th/cmp-nvim-lua" }
 use { "saadparwaiz1/cmp_luasnip" } -- snippet completions
-use { "f3fora/cmp-spell" } -- My Extremem need for spelling
 
 -- Snippets
 use {

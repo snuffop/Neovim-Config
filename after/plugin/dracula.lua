@@ -1,12 +1,12 @@
 local status_ok, dracula = pcall(require, "dracula")
-if not status_ok then 
+if not status_ok then
   return
-end 
+end
 
 dracula.setup = {
   -- customize dracula color palette
   colors = {
-    --   bg = "#282A36",
+      bg = "#282A36",
     --   fg = "#F8F8F2",
     --   selection = "#44475A",
     --   comment = "#6272A4",
