@@ -19,7 +19,7 @@ end
 vim.cmd([[
 augroup packer_user_config
 autocmd!
-autocmd BufWritePost plugins.lua source <afile> | PackerSync
+autocmd BufWritePost packer.lua source <afile> | PackerSync
 augroup end
 ]])
 
@@ -41,12 +41,12 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
     use { "wbthomason/packer.nvim" } -- Have packer manage itself
+    
     use { "JoosepAlviste/nvim-ts-context-commentstring" }
     use { "ahmedkhalf/project.nvim" }
     use { "akinsho/bufferline.nvim" }
     use { "akinsho/toggleterm.nvim" }
     use { "alker0/chezmoi.vim" } -- chezmoi syntax
-    use { "arnarg/todotxt.nvim" }
     use { "christoomey/vim-tmux-navigator" }
     use { "dhruvasagar/vim-table-mode" }
     use { "folke/trouble.nvim" }
@@ -65,9 +65,9 @@ return packer.startup(function(use)
     use { "nvim-lualine/lualine.nvim" }
     use { "nvim-treesitter/nvim-treesitter" }
     use { "theprimeagen/harpoon"}
+    use { "tomiis4/Hypersonic.nvim" } -- REGEX Build and test
     use { "wakatime/vim-wakatime" }
     use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
-    use { "tomiis4/Hypersonic.nvim" } -- REGEX Build and test
 
     -- neorg 
     use {
@@ -83,7 +83,6 @@ return packer.startup(function(use)
     }
 
     -- Orgmode
-
     use {
         'nvim-orgmode/orgmode', config = function()
             require('orgmode').setup{}
@@ -159,11 +158,6 @@ return packer.startup(function(use)
 
     -- Telescope
     use {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'make'
-    }
-
-    use {
         "nvim-telescope/telescope.nvim",
         requires = {
             { "nvim-lua/plenary.nvim"},
@@ -186,7 +180,6 @@ return packer.startup(function(use)
     -- Git
     use { "lewis6991/gitsigns.nvim" }
     use { "tpope/vim-fugitive" }
-
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
