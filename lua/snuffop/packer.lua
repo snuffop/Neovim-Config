@@ -144,6 +144,11 @@ return packer.startup(function(use)
         }
     }
 
+    -- Go Language
+    use {
+        "fatih/vim-go",
+        run = "GoUpdateBinaries",
+    }
     -- Obsidian
     use {
         "epwalsh/obsidian.nvim",
