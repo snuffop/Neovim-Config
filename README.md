@@ -1,2 +1,3 @@
-# Marty Buchaus' Neovi Configuration
+# Marty Buchaus' Neovim Configuration
+
 
