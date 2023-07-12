@@ -100,6 +100,13 @@ local mappings = {
         s = { "<cmd>BufferLinePick<cr>", "Select" },
     },
 
+    c = {
+        name = "+Code",
+        m = { "<cmd>:Mason<cr>", "Mason" },
+        i = { "<cmd>:Inspect<cr>", "TS Inspect" },
+        I = { "<cmd>:TSInstallInfo<cr>", "TS Install Info" },
+    },
+
     e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 
     h = { "<cmd>nohlsearch<CR>", "No Highlight" },
@@ -115,12 +122,6 @@ local mappings = {
         s = { "<cmd>up<cr><esc>", "Save File" },
         v = { "<cmd>Explore<cr>", "Netrw" },
         z = { "<cmd>Telescope zoxide list<cr>", "Zoxide" },
-    },
-
-    p = {
-        name = "+projects",
-        p = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-        f = { "<cmd>lua require('telescope.builtin').git_files()<cr>", "Project files", },
     },
 
 
@@ -221,6 +222,22 @@ local mappings = {
             n = { "<cmd>Neorg workspace notes<cr>", "Notes workspace" },
             j = { "<cmd>Neorg workspace joyent<cr>", "Joyent workspace" },
         },
+    },
+
+    o = {
+        name = "+Open",
+        m = {
+            name = "My",
+            t = { "<cmd>e ~/Nextcloud/Neorg/todo/todo.txt<cr>", "Todo Txt"},
+            w = { "<cmd>e ~/.config/nvim/after/plugin/whichkey.lua<cr>", "NVIM WhichKey"},
+            p = { "<cmd>e ~/.config/nvim/lua/snuffop/packer.lua<cr>", "NVIM Packer"},
+        },
+    },
+
+    p = {
+        name = "+projects",
+        p = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+        f = { "<cmd>lua require('telescope.builtin').git_files()<cr>", "Project files", },
     },
 
     q = {
