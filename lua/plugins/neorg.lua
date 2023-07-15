@@ -9,6 +9,13 @@ return {
         'nvim-neorg/neorg-telescope',
     },
     config = function()
+        require('nvim-treesitter.configs').setup {
+            ensure_installed = { "norg" },
+            highlight = {
+                enable = true,
+            },
+        }
+
         require("neorg").setup {
             load = {
                 ["core.defaults"] = {}, -- Loads default behaviour
