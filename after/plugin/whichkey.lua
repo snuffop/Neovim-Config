@@ -77,14 +77,12 @@ local mappings = {
             a = { "<cmd>Noice all<cr>",  "Noice All" },
             e = { "<cmd>Noice dismiss<cr>",  "Noice Dismiss All" },
         },
-        p = {
-            name = "Packer",
-            S = { "<cmd>PackerStatus<cr>", "Status" },
-            c = { "<cmd>PackerCompile<cr>", "Compile" },
-            i = { "<cmd>PackerInstall<cr>", "Install" },
-            p = { "<cmd>Telescope packer<cr>", "Telescope" },
-            s = { "<cmd>PackerSync<cr>", "Sync" },
-            u = { "<cmd>PackerUpdate<cr>", "Update" },
+        l = {
+            name = "Lazy",
+            s = { "<cmd>Lazy sync<cr>", "Sync" },
+            i = { "<cmd>Lazy install<cr>", "Install" },
+            p = { "<cmd>Telescope lazy<cr>", "Telescope" },
+            l = { "<cmd>Lazy<cr>", "Status" },
         },
         t = {
             name  = "+ToDotxt",
@@ -230,7 +228,7 @@ local mappings = {
             name = "My",
             t = { "<cmd>e ~/Nextcloud/Neorg/todo/todo.txt<cr>", "Todo Txt"},
             w = { "<cmd>e ~/.config/nvim/after/plugin/whichkey.lua<cr>", "NVIM WhichKey"},
-            p = { "<cmd>e ~/.config/nvim/lua/snuffop/packer.lua<cr>", "NVIM Packer"},
+            c = { "<cmd>e ~/.config/nvim/init.lua<cr>", "NVIM Config"},
         },
     },
 

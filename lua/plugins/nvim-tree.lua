@@ -1,7 +1,3 @@
-local status_ok, nvimTree = pcall(require, "nvim-tree")
-if not status_ok then
-  return
-end
 
 local function on_attach(bufnr)
   local api = require("nvim-tree.api")
@@ -99,55 +95,64 @@ local function on_attach(bufnr)
   vim.keymap.set("n", "Z", api.node.run.system, opts("Run System"))
 end
 
-nvimTree.setup {
-  on_attach = on_attach,
-  sort_by = "case_sensitive",
-  update_focused_file = {
-    enable = true,
-    update_cwd = true,
-    update_root = true,
-  },
-  renderer = {
-    group_empty = true,
-    root_folder_modifier = ":t",
-    icons = {
-      glyphs = {
-        default = "",
-        symlink = "",
-        folder = {
-          arrow_open = "",
-          arrow_closed = "",
-          default = "",
-          open = "",
-          empty = "",
-          empty_open = "",
-          symlink = "",
-          symlink_open = "",
-        },
-        git = {
-          unstaged = "",
-          staged = "S",
-          unmerged = "",
-          renamed = "➜",
-          untracked = "U",
-          deleted = "",
-          ignored = "◌",
-        },
-      },
+return {
+    'kyazdani42/nvim-tree.lua',
+    cmd = { 
+        "NvimTreeToggle", 
+        "NvimTreeOpen" 
     },
-  },
-  diagnostics = {
-    enable = true,
-    show_on_dirs = true,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
-  },
-  view = {
-    width = 45,
-    side = "left",
-  },
+    config = function()
+        require('nvim-tree').setup {
+            on_attach = on_attach,
+            sort_by = "case_sensitive",
+            update_focused_file = {
+                enable = true,
+                update_cwd = true,
+                update_root = true,
+            },
+            renderer = {
+                group_empty = true,
+                root_folder_modifier = ":t",
+                icons = {
+                    glyphs = {
+                        default = "",
+                        symlink = "",
+                        folder = {
+                            arrow_open = "",
+                            arrow_closed = "",
+                            default = "",
+                            open = "",
+                            empty = "",
+                            empty_open = "",
+                            symlink = "",
+                            symlink_open = "",
+                        },
+                        git = {
+                            unstaged = "",
+                            staged = "S",
+                            unmerged = "",
+                            renamed = "➜",
+                            untracked = "U",
+                            deleted = "",
+                            ignored = "◌",
+                        },
+                    },
+                },
+            },
+            diagnostics = {
+                enable = true,
+                show_on_dirs = true,
+                icons = {
+                    hint = "",
+                    info = "",
+                    warning = "",
+                    error = "",
+                },
+            },
+            view = {
+                width = 45,
+                side = "left",
+            },
+        }
+    end
 }

@@ -27,9 +27,6 @@ vim.opt.undofile = true
 vim.opt.updatetime = 50
 vim.opt.wrap = false
 
--- colorscheme
-vim.cmd 'colorscheme dracula'
-
 --  Whichkey
 vim.opt.timeout = true
 vim.opt.timeoutlen = 300
