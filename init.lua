@@ -4,7 +4,7 @@
 
 vim.keymap.set("", "<Space>", "<Nop>", {noremap = true, silent = true})
 vim.g.mapleader = " "
-vim.g.maplocaleader = ","
+vim.g.maplocaleader = ";"
 
 -- include/reuqire
 require 'config.options'

@@ -129,9 +129,10 @@ local mappings = {
     b = {
         name = "+Buffers",
         b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "Buffers", },
-        d = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+        d = { "<cmd>bdelete!<CR>", "Delete Buffer" },
         l = { ":lua require('telescope.builtin').buffers()<cr>", "List" },
         s = { "<cmd>BufferLinePick<cr>", "Select" },
+        p = { "<cmd>BufferLineTogglePin<cr>", "Toggle Pin" },
     },
 
     c = {
@@ -324,6 +325,3 @@ local mappings = {
 }
 
 wk.register(mappings, wkopts)
-
-
-
