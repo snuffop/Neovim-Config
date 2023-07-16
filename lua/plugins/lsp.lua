@@ -1,15 +1,53 @@
+-- LSP Zero
+--
+local check_backspace = function()
+    local col = vim.fn.col "." - 1
+    return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+end
+
+local kind_icons = {
+    Text = "󰉿",
+    Method = "󰆧",
+    Function = "󰊕",
+    Constructor = "",
+    Field = " ",
+    Variable = "󰀫",
+    Class = "󰠱",
+    Interface = "",
+    Module = "",
+    Property = "󰜢",
+    Unit = "󰑭",
+    Value = "󰎠",
+    Enum = "",
+    Keyword = "󰌋",
+    Snippet = "",
+    Color = "󰏘",
+    File = "󰈙",
+    Reference = "",
+    Folder = "󰉋",
+    EnumMember = "",
+    Constant = "󰏿",
+    Struct = "",
+    Event = "",
+    Operator = "󰆕",
+    TypeParameter = " ",
+    Misc = " ",
+}
+
+
 return {
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
-        lazy = true,
         config = function()
             require('lsp-zero.settings').preset({})
         end
     },
+
+    -- Luasnip
+  
     {
         'L3MON4D3/LuaSnip',
-        event = "InsertEnter",
         requires = {"rafamadriz/friendly-snippets" , event = "InsertEnter" },
         config = function()
             local ls = require "luasnip"
@@ -49,7 +87,8 @@ return {
                 },
                 window = {
                     documentation = {
-                        max_height = 15,
+                        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+                        max_height = 25,
                         max_width = 60,
                     }
                 },
@@ -73,13 +112,22 @@ return {
                     { name = 'nvim_lua' },
                 },
                 formatting = {
-                    fields = {'abbr', 'kind', 'menu'},
-                    format = require('lspkind').cmp_format({
-                        mode = 'symbol', -- show only symbol annotations
-                        maxwidth = 50, -- prevent the popup from showing more than provided characters
-                        ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead
-                    })
-                }
+                    fields = { "kind", "abbr", "menu" },
+                    format = function(entry, vim_item)
+                        -- Kind icons
+                        vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+                        -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+                        vim_item.menu = ({
+                            nvim_lsp = "[LSP]",
+                            neorg = "[Neorg]",
+                            luasnip = "[Snippet]",
+                            buffer = "[Buffer]",
+                            path = "[Path]",
+                        })[entry.source.name]
+                        return vim_item
+                    end,
+                },
+
             })
         end
     },
@@ -87,7 +135,11 @@ return {
     -- LSP
     {
         'neovim/nvim-lspconfig',
-        cmd = 'LspInfo',
+        cmd = {
+            'LspInfo',
+            'Mason',
+            'MasonUpdate',
+        },
         event = {'BufReadPre', 'BufNewFile'},
         dependencies = {
             { 'hrsh7th/cmp-nvim-lsp' },
@@ -100,6 +152,17 @@ return {
                 lsp.default_keymaps({buffer = bufnr})
             end)
             require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+            lsp.preset("recomended")
+            lsp.nvim_workspace()
+            lsp.set_preferences({
+                suggest_lsp_servers = false,
+                sign_icons = {
+                    error = 'E',
+                    warn = 'W',
+                    hint = 'H',
+                    info = 'I'
+                }
+            })
             lsp.setup()
         end
     }

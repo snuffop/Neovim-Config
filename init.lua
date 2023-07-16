@@ -28,30 +28,11 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
-  defaults = {
-    lazy = false,
-  },
-  dev = {
-    path = "~/Source",
-  },
   checker = {
     enabled = true,
   },
-  performance = {
-    rtp = {
-      disabled_plugins = {
-        "gzip",
-        -- "matchit",
-        -- "matchparen",
-        "netrwPlugin",
-        "tarPlugin",
-        "tohtml",
-        "tutor",
-        "zipPlugin",
-      },
-    },
-  },
 })
+
 -- pull in keymaps and which-key config
 require 'config.keymaps'
 
