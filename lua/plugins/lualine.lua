@@ -61,15 +61,8 @@ return {
                         'lsp_progress',
                         display_components = {'lsp_client_name', 'spinner', { 'title', 'percentage', 'message' }},
                         spinner_symbols = {'⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'},
-                    }
-                },
-                lualine_y = {
-                    'encoding',
-                    'fileformat',
-                    'filetype',
-                },
-                lualine_z = {
-                    'progress',
+                    },
+
                     {
                         'diagnostics',
                         symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
@@ -81,6 +74,14 @@ return {
                             hint = {fg = get_color("DiagnosticSignHint", "fg")},
                         },
                     },
+                },
+                lualine_y = {
+                    'encoding',
+                    'fileformat',
+                    'filetype',
+                },
+                lualine_z = {
+                    'progress',
                 },
             },
             inactive_sections = {
