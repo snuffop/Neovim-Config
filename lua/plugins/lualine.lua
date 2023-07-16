@@ -53,7 +53,6 @@ return {
                         'filename',
                         file_status = true,
                         path = 4,
-                        shorting_target = 40,
                     },
                 },
                 lualine_x = {
@@ -91,7 +90,7 @@ return {
                     {
                         'filename',
                         file_status = true,
-                        path = 1,
+                        path = 4,
                     },
                 },
                 lualine_x = {'location'},
@@ -111,7 +110,6 @@ return {
                         'filename',
                         file_status = true,
                         path = 4,
-                        shorting_target = 40,
                     },
                 },
             },
@@ -122,7 +120,14 @@ return {
                 lualine_c = {},
                 lualine_x = {},
                 lualine_y = {},
-                lualine_z = {'filename'},
+                lualine_z = {
+                    {
+                        'filename',
+                        file_status = true,
+                        path = 4,
+                        shorting_target = 40,
+                    },
+                },
             },
             extensions = {
                 'nvim-tree',
