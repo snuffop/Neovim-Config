@@ -45,7 +45,7 @@ return {
             sections = {
                 lualine_a = { 'mode' },
                 lualine_b = {
-                    { 'b:gitsigns_head', icon = '' }, 
+                    { 'b:gitsigns_head', icon = '' },
                     { 'diff', icon = '', source = diff_source },
                 },
                 lualine_c = {
