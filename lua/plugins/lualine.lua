@@ -11,7 +11,6 @@ local function diff_source()
     end
 end
 
-
 return {
     'nvim-lualine/lualine.nvim',
     dependencies = {
@@ -39,7 +38,7 @@ return {
                 refresh = {
                     statusline = 1000,
                     tabline = 1000,
-                    winbar = 1000,
+                    winbar = 1000, 
                 }
             },
             sections = {
@@ -51,17 +50,11 @@ return {
                 lualine_c = {
                     {
                         'filename',
-                        file_status = true,
-                        path = 4,
+                        file_status = false,
+                        path = 1,
                     },
                 },
                 lualine_x = {
-                    {
-                        'lsp_progress',
-                        display_components = {'lsp_client_name', 'spinner', { 'title', 'percentage', 'message' }},
-                        spinner_symbols = {'⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'},
-                    },
-
                     {
                         'diagnostics',
                         symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
@@ -98,7 +91,13 @@ return {
                 lualine_z = {}
             },
             tabline = {},
-
+            statusline = {
+                lualine_z = {
+                    'lsp_progress',
+                    display_components = {'lsp_client_name', 'spinner', { 'title', 'percentage', 'message' }},
+                    spinner_symbols = {'⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'},
+                },
+            },
             winbar = {
                 lualine_a = {},
                 lualine_b = {},

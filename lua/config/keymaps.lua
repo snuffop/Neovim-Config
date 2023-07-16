@@ -25,6 +25,7 @@ vim.keymap.set('n', "<C-l>", "<cmd>TmuxNavigateRight<cr>")
 keymap("n", "<F3>", ":set spell!<CR>", opts)
 keymap("i", "<F3>", "<C-O>:set spell!<CR>", opts)
 
+keymap("n", ";w", "<cmd>up<cr>", opts)
 keymap("n", ";q", "<cmd>confirm quit<cr>",opts)
 
 -- Resize with arrows
