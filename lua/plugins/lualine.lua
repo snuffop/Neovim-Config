@@ -1,6 +1,9 @@
 -- Lualine config
 return {
     'nvim-lualine/lualine.nvim',
+    dependencies = {
+        'arkav/lualine-lsp-progress',
+    },
     lazy = false,
     config = {
         options = {
@@ -45,6 +48,7 @@ return {
                     'filename',
                     file_status = true,
                     path = 1,
+                    'lsp_progress',
                 },
             },
             lualine_x = {'location'},
@@ -82,3 +86,6 @@ return {
         }
     }
 }
+
+
+

@@ -268,7 +268,7 @@ local mappings = {
 
     p = {
         name = "+projects",
-        p = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+        p = { "<cmd>lua require('telescope').extensions.project.project()<cr>", "Projects" },
         f = { "<cmd>lua require('telescope.builtin').git_files()<cr>", "Project files", },
     },
 

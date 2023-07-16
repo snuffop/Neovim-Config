@@ -7,6 +7,19 @@ return {
             require('lsp-zero.settings').preset({})
         end
     },
+    {
+        'L3MON4D3/LuaSnip',
+        event = "InsertEnter",
+        requires = {"rafamadriz/friendly-snippets" , event = "InsertEnter" },
+        config = function()
+            local ls = require "luasnip"
+            ls.config.set_config {
+                history = true,
+                updateevents = "TextChanged,TextChangedI",
+            }
+            require("luasnip.loaders.from_vscode").lazy_load{}
+        end,
+    },
 
     -- Autocompletion
     {
@@ -19,37 +32,44 @@ return {
             {'hrsh7th/cmp-buffer'},
             {'hrsh7th/cmp-path'},
             {'hrsh7th/cmp-cmdline'},
-            {'L3MON4D3/LuaSnip'},
             {'onsails/lspkind.nvim'},
         },
         config = function()
-            -- Here is where you configure the autocompletion settings.
-            -- The arguments for .extend() have the same shape as `manage_nvim_cmp`: 
-            -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/api-reference.md#manage_nvim_cmp
-            require('luasnip.loaders.from_vscode').lazy_load()
-
-            require('lsp-zero.cmp').extend()
-
             -- And you can configure cmp even more, if you want to.
             local cmp = require('cmp')
             local cmp_action = require('lsp-zero.cmp').action()
+
+            require('luasnip.loaders.from_vscode').lazy_load()
+            require('lsp-zero.cmp').extend()
 
             cmp.setup({
                 preselect = 'item',
                 completion = {
                     completeopt = 'menu,menuone,noinsert'
                 },
+                window = {
+                    documentation = {
+                        max_height = 15,
+                        max_width = 60,
+                    }
+                },
                 mapping = {
-                    ['<C-Space>'] = cmp.mapping.complete(),
+                    ['<C-Shift-Space>'] = cmp.mapping.complete(),
                     ['<C-f>'] = cmp_action.luasnip_jump_forward(),
                     ['<C-b>'] = cmp_action.luasnip_jump_backward(),
                     ['<CR>'] = cmp.mapping.confirm({select = false}),
                 },
+                snippet = {
+                    expand = function(args)
+                        require('luasnip').lsp_expand(args.body)
+                    end,
+                },
                 sources = {
                     { name = 'path' },
-                    { name = "neorg" },
+                    { name = 'neorg' },
                     { name = 'nvim_lsp' },
-                    { name = 'luasnip' },
+                    { name = 'luasnip', keyword_length = 2 },
+                    { name = 'buffer', keyword_length = 3 },
                     { name = 'nvim_lua' },
                 },
                 formatting = {
@@ -75,17 +95,11 @@ return {
             { 'williamboman/mason.nvim' },
         },
         config = function()
-            -- This is where all the LSP shenanigans will live
-
             local lsp = require('lsp-zero')
-
             lsp.on_attach(function(client, bufnr)
                 lsp.default_keymaps({buffer = bufnr})
             end)
-
-            -- (Optional) Configure lua language server for neovim
             require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
             lsp.setup()
         end
     }
