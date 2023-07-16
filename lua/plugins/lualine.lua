@@ -38,7 +38,7 @@ return {
                 refresh = {
                     statusline = 1000,
                     tabline = 1000,
-                    winbar = 1000, 
+                    winbar = 1000,
                 }
             },
             sections = {
@@ -50,8 +50,11 @@ return {
                 lualine_c = {
                     {
                         'filename',
-                        file_status = false,
+                        file_status = true,
                         path = 1,
+                        symbols = {
+                            modified = '[MODIFIED]',
+                        },
                     },
                 },
                 lualine_x = {
