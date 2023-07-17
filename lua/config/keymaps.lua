@@ -132,10 +132,11 @@ local mappings = {
     b = {
         name = "+Buffers",
         b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "Buffers", },
-        d = { "<cmd>bdelete!<CR>", "Delete Buffer" },
+        d = { "<cmd>Bdelete<cr>", "Delete Buffer" },
         l = { ":lua require('telescope.builtin').buffers()<cr>", "List" },
-        s = { "<cmd>BufferLinePick<cr>", "Select" },
         p = { "<cmd>BufferLineTogglePin<cr>", "Toggle Pin" },
+        s = { "<cmd>BufferLinePick<cr>", "Select" },
+        w = { "<cmd>Bwipeout<cr>", "Wipeout  Buffer" },
     },
 
     c = {
