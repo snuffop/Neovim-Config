@@ -166,8 +166,8 @@ local mappings = {
 
     g = {
         name = "Git",
-        g = { "<cmd>LazyGit<cr>", "Lazygit" },
-        n = { "<cmd>Neogit<cr>", "Neogit" },
+        L = { "<cmd>LazyGit<cr>", "Lazygit" },
+        g = { "<cmd>Neogit<cr>", "Neogit" },
         j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
         k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
         l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -181,6 +181,14 @@ local mappings = {
         c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
         d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff", },
         t = { "<cmd>lua require('telescope').extensions.lazygit.lazygit()<cr>", "LazyGit Telescope" },
+    },
+
+    h = {
+        name = "+Help",
+        b = {
+            name = "Bindings",
+            t = { "<cm>WhichKey<cr>", "Whichkey Top Level" },
+        }
     },
 
     l = {
@@ -269,7 +277,7 @@ local mappings = {
         name = "+Open",
         m = {
             name = "My",
-            t = { "<cmd>e ~/Nextcloud/Neorg/todo/todo.txt<cr>", "Todo Txt"},
+            t = { "<cmd>e ~/Nextcloud/Obsidian/todo/todo.txt<cr>", "Todo Txt"},
             w = { "<cmd>e ~/.config/nvim/after/plugin/whichkey.lua<cr>", "NVIM WhichKey"},
             c = { "<cmd>e ~/.config/nvim/init.lua<cr>", "NVIM Config"},
         },
