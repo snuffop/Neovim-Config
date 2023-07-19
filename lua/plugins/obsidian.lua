@@ -8,15 +8,14 @@ return {
             'hrsh7th/nvim-cmp',
             'nvim-telescope/telescope.nvim',
             'godlygeek/tabular',
-            'preservim/vim-markdown',
+            -- 'preservim/vim-markdown',
         },
         init = function()
-            vim.g.vim_markdown_folding_disabled = 1
-            vim.g.vim_markdown_frontmatter = 1
-            vim.g.vim_markdown_new_list_item_indent = 0
+            -- vim.g.vim_markdown_folding_disabled = 1
+            -- vim.g.vim_markdown_frontmatter = 1
+            -- vim.g.vim_markdown_new_list_item_indent = 0
         end,
         config = function()
-
             require('obsidian').setup {
                 dir = "~/Nextcloud/Obsidian/", -- no need to call 'vim.fn.expand' here
                 notes_subdir = "notes",

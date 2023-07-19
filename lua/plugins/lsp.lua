@@ -146,6 +146,7 @@ return {
                 lsp.default_keymaps({buffer = bufnr})
             end)
             require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
             lsp.preset("recomended")
             lsp.nvim_workspace()
             lsp.set_preferences({
@@ -157,6 +158,27 @@ return {
                     info = 'I'
                 }
             })
+            require'lspconfig'.ansiblels.setup{}
+            require'lspconfig'.awk_ls.setup{}
+            require'lspconfig'.bashls.setup{}
+            require'lspconfig'.cssmodules_ls.setup{}
+            require'lspconfig'.gopls.setup{}
+            require'lspconfig'.grammarly.setup{}
+            require'lspconfig'.html.setup{}
+            require'lspconfig'.jqls.setup{}
+            require'lspconfig'.jsonls.setup{}
+            require'lspconfig'.luau_lsp.setup{}
+            require'lspconfig'.marksman.setup{}
+            require'lspconfig'.pylsp.setup{}
+            require'lspconfig'.ruff_lsp.setup{}
+            require'lspconfig'.rust_analyzer.setup{}
+            require'lspconfig'.stylelint_lsp.setup{}
+            require'lspconfig'.terraformls.setup{}
+            require'lspconfig'.tsserver.setup{}
+            require'lspconfig'.vimls.setup{}
+            require'lspconfig'.yamlls.setup{}
+            require'lspconfig'.cssls.setup{}
+
             lsp.setup()
         end
     }

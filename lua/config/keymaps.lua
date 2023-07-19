@@ -152,12 +152,13 @@ local mappings = {
 
     f = {
         name = "+File",
-        a = { "<cmd>RnvimrToggle<cr>", "Ranger Vim" },
+        a = { "<cmd>RnvimrToggle<cr>", "rnvimr toggel" },
+        r = { "<cmd>Ranger<cr>", "Ranger Vim" },
         b = { "<cmd>Telescope file_browser<cr>", "Telescope file_browser" },
         c = { "<cmd>lua require('telescope.builtin').find_files({cwd = '~/.config/nvim/'})<cr>", "Find Config Files" },
         e = { "<cmd>NvimTreeToggle<cr>", "Nvim Tree" },
         f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files", },
-        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+        o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         s = { "<cmd>up<cr><esc>", "Save File" },
         v = { "<cmd>Explore<cr>", "Netrw" },
         z = { "<cmd>Telescope zoxide list<cr>", "Zoxide" },
@@ -187,7 +188,7 @@ local mappings = {
         name = "+Help",
         b = {
             name = "Bindings",
-            t = { "<cm>WhichKey<cr>", "Whichkey Top Level" },
+            t = { "<cmd>WhichKey<cr>", "Whichkey Top Level" },
         }
     },
 
