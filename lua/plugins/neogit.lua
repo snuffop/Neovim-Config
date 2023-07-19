@@ -4,6 +4,7 @@ return {
     dependencies = {
         'nvim-lua/plenary.nvim',
         'sindrets/diffview.nvim',
+        'nvim-telescope/telescope.nvim',
     },
     config = function()
         require('neogit').setup {
@@ -14,6 +15,7 @@ return {
             use_magit_keybindings = true,
             integrations = {
                 diffview = true,
+                telescope = true,
             },
         }
     end
