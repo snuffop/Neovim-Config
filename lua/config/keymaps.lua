@@ -149,7 +149,6 @@ local mappings = {
 
     e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 
-    h = { "<cmd>nohlsearch<CR>", "No Highlight" },
 
     f = {
         name = "+File",
@@ -187,6 +186,7 @@ local mappings = {
 
     h = {
         name = "+Help",
+        h = { "<cmd>nohlsearch<CR>", "No Highlight" },
         b = {
             name = "Bindings",
             t = { "<cmd>WhichKey<cr>", "Whichkey Top Level" },
