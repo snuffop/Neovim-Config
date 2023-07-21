@@ -13,8 +13,5 @@ return {
         build = "make install_jsregexp",
     },
 
-    {
-        'rafamadriz/friendly-snippets', -- a bunch of snippets to use
-    },
 }
 

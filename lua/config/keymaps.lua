@@ -49,10 +49,11 @@ keymap("n", "<leader>Y", '"+Y', opts)
 keymap("n", "<leader>d", '_d', opts)
 
 -- Press jk fast to exit insert mode 
-keymap("i", "jk", "<ESC>", opts)
-keymap("i", "jj", "<ESC>", opts)
-keymap("i", "kk", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", opts)
+--  NOW using better_escape
+-- keymap("i", "jk", "<ESC>", opts)
+-- keymap("i", "jj", "<ESC>", opts)
+-- keymap("i", "kk", "<ESC>", opts)
+-- keymap("i", "kj", "<ESC>", opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv^", opts)
