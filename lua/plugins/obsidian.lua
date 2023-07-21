@@ -11,9 +11,9 @@ return {
             -- 'preservim/vim-markdown',
         },
         init = function()
-            -- vim.g.vim_markdown_folding_disabled = 1
-            -- vim.g.vim_markdown_frontmatter = 1
-            -- vim.g.vim_markdown_new_list_item_indent = 0
+            vim.g.vim_markdown_folding_disabled = 1
+            vim.g.vim_markdown_frontmatter = 1
+            vim.g.vim_markdown_new_list_item_indent = 0
         end,
         config = function()
             require('obsidian').setup {
@@ -87,6 +87,15 @@ return {
                     end
                 end, { noremap = false, expr = true })
             }
+
+            require("nvim-treesitter.configs").setup({
+                ensure_installed = { "markdown", "markdown_inline" },
+                highlight = {
+                    enable = true,
+                    additional_vim_regex_highlighting = { "markdown" },
+                },
+            })
         end
     }
 }
+
