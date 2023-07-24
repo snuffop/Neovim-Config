@@ -96,10 +96,10 @@ local function on_attach(bufnr)
 end
 
 return {
-    'kyazdani42/nvim-tree.lua',
-    cmd = { 
-        "NvimTreeToggle", 
-        "NvimTreeOpen" 
+    'nvim-tree/nvim-tree.lua',
+    cmd = {
+        "NvimTreeToggle",
+        "NvimTreeOpen"
     },
     config = function()
         require('nvim-tree').setup {

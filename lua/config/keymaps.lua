@@ -13,6 +13,23 @@ local keymap = vim.keymap.set
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- HOP
+local hop = require('hop')
+local directions = require('hop.hint').HintDirection
+vim.keymap.set('', 'f', function()
+  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
+end, {remap=true})
+vim.keymap.set('', 'F', function()
+  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
+end, {remap=true})
+vim.keymap.set('', 't', function()
+  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })
+end, {remap=true})
+vim.keymap.set('', 'T', function()
+  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
+end, {remap=true})
+
+
 -- vim.keymap.set({"n","i","v"}, "<C-\\>", "<cmd>ToggleTerm direction=float<cr>", opts)
 
 -- TmuxNavigate
@@ -188,12 +205,15 @@ local mappings = {
     },
 
     h = {
-        name = "+Help",
-        h = { "<cmd>nohlsearch<CR>", "No Highlight" },
-        b = {
-            name = "Bindings",
-            t = { "<cmd>WhichKey<cr>", "Whichkey Top Level" },
-        }
+        name = "Hop",
+        L = { "<cmd>HopLineStart<cr>", "Hop Line Start" },
+        a = { "<cmd>HopAnywhere<cr>", "Hop Anywhere" },
+        h = { "<cmd>HopChar2<cr>", "Hop 2 Char" },
+        c = { "<cmd>HopChar1<cr>", "Hop 1 Char" },
+        l = { "<cmd>HopLine<cr>", "Hop Line" },
+        p = { "<cmd>HopPattern<cr>", "Hop Pattern" },
+        v = { "<cmd>HopVertical<cr>", "Hop Vertical" },
+        w = { "<cmd>HopWord<cr>", "Hop Word" },
     },
 
     l = {
@@ -255,8 +275,8 @@ local mappings = {
         o = {
             name = "Obsidian",
             C = { "<cmd>ObsidianCheckHealth<cr>", "Check Health" },
-            T = { "<cmd>ObsidianTomorrow<cr>", "Tomorrow" },
-            b = { "<cmd>ObsidianBacklinks<cr>", "Backlinks" },
+            T = { "<cmd>ObsidianTomorrow<cr>", "Open Tomorrow" },
+            b = { "<cmd>ObsidianBacklinks<cr>", "Find Backlinks" },
             c = { "<cmd>ObsidianCheck<cr>", "Check" },
             f = { "<cmd>ObsidianFollowLink<cr>", "Follow Link" },
             l = { "<cmd>ObsidianLink<cr>", "Link" },
@@ -264,8 +284,9 @@ local mappings = {
             o = { "<cmd>ObsidianOpen<cr>", "Open" },
             s = { "<cmd>ObsidianQuickSwitch<cr>", "Quick Switch" },
             g = { "<cmd>ObsidianSearch<cr>", "Search" },
-            t = { "<cmd>ObsidianToday<cr>", "Today" },
-            y = { "<cmd>ObsidianYesterday<cr>", "Yesterday" },
+            t = { "<cmd>ObsidianToday<cr>", "Open Today" },
+            y = { "<cmd>ObsidianYesterday<cr>", "Open Yesterday" },
+            m = { "<cmd>ObsidianTemplate<cr>", "Add Template" },
         },
         t = {
             name = "Toggle",
@@ -319,6 +340,10 @@ local mappings = {
         y = { "<cmd>Telescope glyph<cr>", "Glyph" },
     },
 
+    T = {
+        name = "Toggle",
+    },
+
     t = {
         name = "Terminal",
         f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
@@ -334,6 +359,7 @@ local mappings = {
         v = { '<C-w>_', 'Maximize window vertically (_)' },
         ['='] = { '<C-w>=', 'Resize windows equally' },
         s = { ":lua require('telescope-tabs').list_tabs()<cr>", 'Search Tabs' },
+        t = { "<cmd>WhichKey<cr>", "Whichkey Top Level" },
     },
 
     x = {

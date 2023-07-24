@@ -8,7 +8,7 @@ return {
             'hrsh7th/nvim-cmp',
             'nvim-telescope/telescope.nvim',
             'godlygeek/tabular',
-            -- 'preservim/vim-markdown',
+            'preservim/vim-markdown',
         },
         init = function()
             vim.g.vim_markdown_folding_disabled = 1
@@ -87,14 +87,6 @@ return {
                     end
                 end, { noremap = false, expr = true })
             }
-
-            require("nvim-treesitter.configs").setup({
-                ensure_installed = { "markdown", "markdown_inline" },
-                highlight = {
-                    enable = true,
-                    additional_vim_regex_highlighting = { "markdown" },
-                },
-            })
         end
     }
 }

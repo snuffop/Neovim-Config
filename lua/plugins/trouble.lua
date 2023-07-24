@@ -2,7 +2,7 @@
 return {
     'folke/trouble.nvim',
     dependencies = {
-        "kyazdani42/nvim-web-devicons",
+        "nvim-tree/nvim-web-devicons",
     },
     opts = {
         position = "bottom", -- position of the list can be: bottom, top, left, right
