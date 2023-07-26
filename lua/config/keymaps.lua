@@ -13,22 +13,6 @@ local keymap = vim.keymap.set
 --   term_mode = "t",
 --   command_mode = "c",
 
--- HOP
-local hop = require('hop')
-local directions = require('hop.hint').HintDirection
-vim.keymap.set('', 'f', function()
-  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
-end, {remap=true})
-vim.keymap.set('', 'F', function()
-  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
-end, {remap=true})
-vim.keymap.set('', 't', function()
-  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })
-end, {remap=true})
-vim.keymap.set('', 'T', function()
-  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
-end, {remap=true})
-
 -- vim.keymap.set({"n","i","v"}, "<C-\\>", "<cmd>ToggleTerm direction=float<cr>", opts)
 
 -- TmuxNavigate
@@ -126,13 +110,8 @@ local mappings = {
     a = {
         name = "+Application",
         a = {"<cmd>Alpha<cr>", "Alpha" },
-        n = {
-            name = "+Noice",
-            l = { "<cmd>Noice last<cr>",  "Noice Last Message" },
-            h = { "<cmd>Noice history<cr>",  "Noice History" },
-            a = { "<cmd>Noice all<cr>",  "Noice All" },
-            e = { "<cmd>Noice dismiss<cr>",  "Noice Dismiss All" },
-        },
+        m = { "<cmd>Neomutt<cr>", "Neomutt" },
+        n = { "<cmd>Nnn<cr>", "Nnn toggle" },
         l = {
             name = "Lazy",
             s = { "<cmd>Lazy sync<cr>", "Sync" },
@@ -168,7 +147,6 @@ local mappings = {
 
     f = {
         name = "+File",
-        a = { "<cmd>RnvimrToggle<cr>", "rnvimr toggel" },
         b = { "<cmd>Telescope file_browser<cr>", "Telescope file_browser" },
         c = { "<cmd>lua require('telescope.builtin').find_files({cwd = '~/.config/nvim/'})<cr>", "Find Config Files" },
         e = { "<cmd>NvimTreeToggle<cr>", "Nvim Tree" },
@@ -199,20 +177,18 @@ local mappings = {
         p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
         r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
         s = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-        t = { "<cmd>lua require('telescope').extensions.lazygit.lazygit()<cr>", "LazyGit Telescope" },
         u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk", },
     },
 
     h = {
-        name = "Hop",
-        L = { "<cmd>HopLineStart<cr>", "Hop Line Start" },
-        a = { "<cmd>HopAnywhere<cr>", "Hop Anywhere" },
-        h = { "<cmd>HopChar2<cr>", "Hop 2 Char" },
-        c = { "<cmd>HopChar1<cr>", "Hop 1 Char" },
-        l = { "<cmd>HopLine<cr>", "Hop Line" },
-        p = { "<cmd>HopPattern<cr>", "Hop Pattern" },
-        v = { "<cmd>HopVertical<cr>", "Hop Vertical" },
-        w = { "<cmd>HopWord<cr>", "Hop Word" },
+        name = "+Help",
+        n = {
+            name = "+Noice",
+            l = { "<cmd>Noice last<cr>",  "Noice Last Message" },
+            h = { "<cmd>Noice history<cr>",  "Noice History" },
+            a = { "<cmd>Noice all<cr>",  "Noice All" },
+            e = { "<cmd>Noice dismiss<cr>",  "Noice Dismiss All" },
+        },
     },
 
     l = {
@@ -254,7 +230,6 @@ local mappings = {
         name = "+Notes",
         n = { "<cmd>Neorg index<cr>", "Neorg Index" },
         r = { "<cmd>Neorg return<cr>", "Neorg Return" },
-        c = { "<cmd>Neorg toggle-concealer<cr>", "Neorg concealer toggle" },
         F = { "<cmd>Telescope neorg search_headings<cr>", "Search Headings" },
         f = { "<cmd>Telescope neorg find_linkable<cr>", "Search linkable" },
         j = {
@@ -286,10 +261,6 @@ local mappings = {
             t = { "<cmd>ObsidianToday<cr>", "Open Today" },
             y = { "<cmd>ObsidianYesterday<cr>", "Open Yesterday" },
             m = { "<cmd>ObsidianTemplate<cr>", "Add Template" },
-        },
-        t = {
-            name = "Toggle",
-            c = { "<cmd>Neorg toggle-concealer<cr>", "Toggle Concealer" },
         },
         w = {
             name = "Workspace",
@@ -341,6 +312,9 @@ local mappings = {
 
     T = {
         name = "Toggle",
+        c = { "<cmd>Neorg toggle-concealer<cr>", "Concealer" },
+        b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Gitsign Blame" },
+        d = { "<cmd>Gitsigns toggle_deleted<cr>", "Gitsign Deleted" },
     },
 
     t = {

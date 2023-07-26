@@ -26,7 +26,6 @@ return {
                 component_separators = { left = '', right = ''},
                 section_separators = { left = '', right = ''},
                 disabled_filetypes = {
-                    statusline = {},
                     'alpha',
                     'plugins',
                     '[No Name]',
@@ -55,6 +54,12 @@ return {
                         symbols = {
                             modified = '[MODIFIED]',
                         },
+
+                    },
+                    {
+                        '%=',
+                        '%t%m',
+                        '%3p'
                     },
                 },
                 lualine_x = {
