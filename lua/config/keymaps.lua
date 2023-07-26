@@ -310,21 +310,20 @@ local mappings = {
         y = { "<cmd>Telescope glyph<cr>", "Glyph" },
     },
 
-    T = {
-        name = "Toggle",
-        c = { "<cmd>Neorg toggle-concealer<cr>", "Concealer" },
-        b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Gitsign Blame" },
-        d = { "<cmd>Gitsigns toggle_deleted<cr>", "Gitsign Deleted" },
-    },
-
     t = {
-        name = "Terminal",
-        f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-        h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-        v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+        name = "Toggle",
+        c = { "<cmd>Neorg toggle-concealer<cr>", "Toggle Concealer" },
+        b = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle Gitsign Blame" },
+        d = { "<cmd>Gitsigns toggle_deleted<cr>", "Toggle Gitsign Deleted" },
+        t = {
+            name = "Toggle Terminal",
+            f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+            h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+            v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+        },
+        u = { "<cmd>UndotreeToggle<cr>", "undo tree" },
     },
 
-    u = { "<cmd>UndotreeToggle<cr>", "undo tree" },
 
     w = {
         name = "+Windows",

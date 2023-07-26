@@ -62,6 +62,12 @@ return {
                     require('telescope').load_extension("lazy")
                 end,
             },
+            {
+                'nvim-telescope/telescope-project.nvim',
+                config = function()
+                    require('telescope').load_extension("project")
+                end,
+            },
             config = function()
                 local project_actions = require("telescope._extensions.project.actions")
                 require('telescope').setup {

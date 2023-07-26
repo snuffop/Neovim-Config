@@ -26,6 +26,8 @@ return {
                 component_separators = { left = '', right = ''},
                 section_separators = { left = '', right = ''},
                 disabled_filetypes = {
+                    statusline = {},
+                    winbar = {},
                     'alpha',
                     'plugins',
                     '[No Name]',
@@ -33,7 +35,7 @@ return {
                 },
                 ignore_focus = {},
                 always_divide_middle = true,
-                globalstatus = true,
+                globalstatus = false,
                 refresh = {
                     statusline = 1000,
                     tabline = 1000,
@@ -43,18 +45,19 @@ return {
             sections = {
                 lualine_a = { 'mode' },
                 lualine_b = {
-                    { 'b:gitsigns_head', icon = '' },
+                    { 'b:gitsigns_head', icon = ' ' },
                     { 'diff', icon = '', source = diff_source },
+
                 },
                 lualine_c = {
                     {
                         'filename',
                         file_status = true,
-                        path = 1,
+                        path = 4,
+                        shorting_target = 40,
                         symbols = {
                             modified = '[MODIFIED]',
                         },
-
                     },
                     {
                         '%=',
@@ -98,8 +101,20 @@ return {
                 lualine_y = {},
                 lualine_z = {}
             },
-            tabline = {},
+            tabline = {
+                lualine_a = {'buffers'},
+                lualine_b = {},
+                lualine_c = {},
+                lualine_x = {},
+                lualine_y = {'tabs'},
+                lualine_z = {'datetime'},
+            },
             statusline = {
+                lualine_a = {},
+                lualine_b = {},
+                lualine_c = {},
+                lualine_x = {},
+                lualine_y = {},
                 lualine_z = {
                     'lsp_progress',
                     display_components = {'lsp_client_name', 'spinner', { 'title', 'percentage', 'message' }},
@@ -107,7 +122,7 @@ return {
                 },
             },
             winbar = {
-                lualine_a = {},
+                lualine_a = {'branch'},
                 lualine_b = {},
                 lualine_c = {},
                 lualine_x = {},
@@ -139,8 +154,10 @@ return {
             extensions = {
                 'nvim-tree',
                 'fzf',
-                'fugitive',
                 'quickfix',
+                'toggleterm',
+                'trouble',
+                'lazy',
             }
         }
     end
