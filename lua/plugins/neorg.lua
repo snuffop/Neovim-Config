@@ -1,10 +1,13 @@
 -- neorg 
+
 return {
     'nvim-neorg/neorg',
     cmd = "Neorg",
     ft = "norg",
     build = ":Neorg sync-parsers",
     dependencies = {
+        'nvim-treesitter/nvim-treesitter',
+        'nvim-treesitter/nvim-treesitter-textobjects',
         'nvim-lua/plenary.nvim',
         'nvim-neorg/neorg-telescope',
         {
@@ -13,7 +16,6 @@ return {
                 "L3MON4D3/LuaSnip",
             },
         },
-
     },
     config = function()
         require('nvim-treesitter.configs').setup {

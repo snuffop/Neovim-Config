@@ -41,5 +41,6 @@ vim.cmd([[colorscheme dracula]])
 
 -- Load LSP-zero Config
 require 'config.lsp-config'
+require 'config.snippets'
 
 --

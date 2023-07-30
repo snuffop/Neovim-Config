@@ -1,10 +1,12 @@
 -- Keymaps 
 
-local opts = { noremap = true, silent = true }
+vim.keymap.set({"i"}, "<C-K>", "<Plug>luasnip-expand-or-jump<cr>", {silent = true})
+vim.keymap.set({"i", "s" }, "<C-J>", "<Plug>luasnip-jump-prev<cr>", {silent = true})
+vim.keymap.set({"i", "s" }, "<C-L>", "<Plug>luasnip-next-choice<cr>", {silent = true})
 
+local opts = { noremap = true, silent = true }
 -- Shorten function name
 local keymap = vim.keymap.set
-
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -13,13 +15,11 @@ local keymap = vim.keymap.set
 --   term_mode = "t",
 --   command_mode = "c",
 
--- vim.keymap.set({"n","i","v"}, "<C-\\>", "<cmd>ToggleTerm direction=float<cr>", opts)
-
 -- TmuxNavigate
-vim.keymap.set('n', "<C-h>", "<cmd>TmuxNavigateLeft<cr>")
-vim.keymap.set('n', "<C-j>", "<cmd>TmuxNavigateDown<cr>")
-vim.keymap.set('n', "<C-k>", "<cmd>TmuxNavigateUp<cr>")
-vim.keymap.set('n', "<C-l>", "<cmd>TmuxNavigateRight<cr>")
+keymap('n', "<C-h>", "<cmd>TmuxNavigateLeft<cr>", opts)
+keymap('n', "<C-j>", "<cmd>TmuxNavigateDown<cr>", opts)
+keymap('n', "<C-k>", "<cmd>TmuxNavigateUp<cr>", opts)
+keymap('n', "<C-l>", "<cmd>TmuxNavigateRight<cr>", opts)
 
 -- Spelling
 keymap("n", "<F3>", ":set spell!<CR>", opts)
@@ -89,6 +89,12 @@ neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, key
     })
 end)
 
+vim.cmd([[
+nnoremap <M-k> <cmd>WhichKey<cr>
+vnoremap <M-k> <cmd>WhichKey '' v<cr>
+inoremap <M-k> <cmd>WhichKey '' i<cr>
+cnoremap <M-k> <cmd>WhichKey '' c<cr>
+]])
 
 -- Whichkey mappings
 
@@ -173,7 +179,7 @@ local mappings = {
         g = { "<cmd>Neogit<cr>", "Neogit" },
         j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
         k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-        l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+        l = { "<cmd>Gitsigns blame_line<cr>", "Blame" },
         p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
         r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
         s = { "<cmd>Telescope git_status<cr>", "Open changed file" },
@@ -293,13 +299,13 @@ local mappings = {
     s = {
         name = "Search",
         B = { "<cmd>Telescope builtin<cr>", "Builtin" },
-        C = { "<cmd>Telescope commands<cr>", "Commands" },
+        c = { "<cmd>Telescope commands<cr>", "Commands" },
         F = { "<cmd>Telescope filetypes<cr>", "filetypes" },
         H = { "<cmd>Telescope highlights<cr>", "highlights" },
         M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
         R = { "<cmd>Telescope registers<cr>", "Registers" },
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+        C = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
         e = { "<cmd>Telescope env<cr>", "Environment" },
         f = { "<cmd>Telescope find_pickers<cr>", "list pickers" },
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
@@ -308,6 +314,12 @@ local mappings = {
         r = { "<cmd>Telescope resume<cr>", "Resume" },
         q = { "<cmd>Telescope quickfix<cr>", "Resume" },
         y = { "<cmd>Telescope glyph<cr>", "Glyph" },
+    },
+
+    S = {
+        name = "+Source",
+        ["."] = { "<cmd>source %<cr>", "Source Current File" },
+        s = { "<cmd>source ~/.config/nvim/lua/plugins/luasnip.lua<CR>", "Source Snippets" },
     },
 
     t = {
