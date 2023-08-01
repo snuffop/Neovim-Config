@@ -1,7 +1,7 @@
 -- neorg 
-
 return {
     'nvim-neorg/neorg',
+--    commit = "e76f0cb",  -- Breaking changes on vhyrro's commit
     cmd = "Neorg",
     ft = "norg",
     build = ":Neorg sync-parsers",
@@ -10,12 +10,13 @@ return {
         'nvim-treesitter/nvim-treesitter-textobjects',
         'nvim-lua/plenary.nvim',
         'nvim-neorg/neorg-telescope',
-        {
-            'pysan3/neorg-templates',
-            dependencies = {
-                "L3MON4D3/LuaSnip",
-            },
-        },
+        -- {
+        --     'pysan3/neorg-templates',
+        --     dependencies = {
+        --         "L3MON4D3/LuaSnip",
+        --     },
+        -- },
+
     },
     config = function()
         require('nvim-treesitter.configs').setup {
@@ -29,7 +30,6 @@ return {
             load = {
                 ["core.defaults"] = {}, -- Loads default behaviour
                 ["core.concealer"] = {}, -- Adds pretty icons to your documents
-                ["core.manoeuvre"] = {},
                 ["core.summary"] = {},
                 ["core.export"] = {
                     config = {
@@ -67,11 +67,11 @@ return {
                     },
                 },
                 ["core.integrations.telescope"] = {},
-                ["external.templates"] = {
-                    config = {
-                        templates_dir =  "~/Nextcloud/Neorg/templates/",
-                    },
-                },
+                -- ["external.templates"] = {
+                --     config = {
+                --         templates_dir =  "~/Nextcloud/Neorg/templates/",
+                --     },
+                -- },
             }
         }
     end,

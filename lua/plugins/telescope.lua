@@ -1,9 +1,9 @@
 return {
     'nvim-telescope/telescope.nvim',
-    build = function()
-        local ts_update = require('nvim-treesitter.install').up20230704({ with_sync = true })
-        ts_update()
-    end,
+    -- build = function()
+    --     local ts_update = require('nvim-treesitter.install').up20230704({ with_sync = true })
+    --     ts_update()
+    -- end,
     dependencies = {
         {
             'nvim-lua/plenary.nvim',

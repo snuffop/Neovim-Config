@@ -48,13 +48,6 @@ keymap("n", "<leader>Y", '"+Y', opts)
 
 keymap("n", "<leader>d", '_d', opts)
 
--- Press jk fast to exit insert mode 
---  NOW using better_escape
--- keymap("i", "jk", "<ESC>", opts)
--- keymap("i", "jj", "<ESC>", opts)
--- keymap("i", "kk", "<ESC>", opts)
--- keymap("i", "kj", "<ESC>", opts)
-
 -- Stay in indent mode
 keymap("v", "<", "<gv^", opts)
 keymap("v", ">", ">gv^", opts)
@@ -69,25 +62,6 @@ keymap("x", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
-
--- Aditional keymaps
---- Neorg Keybinds
-local neorg_callbacks = require("neorg.callbacks")
-neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, keybinds)
-    -- Map all the below keybinds only when the "norg" mode is active
-    keybinds.map_event_to_mode("norg", {
-        n = { -- Bind keys in normal mode
-            { "<C-s>", "core.integrations.telescope.find_linkable" },
-        },
-
-        i = { -- Bind in insert mode
-            { "<C-l>", "core.integrations.telescope.insert_link" },
-        },
-    }, {
-        silent = true,
-        noremap = true,
-    })
-end)
 
 vim.cmd([[
 nnoremap <M-k> <cmd>WhichKey<cr>
@@ -161,6 +135,7 @@ local mappings = {
         o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         r = { "<cmd>Ranger<cr>", "Ranger Vim" },
         s = { "<cmd>up<cr><esc>", "Save File" },
+        S = { "<cmd>:w !sudo tee %<cr><esc>", "Sudo Save File" },
         v = { "<cmd>Explore<cr>", "Netrw" },
         z = { "<cmd>Telescope zoxide list<cr>", "Zoxide" },
     },
