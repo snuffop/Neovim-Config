@@ -10,13 +10,12 @@ return {
         'nvim-treesitter/nvim-treesitter-textobjects',
         'nvim-lua/plenary.nvim',
         'nvim-neorg/neorg-telescope',
-        -- {
-        --     'pysan3/neorg-templates',
-        --     dependencies = {
-        --         "L3MON4D3/LuaSnip",
-        --     },
-        -- },
-
+        {
+            'pysan3/neorg-templates',
+            dependencies = {
+                "L3MON4D3/LuaSnip",
+            },
+        },
     },
     config = function()
         require('nvim-treesitter.configs').setup {
@@ -67,11 +66,11 @@ return {
                     },
                 },
                 ["core.integrations.telescope"] = {},
-                -- ["external.templates"] = {
-                --     config = {
-                --         templates_dir =  "~/Nextcloud/Neorg/templates/",
-                --     },
-                -- },
+                ["external.templates"] = {
+                    config = {
+                        templates_dir =  "~/Nextcloud/Neorg/templates/",
+                    },
+                },
             }
         }
     end,

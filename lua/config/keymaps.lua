@@ -5,8 +5,10 @@ vim.keymap.set({"i", "s" }, "<C-J>", "<Plug>luasnip-jump-prev<cr>", {silent = tr
 vim.keymap.set({"i", "s" }, "<C-L>", "<Plug>luasnip-next-choice<cr>", {silent = true})
 
 local opts = { noremap = true, silent = true }
+
 -- Shorten function name
 local keymap = vim.keymap.set
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -34,7 +36,7 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Navigate buffers
+-- Navigate buffers 
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
@@ -122,14 +124,18 @@ local mappings = {
         I = { "<cmd>:TSInstallInfo<cr>", "TS Install Info" },
     },
 
-    e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+    d = {
+        name = "+dired",
+        j = { "<cmd>:Dired<cr>", "Dired Jump" },
+    },
+
 
 
     f = {
         name = "+File",
         b = { "<cmd>Telescope file_browser<cr>", "Telescope file_browser" },
         c = { "<cmd>lua require('telescope.builtin').find_files({cwd = '~/.config/nvim/'})<cr>", "Find Config Files" },
-        e = { "<cmd>NvimTreeToggle<cr>", "Nvim Tree" },
+        e = { "<cmd>Neotree<cr>", "NeoTree" },
         f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files", },
         g = { "<cmd>Telescope git_files<cr>", "Git File" },
         o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },

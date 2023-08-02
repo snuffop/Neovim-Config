@@ -95,6 +95,14 @@ return {
                                 project_actions.change_working_directory(prompt_bufnr, false)
                                 require("harpoon.ui").nav_file(1)
                             end
+                        },
+                        file_browser = {
+                            theme = "ivy",
+                            hijack_netrw = true,
+                            grouped = true,
+                            sorting_strategy = 'ascending',
+                            default_selection_index = 2,
+                            mappings = { },
                         }
                     }
                 }
