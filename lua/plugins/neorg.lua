@@ -1,4 +1,5 @@
 -- neorg 
+
 return {
     'nvim-neorg/neorg',
 --    commit = "e76f0cb",  -- Breaking changes on vhyrro's commit
