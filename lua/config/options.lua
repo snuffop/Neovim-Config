@@ -33,3 +33,4 @@ vim.opt.updatetime = 50
 vim.opt.wrap = false
 
 vim.g.markdown_recommended_style = 0
+vim.g.loaded_perl_provider = 0

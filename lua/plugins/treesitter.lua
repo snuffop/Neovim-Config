@@ -2,8 +2,8 @@
 return {
     {
         'nvim-treesitter/nvim-treesitter',
-        version = '*',
         lazy = false,
+        build = {'do', ':TSUPdate'},
         opts = {
             ensure_installed = {
                 "bash",
@@ -58,6 +58,7 @@ return {
             },
         }
     },
+
     {
         'nvim-treesitter/nvim-treesitter-context',
         lazy = false,

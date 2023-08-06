@@ -3,7 +3,7 @@ return {
     "folke/which-key.nvim",
     event = "VeryLazy",
     init = function()
-        vim.o.timout = true
+        vim.o.timeout = true
         vim.o.timeoutlen = 5
     end,
     opts = {
