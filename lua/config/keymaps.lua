@@ -129,12 +129,11 @@ local mappings = {
         j = { "<cmd>:Dired<cr>", "Dired Jump" },
     },
 
-
-
     f = {
         name = "+File",
         b = { "<cmd>Telescope file_browser<cr>", "Telescope file_browser" },
         c = { "<cmd>lua require('telescope.builtin').find_files({cwd = '~/.config/nvim/'})<cr>", "Find Config Files" },
+        d = { "<cmd>Oil<cr>", "Oil " },
         e = { "<cmd>Neotree<cr>", "NeoTree" },
         f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files", },
         g = { "<cmd>Telescope git_files<cr>", "Git File" },
@@ -145,7 +144,6 @@ local mappings = {
         v = { "<cmd>Explore<cr>", "Netrw" },
         z = { "<cmd>Telescope zoxide list<cr>", "Zoxide" },
     },
-
 
     g = {
         name = "+Git",
