@@ -134,7 +134,7 @@ local mappings = {
         b = { "<cmd>Telescope file_browser<cr>", "Telescope file_browser" },
         c = { "<cmd>lua require('telescope.builtin').find_files({cwd = '~/.config/nvim/'})<cr>", "Find Config Files" },
         d = { "<cmd>Oil<cr>", "Oil " },
-        e = { "<cmd>Neotree<cr>", "NeoTree" },
+        e = { "<cmd>NvimTreeToggle<cr>", "Nvim-Tree" },
         f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files", },
         g = { "<cmd>Telescope git_files<cr>", "Git File" },
         o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },

@@ -53,10 +53,11 @@ return {
                     {
                         'filename',
                         file_status = true,
-                        path = 4,
+                        newfile_status = true,
+                        path = 3,
                         shorting_target = 40,
                         symbols = {
-                            modified = '[MODIFIED]',
+                            modified = '[SAVE ME]',
                         },
                     },
                     {
@@ -66,6 +67,9 @@ return {
                     },
                 },
                 lualine_x = {
+                    {
+                        'searchcount',
+                    },
                     {
                         'diagnostics',
                         symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
@@ -94,7 +98,7 @@ return {
                     {
                         'filename',
                         file_status = true,
-                        path = 4,
+                        path = 3,
                     },
                 },
                 lualine_x = {'location'},
@@ -131,7 +135,7 @@ return {
                     {
                         'filename',
                         file_status = true,
-                        path = 4,
+                        path = 1,
                     },
                 },
             },
