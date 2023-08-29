@@ -103,6 +103,9 @@ return {
                             sorting_strategy = 'ascending',
                             default_selection_index = 2,
                             mappings = { },
+                        },
+                        zoxide = {
+                            prompt_title = "zoxide: ",
                         }
                     }
                 }

@@ -126,7 +126,7 @@ local mappings = {
 
     d = {
         name = "+dired",
-        j = { "<cmd>:Dired<cr>", "Dired Jump" },
+        j = { "<cmd>Oil<cr>", "Oil Dired Jump" },
     },
 
     f = {
@@ -231,22 +231,22 @@ local mappings = {
             i = {"<cmd>Neorg inject-metadata<cr>", "Inject Metadata" },
             u = {"<cmd>Neorg update-metadata<cr>", "Update Metadata" },
         },
-        o = {
-            name = "Obsidian",
-            C = { "<cmd>ObsidianCheckHealth<cr>", "Check Health" },
-            T = { "<cmd>ObsidianTomorrow<cr>", "Open Tomorrow" },
-            b = { "<cmd>ObsidianBacklinks<cr>", "Find Backlinks" },
-            c = { "<cmd>ObsidianCheck<cr>", "Check" },
-            f = { "<cmd>ObsidianFollowLink<cr>", "Follow Link" },
-            l = { "<cmd>ObsidianLink<cr>", "Link" },
-            n = { "<cmd>ObsidianNew<cr>", "New Note" },
-            o = { "<cmd>ObsidianOpen<cr>", "Open" },
-            s = { "<cmd>ObsidianQuickSwitch<cr>", "Quick Switch" },
-            g = { "<cmd>ObsidianSearch<cr>", "Search" },
-            t = { "<cmd>ObsidianToday<cr>", "Open Today" },
-            y = { "<cmd>ObsidianYesterday<cr>", "Open Yesterday" },
-            m = { "<cmd>ObsidianTemplate<cr>", "Add Template" },
-        },
+        -- o = {
+        --     name = "Obsidian",
+        --     C = { "<cmd>ObsidianCheckHealth<cr>", "Check Health" },
+        --     T = { "<cmd>ObsidianTomorrow<cr>", "Open Tomorrow" },
+        --     b = { "<cmd>ObsidianBacklinks<cr>", "Find Backlinks" },
+        --     c = { "<cmd>ObsidianCheck<cr>", "Check" },
+        --     f = { "<cmd>ObsidianFollowLink<cr>", "Follow Link" },
+        --     l = { "<cmd>ObsidianLink<cr>", "Link" },
+        --     n = { "<cmd>ObsidianNew<cr>", "New Note" },
+        --     o = { "<cmd>ObsidianOpen<cr>", "Open" },
+        --     s = { "<cmd>ObsidianQuickSwitch<cr>", "Quick Switch" },
+        --     g = { "<cmd>ObsidianSearch<cr>", "Search" },
+        --     t = { "<cmd>ObsidianToday<cr>", "Open Today" },
+        --     y = { "<cmd>ObsidianYesterday<cr>", "Open Yesterday" },
+        --     m = { "<cmd>ObsidianTemplate<cr>", "Add Template" },
+        -- },
         w = {
             name = "Workspace",
             n = { "<cmd>Neorg workspace notes<cr>", "Notes workspace" },
