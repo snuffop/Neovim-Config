@@ -252,6 +252,22 @@ local mappings = {
             n = { "<cmd>Neorg workspace notes<cr>", "Notes workspace" },
             j = { "<cmd>Neorg workspace joyent<cr>", "Joyent workspace" },
         },
+        z = {
+            name = "Zettelkasten",
+            I = { "<cmd>ZkIndex<cr>", "ZK Index"},
+            N = { "<cmd>ZkNew<cr>", "ZK New"},
+            c = { "<cmd>ZkCd<cr>", "ZK CD"},
+            n = { "<cmd>ZkNotes<cr>", "ZK Notes Picker"},
+            b = { "<cmd>ZkBacklinks<cr>", "ZK Backlinks"},
+            l = { "<cmd>ZkLinks<cr>", "ZK Links"},
+            i = { "<cmd>ZkInsertLink<cr>", "ZK Insert Links"},
+            j = {
+                name = "Journals",
+                j = {"<cmd>ZkNew { dir = 'journals', date = 'today' }<cr>", "ZK Journal Today" },
+                y = {"<cmd>ZkNew { dir = 'journals', date = 'yesterday' }<cr>", "ZK Journal Yesterday" },
+                t = {"<cmd>ZkNew { dir = 'journals', date = 'tomorrow' }<cr>", "ZK Journal Tomorrow" },
+            },
+        },
     },
 
     o = {

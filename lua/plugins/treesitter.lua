@@ -48,7 +48,7 @@ return {
             },
             highlight = {
                 enable = true, -- false will disable the whole extension
-                additional_vim_regex_highlighting = false,
+                additional_vim_regex_highlighting = { "markdown" },
             },
             tree_docs = {
                 enable = true,

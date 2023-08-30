@@ -68,6 +68,12 @@ return {
                     require('telescope').load_extension("project")
                 end,
             },
+            {
+                'olacin/telescope-cc.nvim',
+                config = function()
+                    require('telescope').load_extension("conventional_commits")
+                end,
+            },
             config = function()
                 local project_actions = require("telescope._extensions.project.actions")
                 require('telescope').setup {
