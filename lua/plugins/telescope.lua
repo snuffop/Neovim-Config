@@ -69,6 +69,12 @@ return {
                 end,
             },
             {
+                'elpiloto/telescope-vimwiki.nvim',
+                config = function()
+                    require('telescope').load_extension("vimwiki")
+                end,
+            },
+            {
                 'olacin/telescope-cc.nvim',
                 config = function()
                     require('telescope').load_extension("conventional_commits")

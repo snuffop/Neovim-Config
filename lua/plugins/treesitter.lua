@@ -3,8 +3,12 @@ return {
     {
         'nvim-treesitter/nvim-treesitter',
         lazy = false,
-        build = {'do', ':TSUPdate'},
+        build = {':TSUPdate'},
         opts = {
+            context_commentstring = {
+                enable = true,
+                enable_autocmd = false,
+            },
             ensure_installed = {
                 "bash",
                 "c",
@@ -56,6 +60,9 @@ return {
             autopairs = {
                 enable = true,
             },
+            autotag = {
+                enable = true,
+            }
         }
     },
 

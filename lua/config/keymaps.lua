@@ -331,8 +331,7 @@ local mappings = {
         u = { "<cmd>UndotreeToggle<cr>", "undo tree" },
     },
 
-
-    w = {
+    W = {
         name = "+Windows",
         h = { '<C-w>|', 'Maximize window horizontally (|)' },
         v = { '<C-w>_', 'Maximize window vertically (_)' },

@@ -21,6 +21,7 @@ vim.opt.showcmdloc = "statusline"
 vim.opt.signcolumn = "yes"
 vim.opt.smartcase = true
 vim.opt.smartindent = true
+vim.opt.smarttab = true
 vim.opt.softtabstop = 4
 vim.opt.spell = false                                  -- use F3 to toggle
 vim.opt.spelllang = 'en_us'
