@@ -9,11 +9,14 @@ return {
                     syntax = 'markdown',
                     ext = '.md',
                     ignoreFolders = { 'node_modules', '.git' },
-
                 }
             }
             vim.g.vimwiki_markdown_link_ext = 1
         end,
+    },
+    {
+        'mattn/calendar-vim',
+        lazy = false,
     },
     {
         'michal-h21/vimwiki-sync',
@@ -29,5 +32,5 @@ return {
         init = function()
             vim.g.taskwiki_markup_syntax = 'markdown'
         end,
-    }
+    },
 }

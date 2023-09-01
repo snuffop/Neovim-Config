@@ -335,8 +335,9 @@ local mappings = {
     w = {
         name = 'Wiki',
         f =     { "<cmd>Telescope vimwiki<CR>", "Vimwiki files"},
-        p =     { "<cmd>lua require('telescope').extensions.vimwiki.vimwiki()<cr>", "Search Page Names"},
-        ["/"] = { "<cmd> Telescope vimwiki live_grep<CR>", "Live Grep"},
+        p =     { "<cmd>lua require('telescope').extensions.vimwiki.vimwiki()<cr>", "Vimwiki Search Page Names"},
+        l =     { "<cmd>Telescope vimwiki link<CR>", "Vimwiki Insert Link"},
+        ["/"] = { "<cmd> Telescope vimwiki live_grep<CR>", "Vimwiki Live Grep"},
     },
 
     W = {
