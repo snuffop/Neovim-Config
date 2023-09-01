@@ -16,9 +16,11 @@ return {
         end,
     },
     {
-        'michal-h21/vim-zettel',
+        'michal-h21/vimwiki-sync',
         lazy = false,
         init = function()
+            vim.g.vimwiki_sync_branch = "main"
+            vim.g.vimwiki_sync_commit_message = 'Auto commit + push. %c'
         end,
     },
     {

@@ -121,6 +121,7 @@ local mappings = {
         name = "+Code",
         m = { "<cmd>:Mason<cr>", "Mason" },
         i = { "<cmd>:Inspect<cr>", "TS Inspect" },
+        t = { "<cmd>:TagbarToggle<cr>", "Tagbar toggle" },
         I = { "<cmd>:TSInstallInfo<cr>", "TS Install Info" },
     },
 

@@ -1,7 +1,7 @@
 return {
     {
         'saadparwaiz1/cmp_luasnip', -- snippet completions
-        lasy = false,
+        lazy = false,
     },
 
     {
