@@ -331,6 +331,13 @@ local mappings = {
         u = { "<cmd>UndotreeToggle<cr>", "undo tree" },
     },
 
+    w = {
+        name = 'Wiki',
+        f =     { "<cmd>Telescope vimwiki<CR>", "Vimwiki files"},
+        p =     { "<cmd>lua require('telescope').extensions.vimwiki.vimwiki()<cr>", "Search Page Names"},
+        ["/"] = { "<cmd> Telescope vimwiki live_grep<CR>", "Live Grep"},
+    },
+
     W = {
         name = "+Windows",
         h = { '<C-w>|', 'Maximize window horizontally (|)' },

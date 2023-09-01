@@ -3,7 +3,7 @@ return {
     {
         'nvim-treesitter/nvim-treesitter',
         lazy = false,
-        build = {':TSUPdate'},
+        build = {':TSUpdate'},
         opts = {
             context_commentstring = {
                 enable = true,

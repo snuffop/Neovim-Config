@@ -17,13 +17,15 @@ return {
     },
     {
         'michal-h21/vim-zettel',
-        config = function()
+        lazy = false,
+        init = function()
         end,
     },
     {
-        'tbabej/taskwiki',
-        config = function()
-
+        'tools-life/taskwiki',
+        lazy = false,
+        init = function()
+            vim.g.taskwiki_markup_syntax = 'markdown'
         end,
     }
 }
