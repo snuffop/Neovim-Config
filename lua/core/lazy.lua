@@ -31,6 +31,9 @@ local plugins = {
 	-- Better Escape
 	{ "max397574/better-escape.nvim" },
 
+	-- Calendar
+	{ "mattn/calendar-vim" },
+
 	-- Commnets Plugins
 	{ "numToStr/Comment.nvim" },
 
@@ -51,6 +54,13 @@ local plugins = {
 
 	-- Colorizer.lua
 	{ "norcalli/nvim-colorizer.lua" },
+
+	{
+		"tools-life/taskwiki",
+		init = function()
+			vim.g.taskwiki_markup_syntax = "markdown"
+		end,
+	},
 
 	-- Terminal
 	{ "akinsho/toggleterm.nvim" },
@@ -259,11 +269,40 @@ local plugins = {
 	-- Neovim Tagbar
 	{ "preservim/tagbar" },
 
+	-- Project
+	{ "ahmedkhalf/project.nvim" },
+
 	-- VIM bbye
 	{ "moll/vim-bbye" },
+	--
+	-- vimwiki
+	{
+		"vimwiki/vimwiki",
+		init = function()
+			vim.g.vimwiki_list = {
+				{
+					path = "~/Nextcloud/Vimwiki",
+					syntax = "markdown",
+					ext = ".md",
+					ignoreFolders = { "node_modules", ".git" },
+				},
+			}
+			vim.g.vimwiki_markdown_link_ext = 1
+		end,
+	},
+	{
+		"michal-h21/vimwiki-sync",
+		init = function()
+			vim.g.vimwiki_sync_branch = "main"
+			vim.g.vimwiki_sync_commit_message = "Auto commit + push. %c"
+		end,
+	},
 
 	-- Wakatime
-	{ "wakatime/vim-wakatime" },
+	{
+		"wakatime/vim-wakatime",
+		lazy = false,
+	},
 
 	-- ==============================================================
 } -- end of plugin line
