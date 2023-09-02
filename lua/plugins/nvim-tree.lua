@@ -5,11 +5,60 @@ if not installed then
 	return
 end
 
+local api = require("nvim-tree.api")
+
+local function edit_or_open()
+	local node = api.tree.get_node_under_cursor()
+
+	if node.nodes ~= nil then
+		-- expand or collapse folder
+		api.node.open.edit()
+	else
+		-- open file
+		api.node.open.edit()
+		-- Close the tree if file was opened
+		api.tree.close()
+	end
+end
+
+-- open as vsplit on current node
+local function vsplit_preview()
+	local node = api.tree.get_node_under_cursor()
+
+	if node.nodes ~= nil then
+		-- expand or collapse folder
+		api.node.open.edit()
+	else
+		-- open file as vsplit
+		api.node.open.vertical()
+	end
+
+	-- Finally refocus on tree if it was lost
+	api.tree.focus()
+end
+
+local function my_on_attach(bufnr)
+	local function opts(desc)
+		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+	end
+	-- default mappings
+	api.config.mappings.default_on_attach(bufnr)
+	-- custom mappings
+	vim.keymap.set("n", "<C-t>", api.tree.change_root_to_parent, opts("Up"))
+	vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
+	vim.keymap.set("n", "L", edit_or_open, opts("Edit Or Open"))
+	vim.keymap.set("n", "l", vsplit_preview, opts("Vsplit Preview"))
+	vim.keymap.set("n", "H", api.tree.close, opts("Close"))
+	vim.keymap.set("n", "h", api.tree.collapse_all, opts("Collapse All"))
+end
+
 -- Setting up nvim-tree
 NvimTree.setup({
 	auto_reload_on_write = true,
+	sort_by = "case_sensitive",
+
 	view = {
-		width = 30,
+		width = 35,
 		side = "left",
 		number = true,
 		relativenumber = true,
@@ -20,7 +69,7 @@ NvimTree.setup({
 
 	renderer = {
 		add_trailing = false,
-		group_empty = false,
+		group_empty = true,
 		highlight_git = false,
 		full_name = false,
 		highlight_opened_files = "none",
@@ -97,7 +146,6 @@ NvimTree.setup({
 			trash = true,
 		},
 	},
-})
 
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+	on_attach = my_on_attach,
+})

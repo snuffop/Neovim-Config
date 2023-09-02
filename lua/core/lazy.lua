@@ -86,6 +86,12 @@ local plugins = {
 		event = "InsertEnter",
 	},
 
+	-- OIL
+	{
+		"stevearc/oil.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",
@@ -185,6 +191,14 @@ local plugins = {
 	{
 		"nvim-tree/nvim-tree.lua",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
+		cmd = {
+
+			"NvimTreeOpen",
+			"NvimTreeToggle",
+			"NvimTreeFocus",
+			"NvimTreeFileFile",
+			"NvimTreeCollapse",
+		},
 	},
 
 	-- Buffer Line

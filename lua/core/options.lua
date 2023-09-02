@@ -9,8 +9,8 @@ vim.o.spelllang = "en_us"
 
 -- Files and Others
 -- vim.o.fileencoding = 'utf-8' -- File Encoding
-vim.g.loaded_netrw = 1 -- Helps opening links in the internet (probabilly -_-)
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1 -- Helps opening links in the internet (probabilly -_-)
+-- vim.g.loaded_netrwPlugin = 1
 vim.o.autochdir = true
 vim.cmd("filetype plugin indent on")
 vim.o.shortmess = vim.o.shortmess .. "c"
@@ -96,7 +96,3 @@ vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 -- Markdown
 vim.g.markdown_recommended_style = 0
 vim.g.loaded_perl_provider = 0
-
--- Netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
