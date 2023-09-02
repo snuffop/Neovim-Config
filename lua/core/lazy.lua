@@ -96,6 +96,13 @@ local plugins = {
 		event = "InsertEnter",
 	},
 
+	-- nvim surround
+	{
+		"kylechui/nvim-surround",
+		version = "*",
+		event = "VeryLazy",
+	},
+
 	-- OIL
 	{
 		"stevearc/oil.nvim",
@@ -272,6 +279,15 @@ local plugins = {
 	-- Project
 	{ "ahmedkhalf/project.nvim" },
 
+	-- Staruptime
+	{
+		"dstein64/vim-startuptime",
+		cmd = "StartupTime",
+		init = function()
+			vim.g.startuptime_tries = 10
+		end,
+	},
+
 	-- VIM bbye
 	{ "moll/vim-bbye" },
 	--
@@ -302,6 +318,12 @@ local plugins = {
 	{
 		"wakatime/vim-wakatime",
 		lazy = false,
+	},
+
+	{
+		"Wansmer/treesj",
+		keys = { "<space>m", "<space>j", "<space>s" },
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
 	},
 
 	-- ==============================================================
