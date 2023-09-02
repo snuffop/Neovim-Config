@@ -14,6 +14,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+	-- ANSIBLE
+	{ "pearofducks/ansible-vim" },
 	--Dash Board
 	{
 		"goolord/alpha-nvim",
@@ -35,6 +37,12 @@ local plugins = {
 	-- Colorscheme
 	{ "mofiqul/dracula.nvim" },
 
+	-- Chezmoi
+	{ "alker0/chezmoi.vim" },
+
+	-- Cursor Line
+	{ "yamatsum/nvim-cursorline" },
+
 	-- For Transparency
 	{ "xiyaowong/transparent.nvim" },
 
@@ -51,14 +59,7 @@ local plugins = {
 	{ "lukas-reineke/indent-blankline.nvim" },
 
 	-- GitSign Plugins
-	{
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("gitsigns").setup({
-				current_line_blame = true,
-			})
-		end,
-	},
+	{ "lewis6991/gitsigns.nvim" },
 
 	-- Treesitter
 	{
@@ -168,6 +169,17 @@ local plugins = {
 			},
 		},
 	},
+	-- NeoGit
+	{
+		"NeogitOrg/neogit",
+		cmd = "Neogit",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"sindrets/diffview.nvim",
+			"nvim-telescope/telescope.nvim",
+			"ibhagwan/fzf-lua",
+		},
+	},
 
 	-- NeoVIMTree
 	{
@@ -198,7 +210,14 @@ local plugins = {
 	-- Snipit Engine
 	{
 		"L3MON4D3/LuaSnip",
-		dependencies = { "rafamadriz/friendly-snippets" },
+		build = "make install_jsregexp",
+		version = "2.*",
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+			"molleweide/LuaSnip-snippets.nvim",
+			"gisphm/vim-gitignore",
+			"numToStr/Comment.nvim",
+		},
 	},
 
 	-- Lsp Saga
@@ -225,6 +244,13 @@ local plugins = {
 
 	-- Neovim Tagbar
 	{ "preservim/tagbar" },
+
+	-- VIM bbye
+	{ "moll/vim-bbye" },
+
+	-- Wakatime
+	{ "wakatime/vim-wakatime" },
+
 	-- ==============================================================
 } -- end of plugin line
 

@@ -8,7 +8,7 @@ vim.o.spell = false
 vim.o.spelllang = "en_us"
 
 -- Files and Others
-vim.o.fileencoding = "utf-8" -- File Encoding
+-- vim.o.fileencoding = 'utf-8' -- File Encoding
 vim.g.loaded_netrw = 1 -- Helps opening links in the internet (probabilly -_-)
 vim.g.loaded_netrwPlugin = 1
 vim.o.autochdir = true

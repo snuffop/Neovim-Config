@@ -26,9 +26,22 @@ end
 -- luasnip.loaders.from_vscode
 local installed, VScodeSnippets = pcall(require, "luasnip.loaders.from_vscode")
 if not installed then
-	vim.notify("Plugin 'luasnip' is not installed")
+	vim.notify("Plugin 'luasnip_vscode' is not installed")
 	return
 end
+
+local installed, SnipMateSnippets = pcall(require, "luasnip.loaders.from_snipmate")
+if not installed then
+	vim.notify("Plugin 'luasnip_snipmate' is not installed")
+	return
+end
+
+local installed, LuaSnippets = pcall(require, "luasnip.loaders.from_lua")
+if not installed then
+	vim.notify("Plugin 'luasnip_lua' is not installed")
+	return
+end
+
 -- ###################################################################################################
 local has_words_before = function()
 	unpack = unpack or table.unpack
@@ -36,6 +49,12 @@ local has_words_before = function()
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 -- ###################################################################################################
+
+LuaSnip.setup({
+	history = true,
+	updateevents = "TextChanged,TextChangedI",
+	enable_autosnippets = true,
+})
 
 -- Set up nvim-cmp.
 
@@ -100,3 +119,5 @@ Cmp.setup.cmdline(":", {
 
 -- for vscode like snippets
 VScodeSnippets.lazy_load()
+SnipMateSnippets.lazy_load()
+LuaSnippets.lazy_load()
