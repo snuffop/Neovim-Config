@@ -1,15 +1,21 @@
---- Core plugins to split out
-
-return {
-    'nvim-lua/plenary.nvim', -- Useful lua functions used by lots of plugins
-    'moll/vim-bbye', -- Allow for Bdelete and Bwipeout commands
-
-    -- Wakatime 
-    'wakatime/vim-wakatime',
-
-    -- Ansible 
-    'pearofducks/ansible-vim',
-
-}
-
-
+require("plugins.alpha-nvim")
+require("plugins.autopairs")
+require("plugins.better_escape")
+require("plugins.dracula")
+require("plugins.bufferline")
+require("plugins.cmp")
+require("plugins.colorizer")
+require("plugins.diagonistic-signs")
+require("plugins.indent-blankline")
+require("plugins.lsp-saga")
+require("plugins.lsp")
+require("plugins.lualine")
+require("plugins.notify")
+require("plugins.null-ls")
+require("plugins.comments")
+require("plugins.nvim-tree")
+require("plugins.telescope")
+require("plugins.toggleterm")
+require("plugins.transparent-nvim")
+require("plugins.treesitter")
+require("plugins.whichkey")

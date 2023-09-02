@@ -1,82 +1,103 @@
+-- requring plugin
+local installed, NvimTree = pcall(require, "nvim-tree")
+if not installed then
+	vim.notify("Plugin 'nvim-tree' is not installed")
+	return
+end
 
-return {
-    {
-        'nvim-tree/nvim-tree.lua',
-        cmd = {
-            "NvimTreeOpen",
-            "NvimTreeToggle",
-            "NvimTreeFocus",
-            "NvimTreeFileFile",
-            "NvimTreeCollapse",
-        },
-        config = function()
+-- Setting up nvim-tree
+NvimTree.setup({
+	auto_reload_on_write = true,
+	view = {
+		width = 30,
+		side = "left",
+		number = true,
+		relativenumber = true,
+	},
+	filters = {
+		dotfiles = true,
+	},
 
-            local api = require("nvim-tree.api")
+	renderer = {
+		add_trailing = false,
+		group_empty = false,
+		highlight_git = false,
+		full_name = false,
+		highlight_opened_files = "none",
+		highlight_modified = "none",
+		root_folder_label = ":~:s?$?/..?",
+		indent_width = 2,
 
-            local function edit_or_open()
-                local node = api.tree.get_node_under_cursor()
+		indent_markers = {
+			enable = true, -- enables the tree like line
+			inline_arrows = true,
+			icons = {
+				corner = "└",
+				edge = "│",
+				item = "│",
+				bottom = "─",
+				none = " ",
+			},
+		},
 
-                if node.nodes ~= nil then
-                    -- expand or collapse folder
-                    api.node.open.edit()
-                else
-                    -- open file
-                    api.node.open.edit()
-                    -- Close the tree if file was opened
-                    api.tree.close()
-                end
-            end
+		icons = {
+			webdev_colors = true,
+			git_placement = "before",
+			modified_placement = "after",
+			padding = " ",
+			symlink_arrow = " ➛ ",
+			show = {
+				file = true,
+				folder = true,
+				folder_arrow = true,
+				git = true,
+				modified = true,
+			},
 
-            -- open as vsplit on current node
-            local function vsplit_preview()
-                local node = api.tree.get_node_under_cursor()
+			glyphs = {
+				default = "",
+				symlink = "",
+				bookmark = "",
+				modified = "●",
+				folder = {
+					arrow_closed = "",
+					arrow_open = "",
+					default = "",
+					open = "",
+					empty = "",
+					empty_open = "",
+					symlink = "",
+					symlink_open = "",
+				},
 
-                if node.nodes ~= nil then
-                    -- expand or collapse folder
-                    api.node.open.edit()
-                else
-                    -- open file as vsplit
-                    api.node.open.vertical()
-                end
+				git = {
+					unstaged = "✗",
+					staged = "✓",
+					unmerged = "",
+					renamed = "➜",
+					untracked = "★",
+					deleted = "",
+					ignored = "◌",
+				},
+			},
+		}, -- end of icons rendering
 
-                -- Finally refocus on tree if it was lost
-                api.tree.focus()
-            end
+		special_files = {
+			"Cargo.toml",
+			"Makefile",
+			"README.md",
+			"readme.md",
+		},
+		symlink_destination = true,
+	}, -- end of rendering
 
-            local function my_on_attach(bufnr)
+	ui = {
+		confirm = {
+			remove = true,
+			trash = true,
+		},
+	},
+})
 
-                local function opts(desc)
-                    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-                end
-                -- default mappings
-                api.config.mappings.default_on_attach(bufnr)
-                -- custom mappings
-                vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent,    opts('Up'))
-                vim.keymap.set('n', '?',     api.tree.toggle_help,              opts('Help'))
-                vim.keymap.set("n", "L",     edit_or_open,                      opts("Edit Or Open"))
-                vim.keymap.set("n", "l",     vsplit_preview,                    opts("Vsplit Preview"))
-                vim.keymap.set("n", "H",     api.tree.close,                    opts("Close"))
-                vim.keymap.set("n", "h",     api.tree.collapse_all,             opts("Collapse All"))
-            end
-
-
-            require("nvim-tree").setup({
-                sort_by = "case_sensitive",
-                live_filter = {
-                    prefix = "[FILTER]: ",
-                    always_show_folders = false,
-                },
-                view = {
-                    width = 35,
-                },
-                renderer = {
-                    group_empty = true,
-                },
-                filters = {
-                    dotfiles = true,
-                },
-                on_attach = my_on_attach,
-            })
-        end,
-    }
-}
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

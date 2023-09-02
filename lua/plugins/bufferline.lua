@@ -1,9 +1,11 @@
-return {
-    'akinsho/bufferline.nvim',
-    lazy = false,
-    opts = {
-        options = {
-            separator_style = 'slant',
-        }
-    }
-}
+local installed, BufferLine = pcall(require, "bufferline")
+if not installed then
+	vim.notify("Plugin 'bufferline' not installed")
+	return
+end
+
+BufferLine.setup({
+	options = {
+		separator_style = "slant",
+	},
+})
