@@ -25,7 +25,7 @@ local plugins = {
 	-- Vim Notification Popup
 	{ "rcarriga/nvim-notify" },
 
-	-- Auto Formatting
+	-- Auto Formatting,
 	{ "jose-elias-alvarez/null-ls.nvim" },
 
 	-- Better Escape
@@ -39,6 +39,11 @@ local plugins = {
 
 	-- Colorscheme
 	{ "mofiqul/dracula.nvim" },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+	},
 
 	-- Chezmoi
 	{ "alker0/chezmoi.vim" },

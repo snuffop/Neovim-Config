@@ -21,7 +21,7 @@ local get_color = require("lualine.utils.utils").extract_highlight_colors
 LuaLine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "dracula-nvim",
+		theme = "catppuccin",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
