@@ -22,9 +22,6 @@ local plugins = {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
-	-- Vim Notification Popup
-	{ "rcarriga/nvim-notify" },
-
 	-- Auto Formatting,
 	{ "jose-elias-alvarez/null-ls.nvim" },
 
@@ -60,6 +57,16 @@ local plugins = {
 	-- Colorizer.lua
 	{ "norcalli/nvim-colorizer.lua" },
 
+	-- Noice
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+	},
+
+	-- taskwiki
 	{
 		"tools-life/taskwiki",
 		init = function()

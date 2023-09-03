@@ -2,14 +2,11 @@
 
 vim.opt.termguicolors = true
 vim.o.pumheight = 10 -- Max items to show in pop up menu
-vim.o.cmdheight = 1 -- Max items to show in command menu
+vim.o.cmdheight = 1  -- Max items to show in command menu
 vim.o.spell = false
 vim.o.spelllang = "en_us"
 
 -- Files and Others
--- vim.o.fileencoding = 'utf-8' -- File Encoding
--- vim.g.loaded_netrw = 1 -- Helps opening links in the internet (probabilly -_-)
--- vim.g.loaded_netrwPlugin = 1
 vim.o.autochdir = true
 vim.cmd("filetype plugin indent on")
 vim.o.shortmess = vim.o.shortmess .. "c"
@@ -82,15 +79,9 @@ vim.opt.fillchars = { eob = " " }
 
 vim.opt.formatoptions:remove({ "c", "r", "o" }) -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
 
--- Nvim Notify
-vim.notify = require("notify")
 
 -- Auto Formatting and LSP settings
 vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
-
---vim.o.isfname:append("@-@")
---vim.o.iskeyword:append("-") -- hyphenated words recognized by searches
--- vim.o.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 
 -- Markdown
 vim.g.markdown_recommended_style = 0
