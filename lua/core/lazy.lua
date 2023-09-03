@@ -25,7 +25,7 @@ local plugins = {
 	-- Auto Formatting,
 	{ "jose-elias-alvarez/null-ls.nvim" },
 
-	-- Better Escape
+	-- Better Escapej
 	{ "max397574/better-escape.nvim" },
 
 	-- Calendar
