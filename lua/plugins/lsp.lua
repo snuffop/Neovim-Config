@@ -38,7 +38,7 @@ end
 -- cmp_nvim_lsp
 local installed, CmpNvimLsp = pcall(require, "cmp_nvim_lsp")
 if not installed then
-    vim.notify("Plugin 'mason-tool-installer' not installed ")
+    vim.notify("Plugin 'mason-tool-installer' not installed" )
     return
 end
 

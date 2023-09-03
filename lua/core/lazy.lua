@@ -226,6 +226,7 @@ local plugins = {
 	-- Buffer Line
 	{
 		"akinsho/bufferline.nvim",
+		after = "catppuccin",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	-- Lua Line
@@ -292,6 +293,9 @@ local plugins = {
 			vim.g.startuptime_tries = 10
 		end,
 	},
+
+	-- Trouble
+	{ "folke/trouble.nvim" },
 
 	-- VIM bbye
 	{ "moll/vim-bbye" },

@@ -5,7 +5,5 @@ if not installed then
 end
 
 BufferLine.setup({
-	options = {
-		separator_style = "slant",
-	},
+	highlights = require("catppuccin.groups.integrations.bufferline").get(),
 })
