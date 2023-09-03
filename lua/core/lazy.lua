@@ -63,6 +63,7 @@ local plugins = {
 		event = "VeryLazy",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
 		},
 	},
 
@@ -113,6 +114,12 @@ local plugins = {
 		"kylechui/nvim-surround",
 		version = "*",
 		event = "VeryLazy",
+	},
+
+	-- Org mode
+	{
+		"nvim-orgmode/orgmode",
+		ft = "org",
 	},
 
 	-- OIL

@@ -59,6 +59,7 @@ LuaSnip.setup({
 -- Set up nvim-cmp.
 
 Cmp.setup({
+	preselect = "item",
 	snippet = {
 		-- REQUIRED - you must specify a snippet engine
 		expand = function(args)
@@ -81,11 +82,16 @@ Cmp.setup({
 
 	-- Managing Sources for completions
 	sources = Cmp.config.sources({
+		{ name = "path" },
+		{ name = "neorg" },
 		{ name = "nvim_lsp" },
-		{ name = "luasnip" }, -- For luasnip users.
-	}, { { name = "buffer" } }),
-
+		{ name = "luasnip", keyword_length = 2 }, -- For luasnip users.
+		{ name = "orgmode" },
+		{ name = "buffer", keyword_length = 3 },
+		{ name = "nvim_lua" },
+	}),
 	formatting = {
+		fields = { "kind", "abbr", "menu" },
 		format = LspKind.cmp_format({ with_text = true, maxwidth = 50 }),
 	},
 })
