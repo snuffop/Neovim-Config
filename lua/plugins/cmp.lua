@@ -1,5 +1,3 @@
-vim.g.completeopt = "menu,menuone,noselect,noinsert"
-
 -- ###################################################################################################
 -- requring necessary plugins
 -- nvim-cmp
@@ -42,6 +40,34 @@ if not installed then
 	return
 end
 
+local kind_icons = {
+	Text = "",
+	Method = "m",
+	Function = "",
+	Constructor = "",
+	Field = "",
+	Variable = "",
+	Class = "",
+	Interface = "",
+	Module = "",
+	Property = "",
+	Unit = "",
+	Value = "",
+	Enum = "",
+	Keyword = "",
+	Snippet = "",
+	Color = "",
+	File = "",
+	Reference = "",
+	Folder = "",
+	EnumMember = "",
+	Constant = "",
+	Struct = "",
+	Event = "",
+	Operator = "",
+	TypeParameter = "",
+}
+
 -- ###################################################################################################
 local has_words_before = function()
 	unpack = unpack or table.unpack
@@ -73,6 +99,9 @@ Cmp.setup({
 	},
 
 	mapping = Cmp.mapping.preset.insert({
+		["<C-p>"] = Cmp.mapping.select_prev_item(),
+		["<C-n>"] = Cmp.mapping.select_next_item(),
+		["<A-u>"] = Cmp.mapping.confirm({ select = true }),
 		["<C-b>"] = Cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = Cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = Cmp.mapping.complete(),
@@ -82,17 +111,30 @@ Cmp.setup({
 
 	-- Managing Sources for completions
 	sources = Cmp.config.sources({
-		{ name = "path" },
+		{ name = "luasnip" }, -- For luasnip users.
 		{ name = "neorg" },
-		{ name = "nvim_lsp" },
-		{ name = "luasnip", keyword_length = 2 }, -- For luasnip users.
-		{ name = "orgmode" },
-		{ name = "buffer", keyword_length = 3 },
+		{ name = "nvim_lsp", max_item_count = 6 },
 		{ name = "nvim_lua" },
+		{ name = "path" },
+		{ name = "buffer", max_item_count = 6 },
 	}),
+
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
-		format = LspKind.cmp_format({ with_text = true, maxwidth = 50 }),
+		-- format = LspKind.cmp_format({ with_text = true, maxwidth = 50 }),
+		format = function(entry, vim_item)
+			-- Kind icons
+			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+			vim_item.menu = ({
+				luasnip = "LuaSnip",
+				nvim_lua = "[NVim Lua]",
+				nvim_lsp = "[LSP]",
+				buffer = "[Buffer]",
+				path = "[Path]",
+			})[entry.source.name]
+			return vim_item
+		end,
 	},
 })
 
@@ -126,4 +168,4 @@ Cmp.setup.cmdline(":", {
 -- for vscode like snippets
 VScodeSnippets.lazy_load()
 SnipMateSnippets.lazy_load()
-LuaSnippets.lazy_load()
+-- LuaSnippets.lazy_load({ paths = { "~/.config/nvim/snippets/" } })
