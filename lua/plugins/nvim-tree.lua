@@ -49,7 +49,7 @@ local function my_on_attach(bufnr)
 	vim.keymap.set("n", "L", edit_or_open, opts("Edit Or Open"))
 	vim.keymap.set("n", "l", vsplit_preview, opts("Vsplit Preview"))
 	vim.keymap.set("n", "H", api.tree.close, opts("Close"))
-	vim.keymap.set("n", "h", api.tree.collapse_all, opts("Collapse All"))
+	vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
 end
 
 -- Setting up nvim-tree
