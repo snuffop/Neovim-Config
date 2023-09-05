@@ -94,8 +94,26 @@ Telescope.setup({
 			default_selection_index = 2,
 			mappings = {},
 		},
+		fzf = {
+			fuzzy = true,
+			override_generic_sorter = true,
+			override_file_sorter = true,
+			case_mode = "smart_case",
+		},
 		zoxide = {
 			prompt_title = "zoxide: ",
 		},
 	},
 })
+
+Telescope.load_extension("env")
+Telescope.load_extension("glyph")
+Telescope.load_extension("find_pickers")
+Telescope.load_extension("file_browser")
+Telescope.load_extension("media_files")
+Telescope.load_extension("luasnip")
+Telescope.load_extension("zoxide")
+Telescope.load_extension("fzf")
+Telescope.load_extension("lazy")
+Telescope.load_extension("project")
+Telescope.load_extension("vimwiki")

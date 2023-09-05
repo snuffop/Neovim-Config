@@ -35,3 +35,4 @@ vim.cmd([[
 --   autocmd!
 --   autocmd BufWritePre * lua vim.lsp.buf.formatting()
 -- augroup end
+--

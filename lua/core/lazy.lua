@@ -133,84 +133,24 @@ local plugins = {
 		"nvim-telescope/telescope.nvim",
 		-- tag = "0.1.1",
 		dependencies = {
-			{
-				"nvim-lua/plenary.nvim",
-				{
-					"LinArcX/telescope-env.nvim",
-					config = function()
-						require("telescope").load_extension("env")
-					end,
-				},
-				{
-					"ghassan0/telescope-glyph.nvim",
-					config = function()
-						require("telescope").load_extension("glyph")
-					end,
-				},
-				{
-					"keyvchan/telescope-find-pickers.nvim",
-					config = function()
-						require("telescope").load_extension("find_pickers")
-					end,
-				},
-				{
-					"nvim-telescope/telescope-file-browser.nvim",
-					config = function()
-						require("telescope").load_extension("file_browser")
-					end,
-				},
-				{
-					"nvim-telescope/telescope-media-files.nvim",
-				},
-				config = function()
-					require("telescope").load_extension("media_files")
-				end,
-			},
-			{
-				"benfowler/telescope-luasnip.nvim",
-				config = function()
-					require("telescope").load_extension("luasnip")
-				end,
-			},
-			{
-				"jvgrootveld/telescope-zoxide",
-				config = function()
-					require("telescope").load_extension("zoxide")
-				end,
-			},
+			"nvim-lua/plenary.nvim",
+			"LinArcX/telescope-env.nvim",
+			"ghassan0/telescope-glyph.nvim",
+			"keyvchan/telescope-find-pickers.nvim",
+			"nvim-telescope/telescope-file-browser.nvim",
+			"nvim-telescope/telescope-media-files.nvim",
+			"benfowler/telescope-luasnip.nvim",
+			"jvgrootveld/telescope-zoxide",
+			"tsakirist/telescope-lazy.nvim",
+			"nvim-telescope/telescope-project.nvim",
+			"elpiloto/telescope-vimwiki.nvim",
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
 				build = "make",
-				config = function()
-					require("telescope").load_extension("fzf")
-				end,
-			},
-			{
-				"tsakirist/telescope-lazy.nvim",
-				config = function()
-					require("telescope").load_extension("lazy")
-				end,
-			},
-			{
-				"nvim-telescope/telescope-project.nvim",
-				config = function()
-					require("telescope").load_extension("project")
-				end,
-			},
-			{
-				"elpiloto/telescope-vimwiki.nvim",
-				config = function()
-					require("telescope").load_extension("vimwiki")
-				end,
-			},
-			{
-				"olacin/telescope-cc.nvim",
-				config = function()
-					require("telescope").load_extension("conventional_commits")
-				end,
 			},
 		},
 	},
+
 	-- NeoGit
 	{
 		"NeogitOrg/neogit",
