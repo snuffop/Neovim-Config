@@ -76,14 +76,43 @@ local has_words_before = function()
 end
 -- ###################################################################################################
 
+local types = require "luasnip.util.types"
+
 LuaSnip.setup({
 	history = true,
 	updateevents = "TextChanged,TextChangedI",
 	enable_autosnippets = true,
+    ext_opts = {
+        [types.choiceNode] = {
+            active = {
+                virt_text = { { " « ", "NonTest" } },
+            },
+        },
+    },
 })
 
--- Set up nvim-cmp.
+-- Luasnip keymap
+vim.keymap.set({ "i", "s" }, "<c-s>", function ()
+    if LuaSnip.expand_or_jumpable() then
+        LuaSnip.expand_or_jump()
+    end
+end,{ silent = true })
 
+vim.keymap.set({ "i", "s" }, "<c-S>", function ()
+    if LuaSnip.jumpable(-1) then
+        LuaSnip.jump(-1)
+    end
+end, {silent = true })
+
+-- vim.keymap.set( "i", "<c-l>", function ()
+--     if LuaSnip.choice_active() then
+--         LuaSnip.change_choice(1)
+--     end
+-- end)
+
+vim.keymap.set("n", "<leader><leader>s", "<cmd>source ~/.config/nvim/lua/plugins/cmp.lua<CR>")
+
+-- Set up nvim-cmp.
 Cmp.setup({
 	preselect = "item",
 	snippet = {
@@ -169,3 +198,9 @@ Cmp.setup.cmdline(":", {
 VScodeSnippets.lazy_load()
 SnipMateSnippets.lazy_load()
 -- LuaSnippets.lazy_load({ paths = { "~/.config/nvim/snippets/" } })
+LuaSnip.snippets = {
+    all = {
+        LuaSnip.parser.parse_snippet("expand", "-- this is what was expanded!"),
+    },
+}
+

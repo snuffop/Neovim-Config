@@ -70,23 +70,6 @@ end --}}}
 
 -- Start Refactoring --
 
-local mySecondSnippet = s(
-	"MySecond",
-	fmt(
-		[[
-    local {} = function ({})
-{}
-end
-    ]],
-		{
-			i(1, ""),
-			i(2, ""),
-			i(3, ""),
-		}
-	)
-)
-table.insert(snippets, mySecondSnippet)
-
 -- End Refactoring --
 
 return snippets, autosnippets

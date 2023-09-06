@@ -79,10 +79,6 @@ vim.opt.fillchars = { eob = " " }
 
 vim.opt.formatoptions:remove({ "c", "r", "o" }) -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
 
-
--- Auto Formatting and LSP settings
-vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
-
 -- Markdown
 vim.g.markdown_recommended_style = 0
 vim.g.loaded_perl_provider = 0
