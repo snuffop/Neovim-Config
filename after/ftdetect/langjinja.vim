@@ -11,7 +11,7 @@ au BufNewFile,BufRead *.pas.jinja2,*.pas.j2 setf pascaljinja
 au BufNewFile,BufRead *.php.jinja2,*.php.j2 setf phpjinja
 au BufNewFile,BufRead *.pl.jinja2,*.pl.j2 setf perljinja
 au BufNewFile,BufRead *.pro.jinja2,*.pro.j2 setf prologjinja
-au BufNewFile,BufRead *.py.jinja2,*.py.j2 setf pythonjinja
+au BufNewFile,BufRead *.py.jinja2,*.py.j2 setf python.jinja2
 au BufNewFile,BufRead *.rb.jinja2,*.rb.j2 setf rubyjinja
 au BufNewFile,BufRead *.rs.jinja2,*.rs.j2 setf rustjinja
 au BufNewFile,BufRead *.service.jinja2,*.service.j2 setf systemdjinja
@@ -19,7 +19,7 @@ au BufNewFile,BufRead *.sh.jinja2,*.sh.j2 setf shjinja
 au BufNewFile,BufRead *.sql.jinja2,*.sql.j2 setf sqljinja
 au BufNewFile,BufRead *.yml.jinja2,*.yml.j2,*.yaml.j2 setf yamljinja
 au BufNewFile,BufRead Makefile*.jinja2,Makefile*.j2,*.mk.jinja2,*.mk.j2 setf makejinja
-au BufNewFile,BufRead *.cfg.j2 setf nagiosjinja
+au BufNewFile,BufRead *.cfg.j2 setf nagios.jinja2
 " au BufNewFile,BufRead *.cfg.jinja2,*.cfg.j2,*.conf.j2 setf confjinja
 
 au BufNewFile,BufRead hosts setf dosini
