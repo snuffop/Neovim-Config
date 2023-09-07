@@ -45,18 +45,34 @@ local plugins = {
     -- Chezmoi
     { "alker0/chezmoi.vim" },
 
+    -- Leap AVY
+    {
+        "ggandor/leap.nvim",
+    },
+
     -- Cursor Line
     { "yamatsum/nvim-cursorline" },
+
+    -- emmet
+    { "mattn/emmet-vim" },
 
     -- For Transparency
     { "xiyaowong/transparent.nvim" },
 
-    -- Rainbos CSV
-    { "mechatroner/rainbow_csv" },
 
     -- Colorizer.lua
     { "norcalli/nvim-colorizer.lua" },
 
+    -- GitSign Plugins
+    { "lewis6991/gitsigns.nvim" },
+
+    {
+        "m4xshen/hardtime.nvim",
+        dependencies = { 
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim"
+        },
+    },
     -- Noice
     {
         "folke/noice.nvim",
@@ -67,35 +83,11 @@ local plugins = {
         },
     },
 
-    -- taskwiki
-    {
-        "tools-life/taskwiki",
-        init = function()
-            vim.g.taskwiki_markup_syntax = "markdown"
-        end,
-    },
-
-    -- Terminal
-    { "akinsho/toggleterm.nvim" },
-
     -- Indent Line
     { "lukas-reineke/indent-blankline.nvim" },
 
-    -- GitSign Plugins
-    { "lewis6991/gitsigns.nvim" },
-
-    -- Treesitter
-    {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
-        event = "bufWinEnter",
-        dependencies = {
-            "JoosepAlviste/nvim-ts-context-commentstring",
-        },
-    },
-
-    -- Tmux Navigation
-    { "christoomey/vim-tmux-navigator" },
+    -- Rainbos CSV
+    { "mechatroner/rainbow_csv" },
 
     -- nvim-ts-autotag
     { "windwp/nvim-ts-autotag" },
@@ -107,48 +99,6 @@ local plugins = {
     {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
-    },
-
-    -- nvim surround
-    {
-        "kylechui/nvim-surround",
-        version = "*",
-        event = "VeryLazy",
-    },
-
-    -- Org mode
-    {
-        "nvim-orgmode/orgmode",
-        ft = "org",
-    },
-
-    -- OIL
-    {
-        "stevearc/oil.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-    },
-
-    -- Telescope
-    {
-        "nvim-telescope/telescope.nvim",
-        -- tag = "0.1.1",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "LinArcX/telescope-env.nvim",
-            "ghassan0/telescope-glyph.nvim",
-            "keyvchan/telescope-find-pickers.nvim",
-            "nvim-telescope/telescope-file-browser.nvim",
-            "nvim-telescope/telescope-media-files.nvim",
-            "benfowler/telescope-luasnip.nvim",
-            "jvgrootveld/telescope-zoxide",
-            "tsakirist/telescope-lazy.nvim",
-            "nvim-telescope/telescope-project.nvim",
-            "elpiloto/telescope-vimwiki.nvim",
-            {
-                "nvim-telescope/telescope-fzf-native.nvim",
-                build = "make",
-            },
-        },
     },
 
     -- NeoGit
@@ -177,12 +127,79 @@ local plugins = {
         },
     },
 
+    -- nvim surround
+    {
+        "kylechui/nvim-surround",
+        version = "*",
+        event = "VeryLazy",
+    },
+
+    -- Org mode
+    {
+        "nvim-orgmode/orgmode",
+        ft = "org",
+    },
+
+    -- OIL
+    {
+        "stevearc/oil.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+
+    -- taskwiki
+    {
+        "tools-life/taskwiki",
+        init = function()
+            vim.g.taskwiki_markup_syntax = "markdown"
+        end,
+    },
+
+    -- Terminal
+    { "akinsho/toggleterm.nvim" },
+
+    -- Treesitter
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        event = "bufWinEnter",
+        dependencies = {
+            "JoosepAlviste/nvim-ts-context-commentstring",
+        },
+    },
+
+    -- Tmux Navigation
+    { "christoomey/vim-tmux-navigator" },
+
+    -- Telescope
+    {
+        "nvim-telescope/telescope.nvim",
+        -- tag = "0.1.1",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "LinArcX/telescope-env.nvim",
+            "ghassan0/telescope-glyph.nvim",
+            "keyvchan/telescope-find-pickers.nvim",
+            "nvim-telescope/telescope-file-browser.nvim",
+            "nvim-telescope/telescope-media-files.nvim",
+            "benfowler/telescope-luasnip.nvim",
+            "jvgrootveld/telescope-zoxide",
+            "tsakirist/telescope-lazy.nvim",
+            "nvim-telescope/telescope-project.nvim",
+            "elpiloto/telescope-vimwiki.nvim",
+            {
+                "nvim-telescope/telescope-fzf-native.nvim",
+                build = "make",
+            },
+        },
+    },
+
     -- Buffer Line
     {
         "akinsho/bufferline.nvim",
         after = "catppuccin",
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
+
     -- Lua Line
     { "nvim-lualine/lualine.nvim" },
 
@@ -226,12 +243,6 @@ local plugins = {
         "jay-babu/mason-nvim-dap.nvim",
         dependencies = { "mfussenegger/nvim-dap" },
     },
-
-    -- emmet
-    { "mattn/emmet-vim" },
-
-    -- lorem ipsum
-    { "derektata/lorem.nvim" },
 
     -- Neovim Tagbar
     { "preservim/tagbar" },
