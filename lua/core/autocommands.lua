@@ -28,6 +28,8 @@ vim.cmd([[
     autocmd!
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
+
+  au BufNewFile ~/Nextcloud/Vimwiki/diary/*.md :silent 0r !~/.local/bin/script/generate-vimwiki-diary-template.py '%'
 ]])
 
 -- Autoformat
