@@ -58,7 +58,7 @@ NvimTree.setup({
 	sort_by = "case_sensitive",
 
 	view = {
-		width = 35,
+		width = 50,
 		side = "left",
 		number = true,
 		relativenumber = true,
