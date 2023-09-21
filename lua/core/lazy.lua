@@ -34,6 +34,9 @@ local plugins = {
     -- Commnets Plugins
     { "numToStr/Comment.nvim" },
 
+    -- Comment Box
+    { "LudoPinelli/comment-box.nvim" },
+
     -- Colorscheme
     { "mofiqul/dracula.nvim" },
     {

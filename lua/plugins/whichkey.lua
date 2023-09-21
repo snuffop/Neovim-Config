@@ -179,6 +179,7 @@ local mappings = {
 
 	h = {
 		name = "+Help",
+        h = { "<cmd>nohlsearch<CR>", "Clear Search" },
 		n = {
 			name = "+Noice",
 			l = { "<cmd>Noice last<cr>", "Noice Last Message" },

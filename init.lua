@@ -1,4 +1,6 @@
--- Marty Buchaus Neovim Config
+--  ╭──────────────────────────────────────────────────────────╮
+--  │ Marty Buchaus Neovim Config                              │
+--  ╰──────────────────────────────────────────────────────────╯
 -- Set Leaders
 
 vim.keymap.set("", "<Space>", "<Nop>", {noremap = true, silent = true})
