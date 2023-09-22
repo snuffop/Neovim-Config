@@ -14,10 +14,13 @@ set cpo&vim
 
 let b:undo_ftplugin = "setl com< cms< inc< fo<"
 
+setlocal tw=72
 setlocal comments=:# commentstring=#\ %s
 setlocal formatoptions-=t formatoptions+=croql
 
 let &l:include = '^\s*source\>'
+
+match ErrorMsg '\s\+$'
 
 let &cpo = s:cpo_save
 unlet s:cpo_save
