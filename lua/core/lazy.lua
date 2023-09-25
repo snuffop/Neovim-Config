@@ -76,6 +76,18 @@ local plugins = {
             "nvim-lua/plenary.nvim"
         },
     },
+
+    -- Neorg 
+    {
+        "nvim-neorg/neorg",
+        build = ":Neorg wync-parsers",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-neorg/neorg-telescope",
+            "pysan3/neorg-templates",
+        },
+    },
+
     -- Noice
     {
         "folke/noice.nvim",
