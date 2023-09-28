@@ -84,7 +84,6 @@ local plugins = {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-neorg/neorg-telescope",
-            "pysan3/neorg-templates",
         },
     },
 
@@ -99,7 +98,11 @@ local plugins = {
     },
 
     -- Indent Line
-    { "lukas-reineke/indent-blankline.nvim" },
+    { 
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = {},
+    },
 
     -- Rainbos CSV
     { "mechatroner/rainbow_csv" },

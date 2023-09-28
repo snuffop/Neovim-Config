@@ -1,9 +1,14 @@
 require('neorg').setup {
     load = {
-        ["core.concealer"] = {},
+        ["core.concealer"] = {
+            config = {
+                folds = false,
+            },
+        },
         ["core.completion"] = {
             config = {
                 engine = "nvim-cmp",
+                name = "[Neorg]",
             },
         },
         ["core.defaults"] = {},
@@ -16,22 +21,30 @@ require('neorg').setup {
                 index = "index.norg",
             }
         },
+        ["core.dirman.utils"] = {},
+        ["core.export"] = {
+            config = {
+                export_dir = "~/Nextcloud/Neorg/Export/<language>-export",
+            },
+        },
+        ["core.export.markdown"] = {},
+        ["core.esupports.hop"] = {},
+        ["core.esupports.indent"] = {},
+        ["core.esupports.metagen"] = {},
+        ["core.itero"] = {},
         ["core.journal"] = {
             config = {
                 workspace = "notes",
                 use_template = false,
             }
         },
+        ["core.keybinds"] = {},
+        ["core.looking-glass"] = {},
         ["core.summary"] = {},
+        ["core.syntax"] = {},
         ["core.ui.calendar"] = {},
+        ["core.upgrade"] = {},
         ["core.integrations.telescope"] = {},
-        ["external.templates"] = {
-            config = {
-                templates_dir = {
-                    "~/Nextcloud/Neorg/templates/"
-                }
-            }
-        },
     },
 }
 
@@ -48,7 +61,7 @@ neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, key
             { "<C-l>", "core.integrations.telescope.insert_link" },
         },
     }, {
-        silent = true,
-        noremap = true,
-    })
+            silent = true,
+            noremap = true,
+        })
 end)

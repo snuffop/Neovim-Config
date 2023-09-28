@@ -30,6 +30,7 @@ vim.cmd([[
   augroup end
 
   au BufNewFile ~/Nextcloud/Vimwiki/diary/*.md :silent 0r !~/.local/bin/script/generate-vimwiki-diary-template.py '%'
+  au BufNewFile ~/Nextcloud/Neorg/journal/*.norg :silent 0r !~/.local/bin/script/generate-neorg-journal-template.py '%'
 ]])
 
 -- Autoformat
