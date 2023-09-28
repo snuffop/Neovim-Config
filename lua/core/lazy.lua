@@ -84,6 +84,8 @@ local plugins = {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-neorg/neorg-telescope",
+            "max397574/neorg-contexts",
+            "max397574/neorg-kanban",
         },
     },
 

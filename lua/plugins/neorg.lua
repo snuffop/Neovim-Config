@@ -45,6 +45,8 @@ require('neorg').setup {
         ["core.ui.calendar"] = {},
         ["core.upgrade"] = {},
         ["core.integrations.telescope"] = {},
+        ["external.context"] = {},
+        -- ["external.kanban"] = {},
     },
 }
 

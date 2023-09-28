@@ -1,3 +1,7 @@
+-- CMAP lua save via sudo 
+
+vim.cmd[[ cnoreabbrev w!! w !sudo tee % > /dev/null ]]
+
 -- Keymaps 
 
 vim.keymap.set({"i"}, "<C-K>", "<Plug>luasnip-expand-or-jump<cr>", {silent = true})
