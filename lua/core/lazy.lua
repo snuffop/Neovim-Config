@@ -187,6 +187,14 @@ local plugins = {
         },
     },
 
+    -- Treesitter Text objects
+    {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter"
+        },
+    },
+
     -- Tmux Navigation
     { "christoomey/vim-tmux-navigator" },
 
@@ -216,7 +224,6 @@ local plugins = {
     -- Buffer Line
     {
         "akinsho/bufferline.nvim",
-        after = "catppuccin",
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 
