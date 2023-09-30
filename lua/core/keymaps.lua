@@ -8,6 +8,9 @@ vim.keymap.set({"i"}, "<C-K>", "<Plug>luasnip-expand-or-jump<cr>", {silent = tru
 vim.keymap.set({"i", "s" }, "<C-J>", "<Plug>luasnip-jump-prev<cr>", {silent = true})
 vim.keymap.set({"i", "s" }, "<C-L>", "<Plug>luasnip-next-choice<cr>", {silent = true})
 
+-- Oil - 
+vim.keymap.set("n", "-", "<cmd>Oil<cr>", { silent = true, desc = "Open parent directory"})
+
 local opts = { noremap = true, silent = true }
 
 -- Shorten function name

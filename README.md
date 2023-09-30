@@ -1,3 +1,3 @@
-# Marty Buchaus' Neovim Configuration
+Marty Buchaus' Neovim Configuration
 
 
