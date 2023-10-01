@@ -17,10 +17,7 @@ TreeSitter.setup({
         "http",
         "jq",
         "json",
-<<<<<<< HEAD
-=======
         "json",
->>>>>>> 27bbacf (all)
         "lua",
         "markdown",
         "markdown_inline",
@@ -70,7 +67,6 @@ TreeSitter.setup({
         enable = true,
         enable_autocmd = false,
     },
-<<<<<<< HEAD
     textobjects = {
         lsp_interop = {
             enable = true,
@@ -82,6 +78,4 @@ TreeSitter.setup({
             },
         },
     },
-=======
->>>>>>> 27bbacf (all)
 })

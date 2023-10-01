@@ -99,8 +99,6 @@ local mappings = {
 
     ["/"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 
-<<<<<<< HEAD
-    DD = { ":Alpha<cr>", "StartPage" },
     a = {
         name = "+Application",
         a = { "<cmd>Alpha<cr>", "Alpha" },
@@ -116,6 +114,30 @@ local mappings = {
         t = {
             name = "+ToDotxt",
             t = { "<cmd>ToDoTxtTasksToggle<cr>", "Toggle Window" },
+        },
+        d = {
+            name = "+Distant",
+            C =     { "<cmd>DistantConnect<CR>", "Distant Connect" },
+            M =     { "<cmd>DistantMetadata<CR>", "Distant Metadata" },
+            R =     { "<cmd>DistantRemove<CR>", "Distant Remove" },
+            S =     { "<cmd>DistantShell<CR>", "Distant Shell" },
+            ["/"] = { "<cmd>DistantSearch<CR>", "Distant Search" },
+            c =     { "<cmd>DistantCopy<CR>", "Distant Copy" },
+            d =     { "<cmd>Distand<CR>", "Distant" },
+            i =     { "<cmd>DistantInstall<CR>", "Distant Install" },
+            l =     { "<cmd>DistantLaunch<CR>", "Distant Launch" },
+            m =     { "<cmd>DistantMkdir<CR>", "Distant Mkdir" },
+            r =     { "<cmd>DistantRename<CR>", "Distant Rename" },
+            w =     { "<cmd>DistantSpawn<CR>", "Distant Spawn" },
+            x =     { "<cmd>DistantRun<CR>", "Distant Run" },
+            z =     { "<cmd>DistantCancelSearch<CR>", "Distant Cancels Search " },
+            I = {
+                name = "Info",
+                s =     { "<cmd>DistantSystemInfo<CR>", "Distant System Info" },
+                S =     { "<cmd>DistantSessionInfo<CR>", "Distant Session Info" },
+                C =     { "<cmd>DistantCheckHealth<CR>", "Distant Check Health " },
+                z =     { "<cmd>DistantClientVersion<CR>", "Distant Client Version " },
+            },
         },
     },
 
@@ -178,109 +200,6 @@ local mappings = {
         u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
     },
 
-=======
-    a = {
-        name = "+Application",
-        a = { "<cmd>Alpha<cr>", "Alpha" },
-
-        d = {
-            name = "+Distant",
-            C =     { "<cmd>DistantConnect<CR>", "Distant Connect" },
-            M =     { "<cmd>DistantMetadata<CR>", "Distant Metadata" },
-            R =     { "<cmd>DistantRemove<CR>", "Distant Remove" },
-            S =     { "<cmd>DistantShell<CR>", "Distant Shell" },
-            ["/"] = { "<cmd>DistantSearch<CR>", "Distant Search" },
-            c =     { "<cmd>DistantCopy<CR>", "Distant Copy" },
-            d =     { "<cmd>Distand<CR>", "Distant" },
-            i =     { "<cmd>DistantInstall<CR>", "Distant Install" },
-            l =     { "<cmd>DistantLaunch<CR>", "Distant Launch" },
-            m =     { "<cmd>DistantMkdir<CR>", "Distant Mkdir" },
-            r =     { "<cmd>DistantRename<CR>", "Distant Rename" },
-            w =     { "<cmd>DistantSpawn<CR>", "Distant Spawn" },
-            x =     { "<cmd>DistantRun<CR>", "Distant Run" },
-            z =     { "<cmd>DistantCancelSearch<CR>", "Distant Cancels Search " },
-            I = {
-                name = "Info",
-                s =     { "<cmd>DistantSystemInfo<CR>", "Distant System Info" },
-                S =     { "<cmd>DistantSessionInfo<CR>", "Distant Session Info" },
-                C =     { "<cmd>DistantCheckHealth<CR>", "Distant Check Health " },
-                z =     { "<cmd>DistantClientVersion<CR>", "Distant Client Version " },
-            },
-        },
-
-        l = {
-            name = "Lazy",
-            s = { "<cmd>Lazy sync<cr>", "Sync" },
-            i = { "<cmd>Lazy install<cr>", "Install" },
-            p = { "<cmd>Telescope lazy<cr>", "Telescope" },
-            l = { "<cmd>Lazy<cr>", "Status" },
-        },
-        t = {
-            name = "+ToDotxt",
-            t = { "<cmd>ToDoTxtTasksToggle<cr>", "Toggle Window" },
-        },
-    },
-
-    b = {
-        name = "+Buffers",
-        b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "Buffers" },
-        d = { "<cmd>Bdelete<cr>", "Delete Buffer" },
-        l = { ":lua require('telescope.builtin').buffers()<cr>", "List" },
-        p = { "<cmd>BufferLineTogglePin<cr>", "Toggle Pin" },
-        s = { "<cmd>BufferLinePick<cr>", "Select" },
-        w = { "<cmd>Bwipeout<cr>", "Wipeout  Buffer" },
-    },
-
-    c = {
-        name = "+Code",
-        m = { "<cmd>:Mason<cr>", "Mason" },
-        i = { "<cmd>:Inspect<cr>", "TS Inspect" },
-        t = { "<cmd>:TagbarToggle<cr>", "Tagbar toggle" },
-        I = { "<cmd>:TSInstallInfo<cr>", "TS Install Info" },
-    },
-
-    d = {
-        name = "+dired",
-        j =     { "<cmd>Oil<cr>", "Oil Dired Jump" },
-    },
-
-    f = {
-        name = "+File",
-        b = { "<cmd>Telescope file_browser<cr>", "Telescope file_browser" },
-        c = { "<cmd>lua require('telescope.builtin').find_files({cwd = '~/.config/nvim/'})<cr>", "Find Config Files" },
-        d = { "<cmd>Oil<cr>", "Oil " },
-        e = { "<cmd>NvimTreeToggle<cr>", "Nvim-Tree" },
-        f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files" },
-        g = { "<cmd>Telescope git_files<cr>", "Git File" },
-        o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-        r = { "<cmd>Ranger<cr>", "Ranger Vim" },
-        s = { "<cmd>up<cr><esc>", "Save File" },
-        S = { "<cmd>:w !sudo tee %<cr><esc>", "Sudo Save File" },
-        v = { "<cmd>Explore<cr>", "Netrw" },
-        z = { "<cmd>Telescope zoxide list<cr>", "Zoxide" },
-    },
-
-    g = {
-        name = "+Git",
-        L = { "<cmd>LazyGit<cr>", "Lazygit" },
-        R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-        S = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-        c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-        B = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit" },
-        d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
-        f = { "<cmd>Telescope git_files<cr>", "Git File" },
-        g = { "<cmd>Neogit<cr>", "Neogit" },
-        j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-        k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-        l = { "<cmd>Gitsigns blame_line<cr>", "Blame" },
-        p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-        r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-        s = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-        u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
-    },
-
->>>>>>> 27bbacf (all)
     h = {
         name = "+Help",
         h = { "<cmd>nohlsearch<CR>", "Clear Search" },
@@ -386,14 +305,11 @@ local mappings = {
         c = { "<cmd>Telescope commands<cr>", "commands" },
         e = { "<cmd>Telescope env<cr>", "environment" },
         f = { "<cmd>Telescope find_pickers<cr>", "list pickers" },
-<<<<<<< HEAD
         g = {
             name = "+Git Worktree",
             g = { "<cmd>Telescope git_worktree git_worktrees<CR>", "Switch Git Worktree" },
             c = { "<cmd>Telescope git_worktree create_git_worktree<CR>", "Create Git Worktree" },
         },
-=======
->>>>>>> 27bbacf (all)
         h = { "<cmd>Telescope help_tags<cr>", "find help" },
         k = { "<cmd>Telescope keymaps<cr>", "keymaps" },
         m = { "<cmd>Telescope man_pages<cr>", "man pages" },
@@ -409,7 +325,6 @@ local mappings = {
         c = { "<cmd>neorg toggle-concealer<cr>", "toggle concealer" },
         b = { "<cmd>gitsigns toggle_current_line_blame<cr>", "toggle gitsign blame" },
         d = { "<cmd>gitsigns toggle_deleted<cr>", "toggle gitsign deleted" },
-<<<<<<< HEAD
         j = {
             name = "+TreeSJ",
             t = { "<cmd>TSJToggle<cr>", "Trees J toggle" },
@@ -435,26 +350,7 @@ local mappings = {
         t = { "<cmd>WhichKey<cr>", "Whichkey Top Level" },
     },
 
-=======
-        t = {
-            name = "toggle terminal",
-            f = { "<cmd>toggleterm direction=float<cr>", "float" },
-            h = { "<cmd>toggleterm size=10 direction=horizontal<cr>", "horizontal" },
-            v = { "<cmd>toggleterm size=80 direction=vertical<cr>", "vertical" },
-        },
-        u = { "<cmd>undotreetoggle<cr>", "undo tree" },
-    },
 
-    w = {
-        name = "+windows",
-        h = { "<c-w>|", "maximize window horizontally (|)" },
-        v = { "<C-w>_", "Maximize window vertically (_)" },
-        ["="] = { "<C-w>=", "Resize windows equally" },
-        s = { ":lua require('telescope-tabs').list_tabs()<cr>", "Search Tabs" },
-        t = { "<cmd>WhichKey<cr>", "Whichkey Top Level" },
-    },
-
->>>>>>> 27bbacf (all)
     x = {
         c = { "<cmd>!chmod +x %<CR>", "chmod" },
     },

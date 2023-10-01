@@ -68,9 +68,11 @@ local plugins = {
     },
 
     -- Chezmoi
-<<<<<<< HEAD
-=======
-    { "alker0/chezmoi.vim" },
+
+
+    { 
+      "alker0/chezmoi.vim"
+    },
 
     -- Distant
     {
@@ -82,7 +84,6 @@ local plugins = {
     },
 
     -- Leap AVY
->>>>>>> 27bbacf (all)
     {
         "alker0/chezmoi.vim",
     },
