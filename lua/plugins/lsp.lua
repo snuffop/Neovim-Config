@@ -77,10 +77,14 @@ MasonToolInstaller.setup({
     -- start; they should be the names Mason uses for each tool
     ensure_installed = {
         -- you can turn off/on auto_update per tool
-        { "bash-language-server", auto_update = true },
-        { "lua-language-server",  auto_update = true },
-        { "vim-language-server",  auto_update = true },
-        { "stylua",               auto_update = true },
+        { "bash-language-server",           auto_update = true },
+        { "lua-language-server",            auto_update = true },
+        { "vim-language-server",            auto_update = true },
+        { "yaml-language-server",           auto_update = true },
+        { "stylua",                         auto_update = true },
+        { "talpo",                          auto_update = true },
+        { "dockerls",                       auto_update = true },
+        { "docker_compose_language_server", auto_update = true },
         { "editorconfig-checker" },
         { "html-lsp" },
         { "css-lsp" },

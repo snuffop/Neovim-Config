@@ -42,6 +42,9 @@ local plugins = {
         "mattn/calendar-vim",
     },
 
+    -- Chronos
+    { "adrianvalenz/chronos.nvim" },
+
     -- Commnets Plugins
     {
         "numToStr/Comment.nvim",
@@ -65,6 +68,21 @@ local plugins = {
     },
 
     -- Chezmoi
+<<<<<<< HEAD
+=======
+    { "alker0/chezmoi.vim" },
+
+    -- Distant
+    {
+        'chipsenkbeil/distant.nvim',
+        branch = 'v0.3',
+        config = function()
+            require('distant'):setup()
+        end
+    },
+
+    -- Leap AVY
+>>>>>>> 27bbacf (all)
     {
         "alker0/chezmoi.vim",
     },
