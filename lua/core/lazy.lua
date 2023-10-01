@@ -191,6 +191,11 @@ local plugins = {
         },
     },
 
+    -- vim-mergetool
+    {
+        'samoshkin/vim-mergetool',
+    },
+
     -- NeoVIMTree
     {
         "nvim-tree/nvim-tree.lua",
