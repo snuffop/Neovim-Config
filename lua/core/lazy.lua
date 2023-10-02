@@ -16,7 +16,8 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     -- ANSIBLE
     {
-        "pearofducks/ansible-vim",
+        -- "pearofducks/ansible-vim",
+        "mfussenegger/nvim-ansible",
     },
 
     -- Better Escapej
@@ -71,7 +72,7 @@ local plugins = {
 
 
     { 
-      "alker0/chezmoi.vim"
+        "alker0/chezmoi.vim"
     },
 
     -- Distant

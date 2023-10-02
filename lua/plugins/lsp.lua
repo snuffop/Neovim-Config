@@ -81,6 +81,7 @@ MasonToolInstaller.setup({
         { "lua-language-server",            auto_update = true },
         { "vim-language-server",            auto_update = true },
         { "yaml-language-server",           auto_update = true },
+        { "ansible-language-server",        auto_update = true },
         { "stylua",                         auto_update = true },
         { "dockerls",                       auto_update = true },
         { "docker_compose_language_server", auto_update = true },
