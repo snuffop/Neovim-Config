@@ -409,6 +409,15 @@ local plugins = {
         end,
     },
 
+    -- SUDA
+    {
+        "lambdalisue/suda.vim",
+        cmd = {
+            "SudaRead",
+            "Sudawrite",
+        },
+    },
+
     -- Trouble
     {
         "folke/trouble.nvim",
