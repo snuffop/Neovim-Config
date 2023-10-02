@@ -32,9 +32,11 @@ Dracula.setup({
         background_colour = "#282A36",
     },
     show_end_of_buffer = true, -- default false
-    transparent_bg = false, -- default false
+    transparent_bg = true, -- default false
     lualine_bg_color = "#282A36", -- default nil
     -- fg = "#F8F8F2",
     italic_comment = true, -- default false
     overrides = {},
 })
+
+-- vim.cmd([[colorscheme dracula]]) -- Set color scheme
