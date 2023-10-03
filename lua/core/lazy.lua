@@ -16,8 +16,8 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     -- ANSIBLE
     {
-        -- "pearofducks/ansible-vim",
-        "mfussenegger/nvim-ansible",
+        "pearofducks/ansible-vim",
+        -- "mfussenegger/nvim-ansible",
     },
 
     -- Better Escapej
@@ -110,6 +110,11 @@ local plugins = {
     -- Formatting,
     {
         "jose-elias-alvarez/null-ls.nvim",
+    },
+
+    -- Harpoon
+    {
+        "theprimeagen/harpoon",
     },
 
     -- GitSign Plugins

@@ -77,14 +77,15 @@ MasonToolInstaller.setup({
     -- start; they should be the names Mason uses for each tool
     ensure_installed = {
         -- you can turn off/on auto_update per tool
-        { "bash-language-server",           auto_update = true },
-        { "lua-language-server",            auto_update = true },
-        { "vim-language-server",            auto_update = true },
-        { "yaml-language-server",           auto_update = true },
-        { "ansible-language-server",        auto_update = true },
-        { "stylua",                         auto_update = true },
-        { "dockerls",                       auto_update = true },
-        { "docker_compose_language_server", auto_update = true },
+        { "bash-language-server",             auto_update = true },
+        { "lua-language-server",              auto_update = true },
+        { "vim-language-server",              auto_update = true },
+        { "yaml-language-server",             auto_update = true },
+        { "ansible-language-server",          auto_update = true },
+        { "dockerfile-language-server",       auto_update = true },
+        { "docker-compose-language-service",  auto_update = true },
+        { "stylua",                           auto_update = true },
+        { "dockerls",                         auto_update = true },
         { "editorconfig-checker" },
         { "html-lsp" },
         { "css-lsp" },
@@ -106,21 +107,34 @@ MasonToolInstaller.setup({
 
 local capabilities = CmpNvimLsp.default_capabilities()
 
--- pyright
-LspConfig.pyright.setup({
+-- Ansible Language Server 
+LspConfig.ansiblels.setup({
     capabilities = capabilities,
 })
--- tsserver
-LspConfig.tsserver.setup({
+
+-- Bash
+LspConfig.bashls.setup({
     capabilities = capabilities,
 })
--- rust_analyzer
-LspConfig.rust_analyzer.setup({
+
+-- CSS LS
+LspConfig.cssls.setup({
     capabilities = capabilities,
-    -- Server-specific settings. See `:help lspconfig-setup`
-    settings = {
-        ["rust-analyzer"] = {},
-    },
+})
+
+-- Dockerfile
+LspConfig.dockerls.setup({
+    capabilities = capabilities,
+})
+
+-- Docker Compose
+LspConfig.docker_compose_language_service.setup({
+    capabilities = capabilities,
+})
+
+--Grammarly
+LspConfig.grammarly.setup({
+    capabilities = capabilities,
 })
 
 -- html
@@ -140,10 +154,23 @@ LspConfig.lua_ls.setup({
     },
 })
 
--- CSS LS
-LspConfig.cssls.setup({
+-- pyright
+LspConfig.pyright.setup({
     capabilities = capabilities,
 })
+-- tsserver
+LspConfig.tsserver.setup({
+    capabilities = capabilities,
+})
+-- rust_analyzer
+LspConfig.rust_analyzer.setup({
+    capabilities = capabilities,
+    -- Server-specific settings. See `:help lspconfig-setup`
+    settings = {
+        ["rust-analyzer"] = {},
+    },
+})
+
 
 -- Tailwind
 -- Support for tailwind auto completion

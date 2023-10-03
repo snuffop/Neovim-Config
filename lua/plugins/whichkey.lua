@@ -166,6 +166,7 @@ local mappings = {
 
     f = {
         name = "+File",
+        ["."] = { "<cmd>source %<cr>", "source current file" },
         b = { "<cmd>Telescope file_browser<cr>", "Telescope file_browser" },
         c = { "<cmd>lua require('telescope.builtin').find_files({cwd = '~/.config/nvim/'})<cr>", "Find Config Files" },
         d = { "<cmd>Oil<cr>", "Oil " },
@@ -175,7 +176,6 @@ local mappings = {
         o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         r = { "<cmd>Ranger<cr>", "Ranger Vim" },
         s = { "<cmd>up<cr><esc>", "Save File" },
-        --S = { "<cmd>:w !sudo tee %<cr><esc>", "Sudo Save File" },
         S = { "<cmd>SudaWrite<cr><esc>", "Sudo Save File" },
         v = { "<cmd>Explore<cr>", "Netrw" },
         z = { "<cmd>Telescope zoxide list<cr>", "Zoxide" },
@@ -198,6 +198,11 @@ local mappings = {
         p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
         r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
         s = { "<cmd>Telescope git_status<cr>", "Open changed file" },
+        t = {
+            name = "+Git Toggle",
+            b = { "<cmd>gitsigns toggle_current_line_blame<cr>", "toggle gitsign blame" },
+            d = { "<cmd>gitsigns toggle_deleted<cr>", "toggle gitsign deleted" },
+        },
         u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
     },
 
@@ -297,7 +302,8 @@ local mappings = {
 
     s = {
         name = "search",
-        ["."] = { "<cmd>source %<cr>", "source current file" },
+        ["/"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Search Buffer"},
+        ["`"] = { "<cmd>Telescope resume<cr>", "Resume previous search" },
         B = { "<cmd>Telescope git_branches<cr>", "checkout branch" },
         C = { "<cmd>Telescope colorscheme<cr>", "colorscheme" },
         F = { "<cmd>Telescope filetypes<cr>", "filetypes" },
@@ -315,7 +321,7 @@ local mappings = {
         k = { "<cmd>Telescope keymaps<cr>", "keymaps" },
         m = { "<cmd>Telescope man_pages<cr>", "man pages" },
         o = { "<cmd>Telescope vim_options<cr>", "options" },
-        q = { "<cmd>Telescope quickfix<cr>", "resume" },
+        q = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
         r = { "<cmd>Telescope registers<cr>", "registers" },
         s = { "<cmd>source ~/.config/nvim/lua/plugins/luasnip.lua<cr>", "source snippets" },
         y = { "<cmd>Telescope glyph<cr>", "glyph" },
@@ -324,8 +330,6 @@ local mappings = {
     t = {
         name = "toggle",
         c = { "<cmd>neorg toggle-concealer<cr>", "toggle concealer" },
-        b = { "<cmd>gitsigns toggle_current_line_blame<cr>", "toggle gitsign blame" },
-        d = { "<cmd>gitsigns toggle_deleted<cr>", "toggle gitsign deleted" },
         j = {
             name = "+TreeSJ",
             t = { "<cmd>TSJToggle<cr>", "Trees J toggle" },
