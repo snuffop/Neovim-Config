@@ -83,6 +83,7 @@ MasonToolInstaller.setup({
         { "yaml-language-server",             auto_update = true },
         { "ansible-language-server",          auto_update = true },
         { "dockerfile-language-server",       auto_update = true },
+        { "nginx-language-server",            auto_update = true },
         { "mutt-language-server",             auto_update = true },
         { "docker-compose-language-service",  auto_update = true },
         { "stylua",                           auto_update = true },
@@ -154,6 +155,12 @@ LspConfig.lua_ls.setup({
         },
     },
 })
+
+--nginx
+LspConfig.nginx.setup({
+    capabilities = capabilities,
+})
+
 
 -- mutt language server
 LspConfig.mutt_ls.setup({
