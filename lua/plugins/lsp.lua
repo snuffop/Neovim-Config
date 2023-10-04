@@ -83,6 +83,7 @@ MasonToolInstaller.setup({
         { "yaml-language-server",             auto_update = true },
         { "ansible-language-server",          auto_update = true },
         { "dockerfile-language-server",       auto_update = true },
+        { "mutt-language-server",             auto_update = true },
         { "docker-compose-language-service",  auto_update = true },
         { "stylua",                           auto_update = true },
         { "dockerls",                         auto_update = true },
@@ -154,14 +155,21 @@ LspConfig.lua_ls.setup({
     },
 })
 
+-- mutt language server
+LspConfig.mutt_ls.setup({
+    capabilities = capabilities,
+})
+
 -- pyright
 LspConfig.pyright.setup({
     capabilities = capabilities,
 })
+
 -- tsserver
 LspConfig.tsserver.setup({
     capabilities = capabilities,
 })
+
 -- rust_analyzer
 LspConfig.rust_analyzer.setup({
     capabilities = capabilities,
@@ -170,7 +178,6 @@ LspConfig.rust_analyzer.setup({
         ["rust-analyzer"] = {},
     },
 })
-
 
 -- Tailwind
 -- Support for tailwind auto completion
