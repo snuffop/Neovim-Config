@@ -286,6 +286,9 @@ local mappings = {
         name = "+open",
         m = {
             name = "my",
+            i = { "<cmd>edit ~/Nextcloud/Neorg/index.norg<CR>", "Notes Index" },
+            j = { "<cmd>edit ~/Nextcloud/Neorg/joyent/Joyent Index.norg<CR>", "Joyent Index" },
+            g = { "<cmd>edit ~/Nextcloud/Neorg/joyent/Joyent Gage Index.norg<CR>", "Joyent Gage Index" },
         },
     },
 

@@ -420,7 +420,7 @@ local plugins = {
         "lambdalisue/suda.vim",
         cmd = {
             "SudaRead",
-            "Sudawrite",
+            "SudaWrite",
         },
     },
 
