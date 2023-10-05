@@ -1,4 +1,4 @@
--- requring plugin
+-- Requring plugin
 local installed, LuaLine = pcall(require, "lualine")
 if not installed then
     vim.notify("Plugin 'lualine' not installed")
@@ -14,6 +14,29 @@ local function diff_source()
             removed = gitsigns.removed,
         }
     end
+end
+
+local custom_fname = require('lualine.components.filename'):extend()
+local highlight = require'lualine.highlight'
+local default_status_colors = { saved = '#8aadf4', modified = '#FFB86C' }
+
+function custom_fname:init(options)
+  custom_fname.super.init(self, options)
+  self.status_colors = {
+    saved = highlight.create_component_highlight_group(
+      {fg = default_status_colors.saved}, 'filename_status_saved', self.options),
+    modified = highlight.create_component_highlight_group(
+      {fg = default_status_colors.modified}, 'filename_status_modified', self.options),
+  }
+  if self.options.color == nil then self.options.color = '' end
+end
+
+function custom_fname:update_status()
+  local data = custom_fname.super.update_status(self)
+  data = highlight.component_format_highlight(vim.bo.modified
+                                              and self.status_colors.modified
+                                              or self.status_colors.saved) .. data
+  return data
 end
 
 local get_color = require("lualine.utils.utils").extract_highlight_colors
@@ -50,10 +73,10 @@ LuaLine.setup({
         },
         lualine_c = {
             {
-                "filename",
+                custom_fname,
+                path = 3,
                 file_status = true,
                 newfile_status = true,
-                path = 3,
                 shorting_target = 40,
                 symbols = {
                     modified = "[SAVE ME]",

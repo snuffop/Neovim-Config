@@ -361,9 +361,21 @@ local mappings = {
         t = { "<cmd>WhichKey<cr>", "Whichkey Top Level" },
     },
 
-
+    -- Extra
     x = {
         c = { "<cmd>!chmod +x %<CR>", "chmod" },
+        h = {
+            name = "+Hop",
+            ["1"] = { "<cmd>HopChar1<cr>", "Hop Char1"},
+            ["2"] = { "<cmd>HopChar2<cr>", "Hop Char2"},
+            a = { "<cmd>HopAnywhere<cr>", "Hop Anywhere"},
+            l = { "<cmd>HopLine<cr>", "Hop Line"},
+            L = { "<cmd>HopLineStart<cr>", "Hop Line Start"},
+            p = { "<cmd>HopPattern<cr>", "Hop Pattern"},
+            v = { "<cmd>HopVertical<cr>", "Hop Vertical"},
+            w = { "<cmd>HopWord<cr>", "Hop Word"},
+
+        }
     },
 }
 

@@ -4,7 +4,7 @@ vim.opt.termguicolors = true
 vim.o.pumheight = 10 -- Max items to show in pop up menu
 vim.o.cmdheight = 1  -- Max items to show in command menu
 vim.o.spell = false
-vim.o.spelllang = "en_us"
+vim.o.spelllang = "en"
 
 -- Files and Others
 vim.o.autochdir = true

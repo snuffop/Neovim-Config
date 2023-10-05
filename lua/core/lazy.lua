@@ -46,11 +46,6 @@ local plugins = {
     -- Chronos
     { "adrianvalenz/chronos.nvim" },
 
-    -- Commnets Plugins
-    {
-        "numToStr/Comment.nvim",
-    },
-
     -- Comment Box
     {
         "LudoPinelli/comment-box.nvim",
@@ -75,6 +70,12 @@ local plugins = {
         "alker0/chezmoi.vim"
     },
 
+
+    -- Colorizer.lua
+    {
+        "norcalli/nvim-colorizer.lua",
+    },
+
     -- Distant
     {
         'chipsenkbeil/distant.nvim',
@@ -82,16 +83,6 @@ local plugins = {
         config = function()
             require('distant'):setup()
         end
-    },
-
-    -- Leap AVY
-    {
-        "alker0/chezmoi.vim",
-    },
-
-    -- Colorizer.lua
-    {
-        "norcalli/nvim-colorizer.lua",
     },
 
     -- Dash Board
@@ -102,7 +93,7 @@ local plugins = {
         },
     },
 
-    -- emmet
+    -- Emmet
     {
         "mattn/emmet-vim",
     },
@@ -115,6 +106,13 @@ local plugins = {
     -- Harpoon
     {
         "theprimeagen/harpoon",
+    },
+
+    -- HOP
+    {
+        'smoka7/hop.nvim',
+        version = "*",
+        opts = {},
     },
 
     -- GitSign Plugins
@@ -180,12 +178,6 @@ local plugins = {
         "hiphish/rainbow-delimiters.nvim",
     },
 
-    -- nvim autopairs
-    {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-    },
-
     -- NeoGit
     {
         "NeogitOrg/neogit",
@@ -218,17 +210,10 @@ local plugins = {
         },
     },
 
-    -- nvim surround
-    {
-        "kylechui/nvim-surround",
-        version = "*",
-        event = "VeryLazy",
-    },
-
     -- Leap AVY
-    {
-        "ggandor/leap.nvim",
-    },
+    -- {
+    --     "ggandor/leap.nvim",
+    -- },
 
     -- Org mode
     {
@@ -244,7 +229,7 @@ local plugins = {
         },
     },
 
-    -- taskwiki
+    -- Taskwiki
     {
         "tools-life/taskwiki",
         init = function()
@@ -396,6 +381,36 @@ local plugins = {
         dependencies = { "mfussenegger/nvim-dap" },
     },
 
+    -- Mini 
+    {
+        'echasnovski/mini.nvim',
+        version = '*',
+    },
+
+    { 'echasnovski/mini.surround',
+        version = '*',
+    },
+
+    { 'echasnovski/mini.comment',
+        version = '*',
+    },
+
+    {
+        'echasnovski/mini.pairs',
+        version = '*',
+    },
+
+    {
+        'echasnovski/mini.animate',
+        version = '*',
+    },
+
+    -- {
+    --     'echasnovski/mini.jump2d',
+    --     version = '*'
+    -- },
+
+    -- END MINI
     -- Neovim Tagbar
     {
         "preservim/tagbar",
