@@ -77,17 +77,18 @@ MasonToolInstaller.setup({
     -- start; they should be the names Mason uses for each tool
     ensure_installed = {
         -- you can turn off/on auto_update per tool
+        { "ansible-language-server",          auto_update = true },
+        { "awk-language-server",              auto_update = true },
         { "bash-language-server",             auto_update = true },
+        { "docker-compose-language-service",  auto_update = true },
+        { "dockerfile-language-server",       auto_update = true },
+        { "dockerls",                         auto_update = true },
         { "lua-language-server",              auto_update = true },
+        { "mutt-language-server",             auto_update = true },
+        { "nginx-language-server",            auto_update = true },
+        { "stylua",                           auto_update = true },
         { "vim-language-server",              auto_update = true },
         { "yaml-language-server",             auto_update = true },
-        { "ansible-language-server",          auto_update = true },
-        { "dockerfile-language-server",       auto_update = true },
-        { "nginx-language-server",            auto_update = true },
-        { "mutt-language-server",             auto_update = true },
-        { "docker-compose-language-service",  auto_update = true },
-        { "stylua",                           auto_update = true },
-        { "dockerls",                         auto_update = true },
         { "editorconfig-checker" },
         { "html-lsp" },
         { "css-lsp" },
@@ -114,6 +115,11 @@ LspConfig.ansiblels.setup({
     capabilities = capabilities,
 })
 
+-- awk Language Server 
+LspConfig.awk_ls.setup({
+    capabilities = capabilities,
+})
+
 -- Bash
 LspConfig.bashls.setup({
     capabilities = capabilities,
@@ -131,11 +137,6 @@ LspConfig.dockerls.setup({
 
 -- Docker Compose
 LspConfig.docker_compose_language_service.setup({
-    capabilities = capabilities,
-})
-
---Grammarly
-LspConfig.grammarly.setup({
     capabilities = capabilities,
 })
 
