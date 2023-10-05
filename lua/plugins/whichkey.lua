@@ -99,10 +99,10 @@ local mappings = {
 
     ["/"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 
+    -- APPLICATION
     a = {
         name = "+Application",
         a = { "<cmd>Alpha<cr>", "Alpha" },
-        m = { "<cmd>Neomutt<cr>", "Neomutt" },
         n = { "<cmd>Nnn<cr>", "Nnn toggle" },
         l = {
             name = "Lazy",
@@ -110,10 +110,6 @@ local mappings = {
             i = { "<cmd>Lazy install<cr>", "Install" },
             p = { "<cmd>Telescope lazy<cr>", "Telescope" },
             l = { "<cmd>Lazy<cr>", "Status" },
-        },
-        t = {
-            name = "+ToDotxt",
-            t = { "<cmd>ToDoTxtTasksToggle<cr>", "Toggle Window" },
         },
         d = {
             name = "+Distant",
@@ -141,6 +137,7 @@ local mappings = {
         },
     },
 
+    -- BUFFER
     b = {
         name = "+Buffers",
         b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "Buffers" },
@@ -151,6 +148,7 @@ local mappings = {
         w = { "<cmd>Bwipeout<cr>", "Wipeout  Buffer" },
     },
 
+    -- CODE
     c = {
         name = "+Code",
         m = { "<cmd>:Mason<cr>", "Mason" },
@@ -159,9 +157,10 @@ local mappings = {
         I = { "<cmd>:TSInstallInfo<cr>", "TS Install Info" },
     },
 
+    -- D
     d = {
         name = "+dired",
-        j = { "<cmd>Oil<cr>", "Oil Dired Jump" },
+        j = { "<cmd>Oil<cr>", "Oil Dired Jump" },  -- Ment for my finger memory
     },
 
     f = {
@@ -282,6 +281,7 @@ local mappings = {
         },
     },
 
+    -- OPEN My Files
     o = {
         name = "+open",
         m = {
@@ -292,6 +292,7 @@ local mappings = {
         },
     },
 
+    -- PROJECT
     p = {
         name = "+projects",
         p = { "<cmd>lua require'telescope'.extensions.projects.projects{}<cr>", "projects" },
@@ -303,6 +304,7 @@ local mappings = {
         q = { "<cmd>q!<cr>", "quit" },
     },
 
+    -- SEARCH
     s = {
         name = "search",
         ["/"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Search Buffer"},
@@ -330,6 +332,7 @@ local mappings = {
         y = { "<cmd>Telescope glyph<cr>", "glyph" },
     },
 
+    -- TOGGLE
     t = {
         name = "toggle",
         c = { "<cmd>neorg toggle-concealer<cr>", "toggle concealer" },
