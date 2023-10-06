@@ -68,8 +68,14 @@ LuaLine.setup({
     sections = {
         lualine_a = { "mode" },
         lualine_b = {
-            { "b:gitsigns_head", icon = " " },
-            { "diff", icon = "", source = diff_source },
+            {
+                "b:gitsigns_head",
+                icon = " "
+            },
+            {
+                "diff",
+                source = diff_source
+            },
         },
         lualine_c = {
             {
@@ -91,9 +97,16 @@ LuaLine.setup({
         lualine_x = {
             {
                 "searchcount",
+                maxcount = 100,
+                timeout = 200,
             },
             {
                 "diagnostics",
+                sources = {
+                    'nvim_diagnostic',
+                    'nvim_workspace_diagnostic',
+                    'nvim_lsp'
+                },
                 symbols = { error = " ", warn = " ", info = " ", hint = " " },
                 colored = true,
                 diagnostics_color = {
@@ -105,12 +118,13 @@ LuaLine.setup({
             },
         },
         lualine_y = {
-            "encoding",
-            "fileformat",
             "filetype",
+            "fileformat",
+            "encoding",
         },
         lualine_z = {
-            "progress",
+            -- "progress",
+            "location",
         },
     },
     inactive_sections = {

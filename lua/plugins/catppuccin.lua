@@ -12,7 +12,7 @@ Catppuccin.setup({
         dark = "macchiato",
     },
     transparent_background = true, -- disables setting the background color.
-    show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+    show_end_of_buffer = true, -- shows the '~' characters after the end of buffers
     term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
     dim_inactive = {
         enabled = false, -- dims the background color of inactive window
@@ -39,38 +39,10 @@ Catppuccin.setup({
     color_overrides = {},
     custom_highlights = {},
     integrations = {
-        alpha = true,
-        cmp = true,
-        gitsigns = true,
-        hop = true,
         lsp_saga = true,
         mason = true,
-        mini = true,
-        neogit = true,
-        noice = true,
-        notify = true,
-        nvimtree = true,
-        treesitter = true,
         vimwiki = true,
         which_key = true,
-        native_lsp = {
-            enabled = true,
-            virtual_text = {
-                errors = { "italic" },
-                hints = { "italic" },
-                warnings = { "italic" },
-                information = { "italic" },
-            },
-            underlines = {
-                errors = { "underline" },
-                hints = { "underline" },
-                warnings = { "underline" },
-                information = { "underline" },
-            },
-            inlay_hints = {
-                background = true,
-            },
-        },
     },
 })
 
