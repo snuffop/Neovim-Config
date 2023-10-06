@@ -17,13 +17,6 @@ if not installed then
     return
 end
 
-local installed, animate = pcall(require, "mini.animate")
-if not installed then
-    vim.notify("Plugin 'mini-animate' is not installed")
-    return
-end
-
 surround.setup()
 comment.setup()
 pairs.setup()
-animate.setup()

@@ -399,18 +399,8 @@ local plugins = {
         'echasnovski/mini.pairs',
         version = '*',
     },
-
-    {
-        'echasnovski/mini.animate',
-        version = '*',
-    },
-
-    -- {
-    --     'echasnovski/mini.jump2d',
-    --     version = '*'
-    -- },
-
     -- END MINI
+
     -- Neovim Tagbar
     {
         "preservim/tagbar",
