@@ -59,9 +59,23 @@ Mason.setup({
 
 MasonLspConfig.setup({
     ensure_installed = {
-        "lua_ls",
+        "ansiblels",
+        "awk_ls",
+        "bashls",
         "cssls",
+        "cssls",
+        "docker_compose_language_service",
+        "dockerls",
+        "html",
+        "jsonls",
+        "lua_ls",
         "marksman",
+        "mutt_ls",
+        "pyright",
+        "tailwindcss",
+        "taplo",
+        "terraformls",
+        "tsserver"
     },
 })
 
@@ -77,26 +91,21 @@ MasonToolInstaller.setup({
     -- start; they should be the names Mason uses for each tool
     ensure_installed = {
         -- you can turn off/on auto_update per tool
-        { "ansible-language-server",          auto_update = true },
-        { "autopep8",                         auto_update = true },
+        { "ansiblels",                        auto_update = true },
         { "awk-language-server",              auto_update = true },
         { "bash-language-server",             auto_update = true },
-        { "black",                            auto_update = true },
         { "css-lsp",                          auto_update = true },
         { "docker-compose-language-service",  auto_update = true },
-        { "dockerfile-language-server",       auto_update = true },
         { "dockerls",                         auto_update = true },
-        { "editorconfig-checker",             auto_update = true },
-        { "html-lsp",                         auto_update = true },
-        { "json-lsp",                         auto_update = true },
+        { "helm_ls",                          auto_update = true },
+        { "html",                             auto_update = true },
+        { "jsonls",                             auto_update = true },
         { "lua-language-server",              auto_update = true },
+        { "lua-ls",                           auto_update = true },
         { "mutt-language-server",             auto_update = true },
-        { "prettier",                         auto_update = true },
         { "pyright",                          auto_update = true },
-        { "shellcheck",                       auto_update = true },
-        { "shellharden",                      auto_update = true },
-        { "stylua",                           auto_update = true },
         { "taplo",                            auto_update = true },
+        { "terraformls",                      auto_update = true },
         { "vim-language-server",              auto_update = true },
         { "yaml-language-server",             auto_update = true },
     },
@@ -112,47 +121,21 @@ MasonToolInstaller.setup({
 
 local capabilities = CmpNvimLsp.default_capabilities()
 
--- Ansible Language Server 
-LspConfig.ansiblels.setup({
-    capabilities = capabilities,
-})
+LspConfig.ansiblels.setup({ capabilities = capabilities, })
+LspConfig.awk_ls.setup({ capabilities = capabilities, })
+LspConfig.bashls.setup({ capabilities = capabilities, })
+LspConfig.cssls.setup({ capabilities = capabilities, })
+LspConfig.docker_compose_language_service.setup({ capabilities = capabilities, })
+LspConfig.dockerls.setup({ capabilities = capabilities, })
+LspConfig.html.setup({ capabilities = capabilities, })
+LspConfig.jsonls.setup({ capabilities = capabilities, })
+LspConfig.mutt_ls.setup({ capabilities = capabilities, })
+LspConfig.pyright.setup({ capabilities = capabilities, })
+LspConfig.tailwindcss.setup({ capabilities = capabilities, })
+LspConfig.terraformls.setup({ capabilities = capabilities, })
+LspConfig.taplo.setup({ capabilities = capabilities, })
+LspConfig.tsserver.setup({ capabilities = capabilities, })
 
--- awk Language Server 
-LspConfig.awk_ls.setup({
-    capabilities = capabilities,
-})
-
--- Bash
-LspConfig.bashls.setup({
-    capabilities = capabilities,
-})
-
--- TALPO
-LspConfig.taplo.setup({
-    capabilities = capabilities,
-})
-
--- CSS LS
-LspConfig.cssls.setup({
-    capabilities = capabilities,
-})
-
--- Dockerfile
-LspConfig.dockerls.setup({
-    capabilities = capabilities,
-})
-
--- Docker Compose
-LspConfig.docker_compose_language_service.setup({
-    capabilities = capabilities,
-})
-
--- html
-LspConfig.html.setup({
-    capabilities = capabilities,
-})
-
--- Lua LS
 LspConfig.lua_ls.setup({
     capabilities = capabilities,
     settings = {
@@ -164,21 +147,6 @@ LspConfig.lua_ls.setup({
     },
 })
 
--- mutt language server
-LspConfig.mutt_ls.setup({
-    capabilities = capabilities,
-})
-
--- pyright
-LspConfig.pyright.setup({
-    capabilities = capabilities,
-})
-
--- tsserver
-LspConfig.tsserver.setup({
-    capabilities = capabilities,
-})
-
 -- rust_analyzer
 LspConfig.rust_analyzer.setup({
     capabilities = capabilities,
@@ -188,9 +156,3 @@ LspConfig.rust_analyzer.setup({
     },
 })
 
--- Tailwind
--- Support for tailwind auto completion
--- install the tailwind server : "sudo npm install -g @tailwindcss/language-server"
-LspConfig.tailwindcss.setup({
-    capabilities = capabilities,
-})

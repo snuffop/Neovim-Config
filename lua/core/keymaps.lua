@@ -1,5 +1,10 @@
 -- CMAP lua save via sudo 
 
+vim.keymap.set("", "<Space>", "<Nop>", {noremap = true, silent = true})
+vim.g.mapleader = " "
+vim.g.maplocalleader = ","
+
+
 vim.cmd[[ cnoreabbrev w!! w !sudo tee % > /dev/null ]]
 
 -- Keymaps 

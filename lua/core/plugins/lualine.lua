@@ -108,7 +108,6 @@ LuaLine.setup({
                     'nvim_lsp'
                 },
                 symbols = { error = " ", warn = " ", info = " ", hint = " " },
-                colored = true,
                 diagnostics_color = {
                     error = { fg = get_color("DiagnosticSignError", "fg") },
                     warn = { fg = get_color("DiagnosticSignWarn", "fg") },
