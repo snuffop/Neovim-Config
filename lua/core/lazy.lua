@@ -64,7 +64,9 @@ local plugins = {
     },
 
     -- Chezmoi
-    {
+
+
+    { 
         "alker0/chezmoi.vim"
     },
 
@@ -466,19 +468,6 @@ local plugins = {
         lazy = false,
     },
 
-    -- Workspace
-    {
-        "sanathks/workspace.nvim",
-        dependencies = {"nvim-telescope/telescope.nvim"},
-        config = function()
-            require("workspace").setup({
-                workspaces = {
-                    { name = "Joyent",  path = "~/Source/Joyent/",  keymap = { "<leader>pj" } },
-                    { name = "Source", path = "~/Source/", keymap = { "<leader>pS" } },
-                },
-            })
-        end,
-    }
 
     -- ==============================================================
 } -- end of plugin line

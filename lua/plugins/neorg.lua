@@ -11,7 +11,6 @@ require('neorg').setup {
                 name = "[Neorg]",
             },
         },
-        ["core.clipboard.code-blocks"] = {},
         ["core.defaults"] = {},
         ["core.dirman"] = {
             config = {
@@ -39,13 +38,7 @@ require('neorg').setup {
                 use_template = false,
             }
         },
-        ["core.keybinds"] = {
-            config = {
-                hook = function(keybinds)
-                    keybinds.map("norg", "n","<localleader>g", "<cmd>Neorg keybind all core.looking-glass.magnify-code-block<cr>")
-                end,
-            }
-        },
+        ["core.keybinds"] = {},
         ["core.looking-glass"] = {},
         ["core.summary"] = {},
         ["core.syntax"] = {},
