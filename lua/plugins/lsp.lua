@@ -59,9 +59,18 @@ Mason.setup({
 
 MasonLspConfig.setup({
     ensure_installed = {
-        "lua_ls",
+        "bashls",
         "cssls",
+        "cssls",
+        "dockerls",
+        "html",
+        "jsonls",
+        "lua_ls",
         "marksman",
+        "mutt_ls",
+        "pyright",
+        "vimls",
+        "yamlls"
     },
 })
 
@@ -77,25 +86,18 @@ MasonToolInstaller.setup({
     -- start; they should be the names Mason uses for each tool
     ensure_installed = {
         -- you can turn off/on auto_update per tool
-        { "ansible-language-server",          auto_update = true },
-        { "awk-language-server",              auto_update = true },
-        { "bash-language-server",             auto_update = true },
+        { "ansiblels",                        auto_update = true },
+        { "awk-ls",                           auto_update = true },
+        { "bashls",                           auto_update = true },
+        { "cssls",                            auto_update = true },
         { "docker-compose-language-service",  auto_update = true },
-        { "dockerfile-language-server",       auto_update = true },
         { "dockerls",                         auto_update = true },
-        { "lua-language-server",              auto_update = true },
+        { "html",                             auto_update = true },
+        { "jsonls",                           auto_update = true },
         { "mutt-language-server",             auto_update = true },
         { "stylua",                           auto_update = true },
-        { "vim-language-server",              auto_update = true },
-        { "yaml-language-server",             auto_update = true },
-        { "editorconfig-checker" },
-        { "html-lsp" },
-        { "css-lsp" },
-        { "pyright" },
-        { "black" },
-        { "autopep8" },
-        { "json-lsp" },
-        { "prettier" },
+        { "vimls",                            auto_update = true },
+        { "yamlls",                           auto_update = true },
     },
 
     auto_update = false,
