@@ -46,8 +46,6 @@ require('neorg').setup {
         ["core.upgrade"] = {},
         ["core.integrations.telescope"] = {},
         ["core.integrations.treesitter"] = {},
-        ["external.context"] = {},
-        -- ["external.kanban"] = {},
     },
 }
 
