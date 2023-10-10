@@ -78,27 +78,24 @@ MasonToolInstaller.setup({
     ensure_installed = {
         -- you can turn off/on auto_update per tool
         { "ansible-language-server",          auto_update = true },
-        { "autopep8",                         auto_update = true },
         { "awk-language-server",              auto_update = true },
         { "bash-language-server",             auto_update = true },
-        { "black",                            auto_update = true },
-        { "css-lsp",                          auto_update = true },
         { "docker-compose-language-service",  auto_update = true },
         { "dockerfile-language-server",       auto_update = true },
         { "dockerls",                         auto_update = true },
-        { "editorconfig-checker",             auto_update = true },
-        { "html-lsp",                         auto_update = true },
-        { "json-lsp",                         auto_update = true },
         { "lua-language-server",              auto_update = true },
         { "mutt-language-server",             auto_update = true },
-        { "prettier",                         auto_update = true },
-        { "pyright",                          auto_update = true },
-        { "shellcheck",                       auto_update = true },
-        { "shellharden",                      auto_update = true },
         { "stylua",                           auto_update = true },
-        { "taplo",                            auto_update = true },
         { "vim-language-server",              auto_update = true },
         { "yaml-language-server",             auto_update = true },
+        { "editorconfig-checker" },
+        { "html-lsp" },
+        { "css-lsp" },
+        { "pyright" },
+        { "black" },
+        { "autopep8" },
+        { "json-lsp" },
+        { "prettier" },
     },
 
     auto_update = false,
@@ -124,11 +121,6 @@ LspConfig.awk_ls.setup({
 
 -- Bash
 LspConfig.bashls.setup({
-    capabilities = capabilities,
-})
-
--- TALPO
-LspConfig.taplo.setup({
     capabilities = capabilities,
 })
 
