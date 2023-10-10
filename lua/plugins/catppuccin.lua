@@ -39,7 +39,6 @@ Catppuccin.setup({
     color_overrides = {},
     custom_highlights = {},
     integrations = {
-        noice = true,
         lsp_saga = true,
         mason = true,
         vimwiki = true,
