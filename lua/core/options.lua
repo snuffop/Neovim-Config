@@ -8,6 +8,7 @@ vim.o.spelllang = "en"
 
 -- Files and Others
 vim.o.autochdir = true
+vim.g.do_filetype_lua = 1
 vim.cmd("filetype plugin indent on")
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.hidden = true

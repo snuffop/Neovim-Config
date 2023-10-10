@@ -109,6 +109,14 @@ local plugins = {
         },
     },
 
+    --- Markdown Preview
+    {
+        "iamcco/markdown-preview.nvim",
+        build = function() 
+            vim.fn["mkdp#util#install"]() 
+        end,
+    },
+
     -- Neorg 
     {
         "nvim-neorg/neorg",

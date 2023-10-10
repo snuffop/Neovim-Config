@@ -60,9 +60,11 @@ Mason.setup({
 MasonLspConfig.setup({
     ensure_installed = {
         "bashls",
+        "terraformls",
         "cssls",
         "cssls",
         "dockerls",
+        "groovyls",
         "html",
         "jsonls",
         "lua_ls",
@@ -141,6 +143,13 @@ LspConfig.docker_compose_language_service.setup({
     capabilities = capabilities,
 })
 
+
+-- groovy 
+
+LspConfig.groovyls.setup({
+    capabilities = capabilities,
+})
+
 -- html
 LspConfig.html.setup({
     capabilities = capabilities,
@@ -165,6 +174,11 @@ LspConfig.mutt_ls.setup({
 
 -- pyright
 LspConfig.pyright.setup({
+    capabilities = capabilities,
+})
+
+-- terraform
+LspConfig.terraformls.setup({
     capabilities = capabilities,
 })
 
