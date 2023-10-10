@@ -14,47 +14,45 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    -- ANSIBLE
-    {
-        "pearofducks/ansible-vim",
-        -- "mfussenegger/nvim-ansible",
-    },
-
-    -- Better Escapej
-    {
-        "max397574/better-escape.nvim",
-    },
-
-    -- Buffer Line
-    {
-        "akinsho/bufferline.nvim",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons"
-        },
-    },
-
-    -- Cursor Line
-    {
-        "yamatsum/nvim-cursorline",
-    },
-
-    -- Calendar
-    {
-        "mattn/calendar-vim",
-    },
-
-    -- Chronos
+    { "LudoPinelli/comment-box.nvim" },
+    { "ThePrimeagen/git-worktree.nvim" },
+    { "WhoIsSethDaniel/mason-tool-installer.nvim" },
     { "adrianvalenz/chronos.nvim" },
-
-    -- Comment Box
-    {
-        "LudoPinelli/comment-box.nvim",
-    },
-
-    -- Colorscheme
-    {
-        "mofiqul/dracula.nvim",
-    },
+    { "ahmedkhalf/project.nvim" },
+    { "akinsho/toggleterm.nvim" },
+    { "alker0/chezmoi.vim" },
+    { "christoomey/vim-tmux-navigator" },
+    { "folke/trouble.nvim" },
+    { "folke/which-key.nvim" },
+    { "glepnir/lspsaga.nvim" },
+    { "hiphish/rainbow-delimiters.nvim" },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-cmdline" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/cmp-path" },
+    { "hrsh7th/nvim-cmp" },
+    { "jay-babu/mason-null-ls.nvim" },
+    { "jose-elias-alvarez/null-ls.nvim" },
+    { "lewis6991/gitsigns.nvim" },
+    { "mattn/calendar-vim" },
+    { "mattn/emmet-vim" },
+    { "max397574/better-escape.nvim" },
+    { "mechatroner/rainbow_csv" },
+    { "moll/vim-bbye" },
+    { "neovim/nvim-lspconfig", },
+    { "norcalli/nvim-colorizer.lua" },
+    { "nvim-lualine/lualine.nvim" },
+    { "onsails/lspkind.nvim" },
+    { "pearofducks/ansible-vim" },
+    { "preservim/tagbar" },
+    { "saadparwaiz1/cmp_luasnip", },
+    { "theprimeagen/harpoon" },
+    { "williamboman/mason-lspconfig.nvim" },
+    { "williamboman/mason.nvim" },
+    { "windwp/nvim-ts-autotag" },
+    { "xiyaowong/transparent.nvim" },
+    { "yamatsum/nvim-cursorline" },
+    { 'samoshkin/vim-mergetool' },
 
     -- Catppuccin
     {
@@ -63,17 +61,12 @@ local plugins = {
         priority = 1000,
     },
 
-    -- Chezmoi
-
-
-    { 
-        "alker0/chezmoi.vim"
-    },
-
-
-    -- Colorizer.lua
+    -- Buffer Line
     {
-        "norcalli/nvim-colorizer.lua",
+        "akinsho/bufferline.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons"
+        },
     },
 
     -- Distant
@@ -93,36 +86,11 @@ local plugins = {
         },
     },
 
-    -- Emmet
-    {
-        "mattn/emmet-vim",
-    },
-
-    -- Formatting,
-    {
-        "jose-elias-alvarez/null-ls.nvim",
-    },
-
-    -- Harpoon
-    {
-        "theprimeagen/harpoon",
-    },
-
     -- HOP
     {
         'smoka7/hop.nvim',
         version = "*",
         opts = {},
-    },
-
-    -- GitSign Plugins
-    {
-        "lewis6991/gitsigns.nvim",
-    },
-
-    -- Git-Worktree
-    {
-        "ThePrimeagen/git-worktree.nvim",
     },
 
     -- Indent Line
@@ -148,8 +116,6 @@ local plugins = {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-neorg/neorg-telescope",
-            "max397574/neorg-contexts",
-            "max397574/neorg-kanban",
         },
     },
 
@@ -163,21 +129,6 @@ local plugins = {
         },
     },
 
-    -- Rainbows CSV
-    {
-        "mechatroner/rainbow_csv",
-    },
-
-    -- nvim-ts-autotag
-    {
-        "windwp/nvim-ts-autotag",
-    },
-
-    -- Nvim treesitter rainbow brackets
-    {
-        "hiphish/rainbow-delimiters.nvim",
-    },
-
     -- NeoGit
     {
         "NeogitOrg/neogit",
@@ -188,11 +139,6 @@ local plugins = {
             "nvim-telescope/telescope.nvim",
             "ibhagwan/fzf-lua",
         },
-    },
-
-    -- vim-mergetool
-    {
-        'samoshkin/vim-mergetool',
     },
 
     -- NeoVIMTree
@@ -209,11 +155,6 @@ local plugins = {
             "NvimTreeCollapse",
         },
     },
-
-    -- Leap AVY
-    -- {
-    --     "ggandor/leap.nvim",
-    -- },
 
     -- Org mode
     {
@@ -259,25 +200,10 @@ local plugins = {
         },
     },
 
-    -- Terminal
-    {
-        "akinsho/toggleterm.nvim",
-    },
-
-    -- Tmux Navigation
-    {
-        "christoomey/vim-tmux-navigator",
-    },
-
-    -- Transparency
-    {
-        "xiyaowong/transparent.nvim",
-    },
-
     -- treesj
     {
         "Wansmer/treesj",
-        cmd = { 
+        cmd = {
             "TSJToggle",
             "TSJSplit",
             "TSJJoin"
@@ -305,41 +231,6 @@ local plugins = {
         },
     },
 
-
-    -- Lua Line
-    {
-        "nvim-lualine/lualine.nvim",
-    },
-
-    -- WhichKey
-    {
-        "folke/which-key.nvim",
-    },
-
-    -- Auto Completion
-    {
-        "hrsh7th/nvim-cmp",
-    },   -- cmp Completion plugin
-    {
-        "hrsh7th/cmp-buffer",
-    }, -- buffer completion
-    {
-        "hrsh7th/cmp-path",
-    },   -- path completion
-    {
-        "neovim/nvim-lspconfig",
-    },
-    {
-        "hrsh7th/cmp-nvim-lsp",
-    },
-    {
-        "hrsh7th/cmp-cmdline",
-    }, -- command line Completion
-
-    {
-        "saadparwaiz1/cmp_luasnip",
-    },
-
     -- Snipit Engine
     {
         "L3MON4D3/LuaSnip",
@@ -353,29 +244,6 @@ local plugins = {
         },
     },
 
-    -- Lsp Saga
-    {
-        "glepnir/lspsaga.nvim",
-    },
-
-    -- lspkind for icons with snipits
-    {
-        "onsails/lspkind.nvim",
-    },
-
-    -- Managing Mason
-    {
-        "williamboman/mason.nvim",
-    },
-    {
-        "williamboman/mason-lspconfig.nvim",
-    },
-    {
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
-    },
-    {
-        "jay-babu/mason-null-ls.nvim",
-    },
     {
         "jay-babu/mason-nvim-dap.nvim",
         dependencies = { "mfussenegger/nvim-dap" },
@@ -401,16 +269,6 @@ local plugins = {
     },
     -- END MINI
 
-    -- Neovim Tagbar
-    {
-        "preservim/tagbar",
-    },
-
-    -- Project
-    {
-        "ahmedkhalf/project.nvim",
-    },
-
     -- Staruptime
     {
         "dstein64/vim-startuptime",
@@ -427,16 +285,6 @@ local plugins = {
             "SudaRead",
             "SudaWrite",
         },
-    },
-
-    -- Trouble
-    {
-        "folke/trouble.nvim",
-    },
-
-    -- VIM bbye
-    {
-        "moll/vim-bbye",
     },
 
     -- vimwiki
@@ -467,7 +315,6 @@ local plugins = {
         "wakatime/vim-wakatime",
         lazy = false,
     },
-
 
     -- ==============================================================
 } -- end of plugin line

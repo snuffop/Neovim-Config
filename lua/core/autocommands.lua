@@ -33,9 +33,3 @@ vim.cmd([[
   au BufNewFile ~/Nextcloud/Neorg/journal/*.norg :silent 0r !~/.local/bin/script/generate-neorg-journal-template.py '%'
 ]])
 
--- Autoformat
--- augroup _lsp
---   autocmd!
---   autocmd BufWritePre * lua vim.lsp.buf.formatting()
--- augroup end
---
