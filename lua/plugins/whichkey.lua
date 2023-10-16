@@ -113,7 +113,7 @@ local mappings = {
         },
         d = {
             name = "+Distant",
-            C =     { "<cmd>DistantConnect<CR>", "Distant Connect" },
+            C =     { "<cmd>DistantConnect", "Distant Connect" },
             M =     { "<cmd>DistantMetadata<CR>", "Distant Metadata" },
             R =     { "<cmd>DistantRemove<CR>", "Distant Remove" },
             S =     { "<cmd>DistantShell<CR>", "Distant Shell" },
