@@ -103,7 +103,12 @@ local mappings = {
     a = {
         name = "+Application",
         a = { "<cmd>Alpha<cr>", "Alpha" },
-        n = { "<cmd>Nnn<cr>", "Nnn toggle" },
+        f = {
+            name = "+Float",
+            r = { "<cmd>Ranger<CR>", "Ranger" },
+            n = { "<cmd>Nnn<CR>", "NNN" },
+            t = { "<cmd>TaskWarriorTUI<CR>", "TaskWarrior" },
+        },
         l = {
             name = "Lazy",
             s = { "<cmd>Lazy sync<cr>", "Sync" },
@@ -113,15 +118,18 @@ local mappings = {
         },
         d = {
             name = "+Distant",
-            C =     { "<cmd>DistantConnect", "Distant Connect" },
+            l =     {
+                name = "+Launch",
+                j = { "<cmd>DistantConnect 10.10.10.142<CR>", "Joyent Mac" },
+                m = { "<cmd>DistantConnect mail2.dabuke.com<CR>", "Mail2.dabuke.com" },
+                n = { "<cmd>DistantConnect l2.dabuke.com<CR>", "l2.dabuke.com" },
+            },
             M =     { "<cmd>DistantMetadata<CR>", "Distant Metadata" },
             R =     { "<cmd>DistantRemove<CR>", "Distant Remove" },
             S =     { "<cmd>DistantShell<CR>", "Distant Shell" },
             ["/"] = { "<cmd>DistantSearch<CR>", "Distant Search" },
             c =     { "<cmd>DistantCopy<CR>", "Distant Copy" },
-            d =     { "<cmd>Distand<CR>", "Distant" },
             i =     { "<cmd>DistantInstall<CR>", "Distant Install" },
-            l =     { "<cmd>DistantLaunch<CR>", "Distant Launch" },
             m =     { "<cmd>DistantMkdir<CR>", "Distant Mkdir" },
             r =     { "<cmd>DistantRename<CR>", "Distant Rename" },
             w =     { "<cmd>DistantSpawn<CR>", "Distant Spawn" },

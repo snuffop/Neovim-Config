@@ -32,7 +32,7 @@ local plugins = {
     { "hrsh7th/cmp-path" },
     { "hrsh7th/nvim-cmp" },
     { "jay-babu/mason-null-ls.nvim" },
-    { "jose-elias-alvarez/null-ls.nvim" },
+    { "nvimtools/none-ls.nvim" },
     { "lewis6991/gitsigns.nvim" },
     { "mattn/calendar-vim" },
     { "mattn/emmet-vim" },
@@ -52,6 +52,7 @@ local plugins = {
     { "windwp/nvim-ts-autotag" },
     { "xiyaowong/transparent.nvim" },
     { "yamatsum/nvim-cursorline" },
+    { 'is0n/fm-nvim' },
     { 'samoshkin/vim-mergetool' },
 
     -- Catppuccin
@@ -125,6 +126,16 @@ local plugins = {
             "nvim-lua/plenary.nvim",
             "nvim-neorg/neorg-telescope",
         },
+    },
+
+    -- Nerdy (Nerd font glyph selector)
+    {
+        '2kabhishek/nerdy.nvim',
+        dependencies = {
+            'stevearc/dressing.nvim',
+            'nvim-telescope/telescope.nvim',
+        },
+        cmd = 'Nerdy',
     },
 
     -- Noice
