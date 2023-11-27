@@ -63,10 +63,6 @@ TreeSitter.setup({
         max_file_lines = 5000,
     },
 
-    context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-    },
     textobjects = {
         lsp_interop = {
             enable = true,

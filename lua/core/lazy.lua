@@ -123,8 +123,8 @@ local plugins = {
         "nvim-neorg/neorg",
         build = ":Neorg wync-parsers",
         dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-neorg/neorg-telescope",
+            {"nvim-lua/plenary.nvim"},
+            {"nvim-neorg/neorg-telescope"},
         },
     },
 
