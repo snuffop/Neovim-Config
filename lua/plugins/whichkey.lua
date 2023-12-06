@@ -362,8 +362,11 @@ local mappings = {
 
     w = {
         name = "+windows",
-        h = { "<c-w>|", "maximize window horizontally (|)" },
-        v = { "<C-w>_", "Maximize window vertically (_)" },
+        h = { "<c-w>h", "Split window horizontally (|)" },
+        H = { "<c-w>|", "maximize window horizontally (|)" },
+        v = { "<C-w>v", "Split window vertically (_)" },
+        V = { "<C-w>_", "Maximize window vertically (_)" },
+        q = { "<C-w>q", "Quit window vertically (q)" },
         ["="] = { "<C-w>=", "Resize windows equally" },
         s = { ":lua require('telescope-tabs').list_tabs()<cr>", "Search Tabs" },
         t = { "<cmd>WhichKey<cr>", "Whichkey Top Level" },
