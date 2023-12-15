@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     { "LudoPinelli/comment-box.nvim" },
+    { "RRethy/vim-illuminate"},
     { "ThePrimeagen/git-worktree.nvim" },
     { "WhoIsSethDaniel/mason-tool-installer.nvim" },
     { "adrianvalenz/chronos.nvim" },
@@ -70,7 +71,7 @@ local plugins = {
         name = "catppuccin",
         priority = 1000,
     },
-    
+
     -- Distant
     {
         'chipsenkbeil/distant.nvim',
@@ -103,7 +104,13 @@ local plugins = {
         main = "ibl",
         opts = {},
     },
-    
+
+    -- MarkdownTable
+
+    {
+        "tyrossel/MarkdownTable.nvim",
+    },
+
     --- Markdown Preview
     {
         "iamcco/markdown-preview.nvim",
@@ -189,6 +196,21 @@ local plugins = {
             -- see below for full list of optional dependencies 👇
         },
     },
+
+    -- obsidian Bridge
+    {
+        "oflisback/obsidian-bridge.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim" },
+        config = function() require("obsidian-bridge").setup({
+            obsidian_server_address = "http://localhost:27123"
+        }) end,
+        event = {
+            "BufReadPre *.md",
+            "BufNewFile *.md",
+        },
+        lazy = true,
+    },
+
     -- Org mode
     {
         "nvim-orgmode/orgmode",
