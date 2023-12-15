@@ -41,7 +41,6 @@ Catppuccin.setup({
     integrations = {
         lsp_saga = true,
         mason = true,
-        vimwiki = true,
         which_key = true,
     },
 })

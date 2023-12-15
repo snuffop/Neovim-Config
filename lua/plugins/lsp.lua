@@ -96,6 +96,7 @@ MasonToolInstaller.setup({
         { "dockerls",                         auto_update = true },
         { "html",                             auto_update = true },
         { "jsonls",                           auto_update = true },
+        { "jqlsp",                            auto_update = true },
         { "mutt-language-server",             auto_update = true },
         { "stylua",                           auto_update = true },
         { "vimls",                            auto_update = true },
@@ -143,7 +144,6 @@ LspConfig.docker_compose_language_service.setup({
     capabilities = capabilities,
 })
 
-
 -- groovy 
 
 LspConfig.groovyls.setup({
@@ -152,6 +152,12 @@ LspConfig.groovyls.setup({
 
 -- html
 LspConfig.html.setup({
+    capabilities = capabilities,
+})
+
+-- jqlsp
+
+LspConfig.jqlsp.setup({
     capabilities = capabilities,
 })
 

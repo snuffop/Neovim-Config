@@ -29,7 +29,6 @@ require('neorg').setup {
             },
         },
         ["core.export.markdown"] = {},
-        ["core.esupports.hop"] = {},
         ["core.esupports.indent"] = {},
         ["core.esupports.metagen"] = {},
         ["core.itero"] = {},

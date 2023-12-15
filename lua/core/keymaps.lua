@@ -79,3 +79,4 @@ vnoremap <M-k> <cmd>WhichKey '' v<cr>
 inoremap <M-k> <cmd>WhichKey '' i<cr>
 cnoremap <M-k> <cmd>WhichKey '' c<cr>
 ]])
+

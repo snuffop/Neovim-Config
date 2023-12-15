@@ -32,9 +32,7 @@ local plugins = {
     { "hrsh7th/cmp-path" },
     { "hrsh7th/nvim-cmp" },
     { "jay-babu/mason-null-ls.nvim" },
-    { "nvimtools/none-ls.nvim" },
     { "lewis6991/gitsigns.nvim" },
-    { "mattn/calendar-vim" },
     { "mattn/emmet-vim" },
     { "max397574/better-escape.nvim" },
     { "mechatroner/rainbow_csv" },
@@ -42,9 +40,11 @@ local plugins = {
     { "neovim/nvim-lspconfig", },
     { "norcalli/nvim-colorizer.lua" },
     { "nvim-lualine/lualine.nvim" },
+    { "nvimtools/none-ls.nvim" },
     { "onsails/lspkind.nvim" },
     { "pearofducks/ansible-vim" },
     { "preservim/tagbar" },
+    { "renerocksai/calendar-vim" },
     { "saadparwaiz1/cmp_luasnip", },
     { "theprimeagen/harpoon" },
     { "williamboman/mason-lspconfig.nvim" },
@@ -55,12 +55,6 @@ local plugins = {
     { 'is0n/fm-nvim' },
     { 'samoshkin/vim-mergetool' },
 
-    -- Catppuccin
-    {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        priority = 1000,
-    },
 
     -- Buffer Line
     {
@@ -70,6 +64,13 @@ local plugins = {
         },
     },
 
+    -- Catppuccin
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+    },
+    
     -- Distant
     {
         'chipsenkbeil/distant.nvim',
@@ -87,20 +88,6 @@ local plugins = {
         },
     },
 
-    -- HOP
-    {
-        'smoka7/hop.nvim',
-        version = "*",
-        opts = {},
-    },
-
-    -- Indent Line
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        opts = {},
-    },
-
     -- Hard Time
     {
         "m4xshen/hardtime.nvim",
@@ -110,6 +97,13 @@ local plugins = {
         },
     },
 
+    -- Indent Line
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = {},
+    },
+    
     --- Markdown Preview
     {
         "iamcco/markdown-preview.nvim",
@@ -175,6 +169,26 @@ local plugins = {
         },
     },
 
+    -- Obsidian
+    {
+        "epwalsh/obsidian.nvim",
+        version = "*",  -- recommended, use latest release instead of latest commit
+        lazy = true,
+        ft = "markdown",
+        -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+        -- event = {
+        --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+        --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+        --   "BufReadPre path/to/my-vault/**.md",
+        --   "BufNewFile path/to/my-vault/**.md",
+        -- },
+        dependencies = {
+            -- Required.
+            "nvim-lua/plenary.nvim",
+
+            -- see below for full list of optional dependencies 👇
+        },
+    },
     -- Org mode
     {
         "nvim-orgmode/orgmode",
@@ -189,11 +203,28 @@ local plugins = {
         },
     },
 
-    -- Taskwiki
+    -- pomo nvim
     {
-        "tools-life/taskwiki",
-        init = function()
-            vim.g.taskwiki_markup_syntax = "markdown"
+        "epwalsh/pomo.nvim",
+        version = "*",  -- Recommended, use latest release instead of latest commit
+        lazy = true,
+        cmd = { "TimerStart", "TimerRepeat" },
+        dependencies = {
+            -- Optional, but highly recommended if you want to use the "Default" timer
+            "rcarriga/nvim-notify",
+        },
+    },
+
+    -- Peek markdown Previewer
+    {
+        "toppair/peek.nvim",
+        event = { "VeryLazy" },
+        build = "deno task --quiet build:fast",
+        config = function()
+            require("peek").setup()
+            -- refer to `configuration to change defaults`
+            vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+            vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
         end,
     },
 
@@ -211,7 +242,7 @@ local plugins = {
             "jvgrootveld/telescope-zoxide",
             "tsakirist/telescope-lazy.nvim",
             "nvim-telescope/telescope-project.nvim",
-            "elpiloto/telescope-vimwiki.nvim",
+            "nvim-telescope/telescope-symbols.nvim",
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
                 build = "make",
@@ -306,28 +337,6 @@ local plugins = {
         },
     },
 
-    -- vimwiki
-    {
-        "vimwiki/vimwiki",
-        init = function()
-            vim.g.vimwiki_list = {
-                {
-                    path = "~/Nextcloud/Vimwiki",
-                    syntax = "markdown",
-                    ext = ".md",
-                    ignoreFolders = { "node_modules", ".git" },
-                },
-            }
-            vim.g.vimwiki_markdown_link_ext = 1 end,
-    },
-
-    {
-        "michal-h21/vimwiki-sync",
-        init = function() 
-            vim.g.vimwiki_sync_branch = "main" 
-            vim.g.vimwiki_sync_commit_message = "Auto commit + push. %c"
-        end,
-    },
 
     -- Wakatime
     {

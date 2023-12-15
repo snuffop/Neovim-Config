@@ -150,7 +150,7 @@ local mappings = {
         name = "+Buffers",
         b = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "Buffers" },
         d = { "<cmd>Bdelete<cr>", "Delete Buffer" },
-        l = { ":lua require('telescope.builtin').buffers()<cr>", "List" },
+        l = { "<cmd>lua require('telescope.builtin').buffers()<cr>", "List" },
         p = { "<cmd>BufferLineTogglePin<cr>", "Toggle Pin" },
         s = { "<cmd>BufferLinePick<cr>", "Select" },
         w = { "<cmd>Bwipeout<cr>", "Wipeout  Buffer" },
@@ -263,7 +263,7 @@ local mappings = {
     n = {
         name = "+notes",
         n = { "<cmd>Neorg index<cr>", "neorg index" },
-        N = { "<cmd>lua core.dirman.new.note()<cr>", "Neorg New Note" },
+        N = { "<cmd>Neorg keybind norg core.dirman.new.note<cr>", "Neorg New Note" },
         r = { "<cmd>Neorg return<cr>", "neorg return" },
         s = { "<cmd>Telescope Neorg search_headings<cr>", "search headings" },
         f = { "<cmd>Telescope Neorg find_linkable<cr>", "search linkable" },
@@ -375,18 +375,30 @@ local mappings = {
     -- Extra
     x = {
         c = { "<cmd>!chmod +x %<CR>", "chmod" },
-        h = {
-            name = "+Hop",
-            ["1"] = { "<cmd>HopChar1<cr>", "Hop Char1"},
-            ["2"] = { "<cmd>HopChar2<cr>", "Hop Char2"},
-            a = { "<cmd>HopAnywhere<cr>", "Hop Anywhere"},
-            l = { "<cmd>HopLine<cr>", "Hop Line"},
-            L = { "<cmd>HopLineStart<cr>", "Hop Line Start"},
-            p = { "<cmd>HopPattern<cr>", "Hop Pattern"},
-            v = { "<cmd>HopVertical<cr>", "Hop Vertical"},
-            w = { "<cmd>HopWord<cr>", "Hop Word"},
+    },
 
-        }
+    z = {
+        f  = { "<cmd>:lua require('telekasten').find_notes()<cr>", "Find notes"},
+        d  = { "<cmd>:lua require('telekasten').find_daily_notes()<cr>", "Find daily notes"},
+        g  = { "<cmd>:lua require('telekasten').search_notes()<cr>", "Search notes"},
+        z  = { "<cmd>:lua require('telekasten').follow_link()<cr>", "Follow link"},
+        T  = { "<cmd>:lua require('telekasten').goto_today()<cr>", "Go to today"},
+        W  = { "<cmd>:lua require('telekasten').goto_thisweek()<cr>", "Go to this week"},
+        w  = { "<cmd>:lua require('telekasten').find_weekly_notes()<cr>", "Find weekly notes"},
+        n  = { "<cmd>:lua require('telekasten').new_note()<cr>", "New note"},
+        N  = { "<cmd>:lua require('telekasten').new_templated_note()<cr>", "New template note"},
+        y  = { "<cmd>:lua require('telekasten').yank_notelink()<cr>", "Yank notelink"},
+        c  = { "<cmd>:lua require('telekasten').show_calendar()<cr>", "Show calendar"},
+        C  = { "<cmd>: CalendarT<cr>", "Calendar-T"},
+        i  = { "<cmd>:lua require('telekasten').paste_img_and_link()<cr>", "Paste Image and link"},
+        t  = { "<cmd>:lua require('telekasten').toggle_todo()<cr>", "Toggle todo"},
+        b  = { "<cmd>:lua require('telekasten').show_backlinks()<cr>", "Show backlinks"},
+        F  = { "<cmd>:lua require('telekasten').find_friends()<cr>", "Find friends"},
+        I  = { "<cmd>:lua require('telekasten').insert_img_link({ i=true })<cr>", "Insert image"},
+        p  = { "<cmd>:lua require('telekasten').preview_img()<cr>", "Preview image"},
+        m  = { "<cmd>:lua require('telekasten').browse_media()<cr>", "Browse media"},
+        a  = { "<cmd>:lua require('telekasten').show_tags()<cr>", "Show tags"},
+        r  = { "<cmd>:lua require('telekasten').rename_note()<cr>", "Rename note"},
     },
 }
 
