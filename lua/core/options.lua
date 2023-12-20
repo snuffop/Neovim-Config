@@ -19,7 +19,6 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 
 -- Update and backups
-vim.o.conceallevel = 2
 vim.o.showmode = false
 vim.o.backup = false
 vim.o.writebackup = false
@@ -72,7 +71,8 @@ vim.bo.expandtab = true
 vim.o.smarttab = true
 
 -- Folding
-vim.opt.foldlevel = 20
+vim.opt.foldlevel = 99
+vim.o.conceallevel = 2
 
 vim.opt.list = true
 -- vim.opt.listchars:append("eol:↴")

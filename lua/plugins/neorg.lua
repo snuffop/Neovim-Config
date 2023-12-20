@@ -2,7 +2,7 @@ require('neorg').setup {
     load = {
         ["core.concealer"] = {
             config = {
-                folds = false,
+                folds = true,
             },
         },
         ["core.completion"] = {
@@ -17,6 +17,7 @@ require('neorg').setup {
                 workspaces = {
                     notes = "~/Nextcloud/Neorg",
                     joyent = "~/Nextcloud/Neorg/joyent",
+                    zettel = "~/Nextcloud/Neorg/zettel/",
                 },
                 default_workspace = "notes",
                 index = "index.norg",
@@ -42,10 +43,11 @@ require('neorg').setup {
         ["core.looking-glass"] = {},
         ["core.summary"] = {},
         ["core.syntax"] = {},
-        -- ["core.ui.calendar"] = {},
+        ["core.ui.calendar"] = {},
         ["core.upgrade"] = {},
         ["core.integrations.telescope"] = {},
         ["core.integrations.treesitter"] = {},
+
     },
 }
 
@@ -66,3 +68,4 @@ neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, key
             noremap = true,
         })
 end)
+
