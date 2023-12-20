@@ -350,19 +350,13 @@ local mappings = {
     -- TOGGLE
     t = {
         name = "toggle",
-        c = { "<cmd>neorg toggle-concealer<cr>", "toggle concealer" },
+        c = { "<cmd>Neorg toggle-concealer<cr>", "toggle concealer" },
         j = {
             name = "+TreeSJ",
             t = { "<cmd>TSJToggle<cr>", "Trees J toggle" },
             s = { "<cmd>TSJSplit<cr>", "Trees J Split" },
             j = { "<cmd>TSJJoin<cr>", "Trees J Join" },
 
-        },
-        t = {
-            name = "toggle terminal",
-            f = { "<cmd>toggleterm direction=float<cr>", "float" },
-            h = { "<cmd>toggleterm size=10 direction=horizontal<cr>", "horizontal" },
-            v = { "<cmd>toggleterm size=80 direction=vertical<cr>", "vertical" },
         },
         u = { "<cmd>undotreetoggle<cr>", "undo tree" },
     },
