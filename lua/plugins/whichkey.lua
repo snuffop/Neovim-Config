@@ -1,4 +1,4 @@
--- requring plugin
+ -- requring plugin
 local installed, WhichKey = pcall(require, "which-key")
 if not installed then
     vim.notify("Plugin 'which-key' is not installed")
@@ -284,8 +284,9 @@ local mappings = {
         },
         w = {
             name = "workspace",
-            n = { "<cmd>Neorg workspace notes<cr>", "notes workspace" },
-            j = { "<cmd>Neorg workspace joyent<cr>", "joyent workspace" },
+            n = { "<cmd>Neorg workspace notes<cr>", "Notes workspace" },
+            j = { "<cmd>Neorg workspace joyent<cr>", "Joyent workspace" },
+            z = { "<cmd>Neorg workspace zettel<cr>", "Zettel workspace" },
         },
     },
 

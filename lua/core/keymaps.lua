@@ -11,6 +11,9 @@ vim.keymap.set({"i", "s" }, "<C-L>", "<Plug>luasnip-next-choice<cr>", {silent = 
 -- Oil - 
 vim.keymap.set("n", "-", "<cmd>Oil<cr>", { silent = true, desc = "Open parent directory"})
 
+-- Disable F1 --
+vim.keymap.set("n", "<F1>", "<nop>")
+
 local opts = { noremap = true, silent = true }
 
 -- Shorten function name

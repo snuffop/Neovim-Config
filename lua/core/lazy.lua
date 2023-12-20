@@ -105,6 +105,12 @@ local plugins = {
         opts = {},
     },
 
+    -- Lua  neodev
+
+    {
+        "folke/neodev.nvim"
+    },
+
     -- MarkdownTable
 
     {
