@@ -89,6 +89,12 @@ local plugins = {
         },
     },
 
+    -- Denote
+    {
+        "HumanEntity/denote.nvim",
+        cmd = "Denote",
+    },
+
     -- Hard Time
     {
         "m4xshen/hardtime.nvim",
