@@ -1,10 +1,5 @@
-local installed, Denote = pcall(require, "denote")
-if not installed then
-    vim.notify("Plugin 'denote' is not installed")
-    return
-end
 
-Denote.setup({
+require('denote').setup({
     filename = {
         ext = "norg",
         date_sep = "=",

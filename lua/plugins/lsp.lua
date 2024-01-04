@@ -96,7 +96,7 @@ MasonToolInstaller.setup({
         { "dockerls",                         auto_update = true },
         { "html",                             auto_update = true },
         { "jsonls",                           auto_update = true },
-        { "jqlsp",                            auto_update = true },
+        { "jqls",                             auto_update = true },
         { "mutt-language-server",             auto_update = true },
         { "stylua",                           auto_update = true },
         { "vimls",                            auto_update = true },
@@ -156,8 +156,7 @@ LspConfig.html.setup({
 })
 
 -- jqlsp
-
-LspConfig.jqlsp.setup({
+LspConfig.jqls.setup({
     capabilities = capabilities,
 })
 
@@ -205,6 +204,6 @@ LspConfig.rust_analyzer.setup({
 -- Tailwind
 -- Support for tailwind auto completion
 -- install the tailwind server : "sudo npm install -g @tailwindcss/language-server"
-LspConfig.tailwindcss.setup({
-    capabilities = capabilities,
-})
+-- LspConfig.tailwindcss.setup({
+--     capabilities = capabilities,
+-- })

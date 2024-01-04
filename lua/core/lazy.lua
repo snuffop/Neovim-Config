@@ -55,6 +55,7 @@ local plugins = {
     { "yamatsum/nvim-cursorline" },
     { 'is0n/fm-nvim' },
     { 'samoshkin/vim-mergetool' },
+    { "mickael-menu/zk-nvim" },
 
 
     -- Buffer Line
@@ -117,19 +118,6 @@ local plugins = {
         "folke/neodev.nvim"
     },
 
-    -- MarkdownTable
-
-    {
-        "tyrossel/MarkdownTable.nvim",
-    },
-
-    --- Markdown Preview
-    {
-        "iamcco/markdown-preview.nvim",
-        build = function() 
-            vim.fn["mkdp#util#install"]() 
-        end,
-    },
 
     -- Neorg 
     {
@@ -188,41 +176,6 @@ local plugins = {
         },
     },
 
-    -- Obsidian
-    {
-        "epwalsh/obsidian.nvim",
-        version = "*",  -- recommended, use latest release instead of latest commit
-        lazy = true,
-        ft = "markdown",
-        -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-        -- event = {
-        --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-        --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-        --   "BufReadPre path/to/my-vault/**.md",
-        --   "BufNewFile path/to/my-vault/**.md",
-        -- },
-        dependencies = {
-            -- Required.
-            "nvim-lua/plenary.nvim",
-
-            -- see below for full list of optional dependencies 👇
-        },
-    },
-
-    -- obsidian Bridge
-    {
-        "oflisback/obsidian-bridge.nvim",
-        dependencies = { "nvim-telescope/telescope.nvim" },
-        config = function() require("obsidian-bridge").setup({
-            obsidian_server_address = "http://localhost:27123"
-        }) end,
-        event = {
-            "BufReadPre *.md",
-            "BufNewFile *.md",
-        },
-        lazy = true,
-    },
-
     -- Org mode
     {
         "nvim-orgmode/orgmode",
@@ -247,19 +200,6 @@ local plugins = {
             -- Optional, but highly recommended if you want to use the "Default" timer
             "rcarriga/nvim-notify",
         },
-    },
-
-    -- Peek markdown Previewer
-    {
-        "toppair/peek.nvim",
-        event = { "VeryLazy" },
-        build = "deno task --quiet build:fast",
-        config = function()
-            require("peek").setup()
-            -- refer to `configuration to change defaults`
-            vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-            vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
-        end,
     },
 
     -- Telescope
@@ -339,7 +279,7 @@ local plugins = {
         version = '*',
     },
 
-    { 'echasnovski/mini.surround',
+    { 'kylechui/nvim-surround',
         version = '*',
     },
 

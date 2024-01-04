@@ -1,4 +1,4 @@
- -- requring plugin
+-- requring plugin
 local installed, WhichKey = pcall(require, "which-key")
 if not installed then
     vim.notify("Plugin 'which-key' is not installed")
@@ -400,6 +400,13 @@ local mappings = {
         m  = { "<cmd>:lua require('telekasten').browse_media()<cr>", "Browse media"},
         a  = { "<cmd>:lua require('telekasten').show_tags()<cr>", "Show tags"},
         r  = { "<cmd>:lua require('telekasten').rename_note()<cr>", "Rename note"},
+        k = {
+            name = "ZK ZettelKasten",
+            k  = { "<cmd>ZkNotes<cr>", "Zk Notes"},
+            c  = { "<cmd>ZkCd<cr>", "Zk CD"},
+            i  = { "<cmd>ZkInsertLink<cr>", "Zk Instert Link"},
+            l  = { "<cmd>ZkLinks<cr>", "Zk Follow Link"},
+        },
     },
 }
 
