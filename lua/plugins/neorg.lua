@@ -36,7 +36,6 @@ require('neorg').setup {
         ["core.journal"] = {
             config = {
                 workspace = "notes",
-                use_template = false,
             }
         },
         ["core.keybinds"] = {},
@@ -47,7 +46,18 @@ require('neorg').setup {
         ["core.upgrade"] = {},
         ["core.integrations.telescope"] = {},
         ["core.integrations.treesitter"] = {},
-
+        ["external.templates"] = {
+            config = {
+                templates_dir = vim.fn.stdpath("config") .. "/templates/neorg",
+                default_subcommand = "add", -- or "fload", "load"
+                -- keywords = { -- Add your own keywords.
+                --     EXAMPLE_KEYWORD = function ()
+                --         return require("luasnip").insert_node(1, "default text blah blah")
+                --     end,
+                -- },
+                snippets_overwrite = {},
+            },
+        },
     },
 }
 

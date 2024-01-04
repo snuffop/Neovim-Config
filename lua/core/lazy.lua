@@ -124,6 +124,8 @@ local plugins = {
         "nvim-neorg/neorg",
         build = ":Neorg wync-parsers",
         dependencies = {
+            { "pysan3/neorg-templates",
+                dependencies = { "L3MON4D3/LuaSnip" } },
             {"nvim-lua/plenary.nvim"},
             {"nvim-neorg/neorg-telescope"},
         },
