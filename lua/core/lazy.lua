@@ -313,6 +313,24 @@ local plugins = {
         },
     },
 
+    -- Taskwiki
+    {
+        "tools-life/taskwiki",
+    },
+
+    -- vimwiki
+    {
+        "vimwiki/vimwiki", 
+        init = function() 
+            vim.g.vimwiki_list = {
+                {
+                    path = '~/Nextcloud/Vimwiki',
+                    syntax = 'markdown',
+                    ext = '.md',
+                },
+            }
+        end,
+    },
 
     -- Wakatime
     {
