@@ -1,6 +1,6 @@
 -- require("plugins.dracula")
 require("plugins.alpha-nvim")
-require("plugins.better_escape")
+require("plugins.better-escape")
 require("plugins.bufferline")
 require("plugins.catppuccin")
 require("plugins.cmp")
