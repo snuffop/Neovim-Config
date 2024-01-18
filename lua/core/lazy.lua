@@ -74,6 +74,8 @@ local plugins = {
         priority = 1000,
     },
 
+    { 'colevoss/nvimpire' },
+
     -- Distant
     {
         'chipsenkbeil/distant.nvim',
@@ -237,6 +239,7 @@ local plugins = {
             "nvim-telescope/telescope-project.nvim",
             "nvim-telescope/telescope-symbols.nvim",
             "joaomsa/telescope-orgmode.nvim",
+            "nvim-telescope/telescope-smart-history.nvim",
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
                 build = "make",

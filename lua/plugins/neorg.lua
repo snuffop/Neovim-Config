@@ -17,7 +17,6 @@ require('neorg').setup {
                 workspaces = {
                     notes = "~/Nextcloud/Neorg",
                     joyent = "~/Nextcloud/Neorg/joyent",
-                    zettel = "~/Nextcloud/Neorg/zettel",
                 },
                 default_workspace = "notes",
                 index = "index.norg",

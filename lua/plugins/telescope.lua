@@ -17,6 +17,10 @@ end
 local actions = TelescopeActions
 Telescope.setup({
     defaults = {
+        history = {
+            path = '~/.local/share/nvim/databases/telescope_history.sqlite3',
+            limit = 100,
+        },
         layout_config = {
             width = 0.80,
             prompt_position = "bottom",
@@ -107,14 +111,15 @@ Telescope.setup({
 })
 
 Telescope.load_extension("env")
-Telescope.load_extension("glyph")
-Telescope.load_extension("find_pickers")
 Telescope.load_extension("file_browser")
-Telescope.load_extension("media_files")
-Telescope.load_extension("git_worktree")
-Telescope.load_extension("luasnip")
-Telescope.load_extension("zoxide")
+Telescope.load_extension("find_pickers")
 Telescope.load_extension("fzf")
+Telescope.load_extension("git_worktree")
+Telescope.load_extension("glyph")
 Telescope.load_extension("lazy")
+Telescope.load_extension("luasnip")
+Telescope.load_extension("media_files")
 Telescope.load_extension("project")
+Telescope.load_extension("zoxide")
 Telescope.load_extension('orgmode')
+Telescope.load_extension('smart_history')

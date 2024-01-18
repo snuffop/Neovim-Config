@@ -1,4 +1,5 @@
-require("plugins.catppuccin")
+--require("plugins.catppuccin")
+require("plugins.nvimpire")
 require("plugins.alpha-nvim")
 require("plugins.better-escape")
 require("plugins.bufferline")
