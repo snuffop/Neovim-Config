@@ -73,6 +73,7 @@ vim.o.smarttab = true
 -- Folding
 vim.opt.foldlevel = 99
 vim.o.conceallevel = 2
+vim.o.concealcursor = 'nc'
 
 vim.opt.list = true
 -- vim.opt.listchars:append("eol:↴")

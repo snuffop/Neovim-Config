@@ -145,6 +145,7 @@ Cmp.setup({
         { name = "nvim_lsp", max_item_count = 6 },
         { name = "nvim_lua" },
         { name = "path" },
+        { name = "orgmode" },
         { name = "buffer", max_item_count = 6 },
     }),
 

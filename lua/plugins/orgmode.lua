@@ -5,7 +5,7 @@ if not installed then
     return
 end
 
-require("orgmode").setup_ts_grammar()
+Orgmode.setup_ts_grammar()
 
 Orgmode.setup({
     org_agenda_files = { "~/Nextcloud/Notes/org/*" },

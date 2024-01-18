@@ -159,16 +159,17 @@ local mappings = {
     -- CODE
     c = {
         name = "+Code",
-        m = { "<cmd>:Mason<cr>", "Mason" },
-        i = { "<cmd>:Inspect<cr>", "TS Inspect" },
-        t = { "<cmd>:TagbarToggle<cr>", "Tagbar toggle" },
-        I = { "<cmd>:TSInstallInfo<cr>", "TS Install Info" },
+        m = { "<cmd>Mason<cr>", "Mason" },
+        i = { "<cmd>Inspect<cr>", "TS Inspect" },
+        t = { "<cmd>TagbarToggle<cr>", "Tagbar toggle" },
+        I = { "<cmd>TSInstallInfo<cr>", "TS Install Info" },
     },
 
     -- D
     d = {
         name = "+dired",
         j = { "<cmd>Oil<cr>", "Oil Dired Jump" },  -- Ment for my finger memory
+        m = { "<cmd>lua MiniFiles.open()<cr>", "Mini Files" },
     },
 
     f = {
@@ -180,6 +181,7 @@ local mappings = {
         e = { "<cmd>NvimTreeToggle<cr>", "Nvim-Tree" },
         f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files" },
         g = { "<cmd>Telescope git_files<cr>", "Git File" },
+        m = { "<cmd>lua MiniFiles.open()<cr>", "Mini Files" },
         o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         r = { "<cmd>Ranger<cr>", "Ranger Vim" },
         s = { "<cmd>up<cr><esc>", "Save File" },

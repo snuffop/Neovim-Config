@@ -1,4 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+--"HumanEntity/denote.nvim",
 
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -91,18 +92,10 @@ local plugins = {
     },
 
     -- Denote
+    --"HumanEntity/denote.nvim",
     {
-        "HumanEntity/denote.nvim",
+        "danilshvalov/denote.nvim",
         cmd = "Denote",
-    },
-
-    -- Hard Time
-    {
-        "m4xshen/hardtime.nvim",
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim"
-        },
     },
 
     -- Indent Line
@@ -184,11 +177,30 @@ local plugins = {
         ft = "org",
     },
 
+    {
+        'akinsho/org-bullets.nvim',
+        config = function()
+            require('org-bullets').setup()
+        end
+    },
+
+    {
+        "lukas-reineke/headlines.nvim",
+        dependencies = "nvim-treesitter/nvim-treesitter",
+        config = true, -- or `opts = {}`
+    },
+
     -- OIL
     {
         "stevearc/oil.nvim",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
+        },
+    },
+    {
+        "refractalize/oil-git-status.nvim",
+        dependencies = {
+            "stevearc/oil.nvim",
         },
     },
 
@@ -204,8 +216,13 @@ local plugins = {
         },
     },
 
+    {
+        'dhruvasagar/vim-table-mode',
+    },
+
     -- Telescope
-    { "nvim-telescope/telescope.nvim",
+    {
+        "nvim-telescope/telescope.nvim",
         -- tag = "0.1.1",
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -219,6 +236,7 @@ local plugins = {
             "tsakirist/telescope-lazy.nvim",
             "nvim-telescope/telescope-project.nvim",
             "nvim-telescope/telescope-symbols.nvim",
+            "joaomsa/telescope-orgmode.nvim",
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
                 build = "make",
@@ -275,17 +293,24 @@ local plugins = {
         dependencies = { "mfussenegger/nvim-dap" },
     },
 
+    {
+        'kylechui/nvim-surround',
+        version = '*',
+    },
+
     -- Mini 
     {
         'echasnovski/mini.nvim',
         version = '*',
     },
 
-    { 'kylechui/nvim-surround',
+    {
+        'echasnovski/mini.comment',
         version = '*',
     },
 
-    { 'echasnovski/mini.comment',
+    {
+        'echasnovski/mini.files',
         version = '*',
     },
 
@@ -299,8 +324,8 @@ local plugins = {
     {
         "dstein64/vim-startuptime",
         cmd = "StartupTime",
-        init = function() 
-            vim.g.startuptime_tries = 10 
+        init = function()
+            vim.g.startuptime_tries = 10
         end,
     },
 
@@ -311,25 +336,6 @@ local plugins = {
             "SudaRead",
             "SudaWrite",
         },
-    },
-
-    -- Taskwiki
-    {
-        "tools-life/taskwiki",
-    },
-
-    -- vimwiki
-    {
-        "vimwiki/vimwiki", 
-        init = function() 
-            vim.g.vimwiki_list = {
-                {
-                    path = '~/Nextcloud/Vimwiki',
-                    syntax = 'markdown',
-                    ext = '.md',
-                },
-            }
-        end,
     },
 
     -- Wakatime

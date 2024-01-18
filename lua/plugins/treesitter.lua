@@ -5,7 +5,6 @@ if not installed then
     return
 end
 
-
 -- Setting up Treesitter
 TreeSitter.setup({
     ensure_installed = {

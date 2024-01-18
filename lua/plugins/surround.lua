@@ -4,6 +4,4 @@ if not installed then
     return
 end
 
-Surround.setup({
-
-    })
+Surround.setup()

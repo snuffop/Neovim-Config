@@ -1,11 +1,7 @@
--- OIL
-local installed, Oil = pcall(require, "oil")
-if not installed then
-    vim.notify("Plugin 'Oil' is not installed")
-    return
-end
+-- Oil *****Git Status****** at the End of the file 
 
-Oil.setup({
+-- OIL
+require("oil").setup({
     -- Id is automatically added at the beginning, and name at the end
     -- See :help oil-columns
     columns = {
@@ -22,7 +18,7 @@ Oil.setup({
     -- Window-local options to use for oil buffers
     win_options = {
         wrap = false,
-        signcolumn = "no",
+        signcolumn = "yes:2",
         cursorcolumn = false,
         foldcolumn = "0",
         spell = false,
@@ -131,3 +127,6 @@ Oil.setup({
         },
     },
 })
+
+require('oil-git-status').setup()
+
