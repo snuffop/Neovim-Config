@@ -1,12 +1,7 @@
--- nvim-cmp
-local installed, Catppuccin = pcall(require, "catppuccin")
-if not installed then
-    vim.notify("Plugin 'catppuccinp' is not installed")
-    return
-end
+-- Catppuccin Theme
 
-Catppuccin.setup({
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
+require('catppuccin').setup({
+    flavour = "macchiato", -- latte, frappe, macchiato, mocha
     background = { -- :h background
         light = "latte",
         dark = "macchiato",
@@ -39,6 +34,7 @@ Catppuccin.setup({
     color_overrides = {},
     custom_highlights = {},
     integrations = {
+        gitsigns = true,
         lsp_saga = true,
         mason = true,
         which_key = true,

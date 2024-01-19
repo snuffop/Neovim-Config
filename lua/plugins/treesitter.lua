@@ -41,7 +41,8 @@ TreeSitter.setup({
     },
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = { "org", "markdown" },
+        --additional_vim_regex_highlighting = { "org", "markdown" },
+        additional_vim_regex_highlighting = false, -- for catppuccin theme
     },
 
     autotag = {

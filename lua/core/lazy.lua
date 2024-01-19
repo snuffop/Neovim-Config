@@ -15,6 +15,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+
     { "LudoPinelli/comment-box.nvim" },
     { "RRethy/vim-illuminate"},
     { "ThePrimeagen/git-worktree.nvim" },
@@ -56,8 +57,6 @@ local plugins = {
     { "yamatsum/nvim-cursorline" },
     { 'is0n/fm-nvim' },
     { 'samoshkin/vim-mergetool' },
-    { "mickael-menu/zk-nvim" },
-
 
     -- Buffer Line
     {
@@ -74,7 +73,10 @@ local plugins = {
         priority = 1000,
     },
 
-    { 'colevoss/nvimpire' },
+    -- Dracula nvimpire
+    {
+        'colevoss/nvimpire'
+    },
 
     -- Distant
     {
@@ -108,11 +110,9 @@ local plugins = {
     },
 
     -- Lua  neodev
-
     {
         "folke/neodev.nvim"
     },
-
 
     -- Neorg 
     {
@@ -179,19 +179,6 @@ local plugins = {
         ft = "org",
     },
 
-    {
-        'akinsho/org-bullets.nvim',
-        config = function()
-            require('org-bullets').setup()
-        end
-    },
-
-    {
-        "lukas-reineke/headlines.nvim",
-        dependencies = "nvim-treesitter/nvim-treesitter",
-        config = true, -- or `opts = {}`
-    },
-
     -- OIL
     {
         "stevearc/oil.nvim",
@@ -203,18 +190,6 @@ local plugins = {
         "refractalize/oil-git-status.nvim",
         dependencies = {
             "stevearc/oil.nvim",
-        },
-    },
-
-    -- pomo nvim
-    {
-        "epwalsh/pomo.nvim",
-        version = "*",  -- Recommended, use latest release instead of latest commit
-        lazy = true,
-        cmd = { "TimerStart", "TimerRepeat" },
-        dependencies = {
-            -- Optional, but highly recommended if you want to use the "Default" timer
-            "rcarriga/nvim-notify",
         },
     },
 
