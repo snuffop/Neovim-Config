@@ -317,11 +317,25 @@ local plugins = {
         version = '*',
     },
 
-    {
-        'echasnovski/mini.pairs',
-        version = '*',
-    },
     -- END MINI
+
+    {
+        'bennypowers/nvim-regexplainer',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter',
+            'MunifTanjim/nui.nvim',
+        },
+        config = function()
+            require'regexplainer'.setup()
+        end,
+    },
+
+    { 'ZhiyuanLck/smart-pairs', 
+        event = 'InsertEnter', 
+        config = function() 
+            require('pairs'):setup() 
+        end
+    },
 
     -- Staruptime
     {
