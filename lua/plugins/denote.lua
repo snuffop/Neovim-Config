@@ -1,0 +1,2 @@
+
+require('denote').setup()

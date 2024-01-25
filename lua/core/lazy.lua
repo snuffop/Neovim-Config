@@ -1,5 +1,4 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
---"HumanEntity/denote.nvim",
 
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -96,9 +95,10 @@ local plugins = {
     },
 
     -- Denote
-    --"HumanEntity/denote.nvim",
+        -- "danilshvalov/denote.nvim",
+        -- "HumanEntity/denote.nvim",
     {
-        "danilshvalov/denote.nvim",
+        "snuffop/denote.nvim",
         cmd = "Denote",
     },
 

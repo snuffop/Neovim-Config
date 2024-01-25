@@ -161,7 +161,11 @@ local mappings = {
         name = "+Code",
         m = { "<cmd>Mason<cr>", "Mason" },
         i = { "<cmd>Inspect<cr>", "TS Inspect" },
-        t = { "<cmd>TagbarToggle<cr>", "Tagbar toggle" },
+        t = {
+            t = { "<cmd>TroubleToggle<cr>", "Trouble Toggle" },
+            r = { "<cmd>TroubleRefresh<cr>", "Trouble Refresh" },
+        },
+        T = { "<cmd>TagbarToggle<cr>", "Tagbar toggle" },
         I = { "<cmd>TSInstallInfo<cr>", "TS Install Info" },
     },
 
@@ -275,7 +279,7 @@ local mappings = {
             j = { "<cmd>Neorg journal today<cr>", "today" },
             t = { "<cmd>Neorg journal tomorrow<cr>", "tomorrow" },
             y = { "<cmd>Neorg journal yesterday<cr>", "yesterday" },
-            c = { "<cmd>Neorg journal custom", "custom" },
+            c = { "<cmd>Neorg journal custom<cr>", "custom" },
             T = { "<cmd>Neorg journal template<cr>", "template" },
         },
         x = {
