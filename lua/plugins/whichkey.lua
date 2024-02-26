@@ -296,13 +296,7 @@ local mappings = {
 
     -- OPEN My Files
     o = {
-        name = "+open / Obsidian",
-        b = { "<cmd>ObsidianBacklinks<cr>", "Backlinks" },
-        o = { "<cmd>ObsidianOpen<cr>", "Open note" },
-        p = { "<cmd>ObsidianPasteImg<cr>", "Paste image" },
-        q = { "<cmd>ObsidianQuickSwitch<cr>", "Quick switch" },
-        l = { "<cmd>ObssidianLinkNew<cr>", "Link New" },
-        j = { "<cmd>ObsidianToday<cr>", "Daily Journal" },
+        name = "+open",
         m = {
             name = "my",
             i = { "<cmd>edit ~/Nextcloud/Neorg/index.norg<CR>", "Notes Index" },

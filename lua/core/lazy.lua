@@ -19,7 +19,6 @@ local plugins = {
     { "RRethy/vim-illuminate"},
     { "ThePrimeagen/git-worktree.nvim" },
     { "WhoIsSethDaniel/mason-tool-installer.nvim" },
-    { "adrianvalenz/chronos.nvim" },
     { "ahmedkhalf/project.nvim" },
     { "akinsho/toggleterm.nvim" },
     { "alker0/chezmoi.vim" },
@@ -77,29 +76,12 @@ local plugins = {
         'colevoss/nvimpire'
     },
 
-    -- Distant
-    {
-        'chipsenkbeil/distant.nvim',
-        branch = 'v0.3',
-        config = function()
-            require('distant'):setup()
-        end
-    },
-
     -- Dash Board
     {
         "goolord/alpha-nvim",
         dependencies = {
             "nvim-tree/nvim-web-devicons"
         },
-    },
-
-    -- Denote
-        -- "danilshvalov/denote.nvim",
-        -- "HumanEntity/denote.nvim",
-    {
-        "snuffop/denote.nvim",
-        cmd = "Denote",
     },
 
     -- Indent Line
@@ -117,7 +99,7 @@ local plugins = {
     -- Neorg 
     {
         "nvim-neorg/neorg",
-        build = ":Neorg wync-parsers",
+        build = ":Neorg sync-parsers",
         dependencies = {
             { "pysan3/neorg-templates",
                 dependencies = { "L3MON4D3/LuaSnip" } },
@@ -186,6 +168,8 @@ local plugins = {
             "nvim-tree/nvim-web-devicons",
         },
     },
+
+    -- Oil git status
     {
         "refractalize/oil-git-status.nvim",
         dependencies = {
@@ -305,10 +289,10 @@ local plugins = {
         end,
     },
 
-    { 'ZhiyuanLck/smart-pairs', 
-        event = 'InsertEnter', 
-        config = function() 
-            require('pairs'):setup() 
+    { 'ZhiyuanLck/smart-pairs',
+        event = 'InsertEnter',
+        config = function()
+            require('pairs'):setup()
         end
     },
 
