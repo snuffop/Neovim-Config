@@ -181,6 +181,14 @@ local plugins = {
         'dhruvasagar/vim-table-mode',
     },
 
+     -- Tardis Timemachine
+    {
+        'fredeeb/tardis.nvim',
+        dependencies = {
+            'nvim-lua/plenary.nvim'
+        },
+    },
+
     -- Telescope
     {
         "nvim-telescope/telescope.nvim",

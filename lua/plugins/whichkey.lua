@@ -22,11 +22,6 @@ local toggle_float = function()
     return float:toggle()
 end
 
-local toggle_lazygit = function()
-    local lazygit = Terminal:new({ cmd = "lazygit", direction = "float" })
-    return lazygit:toggle()
-end
-
 WhichKey.setup({
     plugins = {
         marks = true, -- shows a list of your marks on ' and `
@@ -196,7 +191,7 @@ local mappings = {
 
     g = {
         name = "+Git",
-        L = { "<cmd>LazyGit<cr>", "Lazygit" },
+        -- L = { "<cmd>LazyGit<cr>", "Lazygit" },
         R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
         S = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -216,6 +211,7 @@ local mappings = {
             b = { "<cmd>gitsigns toggle_current_line_blame<cr>", "toggle gitsign blame" },
             d = { "<cmd>gitsigns toggle_deleted<cr>", "toggle gitsign deleted" },
         },
+        T = { "<cmd>Tardis git<cr>", "Tardis (git timemachine)" },
         u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
     },
 
