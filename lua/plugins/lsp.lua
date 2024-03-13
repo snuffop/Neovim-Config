@@ -64,7 +64,6 @@ MasonLspConfig.setup({
         "cssls",
         "cssls",
         "dockerls",
-        "groovyls",
         "html",
         "jsonls",
         "lua_ls",
@@ -141,12 +140,6 @@ LspConfig.dockerls.setup({
 
 -- Docker Compose
 LspConfig.docker_compose_language_service.setup({
-    capabilities = capabilities,
-})
-
--- groovy 
-
-LspConfig.groovyls.setup({
     capabilities = capabilities,
 })
 
