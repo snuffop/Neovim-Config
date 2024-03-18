@@ -96,6 +96,13 @@ local plugins = {
         "folke/neodev.nvim"
     },
 
+    {
+        "tadmccorkle/markdown.nvim",
+        ft = "markdown", -- or 'event = "VeryLazy"'
+        opts = {
+            -- configuration here or empty for defaults
+        },
+    },
     -- Neorg 
     {
         "nvim-neorg/neorg",
@@ -155,6 +162,18 @@ local plugins = {
         },
     },
 
+    -- Obsidian
+    {
+        "epwalsh/obsidian.nvim",
+        version = "*",
+        lazy = true,
+        lf = "markdown",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "hrsh7th/nvim-cmp",
+        },
+    },
+
     -- Org mode
     {
         "nvim-orgmode/orgmode",
@@ -181,7 +200,7 @@ local plugins = {
         'dhruvasagar/vim-table-mode',
     },
 
-     -- Tardis Timemachine
+    -- Tardis Timemachine
     {
         'fredeeb/tardis.nvim',
         dependencies = {
