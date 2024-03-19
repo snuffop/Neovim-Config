@@ -268,6 +268,7 @@ local mappings = {
         N = { "<cmd>Neorg keybind norg core.dirman.new.note<cr>", "Neorg New Note" },
         o = {
             name = "+Obsidian",
+            b = { "<cmd>ObsidianBacklinks<cr>", "Back Links" },
             j = {
                 name = "+Journal Menu",
                 j = { "<cmd>ObsidianToday<cr>", "Today" },
@@ -276,10 +277,12 @@ local mappings = {
                 s = { "<cmd>ObsidianDailies -7 1<cr>", "last 7" },
             },
             l = { "<cmd>ObsidianLink<cr>", "Link" },
+            n = { "<cmd>ObsidianNew<cr>", "New Zettel" },
             o = { "<cmd>ObsidianQuickSwitch<cr>", "Quick switch" },
             r = { "<cmd>ObsidianRename<cr>", "Rename" },
             s = { "<cmd>ObsidianSearch<cr>", "Search" },
-            t = { "<cmd>ObsidianTemplate<cr>", "Apply template" },
+            T = { "<cmd>ObsidianTemplate<cr>", "Apply template" },
+            t = { "<cmd>ObsidianTags<cr>", "Tags" },
         },
         r = { "<cmd>Neorg return<cr>", "neorg return" },
         s = { "<cmd>Telescope neorg search_headings<cr>", "search headings" },
