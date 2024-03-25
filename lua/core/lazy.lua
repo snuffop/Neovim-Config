@@ -84,6 +84,14 @@ local plugins = {
         },
     },
 
+    -- Distant
+    {
+        'chipsenkbeil/distant.nvim', 
+        branch = 'v0.3',
+        config = function()
+            require('distant'):setup()
+        end
+    },
     -- Indent Line
     {
         "lukas-reineke/indent-blankline.nvim",
@@ -103,7 +111,7 @@ local plugins = {
             -- configuration here or empty for defaults
         },
     },
-    
+
     -- Neorg 
     {
         "vhyrro/luarocks.nvim",
