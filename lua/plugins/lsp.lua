@@ -88,7 +88,6 @@ MasonToolInstaller.setup({
     ensure_installed = {
         -- you can turn off/on auto_update per tool
         { "ansiblels",                        auto_update = true },
-        { "awk-ls",                           auto_update = true },
         { "bashls",                           auto_update = true },
         { "cssls",                            auto_update = true },
         { "docker-compose-language-service",  auto_update = true },
