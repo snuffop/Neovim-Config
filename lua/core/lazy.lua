@@ -103,16 +103,22 @@ local plugins = {
             -- configuration here or empty for defaults
         },
     },
+    
     -- Neorg 
     {
+        "vhyrro/luarocks.nvim",
+        priority = 1000,
+        config = true,
+    },
+    {
         "nvim-neorg/neorg",
-        build = ":Neorg sync-parsers",
         dependencies = {
-            { "pysan3/neorg-templates",
-                dependencies = { "L3MON4D3/LuaSnip" } },
-            {"nvim-lua/plenary.nvim"},
-            {"nvim-neorg/neorg-telescope"},
+            "luarocks.nvim",
+            "nvim-neorg/neorg-telescope",
+            "pysan3/neorg-templates", dependencies = { "L3MON4D3/LuaSnip" },
         },
+        lazy = false,
+        version = "*",
     },
 
     -- Nerdy (Nerd font glyph selector)
@@ -159,18 +165,6 @@ local plugins = {
             "NvimTreeFocus",
             "NvimTreeFileFile",
             "NvimTreeCollapse",
-        },
-    },
-
-    -- Obsidian
-    {
-        "epwalsh/obsidian.nvim",
-        version = "*",
-        lazy = true,
-        lf = "markdown",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "hrsh7th/nvim-cmp",
         },
     },
 

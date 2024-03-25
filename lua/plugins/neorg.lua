@@ -1,3 +1,5 @@
+-- Neorg Config
+
 require('neorg').setup {
     load = {
         ["core.concealer"] = {
@@ -16,6 +18,7 @@ require('neorg').setup {
             config = {
                 workspaces = {
                     notes = "~/Nextcloud/Neorg",
+                    joyent = "~/Nextcloud/Joyent/Neorg",
                 },
                 default_workspace = "notes",
                 index = "index.norg",
@@ -40,18 +43,13 @@ require('neorg').setup {
         ["core.looking-glass"] = {},
         ["core.summary"] = {},
         ["core.syntax"] = {},
-        -- ["core.ui.calendar"] = {},
+        ["core.ui.calendar"] = {},
         ["core.integrations.telescope"] = {},
         ["core.integrations.treesitter"] = {},
         ["external.templates"] = {
             config = {
                 templates_dir = vim.fn.stdpath("config") .. "/templates/neorg",
                 default_subcommand = "add", -- or "fload", "load"
-                -- keywords = { -- Add your own keywords.
-                --     EXAMPLE_KEYWORD = function ()
-                --         return require("luasnip").insert_node(1, "default text blah blah")
-                --     end,
-                -- },
                 snippets_overwrite = {},
             },
         },

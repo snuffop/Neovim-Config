@@ -266,24 +266,6 @@ local mappings = {
         name = "+notes",
         n = { "<cmd>Neorg index<cr>", "neorg index" },
         N = { "<cmd>Neorg keybind norg core.dirman.new.note<cr>", "Neorg New Note" },
-        o = {
-            name = "+Obsidian",
-            b = { "<cmd>ObsidianBacklinks<cr>", "Back Links" },
-            j = {
-                name = "+Journal Menu",
-                j = { "<cmd>ObsidianToday<cr>", "Today" },
-                y = { "<cmd>ObsidianYesterday<cr>", "Yesterday" },
-                t = { "<cmd>ObsidianTomorrow<cr>", "Tomorrow" },
-                s = { "<cmd>ObsidianDailies -7 1<cr>", "last 7" },
-            },
-            l = { "<cmd>ObsidianLink<cr>", "Link" },
-            n = { "<cmd>ObsidianNew<cr>", "New Zettel" },
-            o = { "<cmd>ObsidianQuickSwitch<cr>", "Quick switch" },
-            r = { "<cmd>ObsidianRename<cr>", "Rename" },
-            s = { "<cmd>ObsidianSearch<cr>", "Search" },
-            T = { "<cmd>ObsidianTemplate<cr>", "Apply template" },
-            t = { "<cmd>ObsidianTags<cr>", "Tags" },
-        },
         r = { "<cmd>Neorg return<cr>", "neorg return" },
         s = { "<cmd>Telescope neorg search_headings<cr>", "search headings" },
         f = { "<cmd>Telescope neorg find_linkable<cr>", "search linkable" },
@@ -412,13 +394,6 @@ local mappings = {
         m  = { "<cmd>:lua require('telekasten').browse_media()<cr>", "Browse media"},
         a  = { "<cmd>:lua require('telekasten').show_tags()<cr>", "Show tags"},
         r  = { "<cmd>:lua require('telekasten').rename_note()<cr>", "Rename note"},
-        k = {
-            name = "ZK ZettelKasten",
-            k  = { "<cmd>ZkNotes<cr>", "Zk Notes"},
-            c  = { "<cmd>ZkCd<cr>", "Zk CD"},
-            i  = { "<cmd>ZkInsertLink<cr>", "Zk Instert Link"},
-            l  = { "<cmd>ZkLinks<cr>", "Zk Follow Link"},
-        },
     },
 }
 

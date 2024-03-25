@@ -4,9 +4,9 @@ vim.cmd[[ cnoreabbrev w!! w !sudo tee % > /dev/null ]]
 
 -- Keymaps 
 
-vim.keymap.set({"i"}, "<C-K>", "<Plug>luasnip-expand-or-jump<cr>", {silent = true})
+vim.keymap.set({"i"}, "<C-L>", "<Plug>luasnip-expand-or-jump<cr>", {silent = true})
 vim.keymap.set({"i", "s" }, "<C-J>", "<Plug>luasnip-jump-prev<cr>", {silent = true})
-vim.keymap.set({"i", "s" }, "<C-L>", "<Plug>luasnip-next-choice<cr>", {silent = true})
+vim.keymap.set({"i", "s" }, "<C-K>", "<Plug>luasnip-next-choice<cr>", {silent = true})
 
 -- Oil - 
 vim.keymap.set("n", "-", "<cmd>Oil<cr>", { silent = true, desc = "Open parent directory"})
