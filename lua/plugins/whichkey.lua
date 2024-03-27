@@ -287,6 +287,7 @@ local mappings = {
         w = {
             name = "workspace",
             n = { "<cmd>Neorg workspace notes<cr>", "Notes workspace" },
+            j = { "<cmd>Neorg workspace joyent<cr>", "Joyent workspace" },
         },
     },
 

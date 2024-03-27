@@ -228,6 +228,7 @@ local plugins = {
             "nvim-telescope/telescope-symbols.nvim",
             "joaomsa/telescope-orgmode.nvim",
             "nvim-telescope/telescope-smart-history.nvim",
+            "catgoose/telescope-helpgrep.nvim",
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
                 build = "make",
