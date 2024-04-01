@@ -1,12 +1,6 @@
--- requring plugin
-local installed, TreeSitter = pcall(require, "nvim-treesitter.configs")
-if not installed then
-    vim.notify("Plugin 'treesitter' is not installed")
-    return
-end
 
 -- Setting up Treesitter
-TreeSitter.setup({
+require("nvim-treesitter.configs").setup({
     ensure_installed = {
         "bash",
         "c",
@@ -41,8 +35,8 @@ TreeSitter.setup({
     },
     highlight = {
         enable = true,
-        --additional_vim_regex_highlighting = { "org", "markdown" },
-        additional_vim_regex_highlighting = false, -- for catppuccin theme
+        additional_vim_regex_highlighting = { "org", "markdown" },
+        --additional_vim_regex_highlighting = false, -- for catppuccin theme
     },
 
     autotag = {

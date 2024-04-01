@@ -74,8 +74,8 @@ local plugins = {
     -- Dracula nvimpire
     {
         'colevoss/nvimpire'
-    },
 
+    },
     -- Dash Board
     {
         "goolord/alpha-nvim",
@@ -360,3 +360,4 @@ local opts = {
 }
 
 require("lazy").setup(plugins, opts)
+
