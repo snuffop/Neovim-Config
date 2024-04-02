@@ -23,7 +23,6 @@ local plugins = {
     { "akinsho/toggleterm.nvim" },
     { "alker0/chezmoi.vim" },
     { "christoomey/vim-tmux-navigator" },
-    { "folke/trouble.nvim" },
     { "folke/which-key.nvim" },
     { "glepnir/lspsaga.nvim" },
     { "hiphish/rainbow-delimiters.nvim" },
@@ -265,6 +264,11 @@ local plugins = {
         dependencies = {
             "nvim-treesitter/nvim-treesitter"
         },
+    },
+
+    {
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 
     -- Snipit Engine
