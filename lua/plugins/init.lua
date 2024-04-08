@@ -28,6 +28,8 @@ require("plugins.tardis")
 require("plugins.telescope")
 require("plugins.toggleterm")
 require("plugins.transparent-nvim")
-require("plugins.treesitter")
 require("plugins.trouble")
 require("plugins.whichkey")
+
+-- experament on the issue with date and time snippets
+require("plugins.treesitter")
