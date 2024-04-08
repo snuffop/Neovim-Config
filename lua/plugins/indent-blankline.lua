@@ -1,9 +1,5 @@
--- requring Plugin
-local installed, IndentBlankLine = pcall(require, "ibl")
-if not installed then
-	vim.notify("Plugin 'indent_blankline' is not installed")
-	return
-end
+-- Ident Blank Line
+
 local highlight = {
     "RainbowRed",
     "RainbowYellow",
@@ -30,7 +26,7 @@ end)
 vim.g.rainbow_delimiters = { highlight = highlight }
 
 -- Setting up indent_blankline
-IndentBlankLine.setup{
+require("ibl").setup{
     indent = { highlight = highlight, char = "" },
     whitespace = {
         highlight = highlight,

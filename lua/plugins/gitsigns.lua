@@ -1,11 +1,6 @@
 -- requring plugin
-local installed, GitSigns = pcall(require, "gitsigns")
-if not installed then
-    vim.notify("Plugin 'nvim-comment' not installed")
-    return
-end
 
-GitSigns.setup({
+require('gitsigns').setup({
     signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
     numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
     linehl = false, -- Toggle with `:Gitsigns toggle_linehl`

@@ -1,6 +1,7 @@
 -- ###################################################################################################
 -- requring necessary plugins
 -- nvim-cmp
+
 local installed, Cmp = pcall(require, "cmp")
 if not installed then
     vim.notify("Plugin 'nvim-cmp' is not installed")
