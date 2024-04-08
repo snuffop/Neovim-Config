@@ -35,13 +35,14 @@ vim.o.clipboard = "unnamedplus"
 vim.o.backspace = "indent,eol,start"
 
 -- Search
-vim.opt.hlsearch = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.incsearch = true
+vim.o.hlsearch = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.incsearch = true
+vim.o.inccommand = 'split'
 
 -- Mouse and Scrolling
-vim.o.scrolloff = 10
+vim.o.scrolloff = 999 
 vim.o.sidescrolloff = 5
 vim.o.mouse = "a"
 
@@ -72,15 +73,18 @@ vim.bo.expandtab = true
 vim.o.smarttab = true
 
 -- Folding
-vim.opt.foldlevel = 99
+vim.o.foldlevel = 99
 vim.o.conceallevel = 2
 vim.o.concealcursor = 'nc'
 
-vim.opt.list = true
--- vim.opt.listchars:append("eol:↴")
+vim.o.list = true
+-- vim.o.listchars:append("eol:↴")
 vim.opt.fillchars = { eob = " " }
 
 vim.opt.formatoptions:remove({ "c", "r", "o" }) -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
+
+-- VirtualEdit
+vim.o.virtualedit = "block"
 
 -- Markdown
 vim.g.markdown_recommended_style = 0

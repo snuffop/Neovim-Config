@@ -155,8 +155,14 @@ local mappings = {
     c = {
         name = "+Code",
         m = { "<cmd>Mason<cr>", "Mason" },
-        i = { "<cmd>Inspect<cr>", "TS Inspect" },
         t = {
+            name = "+Treesitter",
+            t = { "<cmd>TSTextobjectSelect<cr>", "TS Select" },
+            u = { "<cmd>TSUpdate<cr>", "TS Update" },
+            i = { "<cmd>Inspect<cr>", "TS Inspect" },
+            I = { "<cmd>TSInstallInfo<cr>", "TS Install Info" },
+        },
+        T = {
             name = "+Trouble",
             t = { "<cmd>Trouble diagnostics toggle<cr>", "Trouble Toggle" },
             T = { "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", "Trouble Toggle Buf" },
@@ -165,8 +171,6 @@ local mappings = {
             q = { "<cmd>Trouble qflist toggle<cr>", "Trouble Quick Fix" },
             r = { "<cmd>TroubleRefresh<cr>", "Trouble Refresh" },
         },
-        T = { "<cmd>TagbarToggle<cr>", "Tagbar toggle" },
-        I = { "<cmd>TSInstallInfo<cr>", "TS Install Info" },
     },
 
     -- D
@@ -375,6 +379,7 @@ local mappings = {
 
         },
         u = { "<cmd>undotreetoggle<cr>", "undo tree" },
+        t = { "<cmd>TagbarToggle<cr>", "Tagbar toggle" },
     },
 
     w = {

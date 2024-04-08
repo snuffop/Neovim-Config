@@ -28,11 +28,14 @@ require("nvim-treesitter.configs").setup({
         "vim",
         "yaml",
     },
+
     sync_install = false,
     auto_install = true,
+
     indent = {
         enable = true,
     },
+
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = { "org", "markdown" },
@@ -68,4 +71,14 @@ require("nvim-treesitter.configs").setup({
             },
         },
     },
+
+    -- incremental_selection = {
+    --     enable = true,
+    --     keymaps = {
+    --         initnselection = "<Leader>tss",
+    --         nodecincremental = "<Leader>si",
+    --         scope_incremental = "<Leader>tsc",
+    --         node_decremental = "<Leader>tsd",
+    --     },
+    -- },
 })

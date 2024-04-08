@@ -83,3 +83,10 @@ inoremap <M-k> <cmd>WhichKey '' i<cr>
 cnoremap <M-k> <cmd>WhichKey '' c<cr>
 ]])
 
+-- attempt to remap lines for autocomplete
+vim.cmd([[
+    inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
+    inoremap <expr> j pumvisible() ? "\<C-n>" : "j"
+    inoremap <expr> k pumvisible() ? "\<C-p>" : "k"
+]])
+
