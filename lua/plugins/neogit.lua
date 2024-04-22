@@ -1,14 +1,21 @@
 -- Neogit
-local installed, NeoGit = pcall(require, 'neogit')
-if not installed then
-    vim.notify("Plugin 'NeoGit' is not installed")
-    return
-end
-
-NeoGit.setup {
-    integrations = {
+--
+return {
+  "NeogitOrg/neogit",
+  cmd = "Neogit",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "sindrets/diffview.nvim",
+    "nvim-telescope/telescope.nvim",
+    "ibhagwan/fzf-lua",
+  },
+  config = function()
+    require("neogit").setup({
+      integrations = {
         diffview = true,
         telescope = true,
         fzf_lua = true,
-    },
+      },
+    })
+  end,
 }
