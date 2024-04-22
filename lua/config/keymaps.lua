@@ -35,6 +35,7 @@ map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Tmux Right" })
 -- Misc
 map("n", "<leader>-", "<cmd>Oil<cr>", { desc = "Oil" })
 -- File
+map("n", "<leader>fe", "<cmd>NvimTreeToggle<cr>", { desc = "Nvim Tree" })
 map("n", "<leader>fs", "<cmd>up<cr>", { desc = "File Save" })
 map("n", "<leader>fmr", "<cmd>Ranger<cr>", { desc = "Ranger" })
 map("n", "<leader>fmn", "<cmd>Nnn<cr>", { desc = "N3" })
