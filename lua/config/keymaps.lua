@@ -81,7 +81,7 @@ map("n", "<leader>nwn", "<cmd>Neorg workspace notes<cr>", { desc = "Notes worksp
 map("n", "<leader>nwj", "<cmd>Neorg workspace joyent<cr>", { desc = "Joyent workspace" })
 
 -- Project
-map("n", "<leader>pf", "<cmd>Telescope projects<cr>", { desc = "Project Files" })
+map("n", "<leader>pp", "<cmd>Telescope projects<cr>", { desc = "Projects" })
 
 -- Text/Toggle
 map("n", "<leader>tu", "<cmd>Telescope undo<cr>", { desc = "Telescope Undo" })

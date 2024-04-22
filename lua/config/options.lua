@@ -6,6 +6,8 @@ vim.g.maplocalleader = ","
 
 vim.o.showcmdloc = "statusline"
 
+vim.o.termguicolors = true
+
 -- Tabs and indentations
 vim.o.tabstop = 4
 vim.bo.tabstop = 4
@@ -41,3 +43,5 @@ vim.opt.grepprg = "rg --vimgrep"
 vim.opt.grepformat = "%f:%l:%c:%m"
 
 vim.opt.conceallevel = 1
+
+vim.o.guifont = "DejaVu Sans Mono:h9"

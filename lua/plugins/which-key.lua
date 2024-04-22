@@ -24,7 +24,6 @@ return {
       ["<leader>nj"] = { name = "Journal" },
       ["<leader>nx"] = { name = "Tool" },
       ["<leader>nw"] = { name = "Workspace" },
-      ["<leader>o"] = { name = "+Obsidian" },
       ["<leader>p"] = { name = "+Projects" },
       ["<leader>q"] = { name = "+quit/session" },
       ["<leader>s"] = { name = "+search" },

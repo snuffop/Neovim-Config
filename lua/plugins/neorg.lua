@@ -67,7 +67,7 @@ return {
           ["core.looking-glass"] = {},
           ["core.summary"] = {},
           ["core.syntax"] = {},
-          ["core.ui.calendar"] = {},
+          --["core.ui.calendar"] = {},
           ["core.integrations.telescope"] = {},
           ["core.integrations.treesitter"] = {},
           ["external.templates"] = {
