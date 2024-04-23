@@ -40,7 +40,9 @@ map("n", "<leader>fmr", "<cmd>Ranger<cr>", { desc = "Ranger" })
 map("n", "<leader>fmn", "<cmd>Nnn<cr>", { desc = "N3" })
 map("n", "<leader>fml", "<cmd>Lazygit<cr>", { desc = "Lazygit" })
 map("n", "<leader>fD", "<cmd>Distant<cr>", { desc = "Distant" })
-map("n", "<leader>fz", "<cmd>Telescope zoxide list<cr>", { desc = "Telescope Zoxide" })
+-- map("n", "<leader>fz", "<cmd>Telescope zoxide list<cr>", { desc = "Telescope Zoxide" })
+map("n", "<leader>fz", "<cmd>lua require('fzf-lua').files({ resume = true })<cr>", { desc = "FZF files" })
+map("n", "<leader>fo", "<cmd>lua require('fzf-lua').oldfiles({ resume = true })<cr>", { desc = "FZF oldfiles" })
 
 -- Git
 map("n", "<leader>gn", "<cmd>Neogit<cr>", { desc = "Neogit" })
