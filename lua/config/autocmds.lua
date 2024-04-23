@@ -19,6 +19,27 @@ vim.cmd([[
 
 ]])
 
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = {
+    "**nagios*/*/*.cfg",
+    "/*etc/nagios/*.cfg",
+    "*groundwork/nagios/etc/*.cfg",
+    "/var/lib/nagios/objects.cache",
+  },
+  callback = function()
+    vim.bo.filetype = "nagios"
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = {
+    "**nagios*/*/*.cfg.j2",
+  },
+  callback = function()
+    vim.bo.filetype = "nagios.jinja"
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = {
     "**/playbooks/*.yml",
