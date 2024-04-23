@@ -42,6 +42,7 @@ vim.o.undofile = true
 vim.opt.grepprg = "rg --vimgrep"
 vim.opt.grepformat = "%f:%l:%c:%m"
 
-vim.opt.conceallevel = 1
+vim.opt.conceallevel = 2
+vim.opt.filetype = on
 
 vim.o.guifont = "DejaVu Sans Mono:h9"
