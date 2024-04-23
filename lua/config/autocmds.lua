@@ -5,17 +5,30 @@
 
 vim.cmd([[
   augroup _general_settings
-    autocmd!
-    autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
-    autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})
-    autocmd BufWinEnter * :set formatoptions-=cro
-    autocmd FileType qf set nobuflisted
+  autocmd!
+  autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
+  autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})
+  autocmd BufWinEnter * :set formatoptions-=cro
+  autocmd FileType qf set nobuflisted
   augroup end
 
   augroup neorg
-    autocmd!
-    autocmd BufNewFile */journal/** 0r !/home/marty/.local/bin/script/generate-neorg-journal-template.py
+  autocmd!
+  autocmd BufNewFile */journal/** 0r !/home/marty/.local/bin/script/generate-neorg-journal-template.py
   augroup end
+
 ]])
 
---
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = {
+    "**/playbooks/*.yml",
+    "**/playbooks/*.yaml",
+    "**/roles/*/tasks/*.yml",
+    "**/roles/*/tasks/*.yaml",
+    "**/roles/*/handlers/*.yml",
+    "**/roles/*/handlers/*.yaml",
+  },
+  callback = function()
+    vim.bo.filetype = "yaml.ansible"
+  end,
+})
