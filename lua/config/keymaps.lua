@@ -13,17 +13,17 @@ vim.cmd([[
 
 -- Whichkey  maps based on mode
 vim.cmd([[
-nnoremap <M-k> <cmd>WhichKey<cr>
-vnoremap <M-k> <cmd>WhichKey '' v<cr>
-inoremap <M-k> <cmd>WhichKey '' i<cr>
-cnoremap <M-k> <cmd>WhichKey '' c<cr>
+    nnoremap <M-k> <cmd>WhichKey<cr>
+    vnoremap <M-k> <cmd>WhichKey '' v<cr>
+    inoremap <M-k> <cmd>WhichKey '' i<cr>
+    cnoremap <M-k> <cmd>WhichKey '' c<cr>
 ]])
 
 -- Neorg overrides
 vim.cmd([[
-inoremap  <C-i> <cmd>Telescope neorg insert_link<cr>
-inoremap  <C-l> <cmd>Telescope neorg insert_file_link<cr>
-inoremap  <C-s> <cmd>Telescope neorg find_linkable<cr>  
+    inoremap  <C-i> <cmd>Telescope neorg insert_link<cr>
+    inoremap  <C-l> <cmd>Telescope neorg insert_file_link<cr>
+    inoremap  <C-s> <cmd>Telescope neorg find_linkable<cr>  
 ]])
 
 -- TmuxNavigate
@@ -33,14 +33,14 @@ map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Tmux Up" })
 map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Tmux Right" })
 
 -- Misc
-map("n", "<leader>-", "<cmd>Oil<cr>", { desc = "Oil" })
 -- File
 map("n", "<leader>fs", "<cmd>up<cr>", { desc = "File Save" })
 map("n", "<leader>fmr", "<cmd>Ranger<cr>", { desc = "Ranger" })
 map("n", "<leader>fmn", "<cmd>Nnn<cr>", { desc = "N3" })
 map("n", "<leader>fml", "<cmd>Lazygit<cr>", { desc = "Lazygit" })
+map("n", "<leader>fmo", "<cmd>Oil<cr>", { desc = "Oil" })
 map("n", "<leader>fD", "<cmd>Distant<cr>", { desc = "Distant" })
--- map("n", "<leader>fz", "<cmd>Telescope zoxide list<cr>", { desc = "Telescope Zoxide" })
+map("n", "<leader>fZ", "<cmd>Telescope zoxide list<cr>", { desc = "Telescope Zoxide" })
 map("n", "<leader>fz", "<cmd>lua require('fzf-lua').files({ resume = true })<cr>", { desc = "FZF files" })
 map("n", "<leader>fo", "<cmd>lua require('fzf-lua').oldfiles({ resume = true })<cr>", { desc = "FZF oldfiles" })
 
