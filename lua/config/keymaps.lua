@@ -84,7 +84,7 @@ map("n", "<leader>nwj", "<cmd>Neorg workspace joyent<cr>", { desc = "Joyent work
 
 -- Open
 
-map("n", "<leader>omc", "<cmd>>lua LazyVim.telescope.config_files()()<cr>", { desc = "Config Files" })
+map("n", "<leader>od", "<cmd>Dashboard<cr>", { desc = "Dashboard" })
 
 -- Project
 map("n", "<leader>pp", "<cmd>Telescope projects<cr>", { desc = "Projects" })
