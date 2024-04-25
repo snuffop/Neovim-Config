@@ -1,105 +1,173 @@
 -- Neorg
---
 
-return {
-
-  {
-    "vhyrro/luarocks.nvim",
-    priority = 1000,
-    config = true,
+local M = {
+  "nvim-neorg/neorg",
+  ft = "norg",
+  version = false,
+  dependencies = {
+    "luarocks.nvim",
+    "nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    "nvim-cmp",
+    "mason.nvim",
+    "plenary.nvim",
+    -- "image.nvim",
+    -- external modules
+    "laher/neorg-exec",
+    "phenax/neorg-hop-extras",
+    { "pysan3/neorg-templates-draft", dependencies = { "L3MON4D3/LuaSnip" } },
+    { "nvim-neorg/neorg-telescope", dependencies = { "nvim-telescope/telescope.nvim" } },
   },
-
-  {
-    "nvim-neorg/neorg",
-    lazy = false,
-    version = "*",
-
-    dependencies = {
-      "luarocks.nvim",
-      "nvim-neorg/neorg-telescope",
-      "pysan3/neorg-templates",
-      dependencies = { "L3MON4D3/LuaSnip" },
-    },
-
-    config = function()
-      require("neorg").setup({
-        load = {
-          ["core.concealer"] = {
-            config = {
-              folds = true,
-            },
-          },
-          ["core.completion"] = {
-            config = {
-              engine = "nvim-cmp",
-              name = "[Neorg]",
-            },
-          },
-          ["core.defaults"] = {},
-          ["core.dirman"] = {
-            config = {
-              workspaces = {
-                notes = "~/Nextcloud/Neorg",
-                joyent = "~/Nextcloud/Joyent/Neorg",
-              },
-              default_workspace = "notes",
-              index = "index.norg",
-            },
-          },
-          ["core.dirman.utils"] = {},
-          ["core.export"] = {
-            config = {
-              export_dir = "~/Nextcloud/Neorg/Export/<language>-export",
-            },
-          },
-          ["core.queries.native"] = {},
-          ["core.export.markdown"] = {},
-          ["core.esupports.indent"] = {},
-          ["core.esupports.hop"] = {},
-          ["core.esupports.metagen"] = {},
-          ["core.itero"] = {},
-          ["core.journal"] = {
-            config = {
-              workspace = "notes",
-            },
-          },
-          ["core.keybinds"] = {},
-          ["core.looking-glass"] = {},
-          ["core.summary"] = {},
-          ["core.syntax"] = {},
-          --["core.ui.calendar"] = {},
-          ["core.integrations.telescope"] = {},
-          ["core.integrations.treesitter"] = {},
-          ["external.templates"] = {
-            config = {
-              templates_dir = vim.fn.stdpath("config") .. "/templates/neorg",
-              default_subcommand = "add", -- or "fload", "load"
-              -- keywords = { -- Add your own keywords.
-              --   EXAMPLE_KEYWORD = function ()
-              --     return require("luasnip").insert_node(1, "default text blah blah")
-              --   end,
-              snippets_overwrite = {},
-            },
-          },
-        },
-      })
-
-      local neorg_callbacks = require("neorg.core.callbacks")
-      neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, keybinds)
-        -- Map all the below keybinds only when the "norg" mode is active
-        keybinds.map_event_to_mode("norg", {
-          n = { -- Bind keys in normal mode
-            { "<C-s>", "core.integrations.telescope.find_linkable" },
-          },
-
-          i = { -- Bind in insert mode
-            { "<C-l>", "core.integrations.telescope.insert_link" },
-          },
-        }, {
-          silent = true,
-          noremap = true,
-        })
-      end)
-    end,
-  },
+  -- build = ":Neorg sync-parsers",
+  cmd = "Neorg",
+  default_workspace = "Notes",
+  aug = vim.api.nvim_create_augroup("NorgAuG", { clear = true }),
 }
+
+M.popup = nil
+M.bufnr = nil
+M.open_index_in_popup = function()
+  if not M.popup then
+    M.popup = require("nui.popup")({
+      bufnr = M.bufnr,
+      size = { width = "80%", height = "90%" },
+      position = { col = "50%", row = "50%" },
+      enter = true,
+      focusable = true,
+      relative = "editor",
+      border = {
+        style = "rounded",
+      },
+      win_options = {
+        winhighlight = "Normal:Normal,FloatBorder:WinSeparator",
+      },
+    })
+  end
+  vim.api.nvim_create_autocmd("WinEnter", {
+    group = M.aug,
+    pattern = "*.norg",
+    callback = function()
+      if vim.api.nvim_get_current_win() == M.popup.winid then
+        vim.keymap.set({ "n", "i", "v" }, "<C-q>", function()
+          vim.cmd.write()
+          M.popup:hide()
+        end, { buffer = M.popup.bufnr, remap = false })
+      end
+    end,
+  })
+  vim.api.nvim_create_autocmd("WinLeave", {
+    group = M.aug,
+    callback = function(args)
+      if vim.api.nvim_get_current_win() == M.popup.winid then
+        M.bufnr = args.buf
+        M.popup:hide()
+      end
+    end,
+  })
+  if M.bufnr and vim.api.nvim_buf_is_valid(M.bufnr) then
+    M.popup.bufnr = M.bufnr
+  end
+  M.popup:mount()
+  M.popup:show()
+  if vim.bo[vim.api.nvim_win_get_buf(M.popup.winid)].filetype ~= "norg" then
+    vim.cmd.edit("index.norg")
+  end
+end
+
+M.keys = {
+  { ",ni", "<Cmd>Neorg index<CR>" },
+  { "<Leader>tt", M.open_index_in_popup, desc = "Open Neorg index in a popup window" },
+}
+
+M.init = function()
+  require("norg-config.commands").setup({})
+  vim.api.nvim_create_autocmd("BufWritePost", {
+    group = M.aug,
+    pattern = "*.norg",
+    command = "Neorg tangle current-file",
+  })
+end
+
+local function list_workspaces(w_dirs)
+  local res = {}
+  for _, w in ipairs(w_dirs) do
+    res[w] = "~/Nextcloud/" .. w
+  end
+  return res
+end
+
+local function load_plugins()
+  return {
+    ["core.concealer"] = {
+      config = {
+        folds = true,
+        icon_preset = "diamond",
+        icons = { code_block = { spell_check = false } },
+      },
+    },
+    ["core.completion"] = {
+      config = {
+        engine = "nvim-cmp",
+        name = "[Norg]",
+      },
+    },
+    ["core.defaults"] = {},
+    ["core.dirman"] = {
+      config = {
+        workspaces = {
+          notes = "~/Nextcloud/Neorg",
+          joyent = "~/Nextcloud/Joyent/Neorg",
+        },
+        default_workspace = "notes",
+        index = "index.norg",
+      },
+    },
+    ["core.dirman.utils"] = {},
+    ["core.export"] = {
+      config = {
+        export_dir = "~/Nextcloud/Neorg/Export/<language>-export",
+      },
+    },
+    ["core.qol.toc"] = {},
+    ["core.qol.todo_items"] = {},
+    ["core.queries.native"] = {},
+    ["core.presenter"] = { config = { zen_mode = "zen-mode" } },
+    ["core.export.markdown"] = { config = { extensions = "all" } },
+    ["core.esupports.indent"] = {},
+    ["core.esupports.hop"] = {},
+    ["core.tangle"] = { config = { report_on_empty = false } },
+    ["core.esupports.metagen"] = { config = { type = "auto", update_date = true } },
+    ["core.itero"] = {},
+    ["core.journal"] = {
+      config = {
+        strategy = "nested",
+        workspace = "notes",
+      },
+    },
+    ["core.keybinds"] = {},
+    ["core.looking-glass"] = {},
+    ["core.summary"] = {},
+    ["core.syntax"] = {},
+    --["core.ui.calendar"] = {},
+    ["core.integrations.telescope"] = {},
+    ["core.integrations.treesitter"] = {},
+    ["external.templates"] = {
+      config = {
+        templates_dir = vim.fn.stdpath("config") .. "/templates/neorg",
+        keywords = require("norg-config.templates"),
+        -- default_subcommand = "add", -- or "fload", "load"
+        -- snippets_overwrite = {},
+      },
+    },
+    ["external.exec"] = {},
+    ["external.hop-extras"] = {},
+  }
+end
+
+M.config = function()
+  require("neorg").setup({
+    load = load_plugins(),
+  })
+end
+
+return M
