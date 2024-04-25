@@ -46,3 +46,8 @@ vim.opt.conceallevel = 2
 vim.opt.filetype = on
 
 vim.o.guifont = "DejaVu Sans Mono:h9"
+
+vim.cmd([[
+ let g:loaded_ruby_provider = 0
+ let g:python3_host_prog = "/usr/bin/python3"
+]])
