@@ -2,11 +2,6 @@
 
 return {
   {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-  },
-  {
-
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "debugloop/telescope-undo.nvim",
@@ -24,11 +19,14 @@ return {
     keys = {
             -- add a keymap to browse plugin files
             -- stylua: ignore
-            {
-                "<leader>fp",
-                function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
-                desc = "Find Plugin File",
-            },
+            { "<leader><space>", false },
+      {
+        "<leader>fp",
+        function()
+          require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
+        end,
+        desc = "Find Plugin File",
+      },
     },
 
     opts = {

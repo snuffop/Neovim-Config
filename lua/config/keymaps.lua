@@ -82,6 +82,10 @@ map("n", "<leader>nxu", "<cmd>Neorg update-metadata<cr>", { desc = "update metad
 map("n", "<leader>nwn", "<cmd>Neorg workspace notes<cr>", { desc = "Notes workspace" })
 map("n", "<leader>nwj", "<cmd>Neorg workspace joyent<cr>", { desc = "Joyent workspace" })
 
+-- Open
+
+map("n", "<leader>omc", "<cmd>>lua LazyVim.telescope.config_files()()<cr>", { desc = "Config Files" })
+
 -- Project
 map("n", "<leader>pp", "<cmd>Telescope projects<cr>", { desc = "Projects" })
 
