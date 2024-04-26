@@ -136,7 +136,13 @@ local function load_plugins()
     ["core.esupports.indent"] = {},
     ["core.esupports.hop"] = {},
     ["core.tangle"] = { config = { report_on_empty = false } },
-    ["core.esupports.metagen"] = { config = { type = "auto", update_date = true } },
+    ["core.esupports.metagen"] = {
+      config = {
+        author = "marty buchaus",
+        type = "none", -- none, auto, empty options
+        update_date = true,
+      },
+    },
     ["core.itero"] = {},
     ["core.journal"] = {
       config = {
@@ -144,7 +150,12 @@ local function load_plugins()
         workspace = "notes",
       },
     },
-    ["core.keybinds"] = {},
+    ["core.keybinds"] = {
+      config = {
+        default_keybinds = true,
+        neorg_leader = "<leader><leader>",
+      },
+    },
     ["core.looking-glass"] = {},
     ["core.summary"] = {},
     ["core.syntax"] = {},

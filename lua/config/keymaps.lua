@@ -2,8 +2,6 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-local map = LazyVim.safe_keymap_set
-
 -- attempt to remap lines for autocomplete
 vim.cmd([[
     inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
@@ -25,6 +23,10 @@ vim.cmd([[
     inoremap  <C-l> <cmd>Telescope neorg insert_file_link<cr>
     inoremap  <C-s> <cmd>Telescope neorg find_linkable<cr>  
 ]])
+
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+local map = LazyVim.safe_keymap_set
 
 -- TmuxNavigate
 map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Tmux Left" })
@@ -55,28 +57,28 @@ map("n", "<leader>gbc", "<cmd>GitBlameCopySHA<cr>", { desc = "Git Blame Copy SHA
 map("n", "<leader>gbC", "<cmd>GitBlameCopyCommitURL<cr>", { desc = "Git Blame Copy Commit URL" })
 
 -- Notes
-map("n", "<leader>nmm", "<cmd>Neorg module list<cr>", { desc = "List Modules" })
-map("n", "<leader>nml", "<cmd>Neorg module load<cr>", { desc = "Load Modules" })
+map("n", "<leader>nmm", "<cmd>Neorg module list<cr>", { desc = "List modules" })
+map("n", "<leader>nml", "<cmd>Neorg module load<cr>", { desc = "Load modules" })
 map("n", "<leader>nn", "<cmd>Neorg index<cr>", { desc = "neorg index" })
-map("n", "<leader>nN", "<cmd>Neorg keybind norg core.dirman.new.note<cr>", { desc = "Neorg New Note" })
+map("n", "<leader>nN", "<cmd>Neorg keybind norg core.dirman.new.note<cr>", { desc = "Neorg new note" })
 map("n", "<leader>nr", "<cmd>Neorg return<cr>", { desc = "neorg return" })
 map("n", "<leader>nts", "<cmd>Telescope neorg search_headings<cr>", { desc = "Search headings" })
 map("n", "<leader>ntf", "<cmd>Telescope neorg find_linkable<cr>", { desc = "Find linkable" })
 map("n", "<leader>nti", "<cmd>Telescope neorg insert_file_link<cr>", { desc = "Insert file link" })
 map("n", "<leader>ntI", "<cmd>Telescope neorg insert_link<cr>", { desc = "Insert link" })
-map("n", "<leader>nta", "<cmd>Telescope neorg find_aof_tasks<cr>", { desc = "AOF Taksks " })
+map("n", "<leader>nta", "<cmd>Telescope neorg find_aof_tasks<cr>", { desc = "AOF taksks " })
 map("n", "<leader>ntA", "<cmd>Telescope neorg find_aof_project_tasks<cr>", { desc = "AOF project tasks" })
-map("n", "<leader>ntb", "<cmd>Telescope neorg find_backlinks<cr>", { desc = "Find Backlinks " })
-map("n", "<leader>ntt", "<cmd>Telescope neorg find_norg_files<cr>", { desc = "Find Files " })
-map("n", "<leader>nth", "<cmd>Telescope neorg search_headings<cr>", { desc = "Search Headings " })
+map("n", "<leader>ntb", "<cmd>Telescope neorg find_backlinks<cr>", { desc = "Find backlinks " })
+map("n", "<leader>ntt", "<cmd>Telescope neorg find_norg_files<cr>", { desc = "Find files " })
+map("n", "<leader>nth", "<cmd>Telescope neorg search_headings<cr>", { desc = "Search headings " })
 map("n", "<leader>nT", "<cmd>Neorg toc qflist<cr>", { desc = "TOC Quick list" })
 map("n", "<leader>njj", "<cmd>Neorg journal today<cr>", { desc = "today" })
 map("n", "<leader>njt", "<cmd>Neorg journal tomorrow<cr>", { desc = "tomorrow" })
 map("n", "<leader>njy", "<cmd>Neorg journal yesterday<cr>", { desc = "yesterday" })
 map("n", "<leader>njc", "<cmd>Neorg journal custom<cr>", { desc = "custom" })
 map("n", "<leader>ncT", "<cmd>Neorg journal toc<cr>", { desc = "TOC" })
-map("n", "<leader>njm", "<cmd>Neorg journal template<cr>", { desc = "template" })
-map("n", "<leader>nxs", "<cmd>Neorg generate-workspace-summary<cr>", { desc = "neorg summary" })
+map("n", "<leader>njm", "<cmd>Neorg templates load journal<cr>", { desc = "Apply journal template" })
+map("n", "<leader>nxs", "<cmd>Neorg generate-workspace-summary<cr>", { desc = "Generate summary" })
 map("n", "<leader>nxi", "<cmd>Neorg inject-metadata<cr>", { desc = "inject metadata" })
 map("n", "<leader>nxu", "<cmd>Neorg update-metadata<cr>", { desc = "update metadata" })
 map("n", "<leader>nwn", "<cmd>Neorg workspace notes<cr>", { desc = "Notes workspace" })
