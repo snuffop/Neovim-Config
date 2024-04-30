@@ -20,7 +20,7 @@ local M = {
   },
   -- build = ":Neorg sync-parsers",
   cmd = "Neorg",
-  default_workspace = "Notes",
+  default_workspace = "notes",
   aug = vim.api.nvim_create_augroup("NorgAuG", { clear = true }),
 }
 
@@ -116,7 +116,6 @@ local function load_plugins()
       config = {
         workspaces = {
           notes = "~/Nextcloud/Neorg",
-          joyent = "~/Nextcloud/Joyent/Neorg",
         },
         default_workspace = "notes",
         index = "index.norg",
