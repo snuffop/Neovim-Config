@@ -5,16 +5,12 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "debugloop/telescope-undo.nvim",
-      "nvim-telescope/telescope-fzf-native.nvim",
-      "jvgrootveld/telescope-zoxide",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-        require("telescope").load_extension("projects")
-        require("telescope").load_extension("undo")
-        require("telescope").load_extension("zoxide")
-      end,
     },
+    build = "make",
+    config = function()
+      require("telescope").load_extension("projects")
+      require("telescope").load_extension("undo")
+    end,
 
     keys = {
             -- add a keymap to browse plugin files
@@ -39,26 +35,6 @@ return {
           i = {
             ["<C-j>"] = "move_selection_next",
             ["<C-k>"] = "move_selection_previous",
-          },
-        },
-      },
-      extensions = {
-        zoxide = {
-          prompt_title = "[ Walking on the shoulders of TJ ]",
-          mappings = {
-            default = {
-              after_action = function(selection)
-                print("Update to (" .. selection.z_score .. ") " .. selection.path)
-              end,
-            },
-            ["<C-s>"] = {
-              before_action = function(selection)
-                print("before C-s")
-              end,
-              action = function(selection)
-                vim.cmd.edit(selection.path)
-              end,
-            },
           },
         },
       },

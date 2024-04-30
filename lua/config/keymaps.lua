@@ -82,7 +82,6 @@ map("n", "<leader>nxs", "<cmd>Neorg generate-workspace-summary<cr>", { desc = "G
 map("n", "<leader>nxi", "<cmd>Neorg inject-metadata<cr>", { desc = "inject metadata" })
 map("n", "<leader>nxu", "<cmd>Neorg update-metadata<cr>", { desc = "update metadata" })
 map("n", "<leader>nwn", "<cmd>Neorg workspace notes<cr>", { desc = "Notes workspace" })
-map("n", "<leader>nwj", "<cmd>Neorg workspace joyent<cr>", { desc = "Joyent workspace" })
 
 -- Open
 

@@ -6,9 +6,22 @@ return {
     init = function()
       require("lazyvim.util").lsp.on_attach(function(_, buffer)
         -- stylua: ignore
-        vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
+                vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
         vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
       end)
+
+      require("lspconfig").ltex.setup({
+        filetypes = { "vimwiki", "norg", "markdown", "md", "pandoc", "vimwiki.markdown.pandoc" },
+        flags = { debounce_text_changes = 300 },
+        settings = {
+          ltex = {
+            language = "en",
+            username = "marty@dabuke.com",
+            apikey = "pit-d8y32hinyhf0",
+          },
+        },
+        on_attach = on_attach,
+      })
     end,
   },
   ---@class PluginLspOpts
