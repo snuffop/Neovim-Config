@@ -39,7 +39,7 @@ return {
   end,
   JOURNAL_DESCRIPTION = function()
     local ls, m = imports()
-    return ls.text_node(m.parse_date(0, os.time(), [[Daily Notes for %A, %B %d %Y]]))
+    return ls.text_node(m.parse_date(0, os.time(), [[Daily Notes for %A, %B %d, %Y]]))
   end,
   JOURNAL_GRAPHICS_LINK = function()
     local ls, m = imports()

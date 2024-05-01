@@ -11,11 +11,6 @@ vim.cmd([[
   autocmd FileType qf set nobuflisted
   augroup end
 
-  augroup neorg
-  autocmd!
-  autocmd BufNewFile */journal/** 0r !/home/marty/.local/bin/script/generate-neorg-journal-template.py
-  augroup end
-
 ]])
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
@@ -50,5 +45,14 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   },
   callback = function()
     vim.bo.filetype = "yaml.ansible"
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = {
+    "**/inventory/**hosts",
+  },
+  callback = function()
+    vim.bo.filetype = "conf"
   end,
 })
