@@ -1,7 +1,7 @@
 -- catppuccin
 return {
   "catppuccin/nvim",
-  lazy = false,
+  lazy = true,
   name = "catppuccin",
   opts = {
     transparent_background = true,

@@ -24,6 +24,11 @@ vim.cmd([[
     inoremap  <C-s> <cmd>Telescope neorg find_linkable<cr>  
 ]])
 
+-- Move blocks of visually selected text
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- oil
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 local map = LazyVim.safe_keymap_set

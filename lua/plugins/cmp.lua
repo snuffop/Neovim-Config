@@ -39,6 +39,7 @@ return {
         { name = "path" },
         { name = "emoji" },
         { name = "neorg" },
+        { name = "orgmode" },
       }, {
         { name = "buffer" },
       }),

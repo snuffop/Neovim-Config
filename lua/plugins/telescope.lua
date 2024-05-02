@@ -5,12 +5,13 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "debugloop/telescope-undo.nvim",
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+      config = function()
+        require("telescope").load_extension("projects")
+        require("telescope").load_extension("undo")
+      end,
     },
-    build = "make",
-    config = function()
-      require("telescope").load_extension("projects")
-      require("telescope").load_extension("undo")
-    end,
 
     keys = {
             -- add a keymap to browse plugin files

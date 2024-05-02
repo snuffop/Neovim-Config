@@ -8,8 +8,6 @@ return {
     cmd = "Oil",
     config = function()
       require("oil").setup({
-        -- Id is automatically added at the beginning, and name at the end
-        -- See :help oil-columns
         columns = {
           "icon",
           "permissions",
