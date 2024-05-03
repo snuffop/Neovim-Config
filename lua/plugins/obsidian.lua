@@ -3,7 +3,20 @@
 return {
   "epwalsh/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
-  lazy = true,
+  cmd = {
+    "ObsidianBacklinks",
+    "ObsidianToday",
+    "ObsidianYesterday",
+    "ObsidianTomorrow",
+    "ObsidianDailies",
+    "ObsidianLink",
+    "ObsidianNew",
+    "ObsidianQuickSwitch",
+    "ObsidianRename",
+    "ObsidianSearch",
+    "ObsidianTemplate",
+    "ObsidianTags",
+  },
   event = {
     "BufReadPre " .. vim.fn.expand("~") .. "Nextcloud/Obsidian/default/**.md",
     "BufNewFile " .. vim.fn.expand("~") .. "Nextcloud/Obsidian/default/**.md",
@@ -34,12 +47,22 @@ return {
       notes_subdir = "Zettelkasten",
 
       completion = {
-        -- Set to false to disable completion.
         nvim_cmp = true,
-        -- Trigger completion at 2 chars.
         min_chars = 2,
       },
 
+      picker = {
+        -- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', or 'mini.pick'.
+        name = "telescope.nvim",
+        -- Optional, configure key mappings for the picker. These are the defaults.
+        -- Not all pickers support all mappings.
+        mappings = {
+          -- Create a new note from your query.
+          new = "<C-x>",
+          -- Insert a link to the selected note.
+          insert_link = "<C-l>",
+        },
+      },
       -- Optional, customize how note IDs are generated given an optional title.
       ---@param title string|?
       ---@return string
@@ -59,6 +82,12 @@ return {
         end
         return tostring(os.date("%Y%m%dT%H%M%S")) .. "--" .. suffix
       end,
+
+      markdown_link_func = function(opts)
+        return require("obsidian.util").markdown_link(opts)
+      end,
+
+      preferred_link_style = "markdown",
     })
   end,
 }

@@ -1,7 +1,9 @@
 -- Tardis Time machine
+-- https://github.com/FredeEB/tardis.nvim
 
 return {
   "fredeeb/tardis.nvim",
+  cmd = "Tardis",
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
