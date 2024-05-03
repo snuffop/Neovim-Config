@@ -24,8 +24,6 @@ vim.cmd([[
     inoremap  <C-s> <cmd>Telescope neorg find_linkable<cr>  
 ]])
 
-vim.keymap.set("c", "w!!", "<esc>:lua require'utils'.sudo_write()<CR>", { desc = "Sudo Write" })
-
 -- Move blocks of visually selected text
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -46,6 +44,7 @@ map("n", "<leader>bB", "<cmd>Telescope buffers<cr>", { desc = "Telescope Buffers
 
 -- File
 map("n", "<leader>fs", "<cmd>up<cr>", { desc = "File Save" })
+map("n", "fS", "<esc>:lua require'utils'.sudo_write()<CR>", { desc = "Sudo Write" })
 map("n", "<leader>fmr", "<cmd>Ranger<cr>", { desc = "Ranger" })
 map("n", "<leader>fmn", "<cmd>Nnn<cr>", { desc = "N3" })
 map("n", "<leader>fml", "<cmd>Lazygit<cr>", { desc = "Lazygit" })
