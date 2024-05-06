@@ -90,22 +90,23 @@ map("n", "<leader>nxs", "<cmd>Neorg generate-workspace-summary<cr>", { desc = "G
 map("n", "<leader>nxi", "<cmd>Neorg inject-metadata<cr>", { desc = "inject metadata" })
 map("n", "<leader>nxu", "<cmd>Neorg update-metadata<cr>", { desc = "update metadata" })
 map("n", "<leader>nwn", "<cmd>Neorg workspace notes<cr>", { desc = "Notes workspace" })
-map("n", "<leader>ojj", "<cmd>ObsidianToday<cr>", { desc = "Obsidian Today" })
-map("n", "<leader>ojy", "<cmd>ObsidianYesterday<cr>", { desc = "Obsidian Yesterday" })
-map("n", "<leader>ojt", "<cmd>ObsidianTomorrow<cr>", { desc = "Obsidian Tomorrow" })
-map("n", "<leader>ojs", "<cmd>ObsidianDailies -7 1<cr>", { desc = "Obsidian Last 7" })
-map("n", "<leader>ob", "<cmd>ObsidianBacklinks<cr>", { desc = "Obsidian Backlinks" })
-map("n", "<leader>ol", "<cmd>Obsidianlink<cr>", { desc = "Obsidian link" })
-map("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "Obsidian New Zettel" })
-map("n", "<leader>oo", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Obsidian Quick Switch" })
-map("n", "<leader>or", "<cmd>ObsidianRename<cr>", { desc = "Obsidian Rename" })
-map("n", "<leader>os", "<cmd>ObsidianSearch<cr>", { desc = "Obsidian Search" })
-map("n", "<leader>ot", "<cmd>ObsidianTemplate<cr>", { desc = "Obsidian Template" })
-map("n", "<leader>oT", "<cmd>ObsidianTags<cr>", { desc = "Obsidian Tags" })
 
--- Open
-
+-- Open / Obsidian
 map("n", "<leader>od", "<cmd>Dashboard<cr>", { desc = "Dashboard" })
+
+map("n", "<leader>ojj", "<cmd>ObsidianToday<cr>", { desc = "Today" })
+map("n", "<leader>ojy", "<cmd>ObsidianYesterday<cr>", { desc = "Yesterday" })
+map("n", "<leader>ojt", "<cmd>ObsidianTomorrow<cr>", { desc = "Tomorrow" })
+map("n", "<leader>ojs", "<cmd>ObsidianDailies -7 1<cr>", { desc = "Last 7" })
+map("n", "<leader>ob", "<cmd>ObsidianBacklinks<cr>", { desc = "Backlinks" })
+map("n", "<leader>oc", "<cmd>ObsidianToggleCheckbox<cr>", { desc = "Toggle checkbox" })
+map("n", "<leader>ol", "<cmd>Obsidianlink<cr>", { desc = "Link" })
+map("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "New Zettel" })
+map("n", "<leader>oo", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Obsidian Quick Switch" })
+map("n", "<leader>or", "<cmd>ObsidianRename<cr>", { desc = "Rename" })
+map("n", "<leader>os", "<cmd>ObsidianSearch<cr>", { desc = "Search" })
+map("n", "<leader>ot", "<cmd>ObsidianTemplate<cr>", { desc = "Template" })
+map("n", "<leader>oT", "<cmd>ObsidianTags<cr>", { desc = "Tags" })
 
 -- Project
 map("n", "<leader>pp", "<cmd>Telescope projects<cr>", { desc = "Projects" })
