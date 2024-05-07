@@ -44,7 +44,7 @@ map("n", "<leader>bB", "<cmd>Telescope buffers<cr>", { desc = "Telescope Buffers
 
 -- File
 map("n", "<leader>fs", "<cmd>up<cr>", { desc = "File Save" })
-map("n", "<leader>fS", "<esc>:lua require'utils'.sudo_write()<CR>", { desc = "Sudo Write" })
+map("n", "<leader>fS", "<cmd>w !sudo tee %<CR>", { desc = "Sudo Write" })
 map("n", "<leader>fmr", "<cmd>Ranger<cr>", { desc = "Ranger" })
 map("n", "<leader>fmn", "<cmd>Nnn<cr>", { desc = "N3" })
 map("n", "<leader>fml", "<cmd>Lazygit<cr>", { desc = "Lazygit" })
