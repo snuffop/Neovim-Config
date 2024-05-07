@@ -14,7 +14,6 @@ local M = {
     -- "image.nvim",
     -- external modules
     "laher/neorg-exec",
-    "phenax/neorg-hop-extras",
     { "pysan3/neorg-templates-draft", dependencies = { "L3MON4D3/LuaSnip" } },
     { "nvim-neorg/neorg-telescope", dependencies = { "nvim-telescope/telescope.nvim" } },
   },
@@ -133,7 +132,6 @@ local function load_plugins()
     ["core.presenter"] = { config = { zen_mode = "zen-mode" } },
     ["core.export.markdown"] = { config = { extensions = "all" } },
     ["core.esupports.indent"] = {},
-    ["core.esupports.hop"] = {},
     ["core.tangle"] = { config = { report_on_empty = false } },
     ["core.esupports.metagen"] = {
       config = {
@@ -170,7 +168,6 @@ local function load_plugins()
       },
     },
     ["external.exec"] = {},
-    ["external.hop-extras"] = {},
   }
 end
 
