@@ -4,6 +4,11 @@ return {
     lazy = true,
     enable = false,
   },
+
+  {
+    "nvimdev/dashboard-nvim",
+    enable = false,
+  },
   {
     "mfussenegger/nvim-lint",
     config = function()

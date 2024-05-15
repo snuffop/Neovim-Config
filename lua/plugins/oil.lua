@@ -135,6 +135,12 @@ return {
             winblend = 0,
           },
         },
+        ssh = {
+          border = "rounded",
+        },
+        keymaps_help = {
+          border = "rounded",
+        },
       })
     end,
   },
