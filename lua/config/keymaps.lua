@@ -103,6 +103,7 @@ map("n", "<leader>oc", "<cmd>ObsidianToggleCheckbox<cr>", { desc = "Toggle check
 map("n", "<leader>ol", "<cmd>Obsidianlink<cr>", { desc = "Link" })
 map("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "New Zettel" })
 map("n", "<leader>oo", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Obsidian Quick Switch" })
+map("n", "<leader>oO", "<cmd>ObsidianOpen<cr>", { desc = "Obsidian Open" })
 map("n", "<leader>or", "<cmd>ObsidianRename<cr>", { desc = "Rename" })
 map("n", "<leader>os", "<cmd>ObsidianSearch<cr>", { desc = "Search" })
 map("n", "<leader>ot", "<cmd>ObsidianTemplate<cr>", { desc = "Template" })
