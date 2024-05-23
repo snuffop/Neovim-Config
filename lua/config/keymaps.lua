@@ -18,18 +18,37 @@ vim.cmd([[
 ]])
 
 -- Neorg overrides
-vim.cmd([[
-    inoremap  <C-i> <cmd>Telescope neorg insert_link<cr>
-    inoremap  <C-l> <cmd>Telescope neorg insert_file_link<cr>
-    inoremap  <C-s> <cmd>Telescope neorg find_linkable<cr>  
-]])
+-- vim.cmd([[
+--     inoremap  <C-i> <cmd>Telescope neorg insert_link<cr>
+--     inoremap  <C-l> <cmd>Telescope neorg insert_file_link<cr>
+--     inoremap  <C-s> <cmd>Telescope neorg find_linkable<cr>
+-- ]])
 
 -- Move blocks of visually selected text
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Start Peek for the current session
+vim.keymap.set("n", "<F3>", "<cmd>PeekOpen<cr>", { desc = "Peek Open" })
+
 -- oil
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- reload keymaps
+vim.keymap.set(
+  "n",
+  "<leader><leader>k",
+  "<cmd>source ~/.config/nvim/lua/config/keymaps.lua<cr>",
+  { desc = "Reload keymaps.lua" }
+)
+
+-- reload snippets
+vim.keymap.set(
+  "n",
+  "<leader><leader>s",
+  "<cmd>source ~/.config/nvim/after/plugin/snippets.lua<cr>",
+  { desc = "Reload luasnip.lua" }
+)
 
 local map = LazyVim.safe_keymap_set
 
@@ -92,22 +111,22 @@ map("n", "<leader>nxu", "<cmd>Neorg update-metadata<cr>", { desc = "update metad
 map("n", "<leader>nwn", "<cmd>Neorg workspace notes<cr>", { desc = "Notes workspace" })
 
 -- Open / Obsidian
-map("n", "<leader>od", "<cmd>Dashboard<cr>", { desc = "Dashboard" })
-
-map("n", "<leader>ojj", "<cmd>ObsidianToday<cr>", { desc = "Today" })
-map("n", "<leader>ojy", "<cmd>ObsidianYesterday<cr>", { desc = "Yesterday" })
-map("n", "<leader>ojt", "<cmd>ObsidianTomorrow<cr>", { desc = "Tomorrow" })
-map("n", "<leader>ojs", "<cmd>ObsidianDailies -7 1<cr>", { desc = "Last 7" })
-map("n", "<leader>ob", "<cmd>ObsidianBacklinks<cr>", { desc = "Backlinks" })
-map("n", "<leader>oc", "<cmd>ObsidianToggleCheckbox<cr>", { desc = "Toggle checkbox" })
-map("n", "<leader>ol", "<cmd>Obsidianlink<cr>", { desc = "Link" })
-map("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "New Zettel" })
-map("n", "<leader>oo", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Obsidian Quick Switch" })
-map("n", "<leader>oO", "<cmd>ObsidianOpen<cr>", { desc = "Obsidian Open" })
-map("n", "<leader>or", "<cmd>ObsidianRename<cr>", { desc = "Rename" })
-map("n", "<leader>os", "<cmd>ObsidianSearch<cr>", { desc = "Search" })
-map("n", "<leader>ot", "<cmd>ObsidianTemplate<cr>", { desc = "Template" })
-map("n", "<leader>oT", "<cmd>ObsidianTags<cr>", { desc = "Tags" })
+-- map("n", "<leader>od", "<cmd>Dashboard<cr>", { desc = "Dashboard" })
+--
+-- map("n", "<leader>ojj", "<cmd>ObsidianToday<cr>", { desc = "Today" })
+-- map("n", "<leader>ojy", "<cmd>ObsidianYesterday<cr>", { desc = "Yesterday" })
+-- map("n", "<leader>ojt", "<cmd>ObsidianTomorrow<cr>", { desc = "Tomorrow" })
+-- map("n", "<leader>ojs", "<cmd>ObsidianDailies -7 1<cr>", { desc = "Last 7" })
+-- map("n", "<leader>ob", "<cmd>ObsidianBacklinks<cr>", { desc = "Backlinks" })
+-- map("n", "<leader>oc", "<cmd>ObsidianToggleCheckbox<cr>", { desc = "Toggle checkbox" })
+-- map("n", "<leader>ol", "<cmd>Obsidianlink<cr>", { desc = "Link" })
+-- map("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "New Zettel" })
+-- map("n", "<leader>oo", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Obsidian Quick Switch" })
+-- map("n", "<leader>oO", "<cmd>ObsidianOpen<cr>", { desc = "Obsidian Open" })
+-- map("n", "<leader>or", "<cmd>ObsidianRename<cr>", { desc = "Rename" })
+-- map("n", "<leader>os", "<cmd>ObsidianSearch<cr>", { desc = "Search" })
+-- map("n", "<leader>ot", "<cmd>ObsidianTemplate<cr>", { desc = "Template" })
+-- map("n", "<leader>oT", "<cmd>ObsidianTags<cr>", { desc = "Tags" })
 
 -- Project
 map("n", "<leader>pp", "<cmd>Telescope projects<cr>", { desc = "Projects" })
@@ -148,6 +167,9 @@ map("n", "<leader>DIz", "<cmd>DistantClientVersion<CR>", { desc = "Distant Clien
 
 -- ZK
 map("n", "<leader>zn", "<cmd>ZkNotes<cr>", { desc = "ZK Notes" })
+map("n", "<leader>zc", "<cmd>ZkCd<cr>", { desc = "ZK CD" })
 map("n", "<leader>zN", "<cmd>ZkNew { title = vim.fn.input('Title: ') }<cr>", { desc = "ZK New" })
 map("n", "<leader>zb", "<cmd>ZkBacklinks<cr>", { desc = "ZK Backlinks" })
 map("n", "<leader>zl", "<cmd>ZkLinks<cr>", { desc = "ZK Links" })
+map("n", "<leader>zt", "<cmd>ZkTags<cr>", { desc = "ZK Tags" })
+map("n", "<leader>zT", "<cmd>ZkNotes { createdAfter = ''3 days ago'}<cr>", { desc = "ZK Notes Recent" })
