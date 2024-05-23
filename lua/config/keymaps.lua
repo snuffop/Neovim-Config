@@ -145,3 +145,9 @@ map("n", "<leader>DIs", "<cmd>DistantSystemInfo<CR>", { desc = "Distant System I
 map("n", "<leader>DIS", "<cmd>DistantSessionInfo<CR>", { desc = "Distant Session Info" })
 map("n", "<leader>DIC", "<cmd>DistantCheckHealth<CR>", { desc = "Distant Check Health " })
 map("n", "<leader>DIz", "<cmd>DistantClientVersion<CR>", { desc = "Distant Client Version " })
+
+-- ZK
+map("n", "<leader>zn", "<cmd>ZkNotes<cr>", { desc = "ZK Notes" })
+map("n", "<leader>zN", "<cmd>ZkNew { title = vim.fn.input('Title: ') }<cr>", { desc = "ZK New" })
+map("n", "<leader>zb", "<cmd>ZkBacklinks<cr>", { desc = "ZK Backlinks" })
+map("n", "<leader>zl", "<cmd>ZkLinks<cr>", { desc = "ZK Links" })

@@ -32,11 +32,6 @@ return {
       "williamboman/mason.nvim",
       "frostplexx/mason-bridge.nvim",
     },
-    config = function()
-      require("conform").setup({
-        formatters_by_ft = require("mason-bridge").get_formatters(),
-      })
-    end,
   },
 
   {
