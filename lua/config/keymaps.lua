@@ -17,12 +17,12 @@ vim.cmd([[
     cnoremap <M-k> <cmd>WhichKey '' c<cr>
 ]])
 
--- Neorg overrides
--- vim.cmd([[
---     inoremap  <C-i> <cmd>Telescope neorg insert_link<cr>
---     inoremap  <C-l> <cmd>Telescope neorg insert_file_link<cr>
---     inoremap  <C-s> <cmd>Telescope neorg find_linkable<cr>
--- ]])
+Neorg overrides
+vim.cmd([[
+    inoremap  <C-i> <cmd>Telescope neorg insert_link<cr>
+    inoremap  <C-l> <cmd>Telescope neorg insert_file_link<cr>
+    inoremap  <C-s> <cmd>Telescope neorg find_linkable<cr>
+]])
 
 -- Move blocks of visually selected text
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -84,31 +84,31 @@ map("n", "<leader>gbc", "<cmd>GitBlameCopySHA<cr>", { desc = "Git Blame Copy SHA
 map("n", "<leader>gbC", "<cmd>GitBlameCopyCommitURL<cr>", { desc = "Git Blame Copy Commit URL" })
 
 -- Notes
-map("n", "<leader>nmm", "<cmd>Neorg module list<cr>", { desc = "List modules" })
-map("n", "<leader>nml", "<cmd>Neorg module load<cr>", { desc = "Load modules" })
-map("n", "<leader>nn", "<cmd>Neorg index<cr>", { desc = "neorg index" })
 map("n", "<leader>nN", "<cmd>Neorg keybind norg core.dirman.new.note<cr>", { desc = "Neorg new note" })
-map("n", "<leader>nr", "<cmd>Neorg return<cr>", { desc = "neorg return" })
-map("n", "<leader>nts", "<cmd>Telescope neorg search_headings<cr>", { desc = "Search headings" })
-map("n", "<leader>ntf", "<cmd>Telescope neorg find_linkable<cr>", { desc = "Find linkable" })
-map("n", "<leader>nti", "<cmd>Telescope neorg insert_file_link<cr>", { desc = "Insert file link" })
-map("n", "<leader>ntI", "<cmd>Telescope neorg insert_link<cr>", { desc = "Insert link" })
-map("n", "<leader>nta", "<cmd>Telescope neorg find_aof_tasks<cr>", { desc = "AOF taksks " })
-map("n", "<leader>ntA", "<cmd>Telescope neorg find_aof_project_tasks<cr>", { desc = "AOF project tasks" })
-map("n", "<leader>ntb", "<cmd>Telescope neorg find_backlinks<cr>", { desc = "Find backlinks " })
-map("n", "<leader>ntt", "<cmd>Telescope neorg find_norg_files<cr>", { desc = "Find files " })
-map("n", "<leader>nth", "<cmd>Telescope neorg search_headings<cr>", { desc = "Search headings " })
 map("n", "<leader>nT", "<cmd>Neorg toc qflist<cr>", { desc = "TOC Quick list" })
+map("n", "<leader>ncT", "<cmd>Neorg journal toc<cr>", { desc = "TOC" })
+map("n", "<leader>ni", "<cmd>Neorg index<cr>", { desc = "neorg index" })
+map("n", "<leader>njc", "<cmd>Neorg journal custom<cr>", { desc = "custom" })
 map("n", "<leader>njj", "<cmd>Neorg journal today<cr>", { desc = "today" })
+map("n", "<leader>njm", "<cmd>Neorg templates load journal<cr>", { desc = "Apply journal template" })
 map("n", "<leader>njt", "<cmd>Neorg journal tomorrow<cr>", { desc = "tomorrow" })
 map("n", "<leader>njy", "<cmd>Neorg journal yesterday<cr>", { desc = "yesterday" })
-map("n", "<leader>njc", "<cmd>Neorg journal custom<cr>", { desc = "custom" })
-map("n", "<leader>ncT", "<cmd>Neorg journal toc<cr>", { desc = "TOC" })
-map("n", "<leader>njm", "<cmd>Neorg templates load journal<cr>", { desc = "Apply journal template" })
-map("n", "<leader>nxs", "<cmd>Neorg generate-workspace-summary<cr>", { desc = "Generate summary" })
-map("n", "<leader>nxi", "<cmd>Neorg inject-metadata<cr>", { desc = "inject metadata" })
-map("n", "<leader>nxu", "<cmd>Neorg update-metadata<cr>", { desc = "update metadata" })
+map("n", "<leader>nml", "<cmd>Neorg module load<cr>", { desc = "Load modules" })
+map("n", "<leader>nmm", "<cmd>Neorg module list<cr>", { desc = "List modules" })
+map("n", "<leader>nn", "<cmd>Telescope neorg find_norg_files<cr>", { desc = "Find files " })
+map("n", "<leader>nr", "<cmd>Neorg return<cr>", { desc = "neorg return" })
+map("n", "<leader>nsA", "<cmd>Telescope neorg find_aof_project_tasks<cr>", { desc = "AOF project tasks" })
+map("n", "<leader>nsI", "<cmd>Telescope neorg insert_link<cr>", { desc = "Insert link" })
+map("n", "<leader>nsa", "<cmd>Telescope neorg find_aof_tasks<cr>", { desc = "AOF taksks " })
+map("n", "<leader>nsb", "<cmd>Telescope neorg find_backlinks<cr>", { desc = "Find backlinks " })
+map("n", "<leader>nsf", "<cmd>Telescope neorg find_linkable<cr>", { desc = "Find linkable" })
+map("n", "<leader>nsh", "<cmd>Telescope neorg search_headings<cr>", { desc = "Search headings " })
+map("n", "<leader>nsi", "<cmd>Telescope neorg insert_file_link<cr>", { desc = "Insert file link" })
+map("n", "<leader>nss", "<cmd>Telescope neorg search_headings<cr>", { desc = "Search headings" })
 map("n", "<leader>nwn", "<cmd>Neorg workspace notes<cr>", { desc = "Notes workspace" })
+map("n", "<leader>nxi", "<cmd>Neorg inject-metadata<cr>", { desc = "inject metadata" })
+map("n", "<leader>nxs", "<cmd>Neorg generate-workspace-summary<cr>", { desc = "Generate summary" })
+map("n", "<leader>nxu", "<cmd>Neorg update-metadata<cr>", { desc = "update metadata" })
 
 -- Open / Obsidian
 -- map("n", "<leader>od", "<cmd>Dashboard<cr>", { desc = "Dashboard" })
@@ -166,10 +166,10 @@ map("n", "<leader>DIC", "<cmd>DistantCheckHealth<CR>", { desc = "Distant Check H
 map("n", "<leader>DIz", "<cmd>DistantClientVersion<CR>", { desc = "Distant Client Version " })
 
 -- ZK
-map("n", "<leader>zn", "<cmd>ZkNotes<cr>", { desc = "ZK Notes" })
-map("n", "<leader>zc", "<cmd>ZkCd<cr>", { desc = "ZK CD" })
-map("n", "<leader>zN", "<cmd>ZkNew { title = vim.fn.input('Title: ') }<cr>", { desc = "ZK New" })
-map("n", "<leader>zb", "<cmd>ZkBacklinks<cr>", { desc = "ZK Backlinks" })
-map("n", "<leader>zl", "<cmd>ZkLinks<cr>", { desc = "ZK Links" })
-map("n", "<leader>zt", "<cmd>ZkTags<cr>", { desc = "ZK Tags" })
-map("n", "<leader>zT", "<cmd>ZkNotes { createdAfter = ''3 days ago'}<cr>", { desc = "ZK Notes Recent" })
+-- map("n", "<leader>zn", "<cmd>ZkNotes<cr>", { desc = "ZK Notes" })
+-- map("n", "<leader>zc", "<cmd>ZkCd<cr>", { desc = "ZK CD" })
+-- map("n", "<leader>zN", "<cmd>ZkNew { title = vim.fn.input('Title: ') }<cr>", { desc = "ZK New" })
+-- map("n", "<leader>zb", "<cmd>ZkBacklinks<cr>", { desc = "ZK Backlinks" })
+-- map("n", "<leader>zl", "<cmd>ZkLinks<cr>", { desc = "ZK Links" })
+-- map("n", "<leader>zt", "<cmd>ZkTags<cr>", { desc = "ZK Tags" })
+-- map("n", "<leader>zT", "<cmd>ZkNotes { createdAfter = ''3 days ago'}<cr>", { desc = "ZK Notes Recent" })

@@ -6,17 +6,21 @@ local M = {
   version = false,
   dependencies = {
     "luarocks.nvim",
+    "nvim-neorg/neorg-telescope",
     "nvim-treesitter/nvim-treesitter",
     "nvim-treesitter/nvim-treesitter-textobjects",
     "nvim-cmp",
     "mason.nvim",
     "plenary.nvim",
-    -- "image.nvim",
-    -- external modules
     "laher/neorg-exec",
-    { "pysan3/neorg-templates-draft", dependencies = { "L3MON4D3/LuaSnip" } },
-    { "nvim-neorg/neorg-telescope", dependencies = { "nvim-telescope/telescope.nvim" } },
+    {
+      "pysan3/neorg-templates-draft",
+      dependencies = {
+        "L3MON4D3/LuaSnip",
+      },
+    },
   },
+
   -- build = ":Neorg sync-parsers",
   cmd = "Neorg",
   default_workspace = "notes",
@@ -42,6 +46,7 @@ M.open_index_in_popup = function()
       },
     })
   end
+
   vim.api.nvim_create_autocmd("WinEnter", {
     group = M.aug,
     pattern = "*.norg",
@@ -54,6 +59,7 @@ M.open_index_in_popup = function()
       end
     end,
   })
+
   vim.api.nvim_create_autocmd("WinLeave", {
     group = M.aug,
     callback = function(args)
@@ -63,11 +69,14 @@ M.open_index_in_popup = function()
       end
     end,
   })
+
   if M.bufnr and vim.api.nvim_buf_is_valid(M.bufnr) then
     M.popup.bufnr = M.bufnr
   end
+
   M.popup:mount()
   M.popup:show()
+
   if vim.bo[vim.api.nvim_win_get_buf(M.popup.winid)].filetype ~= "norg" then
     vim.cmd.edit("index.norg")
   end
@@ -85,14 +94,6 @@ M.init = function()
     pattern = "*.norg",
     command = "Neorg tangle current-file",
   })
-end
-
-local function list_workspaces(w_dirs)
-  local res = {}
-  for _, w in ipairs(w_dirs) do
-    res[w] = "~/Nextcloud/" .. w
-  end
-  return res
 end
 
 local function load_plugins()
@@ -156,9 +157,11 @@ local function load_plugins()
     ["core.looking-glass"] = {},
     ["core.summary"] = {},
     ["core.syntax"] = {},
-    --["core.ui.calendar"] = {},
+    ["core.ui.calendar"] = {},
     ["core.integrations.telescope"] = {},
     ["core.integrations.treesitter"] = {},
+    ["core.integrations.nvim-cmp"] = {},
+    ["core.integrations.image"] = {},
     ["external.templates"] = {
       config = {
         templates_dir = vim.fn.stdpath("config") .. "/templates/neorg",
