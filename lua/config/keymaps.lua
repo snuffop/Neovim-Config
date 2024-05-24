@@ -17,13 +17,6 @@ vim.cmd([[
     cnoremap <M-k> <cmd>WhichKey '' c<cr>
 ]])
 
-Neorg overrides
-vim.cmd([[
-    inoremap  <C-i> <cmd>Telescope neorg insert_link<cr>
-    inoremap  <C-l> <cmd>Telescope neorg insert_file_link<cr>
-    inoremap  <C-s> <cmd>Telescope neorg find_linkable<cr>
-]])
-
 -- Move blocks of visually selected text
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
