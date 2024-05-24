@@ -1,4 +1,7 @@
+--   Jinja2 detect underlying file type as well
+--"Glench/Vim-Jinja2-Syntax",
+
 return {
-  "Glench/Vim-Jinja2-Syntax",
+  "HiPhish/jinja.vim",
   lazy = false,
 }

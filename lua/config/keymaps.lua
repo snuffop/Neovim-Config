@@ -131,7 +131,12 @@ map("n", "<leader>re", "<cmd>RemoteSSHFSEdit<cr>", { desc = "Edit Config" })
 map("n", "<leader>rf", "<cmd>RemoteSSHFSFindFiles<cr>", { desc = "Find Files" })
 map("n", "<leader>rg", "<cmd>RemoteSSHFSLiveGrep<cr>", { desc = "Live Grep" })
 
+--  Search / Telescop4e
+
+map("n", "<leader>sf", "<cmd>Telescope filetypes<cr>", { desc = "Search Filetype" })
+
 -- Text/Toggle
+
 map("n", "<leader>tu", "<cmd>Telescope undo<cr>", { desc = "Telescope Undo" })
 
 -- UI
