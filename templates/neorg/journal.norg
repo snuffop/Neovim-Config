@@ -2,7 +2,9 @@
 title: {TITLE}
 description: {JOURNAL_DESCRIPTION}
 authors: marty buchaus
-categories: journal
+categories: [
+    journal
+]
 created: {METADATA_TIME_STAMP}
 updated: {TODAY_OF_FILETREE}
 version: 1.1.1

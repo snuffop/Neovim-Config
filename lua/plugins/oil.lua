@@ -28,7 +28,7 @@ return {
           spell = false,
           list = false,
           conceallevel = 3,
-          concealcursor = "n",
+          concealcursor = "nvic",
         },
         -- Oil will take over directory buffers e.g. `vim .` or `:e src/`
         default_file_explorer = true,
@@ -72,13 +72,28 @@ return {
         use_default_keymaps = true,
         view_options = {
           -- Show files and directories that start with "."
-          show_hidden = false,
+          show_hidden = true,
           -- This function defines what is considered a "hidden" file
           is_hidden_file = function(name, bufnr)
             return vim.startswith(name, ".")
           end,
           -- This function defines what will never be shown, even when `show_hidden` is set
           is_always_hidden = function(name, bufnr)
+            return false
+          end,
+        },
+        -- Extra arguments to pass to SCP when moving/copying files over SSH
+        extra_scp_args = {},
+        -- EXPERIMENTAL support for performing file operations with git
+        git = {
+          -- Return true to automatically git add/mv/rm files
+          add = function(path)
+            return false
+          end,
+          mv = function(src_path, dest_path)
+            return false
+          end,
+          rm = function(path)
             return false
           end,
         },
