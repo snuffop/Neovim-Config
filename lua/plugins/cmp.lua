@@ -7,7 +7,6 @@ return {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-emoji",
-    "jordelver/cmp-jira",
     {
       "garymjr/nvim-snippets",
       opts = {
@@ -37,7 +36,6 @@ return {
     table.insert(opts.sources, { name = "snippets" })
     table.insert(opts.sources, { name = "path" })
     table.insert(opts.sources, { name = "buffer" })
-    table.insert(opts.sources, { name = "jira" })
   end,
   keys = {
     {

@@ -103,24 +103,6 @@ map("n", "<leader>nxi", "<cmd>Neorg inject-metadata<cr>", { desc = "inject metad
 map("n", "<leader>nxs", "<cmd>Neorg generate-workspace-summary<cr>", { desc = "Generate summary" })
 map("n", "<leader>nxu", "<cmd>Neorg update-metadata<cr>", { desc = "update metadata" })
 
--- Open / Obsidian
--- map("n", "<leader>od", "<cmd>Dashboard<cr>", { desc = "Dashboard" })
---
--- map("n", "<leader>ojj", "<cmd>ObsidianToday<cr>", { desc = "Today" })
--- map("n", "<leader>ojy", "<cmd>ObsidianYesterday<cr>", { desc = "Yesterday" })
--- map("n", "<leader>ojt", "<cmd>ObsidianTomorrow<cr>", { desc = "Tomorrow" })
--- map("n", "<leader>ojs", "<cmd>ObsidianDailies -7 1<cr>", { desc = "Last 7" })
--- map("n", "<leader>ob", "<cmd>ObsidianBacklinks<cr>", { desc = "Backlinks" })
--- map("n", "<leader>oc", "<cmd>ObsidianToggleCheckbox<cr>", { desc = "Toggle checkbox" })
--- map("n", "<leader>ol", "<cmd>Obsidianlink<cr>", { desc = "Link" })
--- map("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "New Zettel" })
--- map("n", "<leader>oo", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Obsidian Quick Switch" })
--- map("n", "<leader>oO", "<cmd>ObsidianOpen<cr>", { desc = "Obsidian Open" })
--- map("n", "<leader>or", "<cmd>ObsidianRename<cr>", { desc = "Rename" })
--- map("n", "<leader>os", "<cmd>ObsidianSearch<cr>", { desc = "Search" })
--- map("n", "<leader>ot", "<cmd>ObsidianTemplate<cr>", { desc = "Template" })
--- map("n", "<leader>oT", "<cmd>ObsidianTags<cr>", { desc = "Tags" })
-
 -- Project
 map("n", "<leader>pp", "<cmd>Telescope projects<cr>", { desc = "Projects" })
 
@@ -141,27 +123,6 @@ map("n", "<leader>tu", "<cmd>Telescope undo<cr>", { desc = "Telescope Undo" })
 
 -- UI
 map("n", "<leader>um", "<cmd>TableModeToggle<cr>", { desc = "Table Mode Toggle" })
-
--- Distant
-map("n", "<leader>Dlj", "<cmd>DistantConnect ssh://10.10.10.142<cr>", { desc = "Joyent Mac" })
-map("n", "<leader>Dlm", "<cmd>DistantConnect ssh://mail.dabuke.com<cr>", { desc = "Mail.dabuke.com" })
-map("n", "<leader>Dll", "<cmd>DistantConnect ssh://l2.dabuke.com<cr>", { desc = "l2.dabuke.com" })
-map("n", "<leader>DM", "<cmd>DistantMetadata<CR>", { desc = "Distant Metadata" })
-map("n", "<leader>DR", "<cmd>DistantRemove<CR>", { desc = "Distant Remove" })
-map("n", "<leader>DS", "<cmd>DistantShell<CR>", { desc = "Distant Shell" })
-map("n", "<leader>D/", "<cmd>DistantSearch<CR>", { desc = "Distant Search" })
-map("n", "<leader>DD", "<cmd>Distant<CR>", { desc = "Distant Search" })
-map("n", "<leader>Dc", "<cmd>DistantCopy<CR>", { desc = "Distant Copy" })
-map("n", "<leader>Di", "<cmd>DistantInstall<CR>", { desc = "Distant Install" })
-map("n", "<leader>Dm", "<cmd>DistantMkdir<CR>", { desc = "Distant Mkdir" })
-map("n", "<leader>Dr", "<cmd>DistantRename<CR>", { desc = "Distant Rename" })
-map("n", "<leader>Dw", "<cmd>DistantSpawn<CR>", { desc = "Distant Spawn" })
-map("n", "<leader>Dx", "<cmd>DistantRun<CR>", { desc = "Distant Run" })
-map("n", "<leader>Dz", "<cmd>DistantCancelSearch<CR>", { desc = "Distant Cancels Search " })
-map("n", "<leader>DIs", "<cmd>DistantSystemInfo<CR>", { desc = "Distant System Info" })
-map("n", "<leader>DIS", "<cmd>DistantSessionInfo<CR>", { desc = "Distant Session Info" })
-map("n", "<leader>DIC", "<cmd>DistantCheckHealth<CR>", { desc = "Distant Check Health " })
-map("n", "<leader>DIz", "<cmd>DistantClientVersion<CR>", { desc = "Distant Client Version " })
 
 -- ZK
 map("n", "<leader>zn", "<cmd>ZkNotes<cr>", { desc = "ZK Notes" })
