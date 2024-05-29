@@ -8,7 +8,7 @@ return {
     return vim.env.JIRA_API_TOKEN ~= nil
   end,
   keys = {
-    { "<leader>jv", ":JiraView<cr>", desc = "View Jira issue", silent = true },
+    { "<leader>jv", ":JiraView<cr>", desc = "View Jira issue", silent = false },
     { "<leader>jo", ":JiraOpen<cr>", desc = "Open Jira issue in browser", silent = true },
   },
 }
