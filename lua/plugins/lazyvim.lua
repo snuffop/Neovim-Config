@@ -4,9 +4,4 @@ return {
     lazy = true,
     enable = false,
   },
-
-  {
-    "nvimdev/dashboard-nvim",
-    enable = false,
-  },
 }
