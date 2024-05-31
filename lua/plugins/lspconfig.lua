@@ -1,5 +1,5 @@
 -- add tsserver and setup with typescript.nvim instead of lspconfig
-local lapi = os.execute("gopass show -o Joyent/aws.amazon.com/marty.buchaus")
+local lapi = os.execute("gopass show -o Application/language-tool")
 
 return {
   "neovim/nvim-lspconfig",
@@ -7,8 +7,8 @@ return {
     "jose-elias-alvarez/typescript.nvim",
     init = function()
       require("lazyvim.util").lsp.on_attach(function(_, buffer)
-                -- stylua: ignore
-                vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
+        -- stylua: ignore
+        vim.keymap.set("n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
         vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
       end)
 
