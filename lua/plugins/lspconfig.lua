@@ -1,4 +1,5 @@
 -- add tsserver and setup with typescript.nvim instead of lspconfig
+local lapi = os.execute("gopass show -o Joyent/aws.amazon.com/marty.buchaus")
 
 return {
   "neovim/nvim-lspconfig",
@@ -18,7 +19,7 @@ return {
           ltex = {
             language = "en",
             username = "marty@dabuke.com",
-            apikey = "pit-d8y32hinyhf0",
+            apikey = lapi,
           },
         },
         on_attach = on_attach,
