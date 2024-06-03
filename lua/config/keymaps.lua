@@ -103,6 +103,10 @@ map("n", "<leader>nxi", "<cmd>Neorg inject-metadata<cr>", { desc = "inject metad
 map("n", "<leader>nxs", "<cmd>Neorg generate-workspace-summary<cr>", { desc = "Generate summary" })
 map("n", "<leader>nxu", "<cmd>Neorg update-metadata<cr>", { desc = "update metadata" })
 
+-- Open
+
+map("n", "<leader>omg", "<cmd>find ~/Nextcloud/Neorg/Todo.norg<cr>", { desc = "Open My Todo's" })
+
 -- Project
 map("n", "<leader>pp", "<cmd>Telescope projects<cr>", { desc = "Projects" })
 
