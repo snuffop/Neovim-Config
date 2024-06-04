@@ -21,6 +21,14 @@ vim.cmd([[
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Snippet Jump in insert mode
+vim.keymap.set({ "i", "s" }, "<C-j>", function()
+  vim.snippet.jump(1)
+end)
+vim.keymap.set({ "i", "s" }, "<C-k>", function()
+  vim.snippet.jump(-1)
+end)
+
 -- Start Peek for the current session
 vim.keymap.set("n", "<F3>", "<cmd>PeekOpen<cr>", { desc = "Peek Open" })
 

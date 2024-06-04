@@ -30,34 +30,12 @@ ls.add_snippets("lua", {
   }),
 })
 
-vim.cmd([[
-  inoremap  <C-i> <cmd>Telescope neorg insert_link<cr>
-  inoremap  <C-l> <cmd>Telescope neorg insert_file_link<cr>
-  inoremap  <C-s> <cmd>Telescope neorg find_linkable<cr>
-]])
-
--- NEORG
-ls.add_snippets("norg", {
-  snip(
-    "jira",
-    fmt(
-      [[
-      {{https://jira-joyent.atlassian.net/browse/{}}}[{}]
-    ]],
-      {
-        ins(1),
-        rep(1),
-      }
-    )
-  ),
-})
-
-ls.add_snippets("norg", {
+ls.add_snippets("markdown", {
   snip(
     "sysops",
     fmt(
       [[
-      {{https://jira-joyent.atlassian.net/browse/SYSOPS-{}}}[SYSOPS-{}]
+      [SYSOPS-{}](https://jira-joyent.atlassian.net/browse/SYSOPS-{})
     ]],
       {
         ins(1),
@@ -67,12 +45,27 @@ ls.add_snippets("norg", {
   ),
 })
 
-ls.add_snippets("norg", {
+ls.add_snippets("markdown", {
   snip(
     "devops",
     fmt(
       [[
-      {{https://jira-joyent.atlassian.net/browse/DEVOPS-{}}}[DEVOPS-{}]
+      [DEVOPS-{}](https://jira-joyent.atlassian.net/browse/DEVOPS-{})
+    ]],
+      {
+        ins(1),
+        rep(1),
+      }
+    )
+  ),
+})
+
+ls.add_snippets("markdown", {
+  snip(
+    "jira",
+    fmt(
+      [[
+      [{}](https://jira-joyent.atlassian.net/browse/{})
     ]],
       {
         ins(1),
