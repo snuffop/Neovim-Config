@@ -10,6 +10,7 @@ local M = {
     "nvim-treesitter/nvim-treesitter",
     "nvim-treesitter/nvim-treesitter-textobjects",
     "max397574/neorg-contexts",
+    "benlubas/neorg-conceal-wrap",
     "pritchett/neorg-capture",
     "nvim-cmp",
     "mason.nvim",
@@ -172,6 +173,7 @@ local function load_plugins()
       },
     },
     ["external.exec"] = {},
+    ["external.conceal-wrap"] = {},
     -- Capture
     ["external.capture"] = {
       config = {

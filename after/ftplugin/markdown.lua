@@ -22,14 +22,6 @@ vim.keymap.set({ "i", "s" }, "<A-h>", function()
   end
 end, { silent = true })
 
-ls.add_snippets("lua", {
-  snip("hello", {
-    text('print("Hello '),
-    ins(1),
-    text(' world")'),
-  }),
-})
-
 ls.add_snippets("markdown", {
   snip(
     "sysops",
