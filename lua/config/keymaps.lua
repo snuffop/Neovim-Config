@@ -54,10 +54,12 @@ vim.keymap.set(
 local map = LazyVim.safe_keymap_set
 
 -- TmuxNavigate
-map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Tmux Left" })
-map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Tmux Down" })
-map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Tmux Up" })
-map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Tmux Right" })
+map("n", "<C-h>", "<cmd>NvimTmuxNavigateLeft<cr>", { desc = "Tmux Left" })
+map("n", "<C-j>", "<cmd>NvimTmuxNavigateDown<cr>", { desc = "Tmux Down" })
+map("n", "<C-k>", "<cmd>NvimTmuxNavigateUp<cr>", { desc = "Tmux Up" })
+map("n", "<C-l>", "<cmd>NvimTmuxNavigateRight<cr>", { desc = "Tmux Right" })
+map("n", "<C-\\>", "<cmd>NvimTmuxNavigateLastActive<cr>", { desc = "Tmux Last Active" })
+map("n", "<C-Space>", "<cmd>NvimTmuxNavigateNext<cr>", { desc = "Tmux Next" })
 
 -- Buffer
 map("n", "<leader>bB", "<cmd>Telescope buffers<cr>", { desc = "Telescope Buffers" })
@@ -118,13 +120,6 @@ map("n", "<leader>omg", "<cmd>find ~/Nextcloud/Neorg/Todo.norg<cr>", { desc = "O
 -- Project
 map("n", "<leader>pp", "<cmd>Telescope projects<cr>", { desc = "Projects" })
 
--- Remote
-map("n", "<leader>rc", "<cmd>RemoteSSHConnect<cr>", { desc = "Connect" })
-map("n", "<leader>rd", "<cmd>RemoteSSHFSDisconnect<cr>", { desc = "Disconnect" })
-map("n", "<leader>re", "<cmd>RemoteSSHFSEdit<cr>", { desc = "Edit Config" })
-map("n", "<leader>rf", "<cmd>RemoteSSHFSFindFiles<cr>", { desc = "Find Files" })
-map("n", "<leader>rg", "<cmd>RemoteSSHFSLiveGrep<cr>", { desc = "Live Grep" })
-
 --  Search / Telescop4e
 
 map("n", "<leader>sf", "<cmd>Telescope filetypes<cr>", { desc = "Search Filetype" })
@@ -135,12 +130,3 @@ map("n", "<leader>tu", "<cmd>Telescope undo<cr>", { desc = "Telescope Undo" })
 
 -- UI
 map("n", "<leader>um", "<cmd>TableModeToggle<cr>", { desc = "Table Mode Toggle" })
-
--- ZK
-map("n", "<leader>zn", "<cmd>ZkNotes<cr>", { desc = "ZK Notes" })
-map("n", "<leader>zc", "<cmd>ZkCd<cr>", { desc = "ZK CD" })
-map("n", "<leader>zN", "<cmd>ZkNew { title = vim.fn.input('Title: ') }<cr>", { desc = "ZK New" })
-map("n", "<leader>zb", "<cmd>ZkBacklinks<cr>", { desc = "ZK Backlinks" })
-map("n", "<leader>zl", "<cmd>ZkLinks<cr>", { desc = "ZK Links" })
-map("n", "<leader>zt", "<cmd>ZkTags<cr>", { desc = "ZK Tags" })
-map("n", "<leader>zT", "<cmd>ZkNotes { createdAfter = ''3 days ago'}<cr>", { desc = "ZK Notes Recent" })
