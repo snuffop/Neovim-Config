@@ -64,6 +64,13 @@ map("n", "<C-Space>", "<cmd>NvimTmuxNavigateNext<cr>", { desc = "Tmux Next" })
 -- Buffer
 map("n", "<leader>bB", "<cmd>Telescope buffers<cr>", { desc = "Telescope Buffers" })
 
+-- Code
+
+map("n", "<leader>ctt", "<cmd>TestFile<cr>", { desc = "Vim-Test File" })
+map("n", "<leader>cta", "<cmd>TestSuite<cr>", { desc = "Vim-Test Suit" })
+map("n", "<leader>ctl", "<cmd>TestLast<cr>", { desc = "Vim-Test Last" })
+map("n", "<leader>ctg", "<cmd>TestVisit<cr>", { desc = "Vim-Test Visit" })
+
 -- File
 map("n", "<leader>fs", "<cmd>up<cr>", { desc = "File Save" })
 map("n", "<leader>fS", "<cmd>w !sudo tee %<CR>", { desc = "Sudo Write" })

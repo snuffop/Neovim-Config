@@ -7,6 +7,7 @@ return {
     require("better_escape").setup({
       mapping = { "jk", "jj", "kk", "kj" },
       timeout = 100,
+      keys = "<Esc>",
     })
   end,
 }

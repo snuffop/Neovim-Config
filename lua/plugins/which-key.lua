@@ -13,6 +13,7 @@ return {
       ["<leader><tab>"] = { name = "+tabs" },
       ["<leader>b"] = { name = "+buffer" },
       ["<leader>c"] = { name = "+code" },
+      ["<leader>ct"] = { name = "+Test" },
       ["<leader>f"] = { name = "+file/find" },
       ["<leader>fm"] = { name = "+Managers" },
       ["<leader>g"] = { name = "+git" },
