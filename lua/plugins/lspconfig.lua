@@ -44,5 +44,7 @@ return {
         return true
       end,
     },
+
+    autoformat = false,
   },
 }

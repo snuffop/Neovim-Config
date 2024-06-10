@@ -5,17 +5,6 @@ return {
     window = {
       mappings = {
 
-        ["e"] = function()
-          vim.api.nvim_exec2("Neotree focus filesystem left", true)
-        end,
-
-        ["b"] = function()
-          vim.api.nvim_exec2("Neotree focus buffers left", true)
-        end,
-        ["g"] = function()
-          vim.api.nvim_exec2("Neotree focus git_status left", true)
-        end,
-
         ["<tab>"] = function(state)
           local node = state.tree:get_node()
           if require("neo-tree.utils").is_expandable(node) then
