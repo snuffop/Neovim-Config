@@ -69,6 +69,7 @@ map("n", "<leader>fs", "<cmd>up<cr>", { desc = "File Save" })
 map("n", "<leader>fS", "<cmd>w !sudo tee %<CR>", { desc = "Sudo Write" })
 map("n", "<leader>fmr", "<cmd>Ranger<cr>", { desc = "Ranger" })
 map("n", "<leader>fmn", "<cmd>Nnn<cr>", { desc = "N3" })
+map("n", "<leader>fmj", "<cmd>lua require'joshuto'.joshuto()<cr>", { desc = "Joshuto" })
 map("n", "<leader>fml", "<cmd>Lazygit<cr>", { desc = "Lazygit" })
 map("n", "<leader>fmo", "<cmd>Oil<cr>", { desc = "Oil" })
 map("n", "<leader>fD", "<cmd>Distant<cr>", { desc = "Distant" })
@@ -130,4 +131,6 @@ map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
 map("n", "<leader>tu", "<cmd>Telescope undo<cr>", { desc = "Telescope Undo" })
 
 -- UI
-map("n", "<leader>um", "<cmd>TableModeToggle<cr>", { desc = "Table Mode Toggle" })
+map("n", "<leader>um", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" })
+map("n", "<leader>uR", "<cmd>ReaderMode<cr>", { desc = "Toggle ReaderMode" })
+

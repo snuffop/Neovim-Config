@@ -60,7 +60,7 @@ return {
         broot_cmd = "broot",
         gitui_cmd = "gitui",
         ranger_cmd = "ranger",
-        joshuto_cmd = "joshuto",
+        -- joshuto_cmd = "joshuto",
         lazygit_cmd = "lazygit",
         neomutt_cmd = "neomutt",
         taskwarrior_cmd = "taskwarrior-tui",

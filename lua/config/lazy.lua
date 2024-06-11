@@ -14,12 +14,9 @@ require("lazy").setup({
   },
   defaults = {
     lazy = true,
-    version = false, -- always use the latest git commit
-    -- version = "*", -- try installing the latest stable version for plugins that support semver
+    version = false, 
   },
-  --install = { colorscheme = { "catppuccin-mocha" } },
-  --install = { colorscheme = { "tokyonight" } },
-  checker = { enabled = false }, -- automatically check for plugin updates
+  checker = { enabled = false }, 
   performance = {
     rtp = {
       -- disable some rtp plugins
