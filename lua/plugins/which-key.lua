@@ -22,6 +22,7 @@ return {
       ["<leader>n"] = { name = "+Neorg" },
       ["<leader>nj"] = { name = "Journal" },
       ["<leader>nm"] = { name = "Module" },
+      ["<leader>no"] = { name = "+Obsidian" },
       ["<leader>nt"] = { name = "Telescope" },
       ["<leader>nw"] = { name = "Workspace" },
       ["<leader>nx"] = { name = "Tool" },

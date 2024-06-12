@@ -2,20 +2,21 @@
 
 return {
   "epwalsh/obsidian.nvim",
-  version = "*", -- recommended, use latest release instead of latest commit
+  version = "*",  -- Recommended, use latest release instead of latest commit
   cmd = {
     "ObsidianBacklinks",
-    "ObsidianToday",
-    "ObsidianYesterday",
-    "ObsidianTomorrow",
     "ObsidianDailies",
     "ObsidianLink",
     "ObsidianNew",
+    "ObsidianOpen",
     "ObsidianQuickSwitch",
     "ObsidianRename",
     "ObsidianSearch",
-    "ObsidianTemplate",
     "ObsidianTags",
+    "ObsidianTemplate",
+    "ObsidianToday",
+    "ObsidianTomorrow",
+    "ObsidianYesterday",
   },
   event = {
     "BufReadPre " .. vim.fn.expand("~") .. "Nextcloud/Obsidian/default/**.md",
