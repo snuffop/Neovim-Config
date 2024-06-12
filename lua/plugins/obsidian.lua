@@ -2,7 +2,7 @@
 
 return {
   "epwalsh/obsidian.nvim",
-  version = "*",  -- Recommended, use latest release instead of latest commit
+  version = "*", -- Recommended, use latest release instead of latest commit
   cmd = {
     "ObsidianBacklinks",
     "ObsidianDailies",
@@ -45,12 +45,21 @@ return {
         subdir = "templates",
       },
 
-      notes_subdir = "Zettelkasten",
+      notes_subdir = "00-Zettelkasten",
 
       completion = {
         nvim_cmp = true,
         min_chars = 2,
       },
+
+      -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
+      -- URL it will be ignored but you can customize this behavior here.
+      ---@param url string
+      follow_url_func = function(url)
+        -- Open the URL in the default web browser.
+        -- vim.fn.jobstart({"open", url})  -- Mac OS
+        vim.fn.jobstart({ "xdg-open", url }) -- linux
+      end,
 
       picker = {
         -- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', or 'mini.pick'.
