@@ -5,13 +5,9 @@ better.
 
 No Warranty Unless you're a used car.
 
-<!--toc:start-->
-
-- [Marty Buchaus' Neovim Configuration](#marty-buchaus-neovim-configuration)
-  - [Notes](#notes)
-  <!--toc:end-->
-
 ## Notes
+
+- 2024-06-12 Migration to obsidian again as neorg is still too immature for my workflow.
 
 - Using Lua Function to obfuscate passwords.
 - Pushed distant into disabled
