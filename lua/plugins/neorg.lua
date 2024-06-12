@@ -3,7 +3,6 @@
 local M = {
   "nvim-neorg/neorg",
   ft = "norg",
-  version = false,
   dependencies = {
     "luarocks.nvim",
     "nvim-neorg/neorg-telescope",
@@ -15,7 +14,6 @@ local M = {
     "nvim-cmp",
     "mason.nvim",
     "plenary.nvim",
-    "laher/neorg-exec",
     {
       "pysan3/neorg-templates",
       dependencies = {
@@ -27,77 +25,7 @@ local M = {
   -- build = ":Neorg sync-parsers",
   cmd = "Neorg",
   default_workspace = "notes",
-  aug = vim.api.nvim_create_augroup("NorgAuG", { clear = true }),
 }
-
-M.popup = nil
-M.bufnr = nil
-M.open_index_in_popup = function()
-  if not M.popup then
-    M.popup = require("nui.popup")({
-      bufnr = M.bufnr,
-      size = { width = "80%", height = "90%" },
-      position = { col = "50%", row = "50%" },
-      enter = true,
-      focusable = true,
-      relative = "editor",
-      border = {
-        style = "rounded",
-      },
-      win_options = {
-        winhighlight = "Normal:Normal,FloatBorder:WinSeparator",
-      },
-    })
-  end
-
-  vim.api.nvim_create_autocmd("WinEnter", {
-    group = M.aug,
-    pattern = "*.norg",
-    callback = function()
-      if vim.api.nvim_get_current_win() == M.popup.winid then
-        vim.keymap.set({ "n", "i", "v" }, "<C-q>", function()
-          vim.cmd.write()
-          M.popup:hide()
-        end, { buffer = M.popup.bufnr, remap = false })
-      end
-    end,
-  })
-
-  vim.api.nvim_create_autocmd("WinLeave", {
-    group = M.aug,
-    callback = function(args)
-      if vim.api.nvim_get_current_win() == M.popup.winid then
-        M.bufnr = args.buf
-        M.popup:hide()
-      end
-    end,
-  })
-
-  if M.bufnr and vim.api.nvim_buf_is_valid(M.bufnr) then
-    M.popup.bufnr = M.bufnr
-  end
-
-  M.popup:mount()
-  M.popup:show()
-
-  if vim.bo[vim.api.nvim_win_get_buf(M.popup.winid)].filetype ~= "norg" then
-    vim.cmd.edit("index.norg")
-  end
-end
-
-M.keys = {
-  { ",ni", "<Cmd>Neorg index<CR>" },
-  { "<Leader>tt", M.open_index_in_popup, desc = "Open Neorg index in a popup window" },
-}
-
-M.init = function()
-  require("norg-config.commands").setup({})
-  vim.api.nvim_create_autocmd("BufWritePost", {
-    group = M.aug,
-    pattern = "*.norg",
-    command = "Neorg tangle current-file",
-  })
-end
 
 local function load_plugins()
   return {
@@ -137,6 +65,7 @@ local function load_plugins()
     ["core.export.markdown"] = { config = { extensions = "all" } },
     ["core.esupports.indent"] = {},
     ["core.tangle"] = { config = { report_on_empty = false } },
+    ["core.esupports.hop"] = {},
     ["core.esupports.metagen"] = {
       config = {
         author = "marty buchaus",
@@ -151,29 +80,25 @@ local function load_plugins()
         workspace = "notes",
       },
     },
-    ["core.keybinds"] = {
-      config = {
-        default_keybinds = true,
-        neorg_leader = "<leader><leader>",
-      },
-    },
+    ["core.keybinds"] = {},
     ["core.looking-glass"] = {},
     ["core.summary"] = {},
     ["core.syntax"] = {},
     ["core.ui.calendar"] = {},
-    ["core.integrations.telescope"] = {},
     ["core.integrations.treesitter"] = {},
     ["core.integrations.nvim-cmp"] = {},
     ["core.integrations.image"] = {},
+    --["core.integrations.telescope"] = {},  -- comment out to make work 2024 06 11 16:45
     ["external.templates"] = {
       config = {
-        keywords = require("norg-config.templates"),
-        -- default_subcommand = "add", -- or "fload", "load"
+        keywords = require("config.templates"),
+        default_subcommand = "load", -- or "add" "fload", "load"
         -- snippets_overwrite = {},
       },
     },
-    ["external.exec"] = {},
     ["external.conceal-wrap"] = {},
+    ["external.context"] = {},
+
     -- Capture
     ["external.capture"] = {
       config = {
@@ -213,8 +138,6 @@ local function load_plugins()
         },
       },
     },
-
-    ["external.context"] = {},
   }
 end
 
