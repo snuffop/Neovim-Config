@@ -130,6 +130,18 @@ map("n", "<leader>nxu", "<cmd>Neorg update-metadata<cr>", { desc = "update metad
 -- Open
 
 map("n", "<leader>omg", "<cmd>find ~/Nextcloud/Neorg/Todo.norg<cr>", { desc = "Open My Todo's" })
+map(
+  "n",
+  "<leader>omjj",
+  "<cmd>find ~/Nextcloud/Obsidian/default/05-Projects/Joyent/20230804T082033==joyent--joyent-notes-index__joyent_index.md<cr>",
+  { desc = "Joyent Index" }
+)
+map(
+  "n",
+  "<leader>omjs",
+  "<cmd>find ~/Nextcloud/Obsidian/default/05-Projects/Joyent/Joyent-Sysops-Index.md<cr>",
+  { desc = "Joyent Sysops Index" }
+)
 
 -- Project
 map("n", "<leader>pp", "<cmd>Telescope projects<cr>", { desc = "Projects" })
@@ -146,4 +158,3 @@ map("n", "<leader>tu", "<cmd>Telescope undo<cr>", { desc = "Telescope Undo" })
 -- UI
 map("n", "<leader>um", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" })
 map("n", "<leader>uR", "<cmd>ReaderMode<cr>", { desc = "Toggle ReaderMode" })
-
