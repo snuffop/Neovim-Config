@@ -2,16 +2,12 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
-vim.g.user = "Mbuchaus (Snuffop)"
 vim.g.mail = "marty@dabuke.com"
+vim.g.user = "Mbuchaus (Snuffop)"
 
-vim.cmd("language en_US.utf8")
+-- vim.cmd("language en_US.utf8")
 
 vim.g.maplocalleader = ","
-
-vim.o.showcmdloc = "statusline"
-
-vim.o.termguicolors = true
 
 -- Tabs and indentations
 vim.bo.autoindent = true
@@ -27,36 +23,34 @@ vim.o.smartindent = true
 vim.o.smarttab = true
 vim.o.softtabstop = 4
 vim.o.tabstop = 4
+vim.o.termguicolors = true
 vim.o.textwidth = 100
 
 -- Folding
-vim.o.foldlevel = 99
-vim.o.conceallevel = 2
 vim.o.concealcursor = "nc"
+vim.o.conceallevel = 2
+vim.o.foldlevel = 99
 
 -- Update and backups
-vim.o.showmode = false
-vim.o.backup = false
-vim.o.writebackup = false
-vim.o.updatetime = 50
-vim.o.timeoutlen = 100
-vim.o.swapfile = false
-vim.o.undodir = os.getenv("HOME") .. "/.config/nvim/etc/undodir"
+vim.o.backup = true
 vim.o.backupdir = os.getenv("HOME") .. "/.config/nvim/etc/backup"
 vim.o.directory = os.getenv("HOME") .. "/.config/nvim/etc/swp"
+vim.o.grepformat = "%f:%l:%c:%m"
+vim.o.grepprg = "rg --vimgrep"
+vim.o.showcmdloc = "statusline"
+vim.o.showmode = false
+vim.o.swapfile = true
+vim.o.timeoutlen = 100
+vim.o.undodir = os.getenv("HOME") .. "/.config/nvim/etc/undodir"
 vim.o.undofile = true
+vim.o.updatetime = 50
+vim.o.writebackup = false
 
-vim.opt.grepprg = "rg --vimgrep"
-vim.opt.grepformat = "%f:%l:%c:%m"
-
-vim.opt.conceallevel = 2
-
-vim.o.guifont = "DejaVu Sans Mono:h9"
-
+-- Lang Specific
 vim.cmd([[
  let g:loaded_ruby_provider = 0
  let g:python3_host_prog = "/usr/bin/python3"
 ]])
 
--- disable autoformat by default ( toggle on if needed )
-vim.g.autoformat = true
+-- GUI Settings
+vim.o.guifont = "DejaVu Sans Mono:h9"

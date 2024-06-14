@@ -1,12 +1,5 @@
-tt.*
-.tests
 doc/tags
-debug
-.repro
-foo.*
+etc/*
 *.log
-data
-undodir
 lazy-lock.json
-lazyvim.json
 lazyvim.json
