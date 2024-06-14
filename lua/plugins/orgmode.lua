@@ -11,12 +11,6 @@ return {
   },
 
   {
-    "lukas-reineke/headlines.nvim",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-    opts = {},
-  },
-
-  {
     "nvim-orgmode/orgmode",
     dependencies = {
       "akinsho/org-bullets.nvim",
