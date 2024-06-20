@@ -8,6 +8,14 @@ return {
     "vhyrro/luarocks.nvim",
     "3rd/image.nvim",
   },
-  opts = true,
   ft = "markdown",
+  config = function()
+    require("styledoc").setup({
+      ui = {
+        list = {
+          enable = false,
+        },
+      },
+    })
+  end,
 }
