@@ -36,7 +36,7 @@ return {
 
   {
     "mfussenegger/nvim-lint",
-    depnedencies = {
+    dependencies = {
       "williamboman/mason.nvim",
       "frostplexx/mason-bridge.nvim",
     },

@@ -37,12 +37,4 @@ return {
       ["<leader>x"] = { name = "+diagnostics/quickfix" },
     },
   },
-  config = function(_, opts)
-    local wk = require("which-key")
-    wk.setup(opts)
-    wk.register(opts.defaults)
-    if LazyVim.has("noice.nvim") then
-      opts.defaults["<leader>sn"] = { name = "+noice" }
-    end
-  end,
 }

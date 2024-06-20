@@ -22,9 +22,7 @@ local M = {
     },
   },
 
-  -- build = ":Neorg sync-parsers",
   cmd = "Neorg",
-  default_workspace = "notes",
 }
 
 local function load_plugins()
