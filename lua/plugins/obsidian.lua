@@ -38,6 +38,7 @@ return {
       daily_notes = {
         folder = "journals",
         date_format = "%Y/%m-%B/%Y-%m-%d-%A",
+        default_tags = { "journal" },
         template = "journals.md",
       },
 
@@ -74,6 +75,11 @@ return {
           insert_link = "<C-l>",
         },
       },
+
+      attachments = {
+        img_folder = "99-assets/imgs",
+      },
+
       -- Optional, customize how note IDs are generated given an optional title.
       ---@param title string|?
       ---@return string
