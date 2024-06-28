@@ -13,7 +13,7 @@ local field_format = {
   },
   blocks = {
     gui = "bold",
-    guifg = "#070707",
+    guifg = "#000000",
   },
 }
 
@@ -55,7 +55,7 @@ return {
         -- modified indicator
         local modified_icon = {}
         if vim.api.nvim_get_option_value("modified", { buf = props.buf }) then
-          modified_icon = vim.tbl_extend("force", { "● " }, field_format.modified)
+          modified_icon = vim.tbl_extend("force", { " " }, field_format.modified)
           display_bufname.guifg = field_format.modified.guifg
         end
 
@@ -68,7 +68,7 @@ return {
           devicon,
           display_bufname,
           modified_icon,
-          display_bufnum,
+          -- display_bufnum,
           stop,
         }
       end,
