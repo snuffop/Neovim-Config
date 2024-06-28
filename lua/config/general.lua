@@ -1,5 +1,5 @@
 vim.g.general_info = {
   username = "snuffop",
   email = "marty@dabuke.com",
-  github = "https://github.eomc/snuffop",
+  github = "https://github.com/snuffop",
 }

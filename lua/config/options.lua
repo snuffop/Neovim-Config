@@ -7,8 +7,6 @@ vim.g.user = "Mbuchaus (Snuffop)"
 
 -- vim.cmd("language en_US.utf8")
 
-vim.g.maplocalleader = ","
-
 -- Tabs and indentations
 vim.bo.autoindent = true
 vim.bo.expandtab = true
