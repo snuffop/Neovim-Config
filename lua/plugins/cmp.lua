@@ -1,46 +1,41 @@
--- Completion
 return {
-  "hrsh7th/nvim-cmp",
-  dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-emoji",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-emoji",
-  },
+  {
+    "hrsh7th/nvim-cmp",
+    ---@param opts cmp.ConfigSchema
+    opts = function(_, opts)
+      local cmp = require("cmp")
+      opts.preselect = cmp.PreselectMode.None
+      opts.completion = { completeopt = "menu,menuone,preview,noinsert,noselect" }
+      opts.experimental.ghost_text = false
 
-  opts = function(_, opts)
-    opts.snippet = {
-      expand = function(args)
-        require("luasnip").lsp_expand(args.body)
-      end,
-    }
-    table.insert(opts.sources, { name = "nvim_lsp" })
-    table.insert(opts.sources, { name = "luasnip" })
-    table.insert(opts.sources, { name = "snippets" })
-    table.insert(opts.sources, { name = "path" })
-    table.insert(opts.sources, { name = "buffer" })
-    table.insert(opts.sources, { name = "neorg" })
-    table.insert(opts.sources, { name = "orgmode" })
-  end,
-  keys = {
-    {
-      "<Tab>",
-      function()
-        return vim.snippet.active({ direction = 1 }) and "<cmd>lua vim.snippet.jump(1)<cr>" or "<Tab>"
-      end,
-      expr = true,
-      silent = true,
-      mode = { "i", "s" },
-    },
-    {
-      "<S-Tab>",
-      function()
-        return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<Tab>"
-      end,
-      expr = true,
-      silent = true,
-      mode = { "i", "s" },
-    },
+      opts.mapping = vim.tbl_extend("force", opts.mapping, {
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
+        ["<Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
+            cmp.select_next_item()
+          elseif vim.snippet.active({ direction = 1 }) then
+            vim.schedule(function()
+              vim.snippet.jump(1)
+            end)
+          elseif has_words_before() then
+            cmp.complete()
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_prev_item()
+          elseif vim.snippet.active({ direction = -1 }) then
+            vim.schedule(function()
+              vim.snippet.jump(-1)
+            end)
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+      })
+    end,
   },
 }

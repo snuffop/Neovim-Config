@@ -46,8 +46,8 @@ vim.o.writebackup = false
 
 -- Lang Specific
 vim.cmd([[
- let g:loaded_ruby_provider = 0
- let g:python3_host_prog = "/usr/bin/python3"
+let g:ruby_host_prog = "/home/marty/.local/share/gem/ruby/3.0.0/bin/neovim-ruby-host"
+let g:python3_host_prog = "/usr/bin/python3"
 ]])
 
 -- GUI Settings

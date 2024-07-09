@@ -37,7 +37,7 @@ local function load_plugins()
     ["core.completion"] = {
       config = {
         engine = "nvim-cmp",
-        name = "[Norg]",
+        name = "[Neorg]",
       },
     },
     ["core.defaults"] = {},
@@ -86,7 +86,13 @@ local function load_plugins()
     ["core.integrations.treesitter"] = {},
     ["core.integrations.nvim-cmp"] = {},
     ["core.integrations.image"] = {},
-    --["core.integrations.telescope"] = {},  -- comment out to make work 2024 06 11 16:45
+    ["core.integrations.telescope"] = {
+      config = {
+        insert_file_link = {
+          show_title_preview = true,
+        },
+      },
+    },
     ["external.templates"] = {
       config = {
         keywords = require("config.templates"),

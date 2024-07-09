@@ -3,12 +3,12 @@
 -- Add any additional keymaps here
 
 -- attempt to remap lines for autocomplete
-vim.cmd([[
-    inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
-    inoremap <expr> j pumvisible() ? "\<C-n>" : "j"
-    inoremap <expr> k pumvisible() ? "\<C-p>" : "k"
-]])
-
+-- vim.cmd([[
+--     inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
+--     inoremap <expr> j pumvisible() ? "\<C-n>" : "j"
+--     inoremap <expr> k pumvisible() ? "\<C-p>" : "k"
+-- ]])
+--
 -- Whichkey  maps based on mode
 vim.cmd([[
     nnoremap <M-k> <cmd>WhichKey<cr>
