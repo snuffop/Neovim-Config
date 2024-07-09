@@ -51,7 +51,7 @@ return {
         keymaps = {
           ["g?"] = "actions.show_help",
           ["<CR>"] = "actions.select",
-          ["l"] = "actions.select",
+          --["l"] = "actions.select",
           ["<C-s>"] = "actions.select_vsplit",
           ["<C-h>"] = "actions.select_split",
           ["<C-t>"] = "actions.select_tab",
@@ -59,7 +59,7 @@ return {
           ["<C-c>"] = "actions.close",
           ["<C-l>"] = "actions.refresh",
           ["-"] = "actions.parent",
-          ["h"] = "actions.parent",
+          --["h"] = "actions.parent",
           ["_"] = "actions.open_cwd",
           ["`"] = "actions.cd",
           ["~"] = "actions.tcd",
