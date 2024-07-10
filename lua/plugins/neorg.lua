@@ -21,7 +21,7 @@ local M = {
       },
     },
   },
-
+  build = ":Neorg sync-parsers",
   cmd = "Neorg",
 }
 
@@ -66,7 +66,7 @@ local function load_plugins()
     ["core.esupports.hop"] = {},
     ["core.esupports.metagen"] = {
       config = {
-        author = "marty buchaus",
+        author = "mbuchaus",
         type = "none", -- none, auto, empty options
         update_date = true,
       },
