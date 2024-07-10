@@ -96,7 +96,7 @@ local function load_plugins()
     ["external.templates"] = {
       config = {
         keywords = require("config.templates"),
-        default_subcommand = "load", -- or "add" "fload", "load"
+        default_subcommand = "add", -- or "add" "fload", "load"
         -- snippets_overwrite = {},
       },
     },
