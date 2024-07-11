@@ -8,14 +8,14 @@ return {
       function()
         require("yazi").yazi()
       end,
-      desc = "Open the file manager",
+      desc = "Open the yazi file manager",
     },
     {
       "<leader>fy",
       function()
         require("yazi").yazi(nil, vim.fn.getcwd())
       end,
-      desc = "Open the file manager in nvim's working directory",
+      desc = "Open the yazi file manager in nvim's working directory",
     },
   },
 }
