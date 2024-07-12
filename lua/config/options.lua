@@ -5,8 +5,6 @@
 vim.g.mail = "marty@dabuke.com"
 vim.g.user = "Mbuchaus (Snuffop)"
 
--- vim.cmd("language en_US.utf8")
-
 -- Tabs and indentations
 vim.bo.autoindent = true
 vim.bo.expandtab = true
@@ -24,9 +22,11 @@ vim.o.tabstop = 4
 vim.o.termguicolors = true
 vim.o.textwidth = 100
 
--- Folding
+-- conceal
 vim.o.concealcursor = "nc"
 vim.o.conceallevel = 2
+
+-- Folding
 vim.o.foldlevel = 99
 
 -- Update and backups
