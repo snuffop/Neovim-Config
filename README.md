@@ -5,8 +5,11 @@ better.
 
 No Warranty Unless you're a used car.
 
+Funny saying I heard the other day "Your Pizza's extended warranty is fine"
+
 ## Notes
 
+- 2024-07-14 Now Back to Neorg. Obsidian is too Mac ish to0 much (do it our way)
 - 2024-06-12 Migration to obsidian again as neorg is still too immature for my workflow.
 
 - Using Lua Function to obfuscate passwords.
