@@ -5,6 +5,9 @@
 vim.g.mail = "marty@dabuke.com"
 vim.g.user = "Mbuchaus (Snuffop)"
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = ","
+
 -- Tabs and indentations
 vim.bo.autoindent = true
 vim.bo.expandtab = true

@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   opts = {
     plugins = { spelling = true },
-    defaults = {
+    spec = {
       mode = { "n", "v" },
       ["g"] = { name = "+goto" },
       ["gs"] = { name = "+surround" },

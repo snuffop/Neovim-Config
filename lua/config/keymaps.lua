@@ -92,23 +92,6 @@ map("n", "<leader>njy", "<cmd>Neorg journal yesterday<cr>", { desc = "yesterday"
 map("n", "<leader>nml", "<cmd>Neorg module load<cr>", { desc = "Load modules" })
 map("n", "<leader>nmm", "<cmd>Neorg module list<cr>", { desc = "List modules" })
 map("n", "<leader>nn", "<cmd>Telescope neorg find_norg_files<cr>", { desc = "Find files " })
-map("n", "<leader>noC", "<cmd>ObsidianCheckHealth<cr>", { desc = "Check Health" })
-map("n", "<leader>noN", "<cmd>ObsidianLinkNew<cr>", { desc = "Link New" })
-map("n", "<leader>noO", "<cmd>ObsidianOpen<cr>", { desc = "Open" })
-map("n", "<leader>noT", "<cmd>ObsidianTemplate<cr>", { desc = "Add Template" })
-map("n", "<leader>nob", "<cmd>ObsidianBacklinks<cr>", { desc = "Find Backlinks" })
-map("n", "<leader>noc", "<cmd>ObsidianCheck<cr>", { desc = "Check" })
-map("n", "<leader>nod", "<cmd>ObsidianDailies -30 2<cr>", { desc = "Open Dailies" })
-map("n", "<leader>nof", "<cmd>ObsidianFollowLink<cr>", { desc = "Follow Link" })
-map("n", "<leader>nog", "<cmd>ObsidianTags<cr>", { desc = "TAGS" })
-map("n", "<leader>nol", "<cmd>ObsidianLinks<cr>", { desc = "List Links" })
-map("n", "<leader>non", "<cmd>ObsidianNew<cr>", { desc = "New Note" })
-map("n", "<leader>noo", "<cmd>ObsidianSearch<cr>", { desc = "Search" })
-map("n", "<leader>nos", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Quick Switch" })
-map("n", "<leader>not", "<cmd>ObsidianToday<cr>", { desc = "Open Today" })
-map("n", "<leader>now", "<cmd>ObsidianTomorrow<cr>", { desc = "Open Tomorrow" })
-map("n", "<leader>nox", "<cmd>ObsidianExtractNote<cr>", { desc = "Extract Note" })
-map("n", "<leader>noy", "<cmd>ObsidianYesterday<cr>", { desc = "Open Yesterday" })
 map("n", "<leader>nr", "<cmd>Neorg return<cr>", { desc = "neorg return" })
 map("n", "<leader>nsA", "<cmd>Telescope neorg find_aof_project_tasks<cr>", { desc = "AOF project tasks" })
 map("n", "<leader>nsI", "<cmd>Telescope neorg insert_link<cr>", { desc = "Insert link" })
@@ -126,18 +109,6 @@ map("n", "<leader>nxu", "<cmd>Neorg update-metadata<cr>", { desc = "update metad
 -- Open
 
 map("n", "<leader>omg", "<cmd>find ~/Nextcloud/Neorg/Todo.norg<cr>", { desc = "Open My Todo's" })
-map(
-  "n",
-  "<leader>omjj",
-  "<cmd>find ~/Nextcloud/Obsidian/default/05-Projects/Joyent/20230804T082033==joyent--joyent-notes-index__joyent_index.md<cr>",
-  { desc = "Joyent Index" }
-)
-map(
-  "n",
-  "<leader>omjs",
-  "<cmd>find ~/Nextcloud/Obsidian/default/05-Projects/Joyent/Joyent-Sysops-Index.md<cr>",
-  { desc = "Joyent Sysops Index" }
-)
 
 -- Project
 map("n", "<leader>pp", "<cmd>Telescope projects<cr>", { desc = "Projects" })
