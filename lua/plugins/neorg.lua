@@ -82,7 +82,7 @@ local function load_plugins()
     ["core.looking-glass"] = {},
     ["core.summary"] = {},
     ["core.syntax"] = {},
-    ["core.ui.calendar"] = {},
+    --["core.ui.calendar"] = {},
     ["core.integrations.treesitter"] = {},
     ["core.integrations.nvim-cmp"] = {},
     ["core.integrations.image"] = {},
