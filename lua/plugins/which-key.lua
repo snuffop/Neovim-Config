@@ -33,6 +33,7 @@ return {
       ["<leader>s"] = { name = "+search" },
       ["<leader>t"] = { name = "+Text/Toggle" },
       ["<leader>u"] = { name = "+ui" },
+      ["<leader>uW"] = { name = "+Wrapping" },
       ["<leader>w"] = { name = "+windows" },
       ["<leader>x"] = { name = "+diagnostics/quickfix" },
     },

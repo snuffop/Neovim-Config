@@ -105,6 +105,16 @@ map("n", "<leader>nwn", "<cmd>Neorg workspace notes<cr>", { desc = "Notes worksp
 map("n", "<leader>nxi", "<cmd>Neorg inject-metadata<cr>", { desc = "inject metadata" })
 map("n", "<leader>nxs", "<cmd>Neorg generate-workspace-summary<cr>", { desc = "Generate summary" })
 map("n", "<leader>nxu", "<cmd>Neorg update-metadata<cr>", { desc = "update metadata" })
+map("n", "<leader>nzz", "<cmd>ZkNotes { sort = { 'modified' }}<cr>", { desc = "ZK Notes" })
+map(
+  "n",
+  "<leader>nzZ",
+  "<cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<cr>",
+  { desc = "ZK Notes Search" }
+)
+map("n", "<leader>nzn", "<cmd>ZkNew { title = vim.fn.input('Title: ')}<cr>", { desc = "ZK New note" })
+map("n", "<leader>nzt", "<cmd>ZkTags<cr>", { desc = "ZK Tags" })
+map("n", "<leader>nzm", "<cmd>ZkMatch<cr>", { desc = "ZK Match Selected" })
 
 -- Open
 
@@ -118,10 +128,9 @@ map("n", "<leader>pp", "<cmd>Telescope projects<cr>", { desc = "Projects" })
 map("n", "<leader>sf", "<cmd>Telescope filetypes<cr>", { desc = "Search Filetype" })
 map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
 
--- Text/Toggle
-
-map("n", "<leader>tu", "<cmd>Telescope undo<cr>", { desc = "Telescope Undo" })
-
 -- UI
 map("n", "<leader>um", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" })
 map("n", "<leader>uR", "<cmd>ReaderMode<cr>", { desc = "Toggle ReaderMode" })
+map("n", "<leader>uWt", "<cmd>lua require('wrapping').toggle_wrap_mode()<cr>", { desc = "Toggle wrapping mode" })
+map("n", "<leader>uWh", "<cmd>lua require('wrapping').hard_wrap_mode()<cr>", { desc = "Hard wrap mode" })
+map("n", "<leader>uWs", "<cmd>lua require('wrapping').soft_wrap_mode()<cr>", { desc = "Soft wrap mode" })
