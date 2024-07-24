@@ -112,9 +112,12 @@ map(
   "<cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<cr>",
   { desc = "ZK Notes Search" }
 )
+map("n", "<leader>nzb", "<cmd>ZkBackLinks<cr>", { desc = "ZK Backlinks" })
+map("n", "<leader>nzi", "<cmd>ZkInsertLink<cr>", { desc = "ZK Insert Link" })
+map("n", "<leader>nzl", "<cmd>ZkLinks<cr>", { desc = "ZK Links" })
+map("n", "<leader>nzm", "<cmd>ZkMatch<cr>", { desc = "ZK Match Selected" })
 map("n", "<leader>nzn", "<cmd>ZkNew { title = vim.fn.input('Title: ')}<cr>", { desc = "ZK New note" })
 map("n", "<leader>nzt", "<cmd>ZkTags<cr>", { desc = "ZK Tags" })
-map("n", "<leader>nzm", "<cmd>ZkMatch<cr>", { desc = "ZK Match Selected" })
 
 -- Open
 
