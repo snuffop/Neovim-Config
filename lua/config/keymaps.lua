@@ -21,6 +21,11 @@ vim.cmd([[
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Quick Escape
+vim.keymap.set("i", "jj", "<ESC>", { silent = true })
+vim.keymap.set("i", "jk", "<ESC>", { silent = true })
+vim.keymap.set("i", "kj", "<ESC>", { silent = true })
+
 -- Snippet Jump in insert mode
 vim.keymap.set({ "i", "s" }, "<C-j>", function()
   vim.snippet.jump(1)
