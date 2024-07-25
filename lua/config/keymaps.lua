@@ -25,13 +25,6 @@ vim.keymap.set({ "i", "s" }, "<C-k>", function()
   vim.snippet.jump(-1)
 end)
 
-vim.api.nvim_set_keymap(
-  "i",
-  "<C-i>",
-  "<cmd>ZkInsertLink<cr>",
-  { noremap = true, silent = true, desc = "Insert ZK Link" }
-)
-
 -- Start Peek for the current session
 vim.keymap.set("n", "<F3>", "<cmd>PeekOpen<cr>", { desc = "Peek Open" })
 
