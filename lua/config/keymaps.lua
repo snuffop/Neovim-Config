@@ -1,21 +1,12 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
-
--- attempt to remap lines for autocomplete
--- vim.cmd([[
---     inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
---     inoremap <expr> j pumvisible() ? "\<C-n>" : "j"
---     inoremap <expr> k pumvisible() ? "\<C-p>" : "k"
--- ]])
 --
 -- Whichkey  maps based on mode
-vim.cmd([[
-    nnoremap <M-k> <cmd>WhichKey<cr>
-    vnoremap <M-k> <cmd>WhichKey '' v<cr>
-    inoremap <M-k> <cmd>WhichKey '' i<cr>
-    cnoremap <M-k> <cmd>WhichKey '' c<cr>
-]])
+vim.api.nvim_set_keymap("n", "<M-k>", "<cmd>WhichKey<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<M-k>", "<cmd>WhichKey<space>v<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<M-k>", "<cmd>WhichKey<space>i<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("c", "<M-k>", "<cmd>WhichKey<space>c<cr>", { noremap = true, silent = true })
 
 -- Move blocks of visually selected text
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -33,6 +24,13 @@ end)
 vim.keymap.set({ "i", "s" }, "<C-k>", function()
   vim.snippet.jump(-1)
 end)
+
+vim.api.nvim_set_keymap(
+  "i",
+  "<C-i>",
+  "<cmd>ZkInsertLink<cr>",
+  { noremap = true, silent = true, desc = "Insert ZK Link" }
+)
 
 -- Start Peek for the current session
 vim.keymap.set("n", "<F3>", "<cmd>PeekOpen<cr>", { desc = "Peek Open" })
@@ -85,44 +83,21 @@ map("n", "<leader>gbC", "<cmd>GitBlameCopyCommitURL<cr>", { desc = "Git Blame Co
 map("n", "<leader>gT", "<cmd>Tardis<cr>", { desc = "Tardis (TimeMachine)" })
 
 -- Notes
-map("n", "<leader>nN", "<cmd>Neorg keybind norg core.dirman.new.note<cr>", { desc = "Neorg new note" })
-map("n", "<leader>nT", "<cmd>Neorg toc qflist<cr>", { desc = "TOC Quick list" })
-map("n", "<leader>ncT", "<cmd>Neorg journal toc<cr>", { desc = "TOC" })
-map("n", "<leader>ni", "<cmd>Neorg index<cr>", { desc = "neorg index" })
-map("n", "<leader>njc", "<cmd>Neorg journal custom<cr>", { desc = "custom" })
-map("n", "<leader>njj", "<cmd>Neorg journal today<cr>", { desc = "today" })
-map("n", "<leader>njm", "<cmd>Neorg templates load journal<cr>", { desc = "Apply journal template" })
-map("n", "<leader>njt", "<cmd>Neorg journal tomorrow<cr>", { desc = "tomorrow" })
-map("n", "<leader>njy", "<cmd>Neorg journal yesterday<cr>", { desc = "yesterday" })
-map("n", "<leader>nml", "<cmd>Neorg module load<cr>", { desc = "Load modules" })
-map("n", "<leader>nmm", "<cmd>Neorg module list<cr>", { desc = "List modules" })
-map("n", "<leader>nn", "<cmd>Telescope neorg find_norg_files<cr>", { desc = "Find files " })
-map("n", "<leader>nr", "<cmd>Neorg return<cr>", { desc = "neorg return" })
-map("n", "<leader>nsA", "<cmd>Telescope neorg find_aof_project_tasks<cr>", { desc = "AOF project tasks" })
-map("n", "<leader>nsI", "<cmd>Telescope neorg insert_link<cr>", { desc = "Insert link" })
-map("n", "<leader>nsa", "<cmd>Telescope neorg find_aof_tasks<cr>", { desc = "AOF taksks " })
-map("n", "<leader>nsb", "<cmd>Telescope neorg find_backlinks<cr>", { desc = "Find backlinks " })
-map("n", "<leader>nsf", "<cmd>Telescope neorg find_linkable<cr>", { desc = "Find linkable" })
-map("n", "<leader>nsh", "<cmd>Telescope neorg search_headings<cr>", { desc = "Search headings " })
-map("n", "<leader>nsi", "<cmd>Telescope neorg insert_file_link<cr>", { desc = "Insert file link" })
-map("n", "<leader>nss", "<cmd>Telescope neorg search_headings<cr>", { desc = "Search headings" })
-map("n", "<leader>nwn", "<cmd>Neorg workspace notes<cr>", { desc = "Notes workspace" })
-map("n", "<leader>nxi", "<cmd>Neorg inject-metadata<cr>", { desc = "inject metadata" })
-map("n", "<leader>nxs", "<cmd>Neorg generate-workspace-summary<cr>", { desc = "Generate summary" })
-map("n", "<leader>nxu", "<cmd>Neorg update-metadata<cr>", { desc = "update metadata" })
-map("n", "<leader>nzz", "<cmd>ZkNotes { sort = { 'modified' }}<cr>", { desc = "ZK Notes" })
+map("n", "<leader>nz", "<cmd>ZkNotes { sort = { 'modified' }}<cr>", { desc = "ZK Notes" })
 map(
   "n",
-  "<leader>nzZ",
+  "<leader>nZ",
   "<cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<cr>",
   { desc = "ZK Notes Search" }
 )
-map("n", "<leader>nzb", "<cmd>ZkBackLinks<cr>", { desc = "ZK Backlinks" })
-map("n", "<leader>nzi", "<cmd>ZkInsertLink<cr>", { desc = "ZK Insert Link" })
-map("n", "<leader>nzl", "<cmd>ZkLinks<cr>", { desc = "ZK Links" })
-map("n", "<leader>nzm", "<cmd>ZkMatch<cr>", { desc = "ZK Match Selected" })
-map("n", "<leader>nzn", "<cmd>ZkNew { title = vim.fn.input('Title: ')}<cr>", { desc = "ZK New note" })
-map("n", "<leader>nzt", "<cmd>ZkTags<cr>", { desc = "ZK Tags" })
+map("n", "<leader>nb", "<cmd>ZkBackLinks<cr>", { desc = "ZK Backlinks" })
+map("n", "<leader>nj", "<cmd>ZkNew { dir = 'journals', date = 'today'}<cr>", { desc = "ZK Journal Today" })
+map("n", "<leader>ny", "<cmd>ZkNew { dir = 'journals', date = 'yesterday'}<cr>", { desc = "ZK Journal Yesterday" })
+map("n", "<leader>ni", "<cmd>ZkInsertLink<cr>", { desc = "ZK Insert Link" })
+map("n", "<leader>nl", "<cmd>ZkLinks<cr>", { desc = "ZK Links" })
+map("n", "<leader>nm", "<cmd>ZkMatch<cr>", { desc = "ZK Match Selected" })
+map("n", "<leader>nn", "<cmd>ZkNew { title = vim.fn.input('Title: ')}<cr>", { desc = "ZK New note" })
+map("n", "<leader>nt", "<cmd>ZkTags<cr>", { desc = "ZK Tags" })
 
 -- Open
 
