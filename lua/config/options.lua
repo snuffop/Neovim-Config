@@ -8,6 +8,9 @@ vim.g.user = "Mbuchaus (Snuffop)"
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
+-- Auto Format
+vim.g.autoformat = false
+
 -- Tabs and indentations
 vim.bo.autoindent = true
 vim.bo.expandtab = true

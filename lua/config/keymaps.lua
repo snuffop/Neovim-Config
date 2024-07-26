@@ -75,28 +75,27 @@ map("n", "<leader>gbc", "<cmd>GitBlameCopySHA<cr>", { desc = "Git Blame Copy SHA
 map("n", "<leader>gbC", "<cmd>GitBlameCopyCommitURL<cr>", { desc = "Git Blame Copy Commit URL" })
 map("n", "<leader>gT", "<cmd>Tardis<cr>", { desc = "Tardis (TimeMachine)" })
 
--- Notes
+-- Obsidian / Open
 
-map("n", "<leader>noC", "<cmd>ObsidianCheckHealth<cr>", { desc = "Check Health" })
-map("n", "<leader>noN", "<cmd>ObsidianLinkNew<cr>", { desc = "Link New" })
-map("n", "<leader>noO", "<cmd>ObsidianOpen<cr>", { desc = "Open" })
-map("n", "<leader>noT", "<cmd>ObsidianTemplate<cr>", { desc = "Add Template" })
-map("n", "<leader>nob", "<cmd>ObsidianBacklinks<cr>", { desc = "Find Backlinks" })
-map("n", "<leader>noc", "<cmd>ObsidianCheck<cr>", { desc = "Check" })
-map("n", "<leader>nod", "<cmd>ObsidianDailies -30 2<cr>", { desc = "Open Dailies" })
-map("n", "<leader>nof", "<cmd>ObsidianFollowLink<cr>", { desc = "Follow Link" })
-map("n", "<leader>nog", "<cmd>ObsidianTags<cr>", { desc = "TAGS" })
-map("n", "<leader>nol", "<cmd>ObsidianLinks<cr>", { desc = "List Links" })
-map("n", "<leader>non", "<cmd>ObsidianNew<cr>", { desc = "New Note" })
-map("n", "<leader>noo", "<cmd>ObsidianSearch<cr>", { desc = "Search" })
-map("n", "<leader>nos", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Quick Switch" })
-map("n", "<leader>not", "<cmd>ObsidianToday<cr>", { desc = "Open Today" })
-map("n", "<leader>now", "<cmd>ObsidianTomorrow<cr>", { desc = "Open Tomorrow" })
-map("n", "<leader>nox", "<cmd>ObsidianExtractNote<cr>", { desc = "Extract Note" })
-map("n", "<leader>noy", "<cmd>ObsidianYesterday<cr>", { desc = "Open Yesterday" })
-map("n", "<leader>zz", "<cmd>ZkNotes { sort = { 'modified' }}<cr>", { desc = "ZK Notes" })
+map("n", "<leader>oC", "<cmd>ObsidianCheckHealth<cr>", { desc = "Check Health" })
+map("n", "<leader>oN", "<cmd>ObsidianLinkNew<cr>", { desc = "Link New" })
+map("n", "<leader>oO", "<cmd>ObsidianOpen<cr>", { desc = "Open" })
+map("n", "<leader>oT", "<cmd>ObsidianTemplate<cr>", { desc = "Add Template" })
+map("n", "<leader>ob", "<cmd>ObsidianBacklinks<cr>", { desc = "Find Backlinks" })
+map("n", "<leader>oc", "<cmd>ObsidianCheck<cr>", { desc = "Check" })
+map("n", "<leader>od", "<cmd>ObsidianDailies -30 2<cr>", { desc = "Open Dailies" })
+map("n", "<leader>of", "<cmd>ObsidianFollowLink<cr>", { desc = "Follow Link" })
+map("n", "<leader>og", "<cmd>ObsidianTags<cr>", { desc = "TAGS" })
+map("n", "<leader>ol", "<cmd>ObsidianLinks<cr>", { desc = "List Links" })
+map("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "New Note" })
+map("n", "<leader>oo", "<cmd>ObsidianSearch<cr>", { desc = "Search" })
+map("n", "<leader>os", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Quick Switch" })
+map("n", "<leader>ot", "<cmd>ObsidianToday<cr>", { desc = "Open Today" })
+map("n", "<leader>ow", "<cmd>ObsidianTomorrow<cr>", { desc = "Open Tomorrow" })
+map("n", "<leader>ox", "<cmd>ObsidianExtractNote<cr>", { desc = "Extract Note" })
+map("n", "<leader>oy", "<cmd>ObsidianYesterday<cr>", { desc = "Open Yesterday" })
 
--- Open
+-- Open My
 
 map("n", "<leader>omg", "<cmd>find ~/Nextcloud/Neorg/Todo.norg<cr>", { desc = "Open My Todo's" })
 map(
