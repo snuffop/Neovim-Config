@@ -61,12 +61,12 @@ return {
     end,
   },
 
-  {
-    "ibhagwan/fzf-lua",
-    opts = {
-      fzf_opts = { ["--layout"] = "default" },
-    },
-  },
+  -- {
+  --   "ibhagwan/fzf-lua",
+  --   opts = {
+  --     fzf_opts = { ["--layout"] = "default" },
+  --   },
+  -- },
 
   {
     "LazyVim/LazyVim",

@@ -76,21 +76,21 @@ map("n", "<leader>gbC", "<cmd>GitBlameCopyCommitURL<cr>", { desc = "Git Blame Co
 map("n", "<leader>gT", "<cmd>Tardis<cr>", { desc = "Tardis (TimeMachine)" })
 
 -- Notes
-map("n", "<leader>nz", "<cmd>ZkNotes { sort = { 'modified' }}<cr>", { desc = "ZK Notes" })
+map("n", "<leader>zz", "<cmd>ZkNotes { sort = { 'modified' }}<cr>", { desc = "ZK Notes" })
 map(
   "n",
-  "<leader>nZ",
+  "<leader>zZ",
   "<cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<cr>",
   { desc = "ZK Notes Search" }
 )
-map("n", "<leader>nb", "<cmd>ZkBackLinks<cr>", { desc = "ZK Backlinks" })
-map("n", "<leader>nj", "<cmd>ZkNew { dir = 'journals', date = 'today'}<cr>", { desc = "ZK Journal Today" })
-map("n", "<leader>ny", "<cmd>ZkNew { dir = 'journals', date = 'yesterday'}<cr>", { desc = "ZK Journal Yesterday" })
-map("n", "<leader>ni", "<cmd>ZkInsertLink<cr>", { desc = "ZK Insert Link" })
-map("n", "<leader>nl", "<cmd>ZkLinks<cr>", { desc = "ZK Links" })
-map("n", "<leader>nm", "<cmd>ZkMatch<cr>", { desc = "ZK Match Selected" })
-map("n", "<leader>nn", "<cmd>ZkNew { title = vim.fn.input('Title: ')}<cr>", { desc = "ZK New note" })
-map("n", "<leader>nt", "<cmd>ZkTags<cr>", { desc = "ZK Tags" })
+map("n", "<leader>zb", "<Cmd>ZkBacklinks<cr>", { desc = "ZK Backlinks" })
+map("n", "<leader>zj", "<Cmd>ZkNew { dir = 'journals', date = 'today'}<cr>", { desc = "ZK Journal Today" })
+map("n", "<leader>zy", "<Cmd>ZkNew { dir = 'journals', date = 'yesterday'}<cr>", { desc = "ZK Journal Yesterday" })
+map("n", "<leader>zi", "<Cmd>ZkInsertLink<cr>", { desc = "ZK Insert Link" })
+map("n", "<leader>zl", "<Cmd>ZkLinks<cr>", { desc = "ZK Links" })
+map("n", "<leader>zm", "<Cmd>ZkMatch<cr>", { desc = "ZK Match Selected" })
+map("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ')}<cr>", { desc = "ZK New note" })
+map("n", "<leader>zt", "<Cmd>ZkTags<cr>", { desc = "ZK Tags" })
 
 -- Open
 

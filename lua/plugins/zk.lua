@@ -20,7 +20,7 @@ M.config = function()
   local zk = require("zk")
   local commands = require("zk.commands")
   require("zk").setup({
-    picker = "fzf_lua",
+    picker = "telescope",
     lsp = {
       config = {
         cmd = { "zk", "lsp" },
