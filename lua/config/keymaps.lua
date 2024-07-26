@@ -76,30 +76,46 @@ map("n", "<leader>gbC", "<cmd>GitBlameCopyCommitURL<cr>", { desc = "Git Blame Co
 map("n", "<leader>gT", "<cmd>Tardis<cr>", { desc = "Tardis (TimeMachine)" })
 
 -- Notes
+
+map("n", "<leader>noC", "<cmd>ObsidianCheckHealth<cr>", { desc = "Check Health" })
+map("n", "<leader>noN", "<cmd>ObsidianLinkNew<cr>", { desc = "Link New" })
+map("n", "<leader>noO", "<cmd>ObsidianOpen<cr>", { desc = "Open" })
+map("n", "<leader>noT", "<cmd>ObsidianTemplate<cr>", { desc = "Add Template" })
+map("n", "<leader>nob", "<cmd>ObsidianBacklinks<cr>", { desc = "Find Backlinks" })
+map("n", "<leader>noc", "<cmd>ObsidianCheck<cr>", { desc = "Check" })
+map("n", "<leader>nod", "<cmd>ObsidianDailies -30 2<cr>", { desc = "Open Dailies" })
+map("n", "<leader>nof", "<cmd>ObsidianFollowLink<cr>", { desc = "Follow Link" })
+map("n", "<leader>nog", "<cmd>ObsidianTags<cr>", { desc = "TAGS" })
+map("n", "<leader>nol", "<cmd>ObsidianLinks<cr>", { desc = "List Links" })
+map("n", "<leader>non", "<cmd>ObsidianNew<cr>", { desc = "New Note" })
+map("n", "<leader>noo", "<cmd>ObsidianSearch<cr>", { desc = "Search" })
+map("n", "<leader>nos", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Quick Switch" })
+map("n", "<leader>not", "<cmd>ObsidianToday<cr>", { desc = "Open Today" })
+map("n", "<leader>now", "<cmd>ObsidianTomorrow<cr>", { desc = "Open Tomorrow" })
+map("n", "<leader>nox", "<cmd>ObsidianExtractNote<cr>", { desc = "Extract Note" })
+map("n", "<leader>noy", "<cmd>ObsidianYesterday<cr>", { desc = "Open Yesterday" })
 map("n", "<leader>zz", "<cmd>ZkNotes { sort = { 'modified' }}<cr>", { desc = "ZK Notes" })
-map(
-  "n",
-  "<leader>zZ",
-  "<cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<cr>",
-  { desc = "ZK Notes Search" }
-)
-map("n", "<leader>zb", "<Cmd>ZkBacklinks<cr>", { desc = "ZK Backlinks" })
-map("n", "<leader>zj", "<Cmd>ZkNew { dir = 'journals', date = 'today'}<cr>", { desc = "ZK Journal Today" })
-map("n", "<leader>zy", "<Cmd>ZkNew { dir = 'journals', date = 'yesterday'}<cr>", { desc = "ZK Journal Yesterday" })
-map("n", "<leader>zi", "<Cmd>ZkInsertLink<cr>", { desc = "ZK Insert Link" })
-map("n", "<leader>zl", "<Cmd>ZkLinks<cr>", { desc = "ZK Links" })
-map("n", "<leader>zm", "<Cmd>ZkMatch<cr>", { desc = "ZK Match Selected" })
-map("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ')}<cr>", { desc = "ZK New note" })
-map("n", "<leader>zt", "<Cmd>ZkTags<cr>", { desc = "ZK Tags" })
 
 -- Open
 
 map("n", "<leader>omg", "<cmd>find ~/Nextcloud/Neorg/Todo.norg<cr>", { desc = "Open My Todo's" })
+map(
+  "n",
+  "<leader>omjj",
+  "<cmd>find ~/Nextcloud/Obsidian/default/05-Projects/Joyent/20230804T082033==joyent--joyent-notes-index__joyent_index.md<cr>",
+  { desc = "Joyent Index" }
+)
+map(
+  "n",
+  "<leader>omjs",
+  "<cmd>find ~/Nextcloud/Obsidian/default/05-Projects/Joyent/Joyent-Sysops-Index.md<cr>",
+  { desc = "Joyent Sysops Index" }
+)
 
 -- Project
 map("n", "<leader>pp", "<cmd>Telescope projects<cr>", { desc = "Projects" })
 
---  Search / Telescop4e
+--  Search / Telescope
 
 map("n", "<leader>sf", "<cmd>Telescope filetypes<cr>", { desc = "Search Filetype" })
 map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
