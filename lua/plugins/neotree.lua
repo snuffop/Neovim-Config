@@ -2,9 +2,6 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   opts = {
-    sources = {
-      zk,
-    },
     window = {
       mappings = {
 
