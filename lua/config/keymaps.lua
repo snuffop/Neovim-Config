@@ -47,6 +47,14 @@ vim.keymap.set(
   { desc = "Reload luasnip.lua" }
 )
 
+local wk = require("which-key")
+wk.add({
+  { "<leader>o", group = "Obsidian" },
+  { "<leader>om", group = "Open My" },
+  { "<leader>gb", group = "GIT Blame"},
+  { "<leader>p", group = "Project" },
+})
+
 local map = LazyVim.safe_keymap_set
 
 -- TmuxNavigate
@@ -76,6 +84,7 @@ map("n", "<leader>gbC", "<cmd>GitBlameCopyCommitURL<cr>", { desc = "Git Blame Co
 map("n", "<leader>gT", "<cmd>Tardis<cr>", { desc = "Tardis (TimeMachine)" })
 
 -- Obsidian / Open
+
 
 map("n", "<leader>oC", "<cmd>ObsidianCheckHealth<cr>", { desc = "Check Health" })
 map("n", "<leader>oN", "<cmd>ObsidianLinkNew<cr>", { desc = "Link New" })
