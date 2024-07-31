@@ -9,6 +9,7 @@ Funny saying I heard the other day "Your Pizza's extended warranty is fine"
 
 ## Notes
 
+- 2024 07 31 and now back to Obsidian again.. neorg is too immature yet.. I still don't like markdown but It's growing on me.
 - 2024-07-14 Now Back to Neorg. Obsidian is too Mac ish to0 much (do it our way)
 - 2024-06-12 Migration to obsidian again as neorg is still too immature for my workflow.
 
