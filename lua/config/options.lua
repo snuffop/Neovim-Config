@@ -9,7 +9,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
 -- Auto Format
-vim.g.autoformat = false
+vim.g.autoformat = true
 
 -- Tabs and indentations
 vim.bo.autoindent = true

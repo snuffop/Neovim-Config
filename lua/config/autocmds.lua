@@ -65,3 +65,14 @@ vim.api.nvim_create_autocmd({ "UIEnter" }, {
     end
   end,
 })
+
+-- Disable autoformat for some files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { 
+        "lua",
+        "markdown",
+    },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})
