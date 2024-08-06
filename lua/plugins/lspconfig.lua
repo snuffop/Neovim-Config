@@ -12,18 +12,18 @@ return {
         vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
       end)
 
-      require("lspconfig").ltex.setup({
-        filetypes = { "vimwiki", "norg", "markdown", "md", "pandoc", "vimwiki.markdown.pandoc" },
-        flags = { debounce_text_changes = 300 },
-        settings = {
-          ltex = {
-            language = "en",
-            username = "marty@dabuke.com",
-            apikey = lapi,
-          },
-        },
-        on_attach = on_attach,
-      })
+      -- require("lspconfig").ltex.setup({
+      --   filetypes = { "vimwiki", "norg", "markdown", "md", "pandoc", "vimwiki.markdown.pandoc" },
+      --   flags = { debounce_text_changes = 300 },
+      --   settings = {
+      --     ltex = {
+      --       language = "en",
+      --       username = "marty@dabuke.com",
+      --       apikey = lapi,
+      --     },
+      --   },
+      --   on_attach = on_attach,
+      -- })
     end,
   },
   ---@class PluginLspOpts
