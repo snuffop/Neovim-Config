@@ -1,8 +1,7 @@
 --  ╭──────────────────────────────────────────────────────────╮
---  │ Marty Buchaus Neovim Config                              │
+--  │ Marty Buchaus Neovim Configuration                       │
 --  ╰──────────────────────────────────────────────────────────╯
 
--- lua/init.lua
 vim.g.lazyvim_json = vim.fn.stdpath("config") .. "/etc/lazyvim.json"
 
 require("config/general")
