@@ -1,8 +1,11 @@
 # Marty Buchaus' Neovim Configuration
 
+- plugin count badge
+- leaderkey badge
+- plugin manager badge
+
 Using Lazyvim to start with and many tweaks along the way. My Lua-fu is weak and I am working to get
 better.
-
 No Warranty Unless you're a used car.
 
 Funny saying I heard the other day "Your Pizza's extended warranty is fine"

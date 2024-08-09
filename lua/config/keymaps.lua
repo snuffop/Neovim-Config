@@ -85,8 +85,6 @@ map("n", "<leader>gT", "<cmd>Tardis<cr>", { desc = "Tardis (TimeMachine)" })
 map("n", "<leader>gm", "<cmd>GitMessenger<cr>", { desc = "Git Messenger" })
 
 -- Obsidian / Open
-
-
 map("n", "<leader>oC", "<cmd>ObsidianCheckHealth<cr>", { desc = "Check Health" })
 map("n", "<leader>oN", "<cmd>ObsidianLinkNew<cr>", { desc = "Link New" })
 map("n", "<leader>oO", "<cmd>ObsidianOpen<cr>", { desc = "Open" })
@@ -131,6 +129,7 @@ map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
 
 -- UI
 map("n", "<leader>um", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" })
+map("n", "<leader>uM", "<cmd>Markview toggle<cr>", { desc = "Toggle Markview Mode" })
 map("n", "<leader>uR", "<cmd>ReaderMode<cr>", { desc = "Toggle ReaderMode" })
 map("n", "<leader>uWt", "<cmd>lua require('wrapping').toggle_wrap_mode()<cr>", { desc = "Toggle wrapping mode" })
 map("n", "<leader>uWh", "<cmd>lua require('wrapping').hard_wrap_mode()<cr>", { desc = "Hard wrap mode" })
