@@ -52,6 +52,11 @@ wk.add({
   { "<leader>gb", group = "GIT Blame"},
   { "<leader>n", group = "Notes"},
   { "<leader>no", group = "Obsidian" },
+  { "<leader>nn", group = "Neorg" },
+  { "<leader>nnj", group = "Journal" },
+  { "<leader>nnm", group = "Module" },
+  { "<leader>nns", group = "Search" },
+  { "<leader>nnx", group = "Extra" },
   { "<leader>om", group = "Open My" },
   { "<leader>p", group = "Project" },
 })
@@ -104,6 +109,30 @@ map("n", "<leader>now", "<cmd>ObsidianTomorrow<cr>", { desc = "Open Tomorrow" })
 map("n", "<leader>nox", "<cmd>ObsidianExtractNote<cr>", { desc = "Extract Note" })
 map("n", "<leader>noy", "<cmd>ObsidianYesterday<cr>", { desc = "Open Yesterday" })
 
+-- Notes
+map("n", "<leader>nnN", "<cmd>Neorg keybind norg core.dirman.new.note<cr>", { desc = "Neorg new note" })
+map("n", "<leader>nnT", "<cmd>Neorg toc qflist<cr>", { desc = "TOC Quick list" })
+map("n", "<leader>nncT", "<cmd>Neorg journal toc<cr>", { desc = "TOC" })
+map("n", "<leader>nni", "<cmd>Neorg index<cr>", { desc = "neorg index" })
+map("n", "<leader>nnjc", "<cmd>Neorg journal custom<cr>", { desc = "custom" })
+map("n", "<leader>nnjj", "<cmd>Neorg journal today<cr>", { desc = "today" })
+map("n", "<leader>nnjm", "<cmd>Neorg templates load journal<cr>", { desc = "Apply journal template" })
+map("n", "<leader>nnjt", "<cmd>Neorg journal tomorrow<cr>", { desc = "tomorrow" })
+map("n", "<leader>nnjy", "<cmd>Neorg journal yesterday<cr>", { desc = "yesterday" })
+map("n", "<leader>nnml", "<cmd>Neorg module load<cr>", { desc = "Load modules" })
+map("n", "<leader>nnmm", "<cmd>Neorg module list<cr>", { desc = "List modules" })
+map("n", "<leader>nnn", "<cmd>Telescope neorg find_norg_files<cr>", { desc = "Find files " })
+map("n", "<leader>nnr", "<cmd>Neorg return<cr>", { desc = "neorg return" })
+map("n", "<leader>nnsI", "<cmd>Telescope neorg insert_link<cr>", { desc = "Insert link" })
+map("n", "<leader>nnsb", "<cmd>Telescope neorg find_backlinks<cr>", { desc = "Find backlinks " })
+map("n", "<leader>nnsf", "<cmd>Telescope neorg find_linkable<cr>", { desc = "Find linkable" })
+map("n", "<leader>nnsh", "<cmd>Telescope neorg search_headings<cr>", { desc = "Search headings " })
+map("n", "<leader>nnsi", "<cmd>Telescope neorg insert_file_link<cr>", { desc = "Insert file link" })
+map("n", "<leader>nnss", "<cmd>Telescope neorg search_headings<cr>", { desc = "Search headings" })
+map("n", "<leader>nnwn", "<cmd>Neorg workspace notes<cr>", { desc = "Notes workspace" })
+map("n", "<leader>nnxi", "<cmd>Neorg inject-metadata<cr>", { desc = "inject metadata" })
+map("n", "<leader>nnxs", "<cmd>Neorg generate-workspace-summary<cr>", { desc = "Generate summary" })
+map("n", "<leader>nnxu", "<cmd>Neorg update-metadata<cr>", { desc = "update metadata" })
 -- Open My
 
 map("n", "<leader>omg", "<cmd>find ~/Nextcloud/Neorg/Todo.norg<cr>", { desc = "Open My Todo's" })

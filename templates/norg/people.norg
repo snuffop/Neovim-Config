@@ -1,0 +1,14 @@
+@document.meta
+title: {TITLE_INPUT}
+description: People Entry for {TITLE_INPUT}
+authors: {AUTHOR}
+categories: [
+    people
+]
+created: {METADATA_TIME_STAMP}
+updated: {TODAY_OF_FILETREE}
+version: 1.1.1
+@end
+
+* {TITLE_INPUT}
+  {CURSOR}

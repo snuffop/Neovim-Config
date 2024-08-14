@@ -12,10 +12,10 @@ return {
     config = function()
       require("oil").setup({
         columns = {
-          "icon",
-          "permissions",
-          "size",
-          "mtime",
+          -- "icon",
+          -- "permissions",
+          -- "size",
+          -- "mtime",
         },
 
         default_file_explorer = true,

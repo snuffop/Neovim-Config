@@ -1,5 +1,3 @@
---Neorg overrides
-
 -- snippets
 
 local ls = require("luasnip")
