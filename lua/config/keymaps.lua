@@ -58,7 +58,7 @@ wk.add({
   { "<leader>nns", group = "Search" },
   { "<leader>nnx", group = "Extra" },
   { "<leader>om", group = "Open My" },
-  { "<leader>p", group = "Project" },
+  -- { "<leader>p", group = "Project" },
 })
 
 local map = LazyVim.safe_keymap_set
@@ -133,24 +133,10 @@ map("n", "<leader>nnwn", "<cmd>Neorg workspace notes<cr>", { desc = "Notes works
 map("n", "<leader>nnxi", "<cmd>Neorg inject-metadata<cr>", { desc = "inject metadata" })
 map("n", "<leader>nnxs", "<cmd>Neorg generate-workspace-summary<cr>", { desc = "Generate summary" })
 map("n", "<leader>nnxu", "<cmd>Neorg update-metadata<cr>", { desc = "update metadata" })
--- Open My
 
-map("n", "<leader>omg", "<cmd>find ~/Nextcloud/Neorg/Todo.norg<cr>", { desc = "Open My Todo's" })
-map(
-  "n",
-  "<leader>omjj",
-  "<cmd>find ~/Nextcloud/Obsidian/default/05-Projects/Joyent/20230804T082033==joyent--joyent-notes-index__joyent_index.md<cr>",
-  { desc = "Joyent Index" }
-)
-map(
-  "n",
-  "<leader>omjs",
-  "<cmd>find ~/Nextcloud/Obsidian/default/05-Projects/Joyent/Joyent-Sysops-Index.md<cr>",
-  { desc = "Joyent Sysops Index" }
-)
 
 -- Project
-map("n", "<leader>pp", "<cmd>Telescope projects<cr>", { desc = "Projects" })
+-- map("n", "<leader>pp", "<cmd>Telescope projects<cr>", { desc = "Projects" })
 
 --  Search / Telescope
 
