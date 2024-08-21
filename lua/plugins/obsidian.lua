@@ -46,8 +46,8 @@ return {
         subdir = "templates",
       },
 
-      notes_subdir = "00-Zettelkasten",
-      new_notes_location = "00-Zettelkasten",
+      notes_subdir = "Notes",
+      new_notes_location = "INBOX",
 
       completion = {
         nvim_cmp = true,
