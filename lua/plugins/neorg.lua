@@ -6,31 +6,27 @@ local M = {
     lazy = false,
     version = false,
     dependencies = {
+        "benlubas/neorg-conceal-wrap",
+        "benlubas/neorg-interim-ls",
+        "benlubas/neorg-se",
+        "bottd/neorg-worklog",
+        "laher/neorg-exec",
         "luarocks.nvim",
+        "mason.nvim",
+        "max397574/neorg-contexts",
+        "nvim-cmp",
         "nvim-neorg/neorg-telescope",
         "nvim-treesitter/nvim-treesitter",
         "nvim-treesitter/nvim-treesitter-textobjects",
-        "max397574/neorg-contexts",
-        "benlubas/neorg-conceal-wrap",
-        "pritchett/neorg-capture",
-        "nvim-cmp",
-        "mason.nvim",
         "plenary.nvim",
-        "laher/neorg-exec",
-        "bottd/neorg-worklog",
-        "benlubas/neorg-interim-ls",
-        {
-            "pysan3/neorg-templates",
-            dependencies = {
-                "L3MON4D3/LuaSnip",
-            },
-        },
+        "pritchett/neorg-capture",
+        { "pysan3/neorg-templates", dependencies = { "L3MON4D3/LuaSnip", }, },
     },
 
     -- build = ":Neorg sync-parsers",
     cmd = "Neorg",
     default_workspace = "notes",
-    aug = vim.api.nvim_create_augroup("NorgAuG", { clear = true }),
+    -- aug = vim.api.nvim_create_augroup("NorgAuG", { clear = true }),
 }
 
 M.popup = nil
@@ -113,8 +109,8 @@ local function load_plugins()
         },
         ["core.completion"] = {
             config = {
-                -- engine = "nvim-cmp",
-                engine = { module_name = "external.lsp-completion"},
+                engine = { module_name = "external.lsp-completion" },
+                --engine = "nvim-cmp",
                 name = "[Norg]",
             },
             ["core.integrations.nvim-cmp"] = {},
@@ -232,10 +228,14 @@ local function load_plugins()
             config = {
                 completion_provider = {
                     enable = true,
-                    -- Try to complete categories. Requires benlubas/neorg-se
-                    categories = false,
+                    categories = true,
                 }
             }
+        },
+        ["external.search"] = {
+            config = {
+                index_on_start = true,
+            },
         },
     }
 end

@@ -27,13 +27,18 @@ vim.keymap.set("n", "<localleader>il", "<cmd>Telescope neorg insert_file_link<cr
 vim.keymap.set("n", "<localleader>nf", "<cmd>Telescope neorg find_norg_files<cr>", { desc = "Find files " })
 
 vim.keymap.set("n", "<localleader>T", "<cmd>Neorg toc qflist<cr>", { desc = "TOC Quick list" })
+-- Search
 vim.keymap.set("n", "<localleader>sI", "<cmd>Telescope neorg insert_link<cr>", { desc = "Insert link" })
 vim.keymap.set("n", "<localleader>sb", "<cmd>Telescope neorg find_backlinks<cr>", { desc = "Find backlinks " })
 vim.keymap.set("n", "<localleader>sf", "<cmd>Telescope neorg find_linkable<cr>", { desc = "Find linkable" })
 vim.keymap.set("n", "<localleader>sh", "<cmd>Telescope neorg search_headings<cr>", { desc = "Search headings " })
 vim.keymap.set("n", "<localleader>si", "<cmd>Telescope neorg insert_file_link<cr>", { desc = "Insert file link" })
 vim.keymap.set("n", "<localleader>ss", "<cmd>Telescope neorg search_headings<cr>", { desc = "Search headings" })
+vim.keymap.set("n", "<localleader>st", "<cmd>Neorg search query fulltext<cr>", { desc = "Search fulltext" })
+vim.keymap.set("n", "<localleader>sc", "<cmd>Neorg search query categories<cr>", { desc = "Search categories" })
+vim.keymap.set("n", "<localleader>sS", "<cmd>Neorg search index<cr>", { desc = "Search Index" })
 
+-- Journal
 vim.keymap.set("n", "<localleader>jT", "<cmd>Neorg journal toc<cr>", { desc = "TOC" })
 vim.keymap.set("n", "<localleader>jc", "<cmd>Neorg journal custom<cr>", { desc = "custom" })
 vim.keymap.set("n", "<localleader>jj", "<cmd>Neorg journal today<cr>", { desc = "today" })
@@ -45,7 +50,6 @@ vim.keymap.set("n", "<localleader>xi", "<cmd>Neorg inject-metadata<cr>", { desc 
 vim.keymap.set("n", "<localleader>xs", "<cmd>Neorg generate-workspace-summary<cr>", { desc = "Generate summary" })
 vim.keymap.set("n", "<localleader>xu", "<cmd>Neorg update-metadata<cr>", { desc = "update metadata" })
 
--- LSP
 
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
@@ -64,7 +68,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 })
 
--- snippets
+-- Snippets
 
 local ls = require("luasnip")
 local snip = ls.snippet

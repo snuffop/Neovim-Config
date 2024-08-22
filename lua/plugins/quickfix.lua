@@ -1,6 +1,8 @@
--- Quickfix
 
 return {
-  "kevinhwang91/nvim-bqf",
-  ft = "qf",
+    "stevearc/quicker.nvim",
+    event = "FileType qf",
+    config = function ()
+        require("quicker").setup()
+    end,
 }

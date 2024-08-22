@@ -110,7 +110,7 @@ map("n", "<leader>nox", "<cmd>ObsidianExtractNote<cr>", { desc = "Extract Note" 
 map("n", "<leader>noy", "<cmd>ObsidianYesterday<cr>", { desc = "Open Yesterday" })
 
 -- Notes
-map("n", "<leader>nnN", "<cmd>Neorg keybind norg core.dirman.new.note<cr>", { desc = "Neorg new note" })
+--map("n", "<leader>nnN", "<cmd>Neorg keybind norg core.dirman.new.note<cr>", { desc = "Neorg new note" })
 map("n", "<leader>nnT", "<cmd>Neorg toc qflist<cr>", { desc = "TOC Quick list" })
 map("n", "<leader>nncT", "<cmd>Neorg journal toc<cr>", { desc = "TOC" })
 map("n", "<leader>nni", "<cmd>Neorg index<cr>", { desc = "neorg index" })
@@ -129,6 +129,9 @@ map("n", "<leader>nnsf", "<cmd>Telescope neorg find_linkable<cr>", { desc = "Fin
 map("n", "<leader>nnsh", "<cmd>Telescope neorg search_headings<cr>", { desc = "Search headings " })
 map("n", "<leader>nnsi", "<cmd>Telescope neorg insert_file_link<cr>", { desc = "Insert file link" })
 map("n", "<leader>nnss", "<cmd>Telescope neorg search_headings<cr>", { desc = "Search headings" })
+map("n", "<leader>nnst", "<cmd>Neorg search query fulltext<cr>", { desc = "Search fulltext" })
+map("n", "<leader>nnsc", "<cmd>Neorg search query categories<cr>", { desc = "Search categories" })
+map("n", "<leader>nnsI", "<cmd>Neorg search index<cr>", { desc = "Search Index" })
 map("n", "<leader>nnwn", "<cmd>Neorg workspace notes<cr>", { desc = "Notes workspace" })
 map("n", "<leader>nnxi", "<cmd>Neorg inject-metadata<cr>", { desc = "inject metadata" })
 map("n", "<leader>nnxs", "<cmd>Neorg generate-workspace-summary<cr>", { desc = "Generate summary" })
