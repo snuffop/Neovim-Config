@@ -31,6 +31,12 @@ return {
             priority = 100,
         })
 
+    table.insert(opts.sources, 1, {
+            name = 'mkdnflow',
+            group_index = 1,
+            priority = 100,
+        })
+
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<CR>"] = cmp.mapping.confirm({ select = false }),
       ["<Tab>"] = cmp.mapping(function(fallback)
