@@ -7,6 +7,8 @@ return {
     paths = {
             "~/Source/*",
             "~/mnt/ssh/joystation/Source/*",
+            "~/Nextcloud/Notes/",
+            "~/Nextcloud/Obsidian/",
         },
     newProjectPath = "~/Source/",
     file_explorer = function(dir)
