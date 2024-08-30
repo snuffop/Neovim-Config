@@ -3,3 +3,4 @@ etc/*
 *.log
 lazy-lock.json
 lazyvim.json
+.envrc
