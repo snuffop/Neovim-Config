@@ -109,8 +109,13 @@ map("n", "<leader>now", "<cmd>ObsidianTomorrow<cr>", { desc = "Open Tomorrow" })
 map("n", "<leader>nox", "<cmd>ObsidianExtractNote<cr>", { desc = "Extract Note" })
 map("n", "<leader>noy", "<cmd>ObsidianYesterday<cr>", { desc = "Open Yesterday" })
 
--- Project
--- map("n", "<leader>pp", "<cmd>Telescope projects<cr>", { desc = "Projects" })
+-- ZK
+map("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { desc = "ZK New" })
+map("n", "<leader>zo", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", { desc = "ZK Notes" })
+map("n", "<leader>zt", "<Cmd>ZkTags<CR>", { desc = "ZK Tags" })
+map("n", "<leader>zi", "<Cmd>! zk index <CR>", { desc = "ZK index" })
+map("n", "<leader>zf", "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", { desc = "ZK Find" })
+map("v", "<leader>zf", ":'<,'>ZkMatch<CR>", { desc = "ZK Match" })
 
 --  Search / Telescope
 
