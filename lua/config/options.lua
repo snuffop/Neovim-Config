@@ -28,7 +28,7 @@ vim.o.tabstop = 4
 vim.o.termguicolors = true
 vim.o.textwidth = 100
 
--- conceal
+-- Conceal
 vim.o.concealcursor = "nc"
 vim.o.conceallevel = 2
 
@@ -52,8 +52,9 @@ vim.o.writebackup = false
 
 -- Lang Specific
 vim.cmd([[
-let g:ruby_host_prog = "/home/marty/.local/share/gem/ruby/3.0.0/bin/neovim-ruby-host"
+" let g:ruby_host_prog = "/home/marty/.local/share/gem/ruby/3.0.0/bin/neovim-ruby-host"
 let g:python3_host_prog = "/usr/bin/python3"
+let g:loaded_perl_provider = 0
 ]])
 
 -- GUI Settings
