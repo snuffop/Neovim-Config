@@ -1,3 +1,7 @@
+"  ╭──────────────────────────────────────────────────────────╮
+"  │ Marty Buchaus Neovim Configuration                       │
+"  ╰──────────────────────────────────────────────────────────╯
+
 if exists('b:current_syntax')
   finish
 endif

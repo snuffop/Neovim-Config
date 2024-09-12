@@ -1,3 +1,7 @@
+--  ╭──────────────────────────────────────────────────────────╮
+--  │ Marty Buchaus Neovim Configuration                       │
+--  ╰──────────────────────────────────────────────────────────╯
+
 -- CMP override to NOT use preselect
 
 return {

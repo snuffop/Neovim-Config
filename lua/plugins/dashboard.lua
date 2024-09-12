@@ -1,3 +1,7 @@
+--  ╭──────────────────────────────────────────────────────────╮
+--  │ Marty Buchaus Neovim Configuration                       │
+--  ╰──────────────────────────────────────────────────────────╯
+
 -- Dashboard
 return {
   "nvimdev/dashboard-nvim",

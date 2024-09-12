@@ -1,3 +1,7 @@
+--  ╭──────────────────────────────────────────────────────────╮
+--  │ Marty Buchaus Neovim Configuration                       │
+--  ╰──────────────────────────────────────────────────────────╯
+
 -- https://github.com/rachartier/tiny-devicons-auto-colors.nvim
 
 return {

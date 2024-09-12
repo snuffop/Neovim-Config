@@ -1,5 +1,9 @@
+"  ╭──────────────────────────────────────────────────────────╮
+"  │ Marty Buchaus Neovim Configuration                       │
+"  ╰──────────────────────────────────────────────────────────╯
 " Forked from Larry Gilbert's syntax file
 " github.com/L2G/vim-syntax-terraform
+
 if exists('b:current_syntax')
   finish
 endif

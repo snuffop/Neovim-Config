@@ -1,3 +1,7 @@
+--  ╭──────────────────────────────────────────────────────────╮
+--  │ Marty Buchaus Neovim Configuration                       │
+--  ╰──────────────────────────────────────────────────────────╯
+
 return {
   "alexghergh/nvim-tmux-navigation",
   cmd = {

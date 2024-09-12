@@ -1,3 +1,7 @@
+--  ╭──────────────────────────────────────────────────────────╮
+--  │ Marty Buchaus Neovim Configuration                       │
+--  ╰──────────────────────────────────────────────────────────╯
+
 return{
     'nvim-orgmode/orgmode',
     event = 'VeryLazy',

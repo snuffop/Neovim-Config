@@ -1,3 +1,7 @@
+--  ╭──────────────────────────────────────────────────────────╮
+--  │ Marty Buchaus Neovim Configuration                       │
+--  ╰──────────────────────────────────────────────────────────╯
+
 -- Neotree Options mod from lazyvim norms
 return {
   "nvim-neo-tree/neo-tree.nvim",

@@ -1,4 +1,8 @@
-" Vim syntax file
+"  ╭──────────────────────────────────────────────────────────╮
+"  │ Marty Buchaus Neovim Configuration                       │
+"  ╰──────────────────────────────────────────────────────────╯
+
+"" Vim syntax file
 " Filename:     nagios.vim
 " Language:     Nagios template object configuration file
 " Author:       Ava Arachne Jarvis <ajar@katanalynx.dyndns.org>

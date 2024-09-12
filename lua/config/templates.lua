@@ -1,3 +1,7 @@
+--  ╭──────────────────────────────────────────────────────────╮
+--  │ Marty Buchaus Neovim Configuration                       │
+--  ╰──────────────────────────────────────────────────────────╯
+
 local function imports()
   return require("luasnip"), require("neorg.modules.external.templates.default_snippets")
 end

@@ -1,4 +1,7 @@
-
+"  ╭──────────────────────────────────────────────────────────╮
+"  │ Marty Buchaus Neovim Configuration                       │
+"  ╰──────────────────────────────────────────────────────────╯
+"
 " markdownWikiLink is a new region
 syn region markdownWikiLink matchgroup=markdownLinkDelimiter start="\[\[" end="\]\]" contains=markdownUrl keepend oneline concealends
 " markdownLinkText is copied from runtime files with 'concealends' appended
