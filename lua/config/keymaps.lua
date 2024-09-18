@@ -122,7 +122,7 @@ map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
 -- UI
 
 map("n", "<leader>um", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" })
-map("n", "<leader>uM", "<cmd>Markview toggle<cr>", { desc = "Toggle Markview Mode" })
+map("n", "<leader>uM", "<cmd>RenderMarkdown toggle<cr>", { desc = "Toggle Render Markdown Mode" })
 map("n", "<leader>uR", "<cmd>ReaderMode<cr>", { desc = "Toggle ReaderMode" })
 map("n", "<leader>uWt", "<cmd>lua require('wrapping').toggle_wrap_mode()<cr>", { desc = "Toggle wrapping mode" })
 map("n", "<leader>uWh", "<cmd>lua require('wrapping').hard_wrap_mode()<cr>", { desc = "Hard wrap mode" })
