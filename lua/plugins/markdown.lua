@@ -3,9 +3,9 @@
 --  ╰──────────────────────────────────────────────────────────╯
 
 return {
---     {
---         "MeanderingProgrammer/markdown.nvim",
---         enabled = false,
---     },
+    {
+        "MeanderingProgrammer/markdown.nvim",
+        enabled = false,
+    },
 }
 
