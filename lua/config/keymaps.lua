@@ -62,6 +62,7 @@ local wk = require("which-key")
 wk.add({
   { "<leader>gb", group = "GIT Blame"},
   { "<leader>n", group = "+Notes"},
+  { "<leader>nd", group = "+Denote"},
 })
 
 local map = LazyVim.safe_keymap_set
