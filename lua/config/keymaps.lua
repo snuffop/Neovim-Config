@@ -115,6 +115,15 @@ map("v", "<leader>nf", "<Cmd>:'<,'>ZkMatch<CR>", { desc = "ZK Match" })
 map("v", "<leader>ni", "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>", { desc = "ZK Insert Link" })
 map("v", "<leader>nN", "<Cmd>'<,'>ZkNewFromTitleSelection<CR>", { desc = "ZK New" })
 
+-- Denote
+map("n", "<leader>ndn", "<cmd>DenoteNewNote<CR>", {desc = "New Note" })
+map("n", "<leader>ndt", "<cmd>DenoteChangeTitle<CR>", { desc = "Change Title" })
+map("n", "<leader>ndg", "<cmd>DenoteChangeTags<CR>", { desc = "Change Tags" })
+map("n", "<leader>ndl", "<cmd>DenotePutNotesListForTags<CR>", { desc = "Put Notes List" })
+map("n", "<leader>nda", "<cmd>DenotePutNoteActionsForTags<CR>", { desc = "Put Notes Actions" })
+map("n", "<leader>ndb", "<cmd>DenotePutNoteBacklinksForBuffer<CR>", { desc = "Put Backlinks" })
+map("n", "<leader>ndf", "<cmd>DenoteFollowLink<CR>", { desc = "Follow Link" })
+
 --  Search / Telescope
 
 map("n", "<leader>sf", "<cmd>Telescope filetypes<cr>", { desc = "Search Filetype" })
