@@ -80,6 +80,10 @@ map("n", "<C-Space>", "<cmd>NvimTmuxNavigateNext<cr>", { desc = "Tmux Next" })
 
 map("n", "<leader>bB", "<cmd>Telescope buffers<cr>", { desc = "Telescope Buffers" })
 
+-- code insertions
+
+map("n", "<leader>cj", "<cmd>lua require('jq').run()<cr>", { desc = "JQ Interface" })
+
 -- File
 
 map("n", "<leader>fs", "<cmd>up<cr>", { desc = "File Save" })
