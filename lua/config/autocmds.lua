@@ -61,6 +61,17 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   end,
 })
 
+-- Set type for systemd files
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = {
+    "*.service*",
+    "*.timer*",
+  },
+  callback = function()
+    vim.bo.filetype = "systemd"
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "UIEnter" }, {
   callback = function(event)
     local client = vim.api.nvim_get_chan_info(vim.v.event.chan).client
@@ -80,3 +91,5 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.b.autoformat = false
   end,
 })
+
+
