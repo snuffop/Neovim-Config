@@ -199,7 +199,8 @@ return {
             },
             checked = {
                 -- Replaces '[x]' of 'task_list_marker_checked'
-                icon = '󰱒 ',
+                --icon = '󰱒 ',
+                icon = " ",
                 -- Highligh for the checked icon
                 highlight = 'RenderMarkdownChecked',
             },
@@ -212,6 +213,8 @@ return {
             --   'highlight': Highlight for the 'rendered' icon
             custom = {
                 todo = { raw = '[-]', rendered = '󰥔 ', highlight = 'RenderMarkdownTodo' },
+                started = { raw = "[>]", rendered = " ", highlight = "@markup.raw" },
+                deleted = { raw = "[~]", rendered = " ", highlight = "@markup.raw" },
             },
         },
 
