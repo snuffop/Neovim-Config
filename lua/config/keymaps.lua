@@ -63,6 +63,8 @@ wk.add({
   { "<leader>gb", group = "GIT Blame"},
   { "<leader>n", group = "+Notes"},
   { "<leader>nd", group = "+Denote"},
+  { "<leader>T", group = "+TaskWarrior"},
+  { "<leader>o", group = "+org-mode"},
 })
 
 local map = LazyVim.safe_keymap_set

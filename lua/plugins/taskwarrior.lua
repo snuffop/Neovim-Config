@@ -5,8 +5,9 @@
 return {
     "huantrinh1802/m_taskwarrior_d.nvim",
     version = "*",
-    lazy = false,
     dependencies = { "MunifTanjim/nui.nvim" },
+    lazy = false,
+
     config = function()
         -- Require
         require("m_taskwarrior_d").setup()
@@ -15,12 +16,7 @@ return {
         vim.api.nvim_set_keymap("n", "<leader>Tv", "<cmd>TWView<cr>", { noremap = true, silent = true })
         vim.api.nvim_set_keymap("n", "<leader>Tu", "<cmd>TWUpdateCurrent<cr>", { noremap = true, silent = true })
         vim.api.nvim_set_keymap("n", "<leader>Ts", "<cmd>TWSyncTasks<cr>", { noremap = true, silent = true })
-        vim.api.nvim_set_keymap(
-            "n",
-            "<c-space>",
-            "<cmd>TWToggle<cr>",
-            { silent = true }
-        )
+        vim.api.nvim_set_keymap("n", "<leader>Tt", "<cmd>TWToggle<cr>", { noremap = true, silent = true })
         -- Be caution: it may be slow to open large files, because it scan the whole buffer
         vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
             group = vim.api.nvim_create_augroup("TWTask", { clear = true }),
