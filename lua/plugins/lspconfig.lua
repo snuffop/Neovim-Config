@@ -3,7 +3,7 @@
 --  ╰──────────────────────────────────────────────────────────╯
 
 -- add tsserver and setup with typescript.nvim instead of lspconfig
-local lapi = os.execute("gopass show -o Application/language-tool")
+--local lapi = os.execute("gopass show -o Application/language-tool")
 
 return {
     "neovim/nvim-lspconfig",
@@ -15,22 +15,6 @@ return {
                 vim.keymap.set("n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
                 vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
             end)
-
-            require("lspconfig").ltex.setup({
-                filetypes = { "vimwiki", "norg", "markdown", "md", "pandoc", "vimwiki.markdown.pandoc" },
-                flags = { debounce_text_changes = 300 },
-                settings = {
-                    ltex = {
-                        language = "en",
-                        username = "marty@dabuke.com",
-                        apikey = lapi,
-                        -- additionalRules = {
-                        --     languageModel = '~/ngrams/',
-                        -- },
-                    },
-                },
-                on_attach = on_attach,
-            })
         end,
     },
     ---@class PluginLspOpts
@@ -40,6 +24,7 @@ return {
             -- tsserver will be automatically installed with mason and loaded with lspconfig
             tsserver = {},
             pyright = {},
+            harper_ls = {},
         },
         -- you can do any additional lsp server setup here
         -- return true if you don't want this server to be setup with lspconfig
@@ -50,6 +35,11 @@ return {
                 require("typescript").setup({ server = opts })
                 return true
             end,
+            settings = {
+                ["harper-ls"] = {
+                    wrong_quotes = true,
+                }
+            }
         },
 
         autoformat = false,
