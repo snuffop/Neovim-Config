@@ -6,49 +6,52 @@
 local lapi = os.execute("gopass show -o Application/language-tool")
 
 return {
-  "neovim/nvim-lspconfig",
-  dependencies = {
-    "jose-elias-alvarez/typescript.nvim",
-    init = function()
-      require("lazyvim.util").lsp.on_attach(function(_, buffer)
-        -- stylua: ignore
-        vim.keymap.set("n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
-        vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
-      end)
+    "neovim/nvim-lspconfig",
+    dependencies = {
+        "jose-elias-alvarez/typescript.nvim",
+        init = function()
+            require("lazyvim.util").lsp.on_attach(function(_, buffer)
+                -- stylua: ignore
+                vim.keymap.set("n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
+                vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
+            end)
 
-      -- require("lspconfig").ltex.setup({
-      --   filetypes = { "vimwiki", "norg", "markdown", "md", "pandoc", "vimwiki.markdown.pandoc" },
-      --   flags = { debounce_text_changes = 300 },
-      --   settings = {
-      --     ltex = {
-      --       language = "en",
-      --       username = "marty@dabuke.com",
-      --       apikey = lapi,
-      --     },
-      --   },
-      --   on_attach = on_attach,
-      -- })
-    end,
-  },
-  ---@class PluginLspOpts
-  opts = {
-    ---@type lspconfig.options
-    servers = {
-      -- tsserver will be automatically installed with mason and loaded with lspconfig
-      tsserver = {},
-      pyright = {},
+            require("lspconfig").ltex.setup({
+                filetypes = { "vimwiki", "norg", "markdown", "md", "pandoc", "vimwiki.markdown.pandoc" },
+                flags = { debounce_text_changes = 300 },
+                settings = {
+                    ltex = {
+                        language = "en",
+                        username = "marty@dabuke.com",
+                        apikey = lapi,
+                        -- additionalRules = {
+                        --     languageModel = '~/ngrams/',
+                        -- },
+                    },
+                },
+                on_attach = on_attach,
+            })
+        end,
     },
-    -- you can do any additional lsp server setup here
-    -- return true if you don't want this server to be setup with lspconfig
-    ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
-    setup = {
-      -- example to setup with typescript.nvim
-      tsserver = function(_, opts)
-        require("typescript").setup({ server = opts })
-        return true
-      end,
-    },
+    ---@class PluginLspOpts
+    opts = {
+        ---@type lspconfig.options
+        servers = {
+            -- tsserver will be automatically installed with mason and loaded with lspconfig
+            tsserver = {},
+            pyright = {},
+        },
+        -- you can do any additional lsp server setup here
+        -- return true if you don't want this server to be setup with lspconfig
+        ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
+        setup = {
+            -- example to setup with typescript.nvim
+            tsserver = function(_, opts)
+                require("typescript").setup({ server = opts })
+                return true
+            end,
+        },
 
-    autoformat = false,
-  },
+        autoformat = false,
+    },
 }
