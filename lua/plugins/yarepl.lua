@@ -1,4 +1,7 @@
---
+--  ╭────────────────────────────────────╮
+--  │ Marty Buchaus Neovim Configuration │
+--  ╰────────────────────────────────────╯
+
 
 return { 
     'milanglacier/yarepl.nvim',

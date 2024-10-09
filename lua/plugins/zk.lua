@@ -1,7 +1,6 @@
---  ╭──────────────────────────────────────────────────────────╮
---  │ Marty Buchaus Neovim Configuration                       │
---  ╰──────────────────────────────────────────────────────────╯
-
+--  ╭────────────────────────────────────╮
+--  │ Marty Buchaus Neovim Configuration │
+--  ╰────────────────────────────────────╯
 -- ZK config
 return {
     "zk-org/zk-nvim",
@@ -21,9 +20,3 @@ return {
         })
     end
 }
-
-
--- :'<,'>ZkNewFromTitleSelection [{options}]
--- :'<,'>ZkNewFromContentSelection [{options}]
--- :'<,'>ZkInsertLinkAtSelection [{options}]
--- :'<,'>ZkMatch [{options}]

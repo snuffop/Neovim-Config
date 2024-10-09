@@ -1,3 +1,8 @@
+--  ╭────────────────────────────────────╮
+--  │ Marty Buchaus Neovim Configuration │
+--  ╰────────────────────────────────────╯
+
+-- JQ interface
 
 return {
   "cenk1cenk2/jq.nvim",

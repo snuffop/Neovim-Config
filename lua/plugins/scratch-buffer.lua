@@ -1,3 +1,6 @@
+--  ╭────────────────────────────────────╮
+--  │ Marty Buchaus Neovim Configuration │
+--  ╰────────────────────────────────────╯
 
 return {
     -- lazy = false,
