@@ -104,24 +104,7 @@ map("n", "<leader>gbC", "<cmd>GitBlameCopyCommitURL<cr>", { desc = "Git Blame Co
 map("n", "<leader>gT", "<cmd>Tardis<cr>", { desc = "Tardis (TimeMachine)" })
 map("n", "<leader>gm", "<cmd>GitMessenger<cr>", { desc = "Git Messenger" })
 
--- ZK
-
-map("n", "<leader>nI", "<Cmd>ZkIndex<CR>", { desc = "ZK index" })
-map("n", "<leader>nb", "<Cmd>ZkBacklinks<CR>", { desc = "ZK Backlinks" })
-map("n", "<leader>nc", "<Cmd>ZkCd<CR>", { desc = "ZK cd" })
-map("n", "<leader>nz", "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", { desc = "ZK Find" })
-map("n", "<leader>ni", "<Cmd>ZkInsertLink<CR>", { desc = "ZK Insert Link" })
-map("n", "<leader>nj", "<Cmd>! daily-file.sh<CR>", { desc = "ZK Daily Journal" })
-map("n", "<leader>nl", "<Cmd>ZkLinks<CR>", { desc = "ZK Links" })
-map("n", "<leader>nN", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { desc = "ZK New" })
-map("n", "<leader>no", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", { desc = "ZK Notes" })
-map("n", "<leader>nr", "<Cmd>ZkNotes { createdAfter = '3 days ago' }<CR>", { desc = "ZK Recent" })
-map("n", "<leader>nt", "<Cmd>ZkTags<CR>", { desc = "ZK Tags" })
-map("v", "<leader>nf", "<Cmd>:'<,'>ZkMatch<CR>", { desc = "ZK Match" })
-map("v", "<leader>ni", "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>", { desc = "ZK Insert Link" })
-map("v", "<leader>nN", "<Cmd>'<,'>ZkNewFromTitleSelection<CR>", { desc = "ZK New" })
-
-
+-- Obsidian
 map("n", "<leader>ob",  "<cmd>ObsidianBacklinks<cr>", { desc = "Obsidian Back Links"})
 map("n", "<leader>od",  "<cmd>ObsidianDailies<cr>",{ desc = "Obsidian Dailies"})
 map("n", "<leader>ol",  "<cmd>ObsidianLink<cr>",{ desc = "Obsidian Link"})
@@ -135,15 +118,6 @@ map("n", "<leader>oT",  "<cmd>ObsidianTemplate<cr>",{ desc = "Obsidian Template"
 map("n", "<leader>oj",  "<cmd>ObsidianToday<cr>",{ desc = "Obsidian Today"})
 map("n", "<leader>o+",  "<cmd>ObsidianTomorrow<cr>",{ desc = "Obsidian Tomorrow"})
 map("n", "<leader>o-",  "<cmd>ObsidianYesterday<cr>",{ desc = "Obsidian Yesterday"})
-
--- Denote
-map("n", "<leader>ndn", "<cmd>DenoteNewNote<CR>", {desc = "New Note" })
-map("n", "<leader>ndt", "<cmd>DenoteChangeTitle<CR>", { desc = "Change Title" })
-map("n", "<leader>ndg", "<cmd>DenoteChangeTags<CR>", { desc = "Change Tags" })
-map("n", "<leader>ndl", "<cmd>DenotePutNotesListForTags<CR>", { desc = "Put Notes List" })
-map("n", "<leader>nda", "<cmd>DenotePutNoteActionsForTags<CR>", { desc = "Put Notes Actions" })
-map("n", "<leader>ndb", "<cmd>DenotePutNoteBacklinksForBuffer<CR>", { desc = "Put Backlinks" })
-map("n", "<leader>ndf", "<cmd>DenoteFollowLink<CR>", { desc = "Follow Link" })
 
 --  Search / Telescope
 
