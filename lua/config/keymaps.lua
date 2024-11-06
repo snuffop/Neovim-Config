@@ -121,6 +121,21 @@ map("v", "<leader>nf", "<Cmd>:'<,'>ZkMatch<CR>", { desc = "ZK Match" })
 map("v", "<leader>ni", "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>", { desc = "ZK Insert Link" })
 map("v", "<leader>nN", "<Cmd>'<,'>ZkNewFromTitleSelection<CR>", { desc = "ZK New" })
 
+
+map("n", "<leader>ob",  "<cmd>ObsidianBacklinks<cr>", { desc = "Obsidian Back Links"})
+map("n", "<leader>od",  "<cmd>ObsidianDailies<cr>",{ desc = "Obsidian Dailies"})
+map("n", "<leader>ol",  "<cmd>ObsidianLink<cr>",{ desc = "Obsidian Link"})
+map("n", "<leader>on",  "<cmd>ObsidianNew<cr>",{ desc = "Obsidian New"})
+map("n", "<leader>oo",  "<cmd>ObsidianOpen<cr>",{ desc = "Obsidian Open"})
+map("n", "<leader>oq",  "<cmd>ObsidianQuickSwitch<cr>",{ desc = "Obsidian Quick Search"})
+map("n", "<leader>or",  "<cmd>ObsidianRename<cr>",{ desc = "Obsidian Rename"})
+map("n", "<leader>os",  "<cmd>ObsidianSearch<cr>",{ desc = "Obsidian Search"})
+map("n", "<leader>ot",  "<cmd>ObsidianTags<cr>",{ desc = "Obsidian Tags"})
+map("n", "<leader>oT",  "<cmd>ObsidianTemplate<cr>",{ desc = "Obsidian Template"})
+map("n", "<leader>oj",  "<cmd>ObsidianToday<cr>",{ desc = "Obsidian Today"})
+map("n", "<leader>o+",  "<cmd>ObsidianTomorrow<cr>",{ desc = "Obsidian Tomorrow"})
+map("n", "<leader>o-",  "<cmd>ObsidianYesterday<cr>",{ desc = "Obsidian Yesterday"})
+
 -- Denote
 map("n", "<leader>ndn", "<cmd>DenoteNewNote<CR>", {desc = "New Note" })
 map("n", "<leader>ndt", "<cmd>DenoteChangeTitle<CR>", { desc = "Change Title" })
