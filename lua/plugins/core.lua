@@ -2,7 +2,7 @@
 --  │ Marty Buchaus Neovim Configuration │
 --  ╰────────────────────────────────────╯
 
+-- CORE
+
 return {
-  "LintaoAmons/scratch.nvim",
-  event = "VeryLazy",
 }
