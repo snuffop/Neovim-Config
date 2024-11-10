@@ -38,4 +38,3 @@ ls.add_snippets("markdown", {
     )
   ),
 })
-end
