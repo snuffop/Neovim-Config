@@ -3,6 +3,6 @@
 --  ╰────────────────────────────────────╯
 
 return {
-  "LintaoAmons/scratch.nvim",
-  event = "VeryLazy",
+    "LintaoAmons/scratch.nvim",
+    event = "VeryLazy",
 }

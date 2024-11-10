@@ -6,6 +6,6 @@
 -- https://github.com/direnv/direnv.vim?tab=readme-ov-file
 
 return {
-  "direnv/direnv.vim",
-  lazy = false,
+    "direnv/direnv.vim",
+    lazy = false,
 }

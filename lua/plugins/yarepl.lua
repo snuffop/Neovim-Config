@@ -2,8 +2,7 @@
 --  │ Marty Buchaus Neovim Configuration │
 --  ╰────────────────────────────────────╯
 
-
-return { 
+return {
     'milanglacier/yarepl.nvim',
     config = true,
     lazy = false
