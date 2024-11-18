@@ -69,3 +69,4 @@ vim.diagnostic.enable(false)
 
 -- LazyVim Options
 vim.g.lazyvim_picker = "telescope"
+vim.g.lazyvim_prettier_needs_config = true
