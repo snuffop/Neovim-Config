@@ -116,6 +116,7 @@ map("n", "<leader>o-",  "<cmd>ObsidianYesterday<cr>",{ desc = "Obsidian Yesterda
 
 --  Search / Telescope
 
+map("n", "<leader>sp", "<cmd>Telescope projects<cr>", { desc = "Search projects" })
 map("n", "<leader>sf", "<cmd>Telescope filetypes<cr>", { desc = "Search Filetype" })
 map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
 
