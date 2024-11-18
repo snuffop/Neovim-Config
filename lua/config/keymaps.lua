@@ -100,19 +100,19 @@ map("n", "<leader>gm", "<cmd>GitMessenger<cr>", { desc = "Git Messenger" })
 
 -- Obsidian
 
-map("n", "<leader>ob",  "<cmd>ObsidianBacklinks<cr>", { desc = "Obsidian Back Links"})
-map("n", "<leader>od",  "<cmd>ObsidianDailies<cr>",{ desc = "Obsidian Dailies"})
-map("n", "<leader>ol",  "<cmd>ObsidianLink<cr>",{ desc = "Obsidian Link"})
-map("n", "<leader>on",  "<cmd>ObsidianNew<cr>",{ desc = "Obsidian New"})
-map("n", "<leader>oO",  "<cmd>ObsidianOpen<cr>",{ desc = "Obsidian Open"})
-map("n", "<leader>oo",  "<cmd>ObsidianQuickSwitch<cr>",{ desc = "Obsidian Quick Search"})
-map("n", "<leader>or",  "<cmd>ObsidianRename<cr>",{ desc = "Obsidian Rename"})
-map("n", "<leader>os",  "<cmd>ObsidianSearch<cr>",{ desc = "Obsidian Search"})
-map("n", "<leader>ot",  "<cmd>ObsidianTags<cr>",{ desc = "Obsidian Tags"})
-map("n", "<leader>oT",  "<cmd>ObsidianTemplate<cr>",{ desc = "Obsidian Template"})
-map("n", "<leader>oj",  "<cmd>ObsidianToday<cr>",{ desc = "Obsidian Today"})
-map("n", "<leader>o+",  "<cmd>ObsidianTomorrow<cr>",{ desc = "Obsidian Tomorrow"})
-map("n", "<leader>o-",  "<cmd>ObsidianYesterday<cr>",{ desc = "Obsidian Yesterday"})
+map("n", "<leader>nb",  "<cmd>ObsidianBacklinks<cr>", { desc = "Obsidian Back Links"})
+map("n", "<leader>nd",  "<cmd>ObsidianDailies<cr>",{ desc = "Obsidian Dailies"})
+map("n", "<leader>nl",  "<cmd>ObsidianLink<cr>",{ desc = "Obsidian Link"})
+map("n", "<leader>nn",  "<cmd>ObsidianNew<cr>",{ desc = "Obsidian New"})
+map("n", "<leader>nO",  "<cmd>ObsidianOpen<cr>",{ desc = "Obsidian Open"})
+map("n", "<leader>no",  "<cmd>ObsidianQuickSwitch<cr>",{ desc = "Obsidian Quick Search"})
+map("n", "<leader>nr",  "<cmd>ObsidianRename<cr>",{ desc = "Obsidian Rename"})
+map("n", "<leader>ns",  "<cmd>ObsidianSearch<cr>",{ desc = "Obsidian Search"})
+map("n", "<leader>nt",  "<cmd>ObsidianTags<cr>",{ desc = "Obsidian Tags"})
+map("n", "<leader>nT",  "<cmd>ObsidianTemplate<cr>",{ desc = "Obsidian Template"})
+map("n", "<leader>nj",  "<cmd>ObsidianToday<cr>",{ desc = "Obsidian Today"})
+map("n", "<leader>n+",  "<cmd>ObsidianTomorrow<cr>",{ desc = "Obsidian Tomorrow"})
+map("n", "<leader>n-",  "<cmd>ObsidianYesterday<cr>",{ desc = "Obsidian Yesterday"})
 
 --  Search / Telescope
 
