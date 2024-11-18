@@ -66,3 +66,6 @@ vim.o.guifont = "DejaVu Sans Mono:h9"
 
 -- disable diagnostics by default (allowing toggle)
 vim.diagnostic.enable(false)
+
+-- LazyVim Options
+vim.g.lazyvim_picker = "telescope"
