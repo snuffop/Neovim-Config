@@ -73,6 +73,9 @@ return {
                             avoid_curses = true,
                             terminating_conjunctions = true
                         },
+                        codeActions = {
+                            forceStable = true,
+                        },
                     },
                 },
             },
