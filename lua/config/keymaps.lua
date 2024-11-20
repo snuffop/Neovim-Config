@@ -83,7 +83,6 @@ map("n", "<leader>bB", "<cmd>Telescope buffers<cr>", { desc = "Telescope Buffers
 map("n", "<leader>bx", "<cmd>ScratchOpen<cr>", { desc = "Scratch Buffer Open"})
 map("n", "<leader>bs", "<cmd>Scratch<cr>", { desc = "Scratch Buffer"})
 
-
 -- code insertions
 
 map("n", "<leader>cj", "<cmd>lua require('jq').run()<cr>", { desc = "JQ Interface" })
@@ -127,3 +126,5 @@ map("n", "<leader>uR", "<cmd>ReaderMode<cr>", { desc = "Toggle ReaderMode" })
 map("n", "<leader>uWt", "<cmd>lua require('wrapping').toggle_wrap_mode()<cr>", { desc = "Toggle wrapping mode" })
 map("n", "<leader>uWh", "<cmd>lua require('wrapping').hard_wrap_mode()<cr>", { desc = "Hard wrap mode" })
 map("n", "<leader>uWs", "<cmd>lua require('wrapping').soft_wrap_mode()<cr>", { desc = "Soft wrap mode" })
+map("n", "<leader>uP", "<cmd>Pencil<cr>", { desc = "Pencil Mode" })
+map("n", "<leader>uz", "<cmd>ZenMode<cr>", { desc = "Twilight Mode" })
