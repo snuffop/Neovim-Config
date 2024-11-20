@@ -62,6 +62,12 @@ return {
             new_notes_location = "Inbox",
             preferred_link_style = "markdown",
 
+            completion = {
+                nvim_cmp = true,
+                min_chars = 2,
+                new_notes_location = "current_dir",
+                prepend_note_id = true,
+            },
             ---@param url string
             follow_url_func = function(url)
                 vim.fn.jobstart({ "xdg-open", url }) -- linux
@@ -88,6 +94,18 @@ return {
                     end
                 end
                 return tostring(os.date("%Y%m%dT%H%M%S")) .. "--" .. suffix
+            end,
+
+            ---@param note string|?
+            ---@return string
+            note_frontmatter_func = function(note)
+                local out = { id = note.id, aliases = note.aliases, tags = note.tags, area = "", project = "" }
+                if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+                    for k, v in pairs(note.metadata) do
+                        out[k] = v
+                    end
+                end
+                return out
             end,
         })
     end,
