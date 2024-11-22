@@ -6,14 +6,16 @@ return {
     "huantrinh1802/m_taskwarrior_d.nvim",
     version = "*",
     dependencies = { "MunifTanjim/nui.nvim" },
-    cmd = {
-        "TWEditTask",
-        "TWView",
-        "TWUpdateCurrent",
-        "TWSyncTasks",
-        "TWToggle",
-        "TWTask",
-    },
+    lazy = false,
+    -- 
+    -- cmd = {
+    --     "TWEditTask",
+    --     "TWView",
+    --     "TWUpdateCurrent",
+    --     "TWSyncTasks",
+    --     "TWToggle",
+    --     "TWTask",
+    -- },
     config = function()
         require("m_taskwarrior_d").setup()
         vim.api.nvim_set_keymap("n", "<leader>Te", "<cmd>TWEditTask<cr>", { desc = "TaskWarrior Edit", noremap = true, silent = true })
