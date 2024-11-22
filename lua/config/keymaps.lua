@@ -116,19 +116,19 @@ map("n", "<leader>o-",  "<cmd>ObsidianYesterday<cr>",{ desc = "Obsidian Yesterda
 -- ZK
 
 map("n", "<leader>nI", "<Cmd>ZkIndex<CR>", { desc = "ZK index" })
+map("n", "<leader>nN", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { desc = "ZK New" })
 map("n", "<leader>nb", "<Cmd>ZkBacklinks<CR>", { desc = "ZK Backlinks" })
 map("n", "<leader>nc", "<Cmd>ZkCd<CR>", { desc = "ZK cd" })
-map("n", "<leader>nz", "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", { desc = "ZK Find" })
 map("n", "<leader>ni", "<Cmd>ZkInsertLink<CR>", { desc = "ZK Insert Link" })
 map("n", "<leader>nj", "<Cmd>! daily-file.sh<CR>", { desc = "ZK Daily Journal" })
 map("n", "<leader>nl", "<Cmd>ZkLinks<CR>", { desc = "ZK Links" })
-map("n", "<leader>nN", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { desc = "ZK New" })
 map("n", "<leader>no", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", { desc = "ZK Notes" })
 map("n", "<leader>nr", "<Cmd>ZkNotes { createdAfter = '3 days ago' }<CR>", { desc = "ZK Recent" })
 map("n", "<leader>nt", "<Cmd>ZkTags<CR>", { desc = "ZK Tags" })
+map("n", "<leader>nz", "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", { desc = "ZK Find" })
+map("v", "<leader>nN", "<Cmd>'<,'>ZkNewFromTitleSelection<CR>", { desc = "ZK New" })
 map("v", "<leader>nf", "<Cmd>:'<,'>ZkMatch<CR>", { desc = "ZK Match" })
 map("v", "<leader>ni", "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>", { desc = "ZK Insert Link" })
-map("v", "<leader>nN", "<Cmd>'<,'>ZkNewFromTitleSelection<CR>", { desc = "ZK New" })
 
 --  Search / Telescope
 
