@@ -13,7 +13,7 @@ return {
         "TWSyncTasks",
         "TWToggle",
         "TWTask",
-    }
+    },
     config = function()
         require("m_taskwarrior_d").setup()
         vim.api.nvim_set_keymap("n", "<leader>Te", "<cmd>TWEditTask<cr>", { desc = "TaskWarrior Edit", noremap = true, silent = true })
