@@ -59,11 +59,8 @@ vim.api.nvim_set_keymap("c", "<M-k>", "<cmd>WhichKey<space>c<cr>", { noremap = t
 
 local wk = require("which-key")
 wk.add({
-  -- { "<leader>gb", group = "GIT Blame"},
   { "<leader>n", group = "+Notes"},
-  { "<leader>nd", group = "+Denote"},
   { "<leader>T", group = "+TaskWarrior"},
-  { "<leader>o", group = "+org-mode"},
 })
 
 local map = LazyVim.safe_keymap_set
@@ -80,8 +77,6 @@ map("n", "<C-Space>", "<cmd>NvimTmuxNavigateNext<cr>", { desc = "Tmux Next" })
 -- Buffer
 
 map("n", "<leader>bB", "<cmd>Telescope buffers<cr>", { desc = "Telescope Buffers" })
-map("n", "<leader>bx", "<cmd>ScratchOpen<cr>", { desc = "Scratch Buffer Open"})
-map("n", "<leader>bs", "<cmd>Scratch<cr>", { desc = "Scratch Buffer"})
 
 -- code insertions
 
@@ -96,22 +91,6 @@ map("n", "<leader>fS", "<cmd>w !sudo tee %<CR>", { desc = "Sudo Write" })
 
 map("n", "<leader>gT", "<cmd>Tardis<cr>", { desc = "Tardis (TimeMachine)" })
 map("n", "<leader>gm", "<cmd>GitMessenger<cr>", { desc = "Git Messenger" })
-
--- Obsidian
-
-map("n", "<leader>ob",  "<cmd>ObsidianBacklinks<cr>", { desc = "Obsidian Back Links"})
-map("n", "<leader>od",  "<cmd>ObsidianDailies<cr>",{ desc = "Obsidian Dailies"})
-map("n", "<leader>ol",  "<cmd>ObsidianLink<cr>",{ desc = "Obsidian Link"})
-map("n", "<leader>on",  "<cmd>ObsidianNew<cr>",{ desc = "Obsidian New"})
-map("n", "<leader>oO",  "<cmd>ObsidianOpen<cr>",{ desc = "Obsidian Open"})
-map("n", "<leader>oo",  "<cmd>ObsidianQuickSwitch<cr>",{ desc = "Obsidian Quick Search"})
-map("n", "<leader>or",  "<cmd>ObsidianRename<cr>",{ desc = "Obsidian Rename"})
-map("n", "<leader>os",  "<cmd>ObsidianSearch<cr>",{ desc = "Obsidian Search"})
-map("n", "<leader>ot",  "<cmd>ObsidianTags<cr>",{ desc = "Obsidian Tags"})
-map("n", "<leader>oT",  "<cmd>ObsidianTemplate<cr>",{ desc = "Obsidian Template"})
-map("n", "<leader>oj",  "<cmd>ObsidianToday<cr>",{ desc = "Obsidian Today"})
-map("n", "<leader>o+",  "<cmd>ObsidianTomorrow<cr>",{ desc = "Obsidian Tomorrow"})
-map("n", "<leader>o-",  "<cmd>ObsidianYesterday<cr>",{ desc = "Obsidian Yesterday"})
 
 -- ZK
 
@@ -141,9 +120,5 @@ map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
 -- UI
 
 map("n", "<leader>um", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" })
-map("n", "<leader>uR", "<cmd>ReaderMode<cr>", { desc = "Toggle ReaderMode" })
-map("n", "<leader>uWt", "<cmd>lua require('wrapping').toggle_wrap_mode()<cr>", { desc = "Toggle wrapping mode" })
-map("n", "<leader>uWh", "<cmd>lua require('wrapping').hard_wrap_mode()<cr>", { desc = "Hard wrap mode" })
-map("n", "<leader>uWs", "<cmd>lua require('wrapping').soft_wrap_mode()<cr>", { desc = "Soft wrap mode" })
 map("n", "<leader>uP", "<cmd>Pencil<cr>", { desc = "Pencil Mode" })
 map("n", "<leader>uz", "<cmd>ZenMode<cr>", { desc = "Twilight Mode" })

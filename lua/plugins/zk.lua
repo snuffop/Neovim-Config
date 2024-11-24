@@ -3,6 +3,7 @@
 --  ╰──────────────────────────────────────────────────────────╯
 
 -- ZK config
+
 return {
     "zk-org/zk-nvim",
     lazy = false,
@@ -20,9 +21,3 @@ return {
         })
     end
 }
-
-
--- :'<,'>ZkNewFromTitleSelection [{options}]
--- :'<,'>ZkNewFromContentSelection [{options}]
--- :'<,'>ZkInsertLinkAtSelection [{options}]
--- :'<,'>ZkMatch [{options}]
