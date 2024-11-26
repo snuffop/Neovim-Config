@@ -119,6 +119,7 @@ vim.keymap.set("n", "<leader>nj", function()
     vim.cmd("edit " .. file)
   else
     print("File not found: " .. file)
+    require("zk").new("journals", "today")
   end
 end, { desc = "Open file from script" })
 
