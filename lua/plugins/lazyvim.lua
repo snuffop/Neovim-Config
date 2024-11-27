@@ -16,4 +16,13 @@ return {
             colorscheme = "tokyonight",
         },
     },
+
+    {
+        "folke/snacks.nvim"
+        opts = {
+            statuscolumn = {
+                enabled = true,
+            },
+        },
+    },
 }
