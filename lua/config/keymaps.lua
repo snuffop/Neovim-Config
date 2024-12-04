@@ -94,34 +94,53 @@ map("n", "<leader>gm", "<cmd>GitMessenger<cr>", { desc = "Git Messenger" })
 
 -- ZK
 
-map("v", "<leader>na", ":'<,'>lua vim.lsp.buf.range_code_action()<CR>", { desc = "ZK LSP code Action" })
-map("n", "<leader>nI", "<Cmd>ZkIndex<CR>", { desc = "ZK index" })
-map("n", "<leader>nN", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { desc = "ZK New" })
-map("n", "<leader>nb", "<Cmd>ZkBacklinks<CR>", { desc = "ZK Backlinks" })
-map("n", "<leader>nc", "<Cmd>ZkCd<CR>", { desc = "ZK cd" })
-map("v", "<leader>nc", ":'<,'>ZkNewFromContentSelection { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>", { desc = "New from Content Selection" })
-map("n", "<leader>ni", "<Cmd>ZkInsertLink<CR>", { desc = "ZK Insert Link" })
---map("n", "<leader>nj", "<Cmd>! daily-file.sh<CR>", { desc = "ZK Daily Journal" })
-map("n", "<leader>nl", "<Cmd>ZkLinks<CR>", { desc = "ZK Links" })
-map("n", "<leader>nn", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", { desc = "ZK Notes" })
-map("n", "<leader>nr", "<Cmd>ZkNotes { createdAfter = '3 days ago' }<CR>", { desc = "ZK Recent" })
-map("n", "<leader>nt", "<Cmd>ZkTags<CR>", { desc = "ZK Tags" })
-map("n", "<leader>ns", "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", { desc = "ZK Find" })
-map("v", "<leader>nN", ":'<,'>ZkNewFromTitleSelection { dir = vim.fn.expand('%:p:h') }<CR>", { desc = "ZK New from Title Selection" })
-map("v", "<leader>nf", "<Cmd>:'<,'>ZkMatch<CR>", { desc = "ZK Match" })
-map("v", "<leader>ni", "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>", { desc = "ZK Insert Link" })
+-- map("v", "<leader>na", ":'<,'>lua vim.lsp.buf.range_code_action()<CR>", { desc = "ZK LSP code Action" })
+-- map("n", "<leader>nI", "<Cmd>ZkIndex<CR>", { desc = "ZK index" })
+-- map("n", "<leader>nN", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { desc = "ZK New" })
+-- map("n", "<leader>nb", "<Cmd>ZkBacklinks<CR>", { desc = "ZK Backlinks" })
+-- map("n", "<leader>nc", "<Cmd>ZkCd<CR>", { desc = "ZK cd" })
+-- map("v", "<leader>nc", ":'<,'>ZkNewFromContentSelection { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>", { desc = "New from Content Selection" })
+-- map("n", "<leader>ni", "<Cmd>ZkInsertLink<CR>", { desc = "ZK Insert Link" })
+-- --map("n", "<leader>nj", "<Cmd>! daily-file.sh<CR>", { desc = "ZK Daily Journal" })
+-- map("n", "<leader>nl", "<Cmd>ZkLinks<CR>", { desc = "ZK Links" })
+-- map("n", "<leader>nn", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", { desc = "ZK Notes" })
+-- map("n", "<leader>nr", "<Cmd>ZkNotes { createdAfter = '3 days ago' }<CR>", { desc = "ZK Recent" })
+-- map("n", "<leader>nt", "<Cmd>ZkTags<CR>", { desc = "ZK Tags" })
+-- map("n", "<leader>ns", "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>", { desc = "ZK Find" })
+-- map("v", "<leader>nN", ":'<,'>ZkNewFromTitleSelection { dir = vim.fn.expand('%:p:h') }<CR>", { desc = "ZK New from Title Selection" })
+-- map("v", "<leader>nf", "<Cmd>:'<,'>ZkMatch<CR>", { desc = "ZK Match" })
+-- map("v", "<leader>ni", "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>", { desc = "ZK Insert Link" })
+--
+-- -- Key map from copilot. son of a bitch. it worked.
+-- vim.keymap.set("n", "<leader>nj", function()
+--   local file = vim.fn.system("daily-file.sh")
+--   file = vim.fn.trim(file) -- Remove any trailing newline characters
+--   if vim.fn.filereadable(file) == 1 then
+--     vim.cmd("edit " .. file)
+--   else
+--     print("File not found: " .. file)
+--     require("zk.commands").get("ZkNew")({ dir = "journals" })
+--   end
+-- end, { desc = "Open file from script" })
+-- NOTES 
 
--- Key map from copilot. son of a bitch. it worked.
-vim.keymap.set("n", "<leader>nj", function()
-  local file = vim.fn.system("daily-file.sh")
-  file = vim.fn.trim(file) -- Remove any trailing newline characters
-  if vim.fn.filereadable(file) == 1 then
-    vim.cmd("edit " .. file)
-  else
-    print("File not found: " .. file)
-    require("zk.commands").get("ZkNew")({ dir = "journals" })
-  end
-end, { desc = "Open file from script" })
+map("n", "<leader>nC", "<cmd>ObsidianCheckHealth<cr>", { desc = "Check Health" })
+map("n", "<leader>nL", "<cmd>ObsidianLinkNew<cr>", { desc = "Link New" })
+map("n", "<leader>nN", "<cmd>ObsidianNew<cr>", { desc = "New Note" })
+map("n", "<leader>nO", "<cmd>ObsidianOpen<cr>", { desc = "Open" })
+map("n", "<leader>nT", "<cmd>ObsidianTemplate<cr>", { desc = "Add Template" })
+map("n", "<leader>nb", "<cmd>ObsidianBacklinks<cr>", { desc = "Find Backlinks" })
+map("n", "<leader>nc", "<cmd>ObsidianCheck<cr>", { desc = "Check" })
+map("n", "<leader>nd", "<cmd>ObsidianDailies -30 2<cr>", { desc = "Open Dailies" })
+map("n", "<leader>nf", "<cmd>ObsidianFollowLink<cr>", { desc = "Follow Link" })
+map("n", "<leader>ng", "<cmd>ObsidianTags<cr>", { desc = "TAGS" })
+map("n", "<leader>nl", "<cmd>ObsidianLinks<cr>", { desc = "List Links" })
+map("n", "<leader>nn", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Quick Switch" })
+map("n", "<leader>ns", "<cmd>ObsidianSearch<cr>", { desc = "Search" })
+map("n", "<leader>nt", "<cmd>ObsidianToday<cr>", { desc = "Open Today" })
+map("n", "<leader>nw", "<cmd>ObsidianTomorrow<cr>", { desc = "Open Tomorrow" })
+map("n", "<leader>nx", "<cmd>ObsidianExtractNote<cr>", { desc = "Extract Note" })
+map("n", "<leader>ny", "<cmd>ObsidianYesterday<cr>", { desc = "Open Yesterday" })
 
 --  Search / Telescope
 
