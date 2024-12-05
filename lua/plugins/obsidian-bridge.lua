@@ -4,6 +4,7 @@
 
 return {
     "oflisback/obsidian-bridge.nvim",
+    lazy = false,
     dependencies = {
         "nvim-telescope/telescope.nvim",
         "nvim-lua/plenary.nvim",
@@ -15,10 +16,10 @@ return {
         "BufReadPre *.md",
         "BufNewFile *.md",
     },
-    cmd = {
-        "ObsidianBridgeDailyNote",
-        "ObsidianBridgeOpenGraph",
-        "ObsidianBridgeOpenVaultMenu",
-        "ObsidianBridgeTelescopeCommand",
-    },
+    -- cmd = {
+    --     "ObsidianBridgeDailyNote",
+    --     "ObsidianBridgeOpenGraph",
+    --     "ObsidianBridgeOpenVaultMenu",
+    --     "ObsidianBridgeTelescopeCommand",
+    -- },
 }

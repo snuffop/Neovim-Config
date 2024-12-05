@@ -71,11 +71,20 @@ return {
             notes_subdir = "3 Resources",
             new_notes_location = "0 Inbox",
             preferred_link_style = "markdown",
+            use_advanced_uri = true,
+            open_app_foreground = false,
+            sort_by = "modified",
+            sort_reversed = true,
+
+            ui = {
+                enabled = false,
+            },
 
             completion = {
                 nvim_cmp = true,
                 min_chars = 2,
             },
+
             ---@param url string
             follow_url_func = function(url)
                 vim.fn.jobstart({ "xdg-open", url }) -- linux
@@ -84,6 +93,7 @@ return {
             attachments = {
                 img_folder = "Assets/images",
             },
+
             -- Optional, customize how note IDs are generated given an optional title.
             ---@param title string|?
             ---@return string
