@@ -34,8 +34,8 @@ return {
     -- },
 
     event = {
-        "BufReadPre " .. vim.fn.expand("~") .. "Nextcloud/Obsidian/default/*.md",
-        "BufNewFile " .. vim.fn.expand("~") .. "Nextcloud/Obsidian/default/*.md",
+        "BufReadPre " .. vim.fn.expand("~") .. "Obsidian/default/*.md",
+        "BufNewFile " .. vim.fn.expand("~") .. "Obsidian/default/*.md",
     },
 
     dependencies = {
@@ -48,7 +48,7 @@ return {
             workspaces = {
                 {
                     name = "default",
-                    path = "~/Nextcloud/Obsidian/default",
+                    path = "~/Obsidian/default",
                 },
             },
 
