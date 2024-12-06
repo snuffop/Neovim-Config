@@ -91,3 +91,15 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.b.autoformat = false
   end,
 })
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead"}, {
+    pattern = {
+        "*i3/config",
+        "*sway/config",
+        
+    },
+    callback = function()
+        vim.bo.filetype = "i3config"
+        vim.bo.commentstring = "# %s"
+    end
+})
