@@ -85,6 +85,7 @@ map("n", "<leader>cj", "<cmd>lua require('jq').run()<cr>", { desc = "JQ Interfac
 
 -- File
 
+map("n", "<leader>fo", "<cmd>FuzzyOil<cr>", { desc = "Fuzzy Oil" })
 map("n", "<leader>fs", "<cmd>up<cr>", { desc = "File Save" })
 map("n", "<leader>fS", "<cmd>w !sudo tee %<CR>", { desc = "Sudo Write" })
 
