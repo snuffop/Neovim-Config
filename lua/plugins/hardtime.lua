@@ -2,6 +2,8 @@
 --  │ Marty Buchaus Neovim Configuration │
 --  ╰────────────────────────────────────╯
 
+-- URL  https://github.com/m4xshen/hardtime.nvim
+
 return {
     "m4xshen/hardtime.nvim",
     dependencies = { 
