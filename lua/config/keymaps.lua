@@ -16,10 +16,10 @@ vim.keymap.set("i", "kj", "<ESC>", { silent = true })
 -- Snippet Jump in insert mode
 
 vim.keymap.set({ "i", "s" }, "<C-j>", function()
-  vim.snippet.jump(1)
+    vim.snippet.jump(1)
 end)
 vim.keymap.set({ "i", "s" }, "<C-k>", function()
-  vim.snippet.jump(-1)
+    vim.snippet.jump(-1)
 end)
 
 -- Start Peek for the current session
@@ -33,19 +33,19 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 -- reload keymaps
 
 vim.keymap.set(
-  "n",
-  "<leader><leader>k",
-  "<cmd>source ~/.config/nvim/lua/config/keymaps.lua<cr>",
-  { desc = "Reload keymaps.lua" }
+    "n",
+    "<leader><leader>k",
+    "<cmd>source ~/.config/nvim/lua/config/keymaps.lua<cr>",
+    { desc = "Reload keymaps.lua" }
 )
 
 -- reload snippets
 
 vim.keymap.set(
-  "n",
-  "<leader><leader>s",
-  "<cmd>source ~/.config/nvim/after/plugin/snippets.lua<cr>",
-  { desc = "Reload luasnip.lua" }
+    "n",
+    "<leader><leader>s",
+    "<cmd>source ~/.config/nvim/after/plugin/snippets.lua<cr>",
+    { desc = "Reload luasnip.lua" }
 )
 
 -- Which-key  Alt-K top level keymaps display
@@ -59,9 +59,10 @@ vim.api.nvim_set_keymap("c", "<M-k>", "<cmd>WhichKey<space>c<cr>", { noremap = t
 
 local wk = require("which-key")
 wk.add({
-  { "<leader>n", group = "+Notes"},
-  { "<leader>nb", group = "+Bridge"},
-  { "<leader>nd", group = "+Dailies"},
+    -- { "<leader>e", group = "+Ecolog" },
+    { "<leader>n", group = "+Notes"},
+    { "<leader>nb", group = "+Bridge"},
+    { "<leader>nd", group = "+Dailies"},
 })
 
 local map = LazyVim.safe_keymap_set

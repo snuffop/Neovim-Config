@@ -3,8 +3,19 @@
 --  ╰──────────────────────────────────────────────────────────╯
 
 -- OIL
+function _G.get_oil_winbar()
+  local dir = require("oil").get_current_dir()
+  if dir then
+    return vim.fn.fnamemodify(dir, ":~")
+  else
+    -- If there is no current directory (e.g. over ssh), just show the buffer name
+    return vim.api.nvim_buf_get_name(0)
+  end
+end
 
 return {
+
+    ---@module 'oil'
     {
         "stevearc/oil.nvim",
         dependencies = {
@@ -14,13 +25,9 @@ return {
             },
         },
         cmd = "Oil",
+
+        ---@type oil.SetupOpts
         opts = {
-            columns = {
-                "icon",
-                "permissions",
-                "size",
-                "mtime",
-            },
             default_file_explorer = true,
             restore_win_options = true,
             delete_to_trash = true,
@@ -53,10 +60,41 @@ return {
             win_options = {
                 signcolumn = "yes:2",
                 statuscolumn = "",
+                winbar = "%!v:lua.get_oil_winbar()",
+            },
+            keymaps = {
+                ["gd"] = {
+                    desc = "Toggle file detail view",
+                    callback = function()
+                        detail = not detail
+                        if detail then
+                            require("oil").set_columns({ "icon", "permissions", "size", "mtime" })
+                        else
+                            require("oil").set_columns({ "icon" })
+                        end
+                    end,
+                },
+                ["g?"]    = { "actions.show_help", mode = "n" },
+                ["<CR>"]  = "actions.select",
+                ["<C-s>"] = { "actions.select", opts = { vertical = true } },
+                ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
+                ["<C-t>"] = { "actions.select", opts = { tab = true } },
+                ["<C-p>"] = "actions.preview",
+                ["<C-c>"] = { "actions.close", mode = "n" },
+                ["<C-l>"] = "actions.refresh",
+                ["-"]     = { "actions.parent", mode = "n" },
+                ["_"]     = { "actions.open_cwd", mode = "n" },
+                ["`"]     = { "actions.cd", mode = "n" },
+                ["~"]     = { "actions.cd", opts = { scope = "tab" }, mode = "n" },
+                ["gs"]    = { "actions.change_sort", mode = "n" },
+                ["gx"]    = "actions.open_external",
+                ["g."]    = { "actions.toggle_hidden", mode = "n" },
+                ["g\\"]   = { "actions.toggle_trash", mode = "n" },
             },
         }
     },
 
+    ---@module 'fuzzy-oil'
     {
         'p10/fuzzy-oil.nvim',
         dependencies = { 'stevearc/oil.nvim', 'nvim-telescope/telescope.nvim' },
@@ -64,6 +102,7 @@ return {
         opts = {},
     },
 
+    ---@module 'oil-git-status'
     {
         "refractalize/oil-git-status.nvim",
         dependencies = {
@@ -78,6 +117,7 @@ return {
         end,
     },
 
+    ---@module 'oil-git-signs'
     {
         "FerretDetective/oil-git-signs.nvim",
         ft = "oil",
