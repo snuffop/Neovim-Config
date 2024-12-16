@@ -8,7 +8,10 @@ return {
     "hrsh7th/nvim-cmp",
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
-        table.insert(opts.sources, { name = "neorg" })
+        table.insert(opts.sources, { 
+            name = "neorg",
+            name = "orgmode",
+        })
 
         local cmp = require("cmp")
 
