@@ -22,6 +22,7 @@ return {
         ---@type lspconfig.options
         servers = {
             -- tsserver will be automatically installed with mason and loaded with lspconfig
+            bashls = {},
             tsserver = {},
             pyright = {},
             lua_ls = {

@@ -80,6 +80,10 @@ return {
                     enabled = false,
                 },
 
+                picker = {
+                    name = "fzf-lua",
+                },
+
                 completion = {
                     nvim_cmp = true,
                     min_chars = 2,
