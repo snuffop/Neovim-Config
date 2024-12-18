@@ -76,7 +76,6 @@ vim.g.lazyvim_picker = "telescope"
 
 -- Require the colors.lua module and access the colors directly without
 -- additional file reads
--- local colors = require("config.colors")
 vim.cmd(string.format([[highlight WinBar1 guifg=%s]], "#b4f9f8"))
 vim.cmd(string.format([[highlight WinBar2 guifg=%s]], "#c3e88d"))
 -- Function to get the full path and replace the home directory with ~
