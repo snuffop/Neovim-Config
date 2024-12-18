@@ -81,7 +81,7 @@ return {
                 },
 
                 picker = {
-                    name = "telescope",
+                    name = "telescope.nvim",
                 },
 
                 completion = {
