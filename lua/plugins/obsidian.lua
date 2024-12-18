@@ -81,7 +81,7 @@ return {
                 },
 
                 picker = {
-                    name = "fzf-lua",
+                    name = "telescope",
                 },
 
                 completion = {

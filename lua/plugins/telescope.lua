@@ -3,18 +3,15 @@
 --  ╰──────────────────────────────────────────────────────────╯
 
 return {
-    "alexghergh/nvim-tmux-navigation",
-    cmd = {
-        "NvimTmuxNavigateLeft",
-        "NvimTmuxNavigateDown",
-        "NvimTmuxNavigateUp",
-        "NvimTmuxNavigateRight",
+    "nvim-telescope/telescope.nvim",
+    opts =  {
+        defaults = {
+            mappings = {
+                n = {
+                    ["d"] = require("telescope.actions").delete_buffer,
+                    ["q"] = require("telescope.actions").close,
+                },
+            },
+        },
     },
-    config = function()
-        local nvim_tmux_nav = require("nvim-tmux-navigation")
-
-        nvim_tmux_nav.setup({
-            disable_when_zoomed = true, -- defaults to false
-        })
-    end,
 }

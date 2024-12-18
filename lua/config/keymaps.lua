@@ -55,6 +55,27 @@ vim.api.nvim_set_keymap("v", "<M-k>", "<cmd>WhichKey<space>v<cr>", { noremap = t
 vim.api.nvim_set_keymap("i", "<M-k>", "<cmd>WhichKey<space>i<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("c", "<M-k>", "<cmd>WhichKey<space>c<cr>", { noremap = true, silent = true })
 
+
+-- telescope buffers as I get a file preview,
+-- that's basically the main benefit lamw25wmal
+vim.keymap.set("n", "<S-h>", function()
+  require("telescope.builtin").buffers(require("telescope.themes").get_ivy({
+    sort_mru = true,
+    -- -- Sorts current and last buffer to the top and selects the lastused (default: false)
+    -- -- Leave this at false, otherwise when put in normal mode, the buffer
+    -- -- below is selected, not the one at the top
+    sort_lastused = false,
+    initial_mode = "normal",
+    -- Pre-select the current buffer
+    -- ignore_current_buffer = false,
+    -- select_current = true,
+    layout_config = {
+      -- Set preview width, 0.7 sets it to 70% of the window width
+      preview_width = 0.45,
+    },
+  }))
+end, { desc = "[P]Open telescope buffers" })
+
 -- Which-Key Top level labels
 
 local wk = require("which-key")

@@ -26,6 +26,11 @@ return {
             quickfile = { enabled = true },
         },
     },
+
+    {
+        "akinsho/bufferline.nvim",
+        enabled = false,
+    }
 }
 
 
