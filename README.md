@@ -1,4 +1,4 @@
-# Marty Buchaus' Neovim Configuration
+# Nvim/
 
 <a href="https://dotfyle.com/snuffop/nvim"><img src="https://dotfyle.com/snuffop/nvim/badges/plugins?style=flat" /></a>
 <a href="https://dotfyle.com/snuffop/nvim"><img src="https://dotfyle.com/snuffop/nvim/badges/leaderkey?style=flat" /></a>
@@ -20,25 +20,99 @@ Open Neovim with this config:
 
 ```sh
 NVIM_APPNAME=snuffop/Nvim/ nvim
+```
 
-## Details 
+## Plugins
 
-Using Lazyvim to start with and many tweaks along the way. My Lua-fu is weak and I am working to get
-better.
-No Warranty Unless you're a used car.
+### code-runner
 
-Funny saying I heard the other day "Your Pizza's extended warranty is fine"
++ [milanglacier/yarepl.nvim](https://dotfyle.com/plugins/milanglacier/yarepl.nvim)
+### color
 
-## Notes
++ [folke/twilight.nvim](https://dotfyle.com/plugins/folke/twilight.nvim)
++ [rachartier/tiny-devicons-auto-colors.nvim](https://dotfyle.com/plugins/rachartier/tiny-devicons-auto-colors.nvim)
+### colorscheme
 
-- 2024 07 31 and now back to Obsidian again.. neorg is too immature yet.. I still don't like markdown but It's growing on me.
-- 2024-07-14 Now Back to Neorg. Obsidian is too Mac ish to0 much (do it our way)
-- 2024-06-12 Migration to obsidian again as neorg is still too immature for my workflow.
++ [folke/tokyonight.nvim](https://dotfyle.com/plugins/folke/tokyonight.nvim)
+### command-line
 
-- Using Lua Function to obfuscate passwords.
-- Pushed distant into disabled
-- Learn Things about LSP setup of each language server!
-- Using Lazyvim for the base config and reference
-- I have been using Neovim for a few days, and I am getting to like it. I used Vim for years and
-  Migrated to Spacemacs then Doom about 10 years ago. Now Neovim has a ton of new development and
-  community involvement. Good to see
++ [cenk1cenk2/jq.nvim](https://dotfyle.com/plugins/cenk1cenk2/jq.nvim)
+### completion
+
++ [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
+### diagnostics
+
++ [folke/trouble.nvim](https://dotfyle.com/plugins/folke/trouble.nvim)
+### editing-support
+
++ [folke/zen-mode.nvim](https://dotfyle.com/plugins/folke/zen-mode.nvim)
+### file-explorer
+
++ [nvim-neo-tree/neo-tree.nvim](https://dotfyle.com/plugins/nvim-neo-tree/neo-tree.nvim)
++ [stevearc/oil.nvim](https://dotfyle.com/plugins/stevearc/oil.nvim)
++ [kelly-lin/ranger.nvim](https://dotfyle.com/plugins/kelly-lin/ranger.nvim)
+### fuzzy-finder
+
++ [nvim-telescope/telescope.nvim](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
+### git
+
++ [akinsho/git-conflict.nvim](https://dotfyle.com/plugins/akinsho/git-conflict.nvim)
++ [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
+### icon
+
++ [ziontee113/icon-picker.nvim](https://dotfyle.com/plugins/ziontee113/icon-picker.nvim)
++ [nvim-tree/nvim-web-devicons](https://dotfyle.com/plugins/nvim-tree/nvim-web-devicons)
++ [echasnovski/mini.icons](https://dotfyle.com/plugins/echasnovski/mini.icons)
+### lsp
+
++ [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
++ [jose-elias-alvarez/typescript.nvim](https://dotfyle.com/plugins/jose-elias-alvarez/typescript.nvim)
+### markdown-and-latex
+
++ [MeanderingProgrammer/render-markdown.nvim](https://dotfyle.com/plugins/MeanderingProgrammer/render-markdown.nvim)
++ [SCJangra/table-nvim](https://dotfyle.com/plugins/SCJangra/table-nvim)
++ [toppair/peek.nvim](https://dotfyle.com/plugins/toppair/peek.nvim)
++ [MeanderingProgrammer/markdown.nvim](https://dotfyle.com/plugins/MeanderingProgrammer/markdown.nvim)
+### note-taking
+
++ [epwalsh/obsidian.nvim](https://dotfyle.com/plugins/epwalsh/obsidian.nvim)
++ [nvim-orgmode/orgmode](https://dotfyle.com/plugins/nvim-orgmode/orgmode)
+### nvim-dev
+
++ [OXY2DEV/helpview.nvim](https://dotfyle.com/plugins/OXY2DEV/helpview.nvim)
++ [grapp-dev/nui-components.nvim](https://dotfyle.com/plugins/grapp-dev/nui-components.nvim)
++ [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
++ [MunifTanjim/nui.nvim](https://dotfyle.com/plugins/MunifTanjim/nui.nvim)
+### plugin-manager
+
++ [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
+### preconfigured
+
++ [LazyVim/LazyVim](https://dotfyle.com/plugins/LazyVim/LazyVim)
+### quickfix
+
++ [stevearc/quicker.nvim](https://dotfyle.com/plugins/stevearc/quicker.nvim)
+### remote-development
+
++ [amitds1997/remote-nvim.nvim](https://dotfyle.com/plugins/amitds1997/remote-nvim.nvim)
+### statusline
+
++ [b0o/incline.nvim](https://dotfyle.com/plugins/b0o/incline.nvim)
+### syntax
+
++ [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
+### utility
+
++ [folke/noice.nvim](https://dotfyle.com/plugins/folke/noice.nvim)
++ [stevearc/dressing.nvim](https://dotfyle.com/plugins/stevearc/dressing.nvim)
+### version-manager
+
++ [fredeeb/tardis.nvim](https://dotfyle.com/plugins/fredeeb/tardis.nvim)
+### workflow
+
++ [m4xshen/hardtime.nvim](https://dotfyle.com/plugins/m4xshen/hardtime.nvim)
+## Language Servers
+
+
+
+ This readme was generated by [Dotfyle](https://dotfyle.com)
