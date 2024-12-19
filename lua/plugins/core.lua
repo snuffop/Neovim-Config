@@ -18,6 +18,19 @@ return {
     },
 
     {
+      "catppuccin/nvim",
+        name = "catppuccin",
+        opts = {
+            transparent_backgroud = true,
+            flavour = "mocha",
+            integration = {
+                copilot = true,
+                blink = true,
+            }
+        }
+    },
+
+    {
         "LazyVim/LazyVim",
         opts = {
             colorscheme = "catppuccin",
