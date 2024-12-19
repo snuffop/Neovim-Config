@@ -8,6 +8,31 @@ return {
         "epwalsh/obsidian.nvim",
         version = "*", -- Recommended, use latest release instead of latest commit
         lazy = false,
+        -- cmd = {
+        --     "ObsidianOpen",
+        --     "ObsidianNew",
+        --     "ObsidianQuickSwitch",
+        --     "ObsidianFollowLink",
+        --     "ObsidianBacklinks",
+        --     "ObsidianTags",
+        --     "ObsidianToday",
+        --     "ObsidianYesterday",
+        --     "ObsidianTomorrow",
+        --     "ObsidianDailies",
+        --     "ObsidianTemplate",
+        --     "ObsidianSearch",
+        --     "ObsidianLink",
+        --     "ObsidianLinkNew",
+        --     "ObsidianLinks",
+        --     "ObsidianExtractNote",
+        --     "ObsidianWorkspace",
+        --     "ObsidianPasteImg",
+        --     "ObsidianRename",
+        --     "ObsidianToggleCheckbox",
+        --     "ObsidianNewFromTemplate",
+        --     "ObsidianTOC",
+        -- },
+
         event = {
             "BufReadPre " .. vim.fn.expand("~") .. "Obsidian/default/*.md",
             "BufNewFile " .. vim.fn.expand("~") .. "Obsidian/default/*.md",
@@ -56,11 +81,11 @@ return {
                 },
 
                 picker = {
-                    name = "fzf-lua",
+                    name = "telescope.nvim",
                 },
 
                 completion = {
-                    --nvim_cmp = true,
+                    nvim_cmp = true,
                     min_chars = 2,
                 },
 
@@ -117,13 +142,17 @@ return {
             "nvim-telescope/telescope.nvim",
             "nvim-lua/plenary.nvim",
         },
-        config = function()
-            require("obsidian-bridge").setup()
-        end,
+        -- config = function()
+        --     require("obsidian-bridge").setup()
+        -- end,
+
+        opts = {
+            scroll_sync = true,
+        },
+
         event = {
             "BufReadPre *.md",
             "BufNewFile *.md",
         },
     }
 }
-gg
