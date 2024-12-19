@@ -69,8 +69,6 @@ vim.diagnostic.enable(false)
 
 -- LazyVim Options
 vim.g.lazyvim_prettier_needs_config = true
-vim.g.lazyvim_cmp = "nvim-cmp"
-vim.g.lazyvim_picker = "fzf-lua"
 
 
 -- Require the colors.lua module and access the colors directly without
