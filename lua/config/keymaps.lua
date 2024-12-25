@@ -115,6 +115,7 @@ map("n", "<leader>fS", "<cmd>w !sudo tee %<CR>", { desc = "Sudo Write" })
 
 map("n", "<leader>gT", "<cmd>Tardis<cr>", { desc = "Tardis (TimeMachine)" })
 map("n", "<leader>gm", "<cmd>GitMessenger<cr>", { desc = "Git Messenger" })
+map("n", "<leader>gg", function() require("lazygit-confirm").confirm() end, { desc = "Git Confirm" })
 
 -- NOTES 
 
