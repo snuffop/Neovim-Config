@@ -8,31 +8,6 @@ return {
         "epwalsh/obsidian.nvim",
         version = "*", -- Recommended, use latest release instead of latest commit
         lazy = false,
-        -- cmd = {
-        --     "ObsidianOpen",
-        --     "ObsidianNew",
-        --     "ObsidianQuickSwitch",
-        --     "ObsidianFollowLink",
-        --     "ObsidianBacklinks",
-        --     "ObsidianTags",
-        --     "ObsidianToday",
-        --     "ObsidianYesterday",
-        --     "ObsidianTomorrow",
-        --     "ObsidianDailies",
-        --     "ObsidianTemplate",
-        --     "ObsidianSearch",
-        --     "ObsidianLink",
-        --     "ObsidianLinkNew",
-        --     "ObsidianLinks",
-        --     "ObsidianExtractNote",
-        --     "ObsidianWorkspace",
-        --     "ObsidianPasteImg",
-        --     "ObsidianRename",
-        --     "ObsidianToggleCheckbox",
-        --     "ObsidianNewFromTemplate",
-        --     "ObsidianTOC",
-        -- },
-
         event = {
             "BufReadPre " .. vim.fn.expand("~") .. "Obsidian/default/*.md",
             "BufNewFile " .. vim.fn.expand("~") .. "Obsidian/default/*.md",
@@ -81,13 +56,27 @@ return {
                 },
 
                 picker = {
-                    name = "telescope.nvim",
+                    -- name = "telescope.nvim",
+                    name = "fzf-lua",
                 },
 
+                -- CMP
+                -- completion = {
+                --     nvim_cmp = true,
+                --     min_chars = 2,
+                -- },
+
+                -- BLINK
                 completion = {
-                    nvim_cmp = true,
-                    min_chars = 2,
+                    nvim_cmd = false,
                 },
+
+                -- HACK: fix error, disable completion.nvim_cmp option, manually register sources
+                local cmp = require("cmp")
+                cmp.register_source("obsidian", require("cmp_obsidian").new())
+                cmp.register_source("obsidian_new", require("cmp_obsidian_new").new())
+                cmp.register_source("obsidian_tags", require("cmp_obsidian_tags").new())
+
 
                 ---@param url string
                 follow_url_func = function(url)
@@ -153,6 +142,31 @@ return {
         event = {
             "BufReadPre *.md",
             "BufNewFile *.md",
+        },
+    },
+
+    -- BLINK Obsidian  Config
+    {
+        "saghen/blink.cmp",
+        dependencies = { "saghen/blink.compat" },
+        opts = {
+            sources = {
+                default = { "obsidian", "obsidian_new", "obsidian_tags" },
+                providers = {
+                    obsidian = {
+                        name = "obsidian",
+                        module = "blink.compat.source",
+                    },
+                    obsidian_new = {
+                        name = "obsidian_new",
+                        module = "blink.compat.source",
+                    },
+                    obsidian_tags = {
+                        name = "obsidian_tags",
+                        module = "blink.compat.source",
+                    },
+                },
+            },
         },
     }
 }
