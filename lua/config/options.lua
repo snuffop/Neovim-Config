@@ -61,6 +61,9 @@ let g:python3_host_prog = "/usr/bin/python3"
 let g:loaded_perl_provider = 0
 ]])
 
+-- LazyVim
+vim.g.lazyvim_picker = "fzf-lua"
+
 -- GUI Settings
 vim.o.guifont = "DejaVu Sans Mono:h9"
 
