@@ -82,6 +82,7 @@ local wk = require("which-key")
 wk.add({
     -- { "<leader>e", group = "+Ecolog" },
     { "<leader>n", group = "+Notes"},
+    { "<leader>T", group = "+NeoWarrior"},
     { "<leader>nb", group = "+Bridge"},
     { "<leader>nd", group = "+Dailies"},
 })
