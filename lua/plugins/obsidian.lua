@@ -42,7 +42,7 @@ return {
             },
 
             notes_subdir = "3 Resources",
-            new_notes_location = "0 Inbox",
+            new_notes_location = "0-Inbox",
             preferred_link_style = "markdown",
             use_advanced_uri = true,
             open_app_foreground = false,
