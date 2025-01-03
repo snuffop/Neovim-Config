@@ -58,6 +58,7 @@ vim.api.nvim_set_keymap("c", "<M-k>", "<cmd>WhichKey<space>c<cr>", { noremap = t
 
 -- telescope buffers as I get a file preview,
 -- that's basically the main benefit lamw25wmal
+
 vim.keymap.set("n", "<S-h>", function()
   require("telescope.builtin").buffers(require("telescope.themes").get_ivy({
     sort_mru = true,
@@ -82,7 +83,7 @@ local wk = require("which-key")
 wk.add({
     -- { "<leader>e", group = "+Ecolog" },
     { "<leader>n", group = "+Notes"},
-    { "<leader>T", group = "+NeoWarrior"},
+    { "<leader>o", group = "+Org Mode"},
     { "<leader>nb", group = "+Bridge"},
     { "<leader>nd", group = "+Dailies"},
 })
@@ -150,5 +151,4 @@ map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
 -- UI
 
 map("n", "<leader>um", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" })
-map("n", "<leader>uP", "<cmd>Pencil<cr>", { desc = "Pencil Mode" })
 map("n", "<leader>uz", "<cmd>ZenMode<cr>", { desc = "Twilight Mode" })
