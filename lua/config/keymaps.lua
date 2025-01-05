@@ -107,6 +107,10 @@ map("n", "<leader>bB", "<cmd>Telescope buffers<cr>", { desc = "Telescope Buffers
 
 map("n", "<leader>cj", "<cmd>lua require('jq').run()<cr>", { desc = "JQ Interface" })
 
+-- D 
+
+map("n", "<leader>dd", '"_d', { desc = 'Delete to the void register'})
+
 -- File
 
 map("n", "<leader>fo", "<cmd>FuzzyOil<cr>", { desc = "Fuzzy Oil" })
