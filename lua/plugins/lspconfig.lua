@@ -2,9 +2,6 @@
 --  │ Marty Buchaus Neovim Configuration │
 --  ╰────────────────────────────────────╯
 
--- add tsserver and setup with typescript.nvim instead of lspconfig
---local lapi = os.execute("gopass show -o Application/language-tool")
-
 return {
     "neovim/nvim-lspconfig",
     dependencies = {

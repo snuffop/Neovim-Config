@@ -103,3 +103,18 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead"}, {
     end
 })
 
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+        vim.highlight.on_yank({ higroup = "Visual", timeout = 500 })
+    end,
+})
+
+-- Help window is vertical
+vim.api.nvim_create_autocmd('BufWinEnter', {
+  pattern = { '*.txt' },
+  callback = function()
+    if vim.bo.filetype == 'help' then
+      vim.cmd.wincmd('L')
+    end
+  end,
+})

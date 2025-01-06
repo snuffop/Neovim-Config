@@ -2,7 +2,6 @@
 --  │ Marty Buchaus Neovim Configuration                       │
 --  ╰──────────────────────────────────────────────────────────╯
 
---
 return {
     "toppair/peek.nvim",
     event = { "VeryLazy" },

@@ -2,8 +2,6 @@
 --  │ Marty Buchaus Neovim Configuration                       │
 --  ╰──────────────────────────────────────────────────────────╯
 
--- Git conflict
-
 return {
     "akinsho/git-conflict.nvim",
     version = "*",
