@@ -102,3 +102,4 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead"}, {
         vim.bo.commentstring = "# %s"
     end
 })
+

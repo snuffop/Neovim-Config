@@ -2,8 +2,10 @@
 --  │ Marty Buchaus Neovim Configuration                       │
 --  ╰──────────────────────────────────────────────────────────╯
 
--- add direnv support
--- https://github.com/direnv/direnv.vim?tab=readme-ov-file
+----------------------------------------------------------------------
+--                          Direnv Support                          --
+--   https://github.com/direnv/direnv.vim?tab=readme-ov-file        --
+----------------------------------------------------------------------
 
 return {
     "direnv/direnv.vim",

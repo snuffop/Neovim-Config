@@ -2,20 +2,22 @@
 --  │ Marty Buchaus Neovim Configuration                       │
 --  ╰──────────────────────────────────────────────────────────╯
 
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
-
 vim.g.mail = "marty@dabuke.com"
 vim.g.user = "Mbuchaus (Snuffop)"
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
--- Auto Format
+----------------------------------------------------------------------
+--                           Auto Format                            --
+----------------------------------------------------------------------
+
 vim.g.autoformat = true
 
--- Tabs and indentations
+----------------------------------------------------------------------
+--                      Tabs and indentations                       --
+----------------------------------------------------------------------
+
 vim.bo.autoindent = true
 vim.bo.expandtab = true
 vim.bo.shiftwidth = 4
@@ -32,11 +34,17 @@ vim.o.tabstop = 4
 vim.o.termguicolors = true
 vim.o.textwidth = 100
 
--- Conceal
+----------------------------------------------------------------------
+--                             Conceal                              --
+----------------------------------------------------------------------
+
 vim.o.concealcursor = "nc"
 vim.o.conceallevel = 2
 
--- Folding
+----------------------------------------------------------------------
+--                             Folding                              --
+----------------------------------------------------------------------
+
 vim.o.foldlevel = 99
 
 -- Update and backups
@@ -54,27 +62,46 @@ vim.o.undofile = true
 vim.o.updatetime = 50
 vim.o.writebackup = false
 
--- Lang Specific
+----------------------------------------------------------------------
+--                          Lang Specific                           --
+----------------------------------------------------------------------
+
 vim.cmd([[
 " let g:ruby_host_prog = "/home/marty/.local/share/gem/ruby/3.0.0/bin/neovim-ruby-host"
 let g:python3_host_prog = "/usr/bin/python3"
 let g:loaded_perl_provider = 0
 ]])
 
--- LazyVim
+----------------------------------------------------------------------
+--                             LazyVim                              --
+----------------------------------------------------------------------
+
 vim.g.lazyvim_picker = "fzf-lua"
 
--- GUI Settings
+----------------------------------------------------------------------
+--                           GUI Settings                           --
+----------------------------------------------------------------------
+
 vim.o.guifont = "DejaVu Sans Mono:h9"
 
--- disable diagnostics by default (allowing toggle)
+----------------------------------------------------------------------
+--         disable diagnostics by default (allowing toggle)         --
+----------------------------------------------------------------------
+
 vim.diagnostic.enable(false)
 
--- LazyVim Options
+----------------------------------------------------------------------
+--                         LazyVim Options                          --
+----------------------------------------------------------------------
+
 vim.g.lazyvim_prettier_needs_config = true
 
 
--- Require the colors.lua module and access the colors directly without
+----------------------------------------------------------------------
+--           Require the colors.lua module and access the           --
+--                     colors directly without                      --
+----------------------------------------------------------------------
+
 vim.cmd(string.format([[highlight WinBar1 guifg=%s]], "#b4f9f8"))
 vim.cmd(string.format([[highlight WinBar2 guifg=%s]], "#c3e88d"))
 -- Function to get the full path and replace the home directory with ~
@@ -94,7 +121,11 @@ local function get_buffer_count()
   end
   return count
 end
--- Function to update the winbar
+
+----------------------------------------------------------------------
+--                  Function to update the winbar                   --
+----------------------------------------------------------------------
+
 local function update_winbar()
   local home_replaced = get_winbar_path()
   local buffer_count = get_buffer_count()
