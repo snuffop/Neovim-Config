@@ -14,14 +14,14 @@ return {
             compat = { "obsidian", "obsidian_new", "obsidian_tags" },
         },
         keymap = {
-            preset = "super-tab"
+            preset = "enter",
+            ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+            ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
         },
-        -- README also notes: 'you may want to set `completion.trigger.show_in_snippet = false`
-        -- or use `completion.list.selection = "manual" | "auto_insert"`'
         completion = {
             list = {
-                selection = "auto_insert" 
-            } 
-        } 
+                selection = "auto_insert",
+            }
+        },
     },
 }
