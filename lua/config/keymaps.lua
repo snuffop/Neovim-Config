@@ -2,18 +2,24 @@
 --  │ Marty Buchaus Neovim Configuration                       │
 --  ╰──────────────────────────────────────────────────────────╯
 
--- Move blocks of visually selected text
+----------------------------------------------------------------------
+--              Move blocks of visually selected text               --
+----------------------------------------------------------------------
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- Quick Escape
+----------------------------------------------------------------------
+--                           Quick Escape                           --
+----------------------------------------------------------------------
 
 vim.keymap.set("i", "jj", "<ESC>", { silent = true })
 vim.keymap.set("i", "jk", "<ESC>", { silent = true })
 vim.keymap.set("i", "kj", "<ESC>", { silent = true })
 
--- Snippet Jump in insert mode
+----------------------------------------------------------------------
+--                   Snippet Jump in insert mode                    --
+----------------------------------------------------------------------
 
 vim.keymap.set({ "i", "s" }, "<C-j>", function()
     vim.snippet.jump(1)
@@ -22,15 +28,21 @@ vim.keymap.set({ "i", "s" }, "<C-k>", function()
     vim.snippet.jump(-1)
 end)
 
--- Start Peek for the current session
+----------------------------------------------------------------------
+--                Start Peek for the current session                --
+----------------------------------------------------------------------
 
 vim.keymap.set("n", "<F3>", "<cmd>PeekOpen<cr>", { desc = "Peek Open" })
 
--- oil
+----------------------------------------------------------------------
+--                               oil                                --
+----------------------------------------------------------------------
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
--- reload keymaps
+----------------------------------------------------------------------
+--                          reload keymaps                          --
+----------------------------------------------------------------------
 
 vim.keymap.set(
     "n",
@@ -39,7 +51,9 @@ vim.keymap.set(
     { desc = "Reload keymaps.lua" }
 )
 
--- reload snippets
+----------------------------------------------------------------------
+--                         reload snippets                          --
+----------------------------------------------------------------------
 
 vim.keymap.set(
     "n",
@@ -48,16 +62,27 @@ vim.keymap.set(
     { desc = "Reload luasnip.lua" }
 )
 
--- Which-key  Alt-K top level keymaps display
+----------------------------------------------------------------------
+--            Which-key  Alt-K top level keymaps display            --
+----------------------------------------------------------------------
 
 vim.api.nvim_set_keymap("n", "<M-k>", "<cmd>WhichKey<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<M-k>", "<cmd>WhichKey<space>v<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<M-k>", "<cmd>WhichKey<space>i<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("c", "<M-k>", "<cmd>WhichKey<space>c<cr>", { noremap = true, silent = true })
 
+----------------------------------------------------------------------
+--                          Comment Block                           --
+----------------------------------------------------------------------
 
--- telescope buffers as I get a file preview,
--- that's basically the main benefit lamw25wmal
+vim.api.nvim_set_keymap('n', 'gcb', ":lua require('nvim-comment-frame').add_comment()<CR>", { desc = "Comment Block Add", noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'gcC', ":lua require('nvim-comment-frame').add_multiline_comment()<CR>", { desc = "Comment Multi Block", noremap = true, silent = true })
+
+----------------------------------------------------------------------
+--            telescope buffers as I get a file preview,            --
+--           that's basically the main benefit lamw25wmal           --
+----------------------------------------------------------------------
+
 
 vim.keymap.set("n", "<S-h>", function()
   require("telescope.builtin").buffers(require("telescope.themes").get_ivy({
@@ -77,7 +102,9 @@ vim.keymap.set("n", "<S-h>", function()
   }))
 end, { desc = "[P]Open telescope buffers" })
 
--- Which-Key Top level labels
+----------------------------------------------------------------------
+--                    Which-Key Top level labels                    --
+----------------------------------------------------------------------
 
 local wk = require("which-key")
 wk.add({
@@ -90,7 +117,9 @@ wk.add({
 
 local map = LazyVim.safe_keymap_set
 
--- Tmux Navigate
+----------------------------------------------------------------------
+--                          Tmux Navigate                           --
+----------------------------------------------------------------------
 
 map("n", "<C-h>", "<cmd>NvimTmuxNavigateLeft<cr>", { desc = "Tmux Left" })
 map("n", "<C-j>", "<cmd>NvimTmuxNavigateDown<cr>", { desc = "Tmux Down" })
@@ -99,31 +128,44 @@ map("n", "<C-l>", "<cmd>NvimTmuxNavigateRight<cr>", { desc = "Tmux Right" })
 map("n", "<C-\\>", "<cmd>NvimTmuxNavigateLastActive<cr>", { desc = "Tmux Last Active" })
 map("n", "<C-Space>", "<cmd>NvimTmuxNavigateNext<cr>", { desc = "Tmux Next" })
 
--- Buffer
+----------------------------------------------------------------------
+--                              Buffer                              --
+----------------------------------------------------------------------
 
 map("n", "<leader>bB", "<cmd>Telescope buffers<cr>", { desc = "Telescope Buffers" })
 
--- code insertions
+----------------------------------------------------------------------
+--                         code insertions                          --
+----------------------------------------------------------------------
 
 map("n", "<leader>cj", "<cmd>lua require('jq').run()<cr>", { desc = "JQ Interface" })
 
--- D 
+----------------------------------------------------------------------
+--                                D                                 --
+----------------------------------------------------------------------
 
 map("n", "<leader>dd", '"_d', { desc = 'Delete to the void register'})
 
--- File
+----------------------------------------------------------------------
+--                               File                               --
+----------------------------------------------------------------------
 
 map("n", "<leader>fo", "<cmd>FuzzyOil<cr>", { desc = "Fuzzy Oil" })
 map("n", "<leader>fs", "<cmd>up<cr>", { desc = "File Save" })
 map("n", "<leader>fS", "<cmd>w !sudo tee %<CR>", { desc = "Sudo Write" })
 
--- Git
+----------------------------------------------------------------------
+--                               GIT                                --
+----------------------------------------------------------------------
 
 map("n", "<leader>gT", "<cmd>Tardis<cr>", { desc = "Tardis (TimeMachine)" })
 map("n", "<leader>gm", "<cmd>GitMessenger<cr>", { desc = "Git Messenger" })
 map("n", "<leader>gg", function() require("lazygit-confirm").confirm() end, { desc = "Git Confirm" })
 
--- NOTES 
+
+----------------------------------------------------------------------
+--                              Notes                               --
+----------------------------------------------------------------------
 
 map("n", "<leader>nL", "<cmd>ObsidianLinkNew<cr>", { desc = "Link New" })
 map("n", "<leader>nN", "<cmd>ObsidianNew<cr>", { desc = "New Note" })
@@ -146,13 +188,19 @@ map("n", "<leader>ns", "<cmd>ObsidianSearch<cr>", { desc = "Search" })
 map("n", "<leader>nt", "<cmd>ObsidianToggleCheckbox<cr>", { desc = "Toggle Checkbox" })
 map("n", "<leader>nx", "<cmd>ObsidianExtractNote<cr>", { desc = "Extract Note" })
 
---  Search / Telescope
+----------------------------------------------------------------------
+--                         Search Telescope                         --
+----------------------------------------------------------------------
 
 map("n", "<leader>sp", "<cmd>Telescope projects<cr>", { desc = "Search projects" })
 map("n", "<leader>sf", "<cmd>Telescope filetypes<cr>", { desc = "Search Filetype" })
 map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
 
--- UI
+----------------------------------------------------------------------
+--                                UI                                --
+----------------------------------------------------------------------
 
 map("n", "<leader>um", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" })
 map("n", "<leader>uz", "<cmd>ZenMode<cr>", { desc = "Twilight Mode" })
+
+--EOF 
