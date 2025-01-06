@@ -201,6 +201,5 @@ map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
 ----------------------------------------------------------------------
 
 map("n", "<leader>um", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" })
-map("n", "<leader>uz", "<cmd>ZenMode<cr>", { desc = "Twilight Mode" })
 
 --EOF 
