@@ -167,9 +167,9 @@ map("n", "<leader>gg", function() require("lazygit-confirm").confirm() end, { de
 --                              Notes                               --
 ----------------------------------------------------------------------
 
-map("n", "<leader>nL", "<cmd>ObsidianLinkNew<cr>", { desc = "Link New" })
-map("n", "<leader>nN", "<cmd>ObsidianNew<cr>", { desc = "New Note" })
-map("n", "<leader>nT", "<cmd>ObsidianTemplate<cr>", { desc = "Add Template" })
+map("n", "<leader>nL",  "<cmd>ObsidianLinkNew<cr>", { desc = "Link New" })
+map("n", "<leader>nN",  "<cmd>ObsidianNew<cr>", { desc = "New Note" })
+map("n", "<leader>nT",  "<cmd>ObsidianTemplate<cr>", { desc = "Add Template" })
 map("n", "<leader>nbb", "<cmd>ObsidianBacklinks<cr>", { desc = "Find Backlinks" })
 map("n", "<leader>nbt", "<cmd>ObsidianBridgeTelescopeCommand<cr>", { desc = "Bridge Telescope" })
 map("n", "<leader>nbv", "<cmd>ObsidianBridgeOpenGraph<cr>", { desc = "Bridge Open Graph" })
@@ -178,15 +178,15 @@ map("n", "<leader>ndd", "<cmd>ObsidianDailies -30 2<cr>", { desc = "Open Dailies
 map("n", "<leader>ndt", "<cmd>ObsidianToday<cr>", { desc = "Open Today" })
 map("n", "<leader>ndw", "<cmd>ObsidianTomorrow<cr>", { desc = "Open Tomorrow" })
 map("n", "<leader>ndy", "<cmd>ObsidianYesterday<cr>", { desc = "Open Yesterday" })
-map("n", "<leader>nf", "<cmd>ObsidianFollowLink<cr>", { desc = "Follow Link" })
-map("n", "<leader>ng", "<cmd>ObsidianTags<cr>", { desc = "Tags" })
-map("n", "<leader>nl", "<cmd>ObsidianLinks<cr>", { desc = "List Links" })
-map("n", "<leader>nn", "<cmd>ObsidianQuickSwitch<cr>", { desc = "Quick Switch" })
-map("n", "<leader>no", "<cmd>ObsidianOpen<cr>", { desc = "Open" })
-map("n", "<leader>nr", "<cmd>ObsidianRename<cr>", { desc = "Rename" })
-map("n", "<leader>ns", "<cmd>ObsidianSearch<cr>", { desc = "Search" })
-map("n", "<leader>nt", "<cmd>ObsidianToggleCheckbox<cr>", { desc = "Toggle Checkbox" })
-map("n", "<leader>nx", "<cmd>ObsidianExtractNote<cr>", { desc = "Extract Note" })
+map("n", "<leader>nf",  "<cmd>ObsidianFollowLink<cr>", { desc = "Follow Link" })
+map("n", "<leader>ng",  "<cmd>ObsidianTags<cr>", { desc = "Tags" })
+map("n", "<leader>nl",  "<cmd>ObsidianLinks<cr>", { desc = "List Links" })
+map("n", "<leader>nn",  "<cmd>ObsidianQuickSwitch<cr>", { desc = "Quick Switch" })
+map("n", "<leader>no",  "<cmd>ObsidianOpen<cr>", { desc = "Open" })
+map("n", "<leader>nr",  "<cmd>ObsidianRename<cr>", { desc = "Rename" })
+map("n", "<leader>ns",  "<cmd>ObsidianSearch<cr>", { desc = "Search" })
+map("n", "<leader>nt",  "<cmd>ObsidianToggleCheckbox<cr>", { desc = "Toggle Checkbox" })
+map("n", "<leader>nx",  "<cmd>ObsidianExtractNote<cr>", { desc = "Extract Note" })
 
 ----------------------------------------------------------------------
 --                         Search Telescope                         --
