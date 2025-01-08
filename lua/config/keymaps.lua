@@ -118,6 +118,18 @@ wk.add({
 local map = LazyVim.safe_keymap_set
 
 ----------------------------------------------------------------------
+--                           Leader Maps                            --
+----------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
+--                               TAB                                --
+----------------------------------------------------------------------
+
+map("n", "<leader><tab><tab>", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+map("n", "<leader><tab>n", "<cmd>tabnew<cr>", { desc = "New Tab" })
+
+----------------------------------------------------------------------
 --                          Tmux Navigate                           --
 ----------------------------------------------------------------------
 
@@ -182,7 +194,9 @@ map("n", "<leader>nf",  "<cmd>ObsidianFollowLink<cr>", { desc = "Follow Link" })
 map("n", "<leader>ng",  "<cmd>ObsidianTags<cr>", { desc = "Tags" })
 map("n", "<leader>nl",  "<cmd>ObsidianLinks<cr>", { desc = "List Links" })
 map("n", "<leader>nn",  "<cmd>ObsidianQuickSwitch<cr>", { desc = "Quick Switch" })
-map("n", "<leader>no",  "<cmd>ObsidianOpen<cr>", { desc = "Open" })
+map("n", "<leader>noo", "<cmd>ObsidianOpen<cr>", { desc = "Open" })
+map("n", "<leader>noi", "<cmd>e ~/Obsidian/default/0-Inbox/INBOX.md<cr>", { desc = "Open INBOX" })
+map("n", "<leader>nog", "<cmd>e ~/Obsidian/default/0-Inbox/Tasks.md<cr>", { desc = "Open Tasks" })
 map("n", "<leader>nr",  "<cmd>ObsidianRename<cr>", { desc = "Rename" })
 map("n", "<leader>ns",  "<cmd>ObsidianSearch<cr>", { desc = "Search" })
 map("n", "<leader>nt",  "<cmd>ObsidianToggleCheckbox<cr>", { desc = "Toggle Checkbox" })

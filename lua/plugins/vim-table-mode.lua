@@ -20,7 +20,7 @@ return {
             move_column_left = '<A-S-h>',  -- Move the current column to the left.
             move_column_right = '<A-S-l>', -- Move the current column to the right.
             insert_table = '<A-t>',        -- Insert a new table.
-            insert_table_alt = '<A-S-t>',  -- Insert a new table that is not surrounded by pipes.
+            insert_table_alt = '<A-S-t>',  -- Insert a new table that is zynot surrounded by pipes.
             delete_column = '<A-d>',       -- Delete the column under cursor.
         }
     },
