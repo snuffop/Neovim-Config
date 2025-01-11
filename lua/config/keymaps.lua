@@ -176,11 +176,22 @@ map("n", "<leader>nzN", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { 
 map("n", "<leader>nzb", "<Cmd>ZkBacklinks<CR>", { desc = "ZK Backlinks" })
 map("n", "<leader>nzc", "<Cmd>ZkCd<CR>", { desc = "ZK cd" })
 map("n", "<leader>nzi", "<Cmd>ZkInsertLink<CR>", { desc = "ZK Insert Link" })
-map("n", "<leader>nzj", "<Cmd>! daily-file.sh<CR>", { desc = "ZK Daily Journal" })
 map("n", "<leader>nzl", "<Cmd>ZkLinks<CR>", { desc = "ZK Links" })
 map("n", "<leader>nzr", "<Cmd>ZkNotes { createdAfter = '3 days ago' }<CR>", { desc = "ZK Recent" })
 map("n", "<leader>nzt", "<Cmd>ZkTags<CR>", { desc = "ZK Tags" })
 map("n", "<leader>nzz", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", { desc = "ZK Notes" })
+
+-- Key map from copilot. son of a bitch. it worked.
+vim.keymap.set("n", "<leader>nzj", function()
+  local file = vim.fn.system("daily-file.sh")
+  file = vim.fn.trim(file) -- Remove any trailing newline characters
+  if vim.fn.filereadable(file) == 1 then
+    vim.cmd("edit " .. file)
+  else
+    print("File not found: " .. file)
+    require("zk.commands").get("ZkNew")({ dir = "journals" })
+  end
+end, { desc = "Open file from script" })
 
 map("v", "<leader>nzf", "<Cmd>:'<,'>ZkMatch<CR>", { desc = "ZK Match" })
 map("v", "<leader>nzi", "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>", { desc = "ZK Insert Link" })
