@@ -109,6 +109,30 @@ vim.keymap.set("n", "<S-h>", function()
   }))
 end, { desc = "[P]Open telescope buffers" })
 
+
+
+-- HACK: Manage Markdown tasks in Neovim similar to Obsidian | Telescope to List Completed and Pending Tasks
+-- https://youtu.be/59hvZl077hM
+--
+-- Iterate throuth completed tasks in telescope lamw25wmal
+vim.keymap.set("n", "<leader>tc", function()
+  require("telescope.builtin").grep_string(require("telescope.themes").get_ivy({
+    prompt_title = "Completed Tasks",
+    -- search = [[- \[x\] `done:]], -- Regex to match the text "`- [x] `done:"
+    search = "^- \\[x\\] `done:", -- Matches lines starting with "- [x] `done:"
+    search_dirs = { vim.fn.getcwd() }, -- Restrict search to the current working directory
+    use_regex = true, -- Enable regex for the search term
+    initial_mode = "normal", -- Start in normal mode
+    layout_config = {
+      preview_width = 0.5, -- Adjust preview width
+    },
+    additional_args = function()
+      return { "--no-ignore" } -- Include files ignored by .gitignore
+    end,
+  }))
+end, { desc = "[P]Search for completed tasks" })
+
+
 ----------------------------------------------------------------------
 --                    Which-Key Top level labels                    --
 ----------------------------------------------------------------------
