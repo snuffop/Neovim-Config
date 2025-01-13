@@ -182,7 +182,7 @@ map("n", "<leader>nzt", "<Cmd>ZkTags<CR>", { desc = "ZK Tags" })
 map("n", "<leader>nzz", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", { desc = "ZK Notes" })
 
 -- Key map from copilot. son of a bitch. it worked.
-vim.keymap.set("n", "<leader>nod", function()
+vim.keymap.set("n", "<leader>not", function()
   local file = vim.fn.system("daily-file.sh")
   file = vim.fn.trim(file) -- Remove any trailing newline characters
   if vim.fn.filereadable(file) == 1 then
