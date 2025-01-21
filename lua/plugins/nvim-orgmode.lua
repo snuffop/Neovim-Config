@@ -10,8 +10,9 @@ return{
         config = function()
             -- Setup orgmode
             require('orgmode').setup({
-                rg_agenda_files = "~/Nextcloud/Org/**/*",
+                org_agenda_files = "~/Nextcloud/Org/Orgzly/*",
                 org_default_notes_file = "~/Nextcloud/Org/Orgzly/Inbox.org",
+                org_todo_keywords 
             })
             -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
             -- add ~org~ to ignore_install
