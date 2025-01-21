@@ -25,6 +25,7 @@ return{
                 },
                 org_log_into_drawer = "LOGBOOK",
                 emacs_config = "~/.config/doom/init.el",
+                org_startup_indented = true,
             })
 
                 -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
