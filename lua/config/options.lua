@@ -76,7 +76,7 @@ let g:loaded_perl_provider = 0
 --                             LazyVim                              --
 ----------------------------------------------------------------------
 
-vim.g.lazyvim_picker = "fzf-lua"
+--vim.g.lazyvim_picker = "fzf-lua"
 
 ----------------------------------------------------------------------
 --                           GUI Settings                           --
