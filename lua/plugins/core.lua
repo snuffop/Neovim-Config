@@ -17,9 +17,10 @@ return {
 
     {
         "folke/tokyonight.nvim",
-        enable = false,
+        enable = true,
         opts = { 
             style = "night",
+            transparent = true,
         },
     },
 
@@ -27,18 +28,18 @@ return {
     --                        Enable Catppuccin                         --
     ----------------------------------------------------------------------
 
-    {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        opts = {
-            transparent_backgroud = true,
-            flavour = "mocha",
-            integration = {
-                copilot = true,
-                blink = true,
-            }
-        }
-    },
+    -- {
+    --     "catppuccin/nvim",
+    --     name = "catppuccin",
+    --     opts = {
+    --         transparent_backgroud = true,
+    --         flavour = "mocha",
+    --         integration = {
+    --             copilot = true,
+    --             blink = true,
+    --         }
+    --     }
+    -- },
 
     ----------------------------------------------------------------------
     --              Set Catppuccin as the used colorscheme              --
@@ -47,7 +48,7 @@ return {
     {
         "LazyVim/LazyVim",
         opts = {
-            colorscheme = "catppuccin",
+            colorscheme = "tokyonight",
             news = {
                 neovim = true,
             }
