@@ -167,22 +167,23 @@ map("n", "<leader>gg", function() require("lazygit-confirm").confirm() end, { de
 map("n", "<leader>noi", "<cmd>e ~/Nextcloud/Org/Orgzly/Inbox.org<cr>", { desc = "Open INBOX" })
 map("n", "<leader>nog", "<cmd>e ~/Nextcloud/Org/Orgzly/tasks.org<cr>", { desc = "Open Tasks" })
 
+
 ----------------------------------------------------------------------
---                                ZK                                --
+--                      Find Todays Journal
 ----------------------------------------------------------------------
 
+map("n", "<leader>not", function()
+    local date_prefix = os.date("%Y%m%dT") -- Get today's date in the format YYYYMMDDT
+    local journal_dir = "~/Nextcloud/Org/Journal/" -- Adjust to your journal directory
+    local file = journal_dir .. date_prefix .. "*.org" -- Construct the file pattern
+    local files = vim.fn.glob(file, false, true) -- Find matching files
 
--- Key map from copilot. son of a bitch. it worked.
--- vim.keymap.set("n", "<leader>not", function()
---   local file = vim.fn.system("daily-file.sh")
---   file = vim.fn.trim(file) -- Remove any trailing newline characters
---   if vim.fn.filereadable(file) == 1 then
---     vim.cmd("edit " .. file)
---   else
---     print("File not found: " .. file)
---     require("zk.commands").get("ZkNew")({ dir = "journals" })
---   end
--- end, { desc = "Open file from script" })
+    if #files > 0 then
+        vim.cmd("edit " .. files[1]) -- Open the first matching file
+    else
+        print("No journal file found for today.")
+    end
+end, { desc = "Open today's journal file" })
 
 
 ----------------------------------------------------------------------
