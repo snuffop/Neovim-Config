@@ -97,14 +97,15 @@ wk.add({
     { "<leader>nb", group = "+Bridge"},
     { "<leader>nd", group = "+Dailies"},
     { "<leader>no", group = "+Open"},
-    { "<leader>nz", group = "+ZK"},
+    { "<leader>nd", group = "+Denote"},
+    { "<leader>ndj", group = "+Journal"},
 })
 
 local map = LazyVim.safe_keymap_set
 
-----------------------------------------------------------------------
+--======================================================================
 --                           Leader Maps                            --
-----------------------------------------------------------------------
+--======================================================================
 
 
 ----------------------------------------------------------------------
@@ -167,12 +168,11 @@ map("n", "<leader>gg", function() require("lazygit-confirm").confirm() end, { de
 map("n", "<leader>noi", "<cmd>e ~/Nextcloud/Org/Orgzly/Inbox.org<cr>", { desc = "Open INBOX" })
 map("n", "<leader>nog", "<cmd>e ~/Nextcloud/Org/Orgzly/tasks.org<cr>", { desc = "Open Tasks" })
 
-
 ----------------------------------------------------------------------
 --                      Find Todays Journal
 ----------------------------------------------------------------------
 
-map("n", "<leader>not", function()
+map("n", "<leader>ndjj", function()
     local date_prefix = os.date("%Y%m%dT") -- Get today's date in the format YYYYMMDDT
     local journal_dir = "~/Nextcloud/Org/Journal/" -- Adjust to your journal directory
     local file = journal_dir .. date_prefix .. "*.org" -- Construct the file pattern
