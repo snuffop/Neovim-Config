@@ -98,6 +98,8 @@ wk.add({
     { "<leader>nd", group = "+Dailies"},
     { "<leader>no", group = "+Open"},
     { "<leader>nd", group = "+Denote"},
+    { "<leader>nz", group = "+ZK"},
+    { "<leader>nzo", group = "+ZKOpen"},
     { "<leader>ndj", group = "+Journal"},
 })
 
@@ -199,5 +201,38 @@ map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
 ----------------------------------------------------------------------
 
 map("n", "<leader>uM", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" })
+
+----------------------------------------------------------------------
+--                                ZK                                --
+----------------------------------------------------------------------
+map("n", "<leader>nzoi", "<cmd>e ~/Zettelkasten/Inbox/inbox.md<cr>", { desc = "Open INBOX" })
+map("n", "<leader>nzog", "<cmd>e ~/Zettelkasten/Inbox/tasks.md<cr>", { desc = "Open Tasks" })
+
+map("n", "<leader>nzI", "<Cmd>ZkIndex<CR>", { desc = "ZK index" })
+map("n", "<leader>nzN", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { desc = "ZK New" })
+map("n", "<leader>nzb", "<Cmd>ZkBacklinks<CR>", { desc = "ZK Backlinks" })
+map("n", "<leader>nzc", "<Cmd>ZkCd<CR>", { desc = "ZK cd" })
+map("n", "<leader>nzi", "<Cmd>ZkInsertLink<CR>", { desc = "ZK Insert Link" })
+map("n", "<leader>nzl", "<Cmd>ZkLinks<CR>", { desc = "ZK Links" })
+map("n", "<leader>nzr", "<Cmd>ZkNotes { createdAfter = '3 days ago' }<CR>", { desc = "ZK Recent" })
+map("n", "<leader>nzT", "<Cmd>ZkTags<CR>", { desc = "ZK Tags" })
+map("n", "<leader>nzz", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", { desc = "ZK Notes" })
+
+-- Key map from copilot. son of a bitch. it worked.
+vim.keymap.set("n", "<leader>nzt", function()
+  local file = vim.fn.system("daily-file.sh")
+  file = vim.fn.trim(file) -- Remove any trailing newline characters
+  if vim.fn.filereadable(file) == 1 then
+    vim.cmd("edit " .. file)
+  else
+    print("File not found: " .. file)
+    require("zk.commands").get("ZkNew")({ dir = "journals" })
+  end
+end, { desc = "Open file from script" })
+
+map("v", "<leader>nzf", "<Cmd>:'<,'>ZkMatch<CR>", { desc = "ZK Match" })
+map("v", "<leader>nzi", "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>", { desc = "ZK Insert Link" })
+map("v", "<leader>nzN", "<Cmd>'<,'>ZkNewFromTitleSelection<CR>", { desc = "ZK New" })
+
 
 --EOF 

@@ -9,7 +9,7 @@ return {
     lazy = false,
     config = function()
         require("zk").setup({
-            picker = "fzf_lua",
+            picker = "snacks_picker",
             lsp = {
                 cmd = {"zk", "lsp"},
                 name = "zk",
