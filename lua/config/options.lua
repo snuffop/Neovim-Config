@@ -82,7 +82,7 @@ let g:loaded_perl_provider = 0
 --                           GUI Settings                           --
 ----------------------------------------------------------------------
 
-vim.o.guifont = "DejaVu Sans Mono:h9"
+vim.o.guifont = "DejaVu Sans Mono:h14"
 
 ----------------------------------------------------------------------
 --         disable diagnostics by default (allowing toggle)         --
