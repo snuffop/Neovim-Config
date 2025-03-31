@@ -24,8 +24,11 @@ return{
                     DONE       = ':foreground "green"   :weight bold',
                 },
                 org_log_into_drawer = "LOGBOOK",
+                org_log_done = true,
+                org_log_repeat = true,
                 emacs_config = "~/.config/doom/init.el",
                 org_startup_indented = true,
+                org_hide_leading_stars = true,
             })
 
                 -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
@@ -33,6 +36,20 @@ return{
             require('nvim-treesitter.configs').setup({
                 ensure_installed = 'all',
                 ignore_install = { 'org' },
+            })
+            require('blink.cmp').setup({
+                sources = {
+                    per_filetype = {
+                        org = {'orgmode'}
+                    },
+                    providers = {
+                        orgmode = {
+                            name = 'Orgmode',
+                            module = 'orgmode.org.autocompletion.blink',
+                            fallbacks = { 'buffer' },
+                        },
+                    },
+                },
             })
         end,
     },
@@ -44,4 +61,20 @@ return{
             require('org-bullets').setup()
         end
     },
+
+    {
+        "nvim-orgmode/telescope-orgmode.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            "nvim-orgmode/orgmode",
+            "nvim-telescope/telescope.nvim",
+        },
+        config = function()
+            require("telescope").load_extension("orgmode")
+
+            vim.keymap.set("n", "<leader>osr", require("telescope").extensions.orgmode.refile_heading)
+            vim.keymap.set("n", "<leader>oss", require("telescope").extensions.orgmode.search_headings)
+            vim.keymap.set("n", "<leader>osi", require("telescope").extensions.orgmode.insert_link)
+        end,
+    }
 }
