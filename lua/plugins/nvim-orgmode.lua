@@ -31,8 +31,8 @@ return{
                 org_hide_leading_stars = true,
             })
 
-                -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
-                -- add ~org~ to ignore_install
+            -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
+            -- add ~org~ to ignore_install
             require('nvim-treesitter.configs').setup({
                 ensure_installed = 'all',
                 ignore_install = { 'org' },

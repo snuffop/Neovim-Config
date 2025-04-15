@@ -169,6 +169,7 @@ map("n", "<leader>gg", function() require("lazygit-confirm").confirm() end, { de
 
 map("n", "<leader>noi", "<cmd>e ~/Nextcloud/Org/Orgzly/Inbox.org<cr>", { desc = "Open INBOX" })
 map("n", "<leader>nog", "<cmd>e ~/Nextcloud/Org/Orgzly/tasks.org<cr>", { desc = "Open Tasks" })
+map("n", "<leader>nh", function() Snacks.picker.notifications() end, { desc = "Notification History" })
 
 ----------------------------------------------------------------------
 --                      Find Todays Journal
@@ -201,6 +202,7 @@ map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
 ----------------------------------------------------------------------
 
 map("n", "<leader>uM", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" })
+map("n", "<leader>un", function() Snacks.notifier.hide() end, { desc = "Dismiss All Notification" })
 
 ----------------------------------------------------------------------
 --                                ZK                                --
