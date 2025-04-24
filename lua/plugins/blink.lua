@@ -8,11 +8,11 @@ return {
         -- "obsidian-nvim/obsidian.nvim",
         "saghen/blink.compat",
     },
-    -- opts = {
-    --     sources = {
-    --         compat = { "obsidian", "obsidian_new", "obsidian_tags" },
-    --     },
-    -- },
+    opts = {
+        sources = {
+            compat = { "obsidian", "obsidian_new", "obsidian_tags" },
+        },
+    },
     keymap = {
         preset = "enter",
         ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
