@@ -5,7 +5,7 @@
 return {
     "saghen/blink.cmp",
     dependencies = { 
-        "epwalsh/obsidian.nvim",
+        "obsidian-nvim/obsidian.nvim",
         "saghen/blink.compat",
     },
     opts = {

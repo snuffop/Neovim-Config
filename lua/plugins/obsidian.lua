@@ -5,7 +5,7 @@
 -- Obsidian epwalsh version
 return {
     {
-        "epwalsh/obsidian.nvim",
+        "obsidian-nvim/obsidian.nvim",
         version = "*", -- Recommended, use latest release instead of latest commit
         lazy = false,
         event = {
@@ -55,7 +55,8 @@ return {
 
             picker = {
                 -- name = "telescope.nvim",
-                name = "fzf-lua",
+                -- name = "fzf-lua",
+                name = "snacks",
             },
 
             completion = {
@@ -128,5 +129,4 @@ return {
             "BufNewFile *.md",
         },
     },
-
 }
