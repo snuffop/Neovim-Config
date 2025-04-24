@@ -10,15 +10,7 @@ return {
     },
     opts = {
         sources = {
-            default = { "lazydev"},
             compat = { "obsidian", "obsidian_new", "obsidian_tags" },
-            providers = {
-                lazydev = {
-                    name = "lazydev",
-                    module = "lazydev.integrations.blank",
-                    score_offset = 100 
-                },
-            },
         },
         keymap = {
             preset = "enter",
