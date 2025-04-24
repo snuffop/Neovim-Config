@@ -56,11 +56,12 @@ return {
             picker = {
                 -- name = "telescope.nvim",
                 -- name = "fzf-lua",
-                name = "snacks",
+                name = "snacks.pick",
             },
 
             completion = {
-                nvim_cmp = true,
+                blink = true,
+                -- nvim_cmp = true,
                 min_chars = 2,
             },
 
