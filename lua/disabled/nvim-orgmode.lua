@@ -37,8 +37,6 @@ return{
                 ensure_installed = 'all',
                 ignore_install = { 'org' },
             })
-            require('blink.cmp').setup({
-                sources = {
                     per_filetype = {
                         org = {'orgmode'}
                     },
