@@ -92,15 +92,15 @@ vim.api.nvim_set_keymap('n', 'gcC', ":lua require('nvim-comment-frame').add_mult
 local wk = require("which-key")
 wk.add({
     -- { "<leader>e", group = "+Ecolog" },
-    { "<leader>n", group = "+Notes"},
-    { "<leader>o", group = "+Org Mode"},
-    { "<leader>nb", group = "+Bridge"},
-    { "<leader>nd", group = "+Dailies"},
-    { "<leader>no", group = "+Open"},
-    { "<leader>nd", group = "+Denote"},
-    { "<leader>ndj", group = "+Journal"},
-    { "<leader>z", group = "+ZK"},
-    { "<leader>zo", group = "+ZKOpen"},
+    -- { "<leader>n", group = "+Notes"},
+    -- { "<leader>o", group = "+Org Mode"},
+    -- { "<leader>nb", group = "+Bridge"},
+    -- { "<leader>nd", group = "+Dailies"},
+    -- { "<leader>no", group = "+Open"},
+    -- { "<leader>nd", group = "+Denote"},
+    -- { "<leader>ndj", group = "+Journal"},
+    -- { "<leader>z", group = "+ZK"},
+    -- { "<leader>zo", group = "+ZKOpen"},
 })
 
 local map = LazyVim.safe_keymap_set
@@ -167,26 +167,26 @@ map("n", "<leader>gg", function() require("lazygit-confirm").confirm() end, { de
 --                              Notes                               --
 ----------------------------------------------------------------------
 
-map("n", "<leader>noi", "<cmd>e ~/Nextcloud/Org/Orgzly/Inbox.org<cr>", { desc = "Open INBOX" })
-map("n", "<leader>nog", "<cmd>e ~/Nextcloud/Org/Orgzly/tasks.org<cr>", { desc = "Open Tasks" })
-map("n", "<leader>nh", function() Snacks.picker.notifications() end, { desc = "Notification History" })
+-- map("n", "<leader>noi", "<cmd>e ~/Nextcloud/Org/Orgzly/Inbox.org<cr>", { desc = "Open INBOX" })
+-- map("n", "<leader>nog", "<cmd>e ~/Nextcloud/Org/Orgzly/tasks.org<cr>", { desc = "Open Tasks" })
+-- map("n", "<leader>nh", function() Snacks.picker.notifications() end, { desc = "Notification History" })
 
 ----------------------------------------------------------------------
 --                      Find Todays Journal
 ----------------------------------------------------------------------
 
-map("n", "<leader>ndjj", function()
-    local date_prefix = os.date("%Y%m%dT") -- Get today's date in the format YYYYMMDDT
-    local journal_dir = "~/Nextcloud/Org/Journal/" -- Adjust to your journal directory
-    local file = journal_dir .. date_prefix .. "*.org" -- Construct the file pattern
-    local files = vim.fn.glob(file, false, true) -- Find matching files
-
-    if #files > 0 then
-        vim.cmd("edit " .. files[1]) -- Open the first matching file
-    else
-        print("No journal file found for today.")
-    end
-end, { desc = "Open today's journal file" })
+-- map("n", "<leader>ndjj", function()
+--     local date_prefix = os.date("%Y%m%dT") -- Get today's date in the format YYYYMMDDT
+--     local journal_dir = "~/Nextcloud/Org/Journal/" -- Adjust to your journal directory
+--     local file = journal_dir .. date_prefix .. "*.org" -- Construct the file pattern
+--     local files = vim.fn.glob(file, false, true) -- Find matching files
+--
+--     if #files > 0 then
+--         vim.cmd("edit " .. files[1]) -- Open the first matching file
+--     else
+--         print("No journal file found for today.")
+--     end
+-- end, { desc = "Open today's journal file" })
 
 
 ----------------------------------------------------------------------
@@ -207,34 +207,34 @@ map("n", "<leader>un", function() Snacks.notifier.hide() end, { desc = "Dismiss 
 ----------------------------------------------------------------------
 --                                ZK                                --
 ----------------------------------------------------------------------
-map("n", "<leader>zoi", "<cmd>e ~/Zettelkasten/Inbox/inbox.md<cr>", { desc = "Open INBOX" })
-map("n", "<leader>zog", "<cmd>e ~/Zettelkasten/Inbox/tasks.md<cr>", { desc = "Open Tasks" })
-
-map("n", "<leader>zI", "<Cmd>ZkIndex<CR>", { desc = "ZK index" })
-map("n", "<leader>zN", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { desc = "ZK New" })
-map("n", "<leader>zb", "<Cmd>ZkBacklinks<CR>", { desc = "ZK Backlinks" })
-map("n", "<leader>zc", "<Cmd>ZkCd<CR>", { desc = "ZK cd" })
-map("n", "<leader>zi", "<Cmd>ZkInsertLink<CR>", { desc = "ZK Insert Link" })
-map("n", "<leader>zl", "<Cmd>ZkLinks<CR>", { desc = "ZK Links" })
-map("n", "<leader>zr", "<Cmd>ZkNotes { createdAfter = '3 days ago' }<CR>", { desc = "ZK Recent" })
-map("n", "<leader>zt", "<Cmd>ZkTags<CR>", { desc = "ZK Tags" })
-map("n", "<leader>zz", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", { desc = "ZK Notes" })
-
--- Key map from copilot. son of a bitch. it worked.
-vim.keymap.set("n", "<leader>zj", function()
-  local file = vim.fn.system("daily-file.sh")
-  file = vim.fn.trim(file) -- Remove any trailing newline characters
-  if vim.fn.filereadable(file) == 1 then
-    vim.cmd("edit " .. file)
-  else
-    print("File not found: " .. file)
-    require("zk.commands").get("ZkNew")({ dir = "journals" })
-  end
-end, { desc = "Open file from script" })
-
-map("v", "<leader>zf", "<Cmd>:'<,'>ZkMatch<CR>", { desc = "ZK Match" })
-map("v", "<leader>zi", "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>", { desc = "ZK Insert Link" })
-map("v", "<leader>zN", "<Cmd>'<,'>ZkNewFromTitleSelection<CR>", { desc = "ZK New" })
-
+-- map("n", "<leader>zoi", "<cmd>e ~/Zettelkasten/Inbox/inbox.md<cr>", { desc = "Open INBOX" })
+-- map("n", "<leader>zog", "<cmd>e ~/Zettelkasten/Inbox/tasks.md<cr>", { desc = "Open Tasks" })
+--
+-- map("n", "<leader>zI", "<Cmd>ZkIndex<CR>", { desc = "ZK index" })
+-- map("n", "<leader>zN", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { desc = "ZK New" })
+-- map("n", "<leader>zb", "<Cmd>ZkBacklinks<CR>", { desc = "ZK Backlinks" })
+-- map("n", "<leader>zc", "<Cmd>ZkCd<CR>", { desc = "ZK cd" })
+-- map("n", "<leader>zi", "<Cmd>ZkInsertLink<CR>", { desc = "ZK Insert Link" })
+-- map("n", "<leader>zl", "<Cmd>ZkLinks<CR>", { desc = "ZK Links" })
+-- map("n", "<leader>zr", "<Cmd>ZkNotes { createdAfter = '3 days ago' }<CR>", { desc = "ZK Recent" })
+-- map("n", "<leader>zt", "<Cmd>ZkTags<CR>", { desc = "ZK Tags" })
+-- map("n", "<leader>zz", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", { desc = "ZK Notes" })
+--
+-- -- Key map from copilot. son of a bitch. it worked.
+-- vim.keymap.set("n", "<leader>zj", function()
+--   local file = vim.fn.system("daily-file.sh")
+--   file = vim.fn.trim(file) -- Remove any trailing newline characters
+--   if vim.fn.filereadable(file) == 1 then
+--     vim.cmd("edit " .. file)
+--   else
+--     print("File not found: " .. file)
+--     require("zk.commands").get("ZkNew")({ dir = "journals" })
+--   end
+-- end, { desc = "Open file from script" })
+--
+-- map("v", "<leader>zf", "<Cmd>:'<,'>ZkMatch<CR>", { desc = "ZK Match" })
+-- map("v", "<leader>zi", "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>", { desc = "ZK Insert Link" })
+-- map("v", "<leader>zN", "<Cmd>'<,'>ZkNewFromTitleSelection<CR>", { desc = "ZK New" })
+--
 
 --EOF 
