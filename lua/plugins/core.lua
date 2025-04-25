@@ -18,9 +18,9 @@ return {
 
     {
         "folke/tokyonight.nvim",
-        enable = false,
+        enable = true,
         opts = { 
-            style = "night",
+            style = "moon",
             transparent = true,
         },
     },
@@ -49,8 +49,8 @@ return {
     {
         "LazyVim/LazyVim",
         opts = {
-            -- colorscheme = "tokyonight",
-            colorscheme = "catppuccin",
+            colorscheme = "tokyonight",
+            --colorscheme = "catppuccin",
             news = {
                 neovim = true,
             }
