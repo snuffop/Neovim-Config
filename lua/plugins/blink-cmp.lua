@@ -1,7 +1,3 @@
---  ╭────────────────────────────────────╮
---  │ Marty Buchaus Neovim Configuration │
---  ╰────────────────────────────────────╯
-
 -- Filename: ~/github/dotfiles-latest/neovim/neobean/lua/plugins/blink-cmp.lua
 -- ~/github/dotfiles-latest/neovim/neobean/lua/plugins/blink-cmp.lua
 

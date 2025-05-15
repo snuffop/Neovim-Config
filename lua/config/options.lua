@@ -12,7 +12,7 @@ vim.g.maplocalleader = ","
 --                           Snacks 
 ----------------------------------------------------------------------
 
-vim.g.snacks_animate = false
+vim.g.snacks_animate = true
 vim.g.lazyvim_picker = "snacks"
 
 
@@ -20,7 +20,7 @@ vim.g.lazyvim_picker = "snacks"
 --                           Auto Format                            --
 ----------------------------------------------------------------------
 
-vim.g.autoformat = true
+vim.g.autoformat = false
 
 ----------------------------------------------------------------------
 --                      Tabs and indentations                       --
@@ -48,7 +48,14 @@ vim.o.textwidth = 100
 ----------------------------------------------------------------------
 
 vim.o.concealcursor = "nc"
-vim.o.conceallevel = 0
+vim.o.conceallevel = 1
+
+----------------------------------------------------------------------
+--                             Wrap                                --
+----------------------------------------------------------------------
+
+vim.o.linebreak = false
+vim.o.wrap = false
 
 ----------------------------------------------------------------------
 --                             Folding                              --
