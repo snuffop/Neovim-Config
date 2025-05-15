@@ -7,6 +7,7 @@
 return {
     "zk-org/zk-nvim",
     lazy = false,
+    branch = 'fix/client-nil-error',
     config = function ()
         require("zk").setup({
             picker = "snacks_picker",
