@@ -51,7 +51,7 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "OIL open parent" })
 
 vim.keymap.set(
     "n",
-    "<leader><leader>k",
+    "<leader>Rk",
     "<cmd>source ~/.config/nvim/lua/config/keymaps.lua<cr>",
     { desc = "Reload keymaps.lua" }
 )
@@ -62,7 +62,7 @@ vim.keymap.set(
 
 vim.keymap.set(
     "n",
-    "<leader><leader>s",
+    "<leader>Rs",
     "<cmd>source ~/.config/nvim/after/plugin/snippets.lua<cr>",
     { desc = "Reload luasnip.lua" }
 )
@@ -90,11 +90,12 @@ vim.api.nvim_set_keymap('n', 'gcC', ":lua require('nvim-comment-frame').add_mult
 local wk = require("which-key")
 wk.add({
     { "<leader>n", group = "+Notes"},
+    { "<leader>R", group = "+Reload"},
     { "<leader>nb", group = "+Bridge"},
     { "<leader>nd", group = "+Daily"},
     { "<leader>no", group = "+Open"},
-    { "<leader>m", group = "+Markdown"},
-    { "<leader>mh", group = "+Headers"},
+    { "<leader>m", group = "+My"},
+    { "<leader>mt", group = "+NeoWarrior"},
 })
 
 local map = LazyVim.safe_keymap_set
@@ -126,7 +127,6 @@ map("n", "<C-Space>", "<cmd>NvimTmuxNavigateNext<cr>", { desc = "Tmux Next" })
 --                              Buffer                              --
 ----------------------------------------------------------------------
 
-map("n", "<leader>bB", "<cmd>Telescope buffers<cr>", { desc = "Telescope Buffers" })
 
 ----------------------------------------------------------------------
 --                         code insertions                          --
@@ -156,6 +156,11 @@ map("n", "<leader>fS", "<cmd>w !sudo tee %<CR>", { desc = "Sudo Write" })
 map("n", "<leader>gT", "<cmd>Tardis<cr>", { desc = "Tardis (TimeMachine)" })
 map("n", "<leader>gm", "<cmd>GitMessenger<cr>", { desc = "Git Messenger" })
 map("n", "<leader>gg", function() require("lazygit-confirm").confirm() end, { desc = "Git Confirm" })
+
+
+----------------------------------------------------------------------
+--                         Taskwarrior
+----------------------------------------------------------------------
 
 
 ----------------------------------------------------------------------
