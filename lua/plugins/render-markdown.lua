@@ -3,6 +3,7 @@
 --  ╰──────────────────────────────────────────────────────────╯
 
 return {
+    --  Render Markdown config
     'MeanderingProgrammer/render-markdown.nvim',
     dependencies = { 
         'nvim-treesitter/nvim-treesitter', 
@@ -18,11 +19,11 @@ return {
             gitcommit = {
                 enabled = true,
                 query = [[
-                ((message) @injection.content
-                    (#set! injection.combined)
-                    (#set! injection.include-children)
-                    (#set! injection.language "markdown"))
-            ]],
+                        ((message) @injection.content
+                        (#set! injection.combined)
+                        (#set! injection.include-children)
+                        (#set! injection.language "markdown"))
+                        ]],
             },
         },
         heading = {

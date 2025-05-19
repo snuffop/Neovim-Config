@@ -5,6 +5,7 @@ if require("zk.util").notebook_root(vim.fn.expand('%:p')) ~= nil then
 
   -- Open the link under the caret.
   map("n", "<CR>", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
+  map("i", "<A-i>", "<Cmd>ZkInsertLink<CR>", opts)
 
   -- Create a new note after asking for its title.
   -- This overrides the global `<leader>zn` mapping to create the note in the same directory as the current buffer.

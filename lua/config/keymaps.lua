@@ -170,7 +170,7 @@ map("n", "<leader>nzoi", "<cmd>e ~/Zettelkasten/Inbox/inbox.md<cr>", { desc = "O
 map("n", "<leader>nzog", "<cmd>e ~/Zettelkasten/Inbox/tasks.md<cr>", { desc = "Open Tasks" })
 
 map("n", "<leader>nzI", "<Cmd>ZkIndex<CR>", { desc = "ZK index" })
-map("n", "<leader>nzN", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { desc = "ZK New" })
+map("n", "<leader>nzN", "<Cmd>ZkNew { title = vim.kn.input('Title: ') }<CR>", { desc = "ZK New" })
 map("n", "<leader>nzb", "<Cmd>ZkBacklinks<CR>", { desc = "ZK Backlinks" })
 map("n", "<leader>nzc", "<Cmd>ZkCd<CR>", { desc = "ZK cd" })
 map("n", "<leader>nzi", "<Cmd>ZkInsertLink<CR>", { desc = "ZK Insert Link" })
