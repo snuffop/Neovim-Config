@@ -37,7 +37,7 @@ return {
             flavour = "mocha",
             integration = {
                 copilot = true,
-                blink = true,
+                blink_cmp = true,
             }
         }
     },

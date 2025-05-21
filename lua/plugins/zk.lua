@@ -19,13 +19,13 @@ return {
             },
             lsp = {
                 config = {
-                    cmd = {"zk", "lsp"},
                     name = "zk",
+                    cmd = {"zk", "lsp"},
+                    filetypes = { "markdown" },
                 }
             },
             auto_attach = {
                 enable = true,
-                filetypes = { "markdown" },
             }
         })
     end

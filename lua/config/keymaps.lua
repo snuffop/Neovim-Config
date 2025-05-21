@@ -76,6 +76,17 @@ vim.api.nvim_set_keymap("v", "<M-k>", "<cmd>WhichKey<space>v<cr>", { noremap = t
 vim.api.nvim_set_keymap("i", "<M-k>", "<cmd>WhichKey<space>i<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("c", "<M-k>", "<cmd>WhichKey<space>c<cr>", { noremap = true, silent = true })
 
+-- movement
+vim.keymap.set({ 'n', 'v' }, 'gk', '<cmd>Treewalker Up<cr>', { silent = true })
+vim.keymap.set({ 'n', 'v' }, 'gj', '<cmd>Treewalker Down<cr>', { silent = true })
+vim.keymap.set({ 'n', 'v' }, 'gh', '<cmd>Treewalker Left<cr>', { silent = true })
+vim.keymap.set({ 'n', 'v' }, 'gl', '<cmd>Treewalker Right<cr>', { silent = true })
+
+-- swapping
+vim.keymap.set('n', 'gK', '<cmd>Treewalker SwapUp<cr>', { silent = true })
+vim.keymap.set('n', 'gJ', '<cmd>Treewalker SwapDown<cr>', { silent = true })
+vim.keymap.set('n', 'gH', '<cmd>Treewalker SwapLeft<cr>', { silent = true })
+vim.keymap.set('n', 'gL', '<cmd>Treewalker SwapRight<cr>', { silent = true })
 ----------------------------------------------------------------------
 --                          Comment Block                           --
 ----------------------------------------------------------------------
