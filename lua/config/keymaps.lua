@@ -100,6 +100,7 @@ vim.api.nvim_set_keymap('n', 'gcC', ":lua require('nvim-comment-frame').add_mult
 
 local wk = require("which-key")
 wk.add({
+    { "<leader>A", group = "+Applications"},
     { "<leader>n", group = "+Notes"},
     { "<leader>R", group = "+Reload"},
     { "<leader>nb", group = "+Bridge"},
@@ -114,7 +115,6 @@ local map = LazyVim.safe_keymap_set
 --======================================================================
 --                           Leader Maps                            --
 --======================================================================
-
 
 ----------------------------------------------------------------------
 --                               TAB                                --
@@ -133,6 +133,12 @@ map("n", "<C-k>", "<cmd>NvimTmuxNavigateUp<cr>", { desc = "Tmux Up" })
 map("n", "<C-l>", "<cmd>NvimTmuxNavigateRight<cr>", { desc = "Tmux Right" })
 map("n", "<C-\\>", "<cmd>NvimTmuxNavigateLastActive<cr>", { desc = "Tmux Last Active" })
 map("n", "<C-Space>", "<cmd>NvimTmuxNavigateNext<cr>", { desc = "Tmux Next" })
+
+----------------------------------------------------------------------
+--                      Applications                                --
+----------------------------------------------------------------------
+
+map("n", "<leader>Af", "<cmd>Feed<cr>", { desc = "RSS Feed" })
 
 ----------------------------------------------------------------------
 --                              Buffer                              --
@@ -170,8 +176,15 @@ map("n", "<leader>gg", function() require("lazygit-confirm").confirm() end, { de
 
 
 ----------------------------------------------------------------------
---                         Taskwarrior
+--                         My
 ----------------------------------------------------------------------
+
+map('n', '<leader>mm', function()
+  vim.cmd('write')
+  local input = vim.fn.expand('%:p')
+  local output = vim.fn.expand('%:p:r') .. '.md'
+  vim.cmd('!pandoc "' .. input .. '" -f org -t markdown -o "' .. output .. '"')
+end, { desc = "Convert Org to Markdown with Pandoc" })
 
 
 ----------------------------------------------------------------------
