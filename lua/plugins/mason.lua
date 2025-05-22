@@ -11,9 +11,6 @@ return {
   opts = {
     ensure_installed = {
       "templ",
-      "html-lsp",
-      "htmx-lsp",
-      "tailwindcss-language-server",
       "harper-ls",
     },
   },
