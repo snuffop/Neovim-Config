@@ -21,7 +21,6 @@ vim.keymap.set("i", "kj", "<ESC>", { silent = true })
 
 vim.keymap.set({ "n", "v", "i" }, "<M-q>", "<cmd>qa<cr>", { desc = "[P]Quit All" })
 
-
 ----------------------------------------------------------------------
 --                   Snippet Jump in insert mode                    --
 ----------------------------------------------------------------------
@@ -225,7 +224,6 @@ map("n", "<leader>nh", function() Snacks.picker.notifications() end, { desc = "N
 --                         Search Telescope                         --
 ----------------------------------------------------------------------
 
-map("n", "<leader>sp", "<cmd>Telescope projects<cr>", { desc = "Search projects" })
 map("n", "<leader>sf", "<cmd>Telescope filetypes<cr>", { desc = "Search Filetype" })
 map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
 
