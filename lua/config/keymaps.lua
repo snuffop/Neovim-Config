@@ -173,17 +173,23 @@ map("n", "<leader>fS", "<cmd>w !sudo tee %<CR>", { desc = "Sudo Write" })
 map("n", "<leader>gT", "<cmd>Tardis<cr>", { desc = "Tardis (TimeMachine)" })
 map("n", "<leader>gm", "<cmd>GitMessenger<cr>", { desc = "Git Messenger" })
 map("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit" })
-
+map("n", "<leader>gv",  function()
+    if next(require('diffview.lib').views) == nil then
+        vim.cmd('DiffviewOpen')
+    else
+        vim.cmd('DiffviewClose')
+    end
+end, { desc = "Git DiffView" })
 
 ----------------------------------------------------------------------
 --                         My
 ----------------------------------------------------------------------
 
 map('n', '<leader>mm', function()
-  vim.cmd('write')
-  local input = vim.fn.expand('%:p')
-  local output = vim.fn.expand('%:p:r') .. '.md'
-  vim.cmd('!pandoc "' .. input .. '" -f org -t markdown -o "' .. output .. '"')
+    vim.cmd('write')
+    local input = vim.fn.expand('%:p')
+    local output = vim.fn.expand('%:p:r') .. '.md'
+    vim.cmd('!pandoc "' .. input .. '" -f org -t markdown -o "' .. output .. '"')
 end, { desc = "Convert Org to Markdown with Pandoc" })
 
 map('n', '<leader>mrm', "<cmd>RecallMark<cr>", { desc = "Recall Mark" })
@@ -211,14 +217,14 @@ map("n", "<leader>nzz", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", { desc = "
 
 -- Key map from copilot. son of a bitch. it worked.
 vim.keymap.set("n", "<leader>nzj", function()
-  local file = vim.fn.system("daily-file.sh")
-  file = vim.fn.trim(file) -- Remove any trailing newline characters
-  if vim.fn.filereadable(file) == 1 then
-    vim.cmd("edit " .. file)
-  else
-    print("File not found: " .. file)
-    require("zk.commands").get("ZkNew")({ dir = "journals" })
-  end
+    local file = vim.fn.system("daily-file.sh")
+    file = vim.fn.trim(file) -- Remove any trailing newline characters
+    if vim.fn.filereadable(file) == 1 then
+        vim.cmd("edit " .. file)
+    else
+        print("File not found: " .. file)
+        require("zk.commands").get("ZkNew")({ dir = "journals" })
+    end
 end, { desc = "Open file from script" })
 
 map("v", "<leader>nzf", "<Cmd>:'<,'>ZkMatch<CR>", { desc = "ZK Match" })
