@@ -171,7 +171,7 @@ map("n", "<leader>fS", "<cmd>w !sudo tee %<CR>", { desc = "Sudo Write" })
 
 map("n", "<leader>gT", "<cmd>Tardis<cr>", { desc = "Tardis (TimeMachine)" })
 map("n", "<leader>gm", "<cmd>GitMessenger<cr>", { desc = "Git Messenger" })
-map("n", "<leader>gg", "<cmd>Neogit cwd=%:p:h<cr>", { desc = "Neogit" })
+map("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Neogit" })
 
 
 ----------------------------------------------------------------------
