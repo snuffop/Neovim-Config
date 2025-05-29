@@ -107,6 +107,7 @@ wk.add({
     { "<leader>no", group = "+Open"},
     { "<leader>m", group = "+My"},
     { "<leader>mt", group = "+NeoWarrior"},
+    { "<leader>mr", group = "+Recall"},
 })
 
 local map = LazyVim.safe_keymap_set
@@ -185,6 +186,9 @@ map('n', '<leader>mm', function()
   vim.cmd('!pandoc "' .. input .. '" -f org -t markdown -o "' .. output .. '"')
 end, { desc = "Convert Org to Markdown with Pandoc" })
 
+map('n', '<leader>mrm', "<cmd>RecallMark<cr>", { desc = "Recall Mark" })
+map('n', '<leader>mru', "<cmd>RecallUnmark<cr>", { desc = "Recall Unmark" })
+map('n', '<leader>mru', "<cmd>RecallToggle<cr>", { desc = "Recall Toggle" })
 
 ----------------------------------------------------------------------
 --                              Notes                               --
