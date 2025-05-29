@@ -20,7 +20,7 @@ return {
         "folke/tokyonight.nvim",
         enable = true,
         opts = { 
-            style = "moon",
+            style = "night",
             transparent = true,
         },
     },
