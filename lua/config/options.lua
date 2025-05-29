@@ -106,7 +106,4 @@ vim.diagnostic.enable(false)
 
 vim.g.lazyvim_prettier_needs_config = true
 
-vim.o.shadafile = "$HOME/.config/nvim/project.shada"
-
-
 --EOF

@@ -233,6 +233,8 @@ map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
 
 map("n", "<leader>uM", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" })
 map("n", "<leader>un", function() Snacks.notifier.hide() end, { desc = "Dismiss All Notification" })
+map("n", "<leader>uB", "<cmd>GitBlameToggle<cr>", { desc = "Toggle Git Blame" })
+
 
 local query=vim.treesitter.query.parse('markdown','((atx_heading) @header)')
 vim.keymap.set('n',']h',function ()
