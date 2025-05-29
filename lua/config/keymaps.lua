@@ -188,7 +188,10 @@ end, { desc = "Convert Org to Markdown with Pandoc" })
 
 map('n', '<leader>mrm', "<cmd>RecallMark<cr>", { desc = "Recall Mark" })
 map('n', '<leader>mru', "<cmd>RecallUnmark<cr>", { desc = "Recall Unmark" })
-map('n', '<leader>mru', "<cmd>RecallToggle<cr>", { desc = "Recall Toggle" })
+map('n', '<leader>mrt', "<cmd>RecallToggle<cr>", { desc = "Recall Toggle" })
+map('n', '<leader>mr[', "<cmd>RecallPrevious<cr>", { desc = "Recall Previous" })
+map('n', '<leader>mr]', "<cmd>RecallNext<cr>", { desc = "Recall Next" })
+map('n', '<leader>mrc', "<cmd>RecallClear<cr>", { desc = "Recall Clear" })
 
 ----------------------------------------------------------------------
 --                              Notes                               --
