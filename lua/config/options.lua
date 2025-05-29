@@ -106,4 +106,8 @@ vim.diagnostic.enable(false)
 
 vim.g.lazyvim_prettier_needs_config = true
 
+vim.o.exrc = true
+vim.o.secure = true
+vim.o.shadafile = ".vim/project.shada"
+
 --EOF
