@@ -99,7 +99,6 @@ vim.api.nvim_set_keymap('n', 'gcC', ":lua require('nvim-comment-frame').add_mult
 
 local wk = require("which-key")
 wk.add({
-    { "<leader>A", group = "+Applications"},
     { "<leader>n", group = "+Notes"},
     { "<leader>R", group = "+Reload"},
     { "<leader>nb", group = "+Bridge"},
@@ -137,8 +136,6 @@ map("n", "<C-Space>", "<cmd>NvimTmuxNavigateNext<cr>", { desc = "Tmux Next" })
 ----------------------------------------------------------------------
 --                      Applications                                --
 ----------------------------------------------------------------------
-
-map("n", "<leader>Af", "<cmd>Feed<cr>", { desc = "RSS Feed" })
 
 ----------------------------------------------------------------------
 --                              Buffer                              --
