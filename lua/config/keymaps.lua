@@ -230,6 +230,7 @@ map("v", "<leader>nzi", "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>", { desc = "ZK I
 map("v", "<leader>nzN", "<Cmd>'<,'>ZkNewFromTitleSelection<CR>", { desc = "ZK New" })
 
 map("n", "<leader>nh", function() Snacks.picker.notifications() end, { desc = "Notification History" })
+map("n", "<leader>fP", function() Snacks.picker.projects() end, { desc = "Projects" })
 
 ----------------------------------------------------------------------
 --                         Search Telescope                         --
