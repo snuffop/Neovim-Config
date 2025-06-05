@@ -106,6 +106,9 @@ vim.diagnostic.enable(false)
 
 vim.g.lazyvim_prettier_needs_config = true
 
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+
 vim.opt.exrc = true
 vim.opt.secure = true
 vim.opt.shadafile = ".vim/project.shada"

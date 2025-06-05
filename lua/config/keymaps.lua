@@ -101,12 +101,14 @@ local wk = require("which-key")
 wk.add({
     { "<leader>n", group = "+Notes"},
     { "<leader>R", group = "+Reload"},
-    { "<leader>nb", group = "+Bridge"},
-    { "<leader>nd", group = "+Daily"},
-    { "<leader>no", group = "+Open"},
-    { "<leader>m", group = "+My"},
-    { "<leader>mt", group = "+NeoWarrior"},
-    { "<leader>mr", group = "+Recall"},
+    { "<leader>nz", group = "+ZK"},
+    { "<leader>o", group = "+Org-Mode"},
+    { "<leader>ob", group = "+Org-Babel"},
+    { "<leader>od", group = "+Org Date"},
+    { "<leader>oi", group = "+Org Insert"},
+    { "<leader>ol", group = "+Org Link"},
+    { "<leader>on", group = "+Org Note"},
+    { "<leader>ox", group = "+Org Misc"},
 })
 
 local map = LazyVim.safe_keymap_set

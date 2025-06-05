@@ -29,5 +29,6 @@ return {
             "promql",
             "glsl",
         },
+        ignore_install = { 'org' },
     },
 }
