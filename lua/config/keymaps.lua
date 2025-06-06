@@ -99,7 +99,6 @@ vim.api.nvim_set_keymap('n', 'gcC', ":lua require('nvim-comment-frame').add_mult
 
 local wk = require("which-key")
 wk.add({
-    { "<leader>C", group = "+Continue"},
     { "<leader>n", group = "+Notes"},
     { "<leader>R", group = "+Reload"},
     { "<leader>nz", group = "+ZK"},
@@ -151,16 +150,6 @@ map("n", "<C-Space>", "<cmd>NvimTmuxNavigateNext<cr>", { desc = "Tmux Next" })
 
 map("n", "<leader>cj", "<cmd>lua require('jq').run()<cr>", { desc = "JQ Interface" })
 
-
-----------------------------------------------------------------------
---                                C                                 --
-----------------------------------------------------------------------
-
-map("n", "<leader>Cc", '"<cmd>ContinueToggleAutoSave<cr>', { desc = 'Continue Toggle Auto Save'})
-map("n", "<leader>Cl", '"<cmd>ContinueLoad<cr>', { desc = 'Continue Load Session'})
-map("n", "<leader>Cs", '"<cmd>ContinueSave<cr>', { desc = 'Continue Save Session'})
-map("n", "<leader>Cd", '"<cmd>ContinueDelete<cr>', { desc = 'Continue Delete Session'})
-map("n", "<leader>CC", '"<cmd>ContinueSearch<cr>', { desc = 'Continue Search Sessions'})
 
 ----------------------------------------------------------------------
 --                                D                                 --
