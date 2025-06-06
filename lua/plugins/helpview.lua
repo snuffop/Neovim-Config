@@ -2,10 +2,9 @@
 --  │ Marty Buchaus Neovim Configuration                       │
 --  ╰──────────────────────────────────────────────────────────╯
 
+-- https://github.com/OXY2DEV/helpview.nvim
+
 return {
     "OXY2DEV/helpview.nvim",
-    lazy = false, -- Recommended
-    dependencies = {
-        "nvim-treesitter/nvim-treesitter"
-    }
+    lazy = false, 
 }
