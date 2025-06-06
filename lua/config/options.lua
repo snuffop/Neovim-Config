@@ -15,7 +15,6 @@ vim.g.maplocalleader = ","
 vim.g.snacks_animate = true
 vim.g.lazyvim_picker = "snacks"
 
-
 ----------------------------------------------------------------------
 --                           Auto Format                            --
 ----------------------------------------------------------------------
@@ -41,7 +40,6 @@ vim.o.softtabstop = 4
 vim.o.tabstop = 4
 vim.o.termguicolors = true
 vim.o.textwidth = 100
-
 
 ----------------------------------------------------------------------
 --                             Conceal                              --
