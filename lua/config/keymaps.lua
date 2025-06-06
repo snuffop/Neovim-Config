@@ -86,6 +86,7 @@ vim.keymap.set('n', 'gK', '<cmd>Treewalker SwapUp<cr>', { silent = true })
 vim.keymap.set('n', 'gJ', '<cmd>Treewalker SwapDown<cr>', { silent = true })
 vim.keymap.set('n', 'gH', '<cmd>Treewalker SwapLeft<cr>', { silent = true })
 vim.keymap.set('n', 'gL', '<cmd>Treewalker SwapRight<cr>', { silent = true })
+
 ----------------------------------------------------------------------
 --                          Comment Block                           --
 ----------------------------------------------------------------------
@@ -113,9 +114,10 @@ wk.add({
 
 local map = LazyVim.safe_keymap_set
 
---======================================================================
---                           Leader Maps                            --
---======================================================================
+----------------------------------------------------------------------
+--                       Leader Based Keymaps                       --
+----------------------------------------------------------------------
+
 
 ----------------------------------------------------------------------
 --                               TAB                                --
@@ -134,14 +136,6 @@ map("n", "<C-k>", "<cmd>NvimTmuxNavigateUp<cr>", { desc = "Tmux Up" })
 map("n", "<C-l>", "<cmd>NvimTmuxNavigateRight<cr>", { desc = "Tmux Right" })
 map("n", "<C-\\>", "<cmd>NvimTmuxNavigateLastActive<cr>", { desc = "Tmux Last Active" })
 map("n", "<C-Space>", "<cmd>NvimTmuxNavigateNext<cr>", { desc = "Tmux Next" })
-
-----------------------------------------------------------------------
---                      Applications                                --
-----------------------------------------------------------------------
-
-----------------------------------------------------------------------
---                              Buffer                              --
-----------------------------------------------------------------------
 
 
 ----------------------------------------------------------------------
@@ -180,10 +174,13 @@ map("n", "<leader>gv",  function()
         vim.cmd('DiffviewClose')
     end
 end, { desc = "Git DiffView" })
+map("n", "<leader>gg", function()
+    require("lazygit-confirm").confirm()
+end, { noremap = true, desc = "LazyGit /w confirm"})
 
-----------------------------------------------------------------------
---                         My
-----------------------------------------------------------------------
+    ----------------------------------------------------------------------
+    --                    My Open Functions keymaps                     --
+    ----------------------------------------------------------------------
 
 map('n', '<leader>mm', function()
     vim.cmd('write')
@@ -192,47 +189,40 @@ map('n', '<leader>mm', function()
     vim.cmd('!pandoc "' .. input .. '" -f org -t markdown -o "' .. output .. '"')
 end, { desc = "Convert Org to Markdown with Pandoc" })
 
-map('n', '<leader>mrm', "<cmd>RecallMark<cr>", { desc = "Recall Mark" })
-map('n', '<leader>mru', "<cmd>RecallUnmark<cr>", { desc = "Recall Unmark" })
-map('n', '<leader>mrt', "<cmd>RecallToggle<cr>", { desc = "Recall Toggle" })
-map('n', '<leader>mr[', "<cmd>RecallPrevious<cr>", { desc = "Recall Previous" })
-map('n', '<leader>mr]', "<cmd>RecallNext<cr>", { desc = "Recall Next" })
-map('n', '<leader>mrc', "<cmd>RecallClear<cr>", { desc = "Recall Clear" })
-
 ----------------------------------------------------------------------
 --                              Notes                               --
 ----------------------------------------------------------------------
-map("n", "<leader>nzoi", "<cmd>e ~/Zettelkasten/Inbox/inbox.md<cr>", { desc = "Open INBOX" })
-map("n", "<leader>nzog", "<cmd>e ~/Zettelkasten/Inbox/tasks.md<cr>", { desc = "Open Tasks" })
-
-map("n", "<leader>nzI", "<Cmd>ZkIndex<CR>", { desc = "ZK index" })
-map("n", "<leader>nzN", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { desc = "ZK New" })
-map("n", "<leader>nzb", "<Cmd>ZkBacklinks<CR>", { desc = "ZK Backlinks" })
-map("n", "<leader>nzc", "<Cmd>ZkCd<CR>", { desc = "ZK cd" })
-map("n", "<leader>nzi", "<Cmd>ZkInsertLink<CR>", { desc = "ZK Insert Link" })
-map("n", "<leader>nzl", "<Cmd>ZkLinks<CR>", { desc = "ZK Links" })
-map("n", "<leader>nzr", "<Cmd>ZkNotes { createdAfter = '3 days ago' }<CR>", { desc = "ZK Recent" })
-map("n", "<leader>nzt", "<Cmd>ZkTags<CR>", { desc = "ZK Tags" })
-map("n", "<leader>nzz", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", { desc = "ZK Notes" })
-
--- Key map from copilot. son of a bitch. it worked.
-vim.keymap.set("n", "<leader>nzj", function()
-    local file = vim.fn.system("daily-file.sh")
-    file = vim.fn.trim(file) -- Remove any trailing newline characters
-    if vim.fn.filereadable(file) == 1 then
-        vim.cmd("edit " .. file)
-    else
-        print("File not found: " .. file)
-        require("zk.commands").get("ZkNew")({ dir = "journals" })
-    end
-end, { desc = "Open file from script" })
-
-map("v", "<leader>nzf", "<Cmd>:'<,'>ZkMatch<CR>", { desc = "ZK Match" })
-map("v", "<leader>nzi", "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>", { desc = "ZK Insert Link" })
-map("v", "<leader>nzN", "<Cmd>'<,'>ZkNewFromTitleSelection<CR>", { desc = "ZK New" })
-
-map("n", "<leader>nh", function() Snacks.picker.notifications() end, { desc = "Notification History" })
-map("n", "<leader>fP", function() Snacks.picker.projects() end, { desc = "Projects" })
+-- map("n", "<leader>nzoi", "<cmd>e ~/Zettelkasten/Inbox/inbox.md<cr>", { desc = "Open INBOX" })
+-- map("n", "<leader>nzog", "<cmd>e ~/Zettelkasten/Inbox/tasks.md<cr>", { desc = "Open Tasks" })
+--
+-- map("n", "<leader>nzI", "<Cmd>ZkIndex<CR>", { desc = "ZK index" })
+-- map("n", "<leader>nzN", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { desc = "ZK New" })
+-- map("n", "<leader>nzb", "<Cmd>ZkBacklinks<CR>", { desc = "ZK Backlinks" })
+-- map("n", "<leader>nzc", "<Cmd>ZkCd<CR>", { desc = "ZK cd" })
+-- map("n", "<leader>nzi", "<Cmd>ZkInsertLink<CR>", { desc = "ZK Insert Link" })
+-- map("n", "<leader>nzl", "<Cmd>ZkLinks<CR>", { desc = "ZK Links" })
+-- map("n", "<leader>nzr", "<Cmd>ZkNotes { createdAfter = '3 days ago' }<CR>", { desc = "ZK Recent" })
+-- map("n", "<leader>nzt", "<Cmd>ZkTags<CR>", { desc = "ZK Tags" })
+-- map("n", "<leader>nzz", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", { desc = "ZK Notes" })
+--
+-- -- Key map from copilot. son of a bitch. it worked.
+-- vim.keymap.set("n", "<leader>nzj", function()
+--     local file = vim.fn.system("daily-file.sh")
+--     file = vim.fn.trim(file) -- Remove any trailing newline characters
+--     if vim.fn.filereadable(file) == 1 then
+--         vim.cmd("edit " .. file)
+--     else
+--         print("File not found: " .. file)
+--         require("zk.commands").get("ZkNew")({ dir = "journals" })
+--     end
+-- end, { desc = "Open file from script" })
+--
+-- map("v", "<leader>nzf", "<Cmd>:'<,'>ZkMatch<CR>", { desc = "ZK Match" })
+-- map("v", "<leader>nzi", "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>", { desc = "ZK Insert Link" })
+-- map("v", "<leader>nzN", "<Cmd>'<,'>ZkNewFromTitleSelection<CR>", { desc = "ZK New" })
+--
+-- map("n", "<leader>nh", function() Snacks.picker.notifications() end, { desc = "Notification History" })
+-- map("n", "<leader>fP", function() Snacks.picker.projects() end, { desc = "Projects" })
 
 ----------------------------------------------------------------------
 --                         Search Telescope                         --
