@@ -223,7 +223,7 @@ end, { desc = "Convert Org to Markdown with Pandoc" })
 --
 -- map("n", "<leader>nh", function() Snacks.picker.notifications() end, { desc = "Notification History" })
 -- map("n", "<leader>fP", function() Snacks.picker.projects() end, { desc = "Projects" })
-
+--
 ----------------------------------------------------------------------
 --                         Search Telescope                         --
 ----------------------------------------------------------------------
