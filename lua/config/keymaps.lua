@@ -103,6 +103,7 @@ wk.add({
     { "<leader>n", group = "+Notes"},
     { "<leader>R", group = "+Reload"},
     { "<leader>nz", group = "+ZK"},
+    { "<leader>T", group = "+Checkmate"},
     { "<leader>o", group = "+Org-Mode"},
     { "<leader>ob", group = "+Org-Babel"},
     { "<leader>od", group = "+Org Date"},
