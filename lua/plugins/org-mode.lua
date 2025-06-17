@@ -106,6 +106,9 @@ return {
                     global = {
                         org_capture = {'gC', desc = "Org Capture"},
                     },
+                    capture = {
+                        org_capture_finalize = "<C-c><C-c>",
+                    },
                     org = {
                         org_refile = {"<localleader>r", desc = "Refile"},
                         org_clock_in = {"<localleader>ci", desc = "Clock In"},
