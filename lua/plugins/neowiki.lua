@@ -8,8 +8,8 @@ return {
     opts = {
         wiki_dirs = {
             -- neowiki.nvim supports both absolute and relative paths
-            -- { name = "Work", path = "~/work/wiki" },
             { name = "Personal", path = "~/Nextcloud/Wiki" },
+            --{ name = "Joyent", path = "~/Nextcloud/Joyent/Wiki" },
         },
     },
     keys = {
