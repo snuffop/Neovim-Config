@@ -114,6 +114,24 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
   end,
 })
 
+-- Folding files and Persisting folds
+-- https://github.com/LazyVim/LazyVim/discussions/1358
+
+vim.api.nvim_create_autocmd("BufWinLeave", {
+  pattern = "*.*",
+  callback = function()
+    vim.cmd.mkview()
+  end,
+  group = save_fold,
+})
+
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  pattern = "*.*",
+  callback = function()
+    vim.cmd.loadview({ mods = { emsg_silent = true } })
+  end,
+  group = save_fold,
+})
 
 -- close some filetypes with <esc>
 vim.api.nvim_create_autocmd("FileType", {
@@ -155,4 +173,3 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {pattern = "markdown", command = "set awa"})
 -- Use the following if your buffer is set to become hidden
 vim.api.nvim_create_autocmd("BufLeave", {pattern = "*.md", command = "silent! wall"})
-

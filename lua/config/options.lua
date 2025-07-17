@@ -104,8 +104,11 @@ vim.diagnostic.enable(false)
 
 vim.g.lazyvim_prettier_needs_config = true
 
-vim.wo.foldmethod = 'expr'
-vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+-- vim.wo.foldmethod = 'expr'
+-- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldnestmax = 1
 
 vim.opt.exrc = true
 vim.opt.secure = true
