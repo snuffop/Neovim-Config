@@ -49,6 +49,8 @@ return {
                 },
             },
             harper_ls = {
+                enabled = true,
+                filetypes = { "markdown", "text" },
                 settings = {
                     ["harper-ls"] = {
                         userDictPath = "~/.config/nvim/spell/harper-dict.txt",
@@ -73,6 +75,12 @@ return {
                         },
                         codeActions = {
                             forceStable = true,
+                        },
+                        isolateEnglish = true,
+                        markdown = {
+                            -- [ignores this part]()
+                            -- [[ also ignores my marksman links ]]
+                            IgnoreLinkTitle = true,
                         },
                     },
                 },

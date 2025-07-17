@@ -117,27 +117,11 @@ wk.add({
 local map = LazyVim.safe_keymap_set
 
 ----------------------------------------------------------------------
---                       Leader Based Keymaps                       --
-----------------------------------------------------------------------
-
-
-----------------------------------------------------------------------
 --                               TAB                                --
 ----------------------------------------------------------------------
 
 map("n", "<leader><tab><tab>", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 map("n", "<leader><tab>n", "<cmd>tabnew<cr>", { desc = "New Tab" })
-
-----------------------------------------------------------------------
---                          Tmux Navigate                           --
-----------------------------------------------------------------------
-
-map("n", "<C-h>", "<cmd>NvimTmuxNavigateLeft<cr>", { desc = "Tmux Left" })
-map("n", "<C-j>", "<cmd>NvimTmuxNavigateDown<cr>", { desc = "Tmux Down" })
-map("n", "<C-k>", "<cmd>NvimTmuxNavigateUp<cr>", { desc = "Tmux Up" })
-map("n", "<C-l>", "<cmd>NvimTmuxNavigateRight<cr>", { desc = "Tmux Right" })
-map("n", "<C-\\>", "<cmd>NvimTmuxNavigateLastActive<cr>", { desc = "Tmux Last Active" })
-map("n", "<C-Space>", "<cmd>NvimTmuxNavigateNext<cr>", { desc = "Tmux Next" })
 
 
 ----------------------------------------------------------------------
