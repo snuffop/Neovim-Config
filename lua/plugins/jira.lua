@@ -4,6 +4,8 @@
 
 -- JIRA https://github.com/WillianPaiva/jira-nvim?tab=readme-ov-file#installation
 
+if vim.uv.os_gethostname() == "archzen" or vim.uv.os_gethostname() == "archovo" then
+
 local JIRA_URL = os.getenv("JIRA_DOMAIN") 
 local JIRA_EMAIL = os.getenv("JIRA_USER") 
 local JIRA_API_TOKEN = os.getenv("JIRA_API_TOKEN") 
@@ -129,3 +131,6 @@ return {
     },
   },
 }
+else
+  return {}
+end
