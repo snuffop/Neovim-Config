@@ -181,15 +181,6 @@ end, { desc = "Convert Org to Markdown with Pandoc" })
 map("n", "<leader>noi", "<cmd>e ~/Zettelkasten/Inbox/inbox.md<cr>", { desc = "Open INBOX" })
 map("n", "<leader>nog", "<cmd>e ~/Zettelkasten/Inbox/tasks.md<cr>", { desc = "Open Tasks" })
 
-map("n", "<leader>nzI", "<Cmd>ZkIndex<CR>", { desc = "ZK index" })
-map("n", "<leader>nzN", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", { desc = "ZK New" })
-map("n", "<leader>nzb", "<Cmd>ZkBacklinks<CR>", { desc = "ZK Backlinks" })
-map("n", "<leader>nzc", "<Cmd>ZkCd<CR>", { desc = "ZK cd" })
-map("n", "<leader>nzi", "<Cmd>ZkInsertLink<CR>", { desc = "ZK Insert Link" })
-map("n", "<leader>nzl", "<Cmd>ZkLinks<CR>", { desc = "ZK Links" })
-map("n", "<leader>nzr", "<Cmd>ZkNotes { createdAfter = '3 days ago' }<CR>", { desc = "ZK Recent" })
-map("n", "<leader>nzt", "<Cmd>ZkTags<CR>", { desc = "ZK Tags" })
-map("n", "<leader>nzz", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", { desc = "ZK Notes" })
 
 -- Key map from copilot. son of a bitch. it worked.
 vim.keymap.set("n", "<leader>nzj", function()
@@ -209,31 +200,7 @@ map("v", "<leader>nzN", "<Cmd>'<,'>ZkNewFromTitleSelection<CR>", { desc = "ZK Ne
 
 map("n", "<leader>nh", function() Snacks.picker.notifications() end, { desc = "Notification History" })
 map("n", "<leader>fP", function() Snacks.picker.projects() end, { desc = "Projects" })
---
--- map("n", "<leader>nL",  "<cmd>ObsidianLinkNew<cr>", { desc = "Link New" })
--- map("n", "<leader>nN",  "<cmd>ObsidianNew<cr>", { desc = "New Note" })
--- map("n", "<leader>nT",  "<cmd>ObsidianTemplate<cr>", { desc = "Add Template" })
--- map("n", "<leader>nbb", "<cmd>ObsidianBacklinks<cr>", { desc = "Find Backlinks" })
--- map("n", "<leader>nbt", "<cmd>ObsidianBridgeTelescopeCommand<cr>", { desc = "Bridge Telescope" })
--- map("n", "<leader>nbv", "<cmd>ObsidianBridgeOpenGraph<cr>", { desc = "Bridge Open Graph" })
--- map("n", "<leader>nbv", "<cmd>ObsidianBridgeOpenVaultMenu<cr>", { desc = "Bridge Vault Menu" })
--- map("n", "<leader>ndd", "<cmd>ObsidianDailies -30 2<cr>", { desc = "Open Dailies" })
--- map("n", "<leader>ndt", "<cmd>ObsidianToday<cr>", { desc = "Open Today" })
--- map("n", "<leader>ndw", "<cmd>ObsidianTomorrow<cr>", { desc = "Open Tomorrow" })
--- map("n", "<leader>ndy", "<cmd>ObsidianYesterday<cr>", { desc = "Open Yesterday" })
--- map("n", "<leader>nf",  "<cmd>ObsidianFollowLink<cr>", { desc = "Follow Link" })
--- map("n", "<leader>ng",  "<cmd>ObsidianTags<cr>", { desc = "Tags" })
--- map("n", "<leader>nl",  "<cmd>ObsidianLinks<cr>", { desc = "List Links" })
--- map("n", "<leader>nn",  "<cmd>ObsidianQuickSwitch<cr>", { desc = "Quick Switch" })
--- map("n", "<leader>noo", "<cmd>ObsidianOpen<cr>", { desc = "Open" })
--- map("n", "<leader>noi", "<cmd>e ~/Obsidian/default/0-Inbox/INBOX.md<cr>", { desc = "Open INBOX" })
--- map("n", "<leader>nog", "<cmd>e ~/Obsidian/default/0-Inbox/Tasks.md<cr>", { desc = "Open Tasks" })
--- map("n", "<leader>nr",  "<cmd>ObsidianRename<cr>", { desc = "Rename" })
--- map("n", "<leader>ns",  "<cmd>ObsidianSearch<cr>", { desc = "Search" })
--- map("n", "<leader>nt",  "<cmd>ObsidianToggleCheckbox<cr>", { desc = "Toggle Checkbox" })
--- map("n", "<leader>nx",  "<cmd>ObsidianExtractNote<cr>", { desc = "Extract Note" })
 
--- map("n", "<leader>nh", function() Snacks.picker.notifications() end, { desc = "Notification History" })
 ----------------------------------------------------------------------
 --                         Search Telescope                         --
 ----------------------------------------------------------------------
