@@ -30,7 +30,8 @@ return {
         })
 
         local zk = require("zk")
-        local commands = require("zk.commands")
+        local zk_ui = require("zk.ui")
+        local zk_commands = require("zk.commands")
         local function make_edit_fn(defaults, picker_options)
             return function(options)
                 options = vim.tbl_extend("force", defaults, options or {})
@@ -38,8 +39,8 @@ return {
             end
         end
 
-        commands.add("ZkOrphans", make_edit_fn({ orphan = true }, { title = "Zk Orphans" }))
-        commands.add("ZkRecents", make_edit_fn({ createdAfter = "2 weeks ago" }, { title = "Zk Recents" }))
+        zk_commands.add("ZkOrphans", make_edit_fn({ orphan = true }, { title = "Zk Orphans" }))
+        zk_commands.add("ZkRecents", make_edit_fn({ createdAfter = "2 weeks ago" }, { title = "Zk Recents" }))
 
         vim.api.nvim_create_user_command('ZkUpdate', function(opts)
             -- Get the Zettelkasten base directory from Neovim's expanded path
@@ -63,21 +64,71 @@ return {
                 require("zk.commands").get("ZkNew")({ dir = "journals" })
             end
         end, { desc = "ZK Daily Today" })
+
+        -- ZK Tags Picker (<leader>nzt)
+        vim.keymap.set("n", "<leader>nzt", function()
+            zk_commands.get("ZkTags")({}, function(tags)
+                zk_ui.pick_tags(tags, {}, function(selected)
+                    if selected then
+                        zk_commands.get("ZkNotes")({ tags = { selected } }, function(notes)
+                            zk_ui.pick_notes(notes, { title = "Notes with tag: " .. selected }, function(note)
+                                if note then
+                                    vim.cmd("edit " .. note.path)
+                                end
+                            end)
+                        end)
+                    end
+                end)
+            end)
+        end, { desc = "ZK Tags Picker" })
+
+        -- ZK All Notes Picker, sorted by modified (<leader>nzz)
+        vim.keymap.set("n", "<leader>nzz", function()
+            zk_commands.get("ZkNotes")({ sort = { "modified" } }, function(notes)
+                zk_ui.pick_notes(notes, { title = "ZK All Notes (by modified)" }, function(selected)
+                    if selected then
+                        vim.cmd("edit " .. selected.path)
+                    end
+                end)
+            end)
+        end, { desc = "ZK All Notes (sorted by modified)" })
+
+        -- ZK Recent Notes Picker (<leader>nzr)
+        vim.keymap.set("n", "<leader>nzr", function()
+            zk_commands.get("ZkNotes")({ createdAfter = '3 days ago' }, function(notes)
+                zk_ui.pick_notes(notes, { title = "ZK Recent Notes" }, function(selected)
+                    if selected then
+                        vim.cmd("edit " .. selected.path)
+                    end
+                end)
+            end)
+        end, { desc = "ZK Recent Notes" })
     end,
     keys = {
-        { '<leader>nzI', function() require('zk').index() end, desc = "ZK index" },
-        { '<leader>nzN', function() require('zk').new({ title = vim.fn.input('Title: ') }) end, desc = "ZK New" },
-        { '<leader>nzN', function() require('zk').new_from_title_selection() end, desc = "ZK New" },
         { '<leader>nzU', '<Cmd>ZkUpdate<CR>', desc = "ZK Git Update" },
+        { '<leader>nzN', function() require('zk').new({ title = vim.fn.input('Title: ') }) end, desc = "ZK New (Prompt)" },
         { '<leader>nzb', function() require('zk').backlinks() end, desc = "ZK Backlinks" },
-        { '<leader>nzc', function() require('zk').cd() end, desc = "ZK cd" },
-        { '<leader>nzf', function() require('zk').match() end, desc = "ZK Match" },
-        { '<leader>nzi', function() require('zk').insert_link() end, desc = "ZK Insert Link" },
-        { '<leader>nzi', function() require('zk').insert_link_at_selection() end, desc = "ZK Insert Link" },
+        { '<leader>nzc', function() require('zk').cd() end, desc = "ZK CD" },
+        { '<leader>nzi', function() require('zk').insert_link() end, desc = "ZK Insert Link (Picker)" },
         { '<leader>nzl', function() require('zk').links() end, desc = "ZK Links" },
-        { '<leader>nzr', function() require('zk').notes({ createdAfter = '3 days ago' }) end, desc = "ZK Recent" },
-        { '<leader>nzt', function() require('zk').tags() end, desc = "ZK Tags" },
-        { '<leader>nzz', function() require('zk').notes({ sort = { 'modified' } }) end, desc = "ZK Notes" },
-    }
+        { '<leader>nzI', function() require('zk').index() end, desc = "ZK Index" },
+        {
+            '<leader>nzf',
+            "<Cmd>:'<,'>ZkMatch<CR>",
+            mode = "v",
+            desc = "ZK Match (Visual Selection)",
+        },
+        {
+            '<leader>nzi', -- Re-using <leader>nzi for visual mode, as it's common for context-sensitive actions
+            "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>",
+            mode = "v",
+            desc = "ZK Insert Link (Visual Selection)",
+        },
+        {
+            '<leader>nzN', -- Re-using <leader>nzN for visual mode
+            "<Cmd>:'<,'>ZkNewFromTitleSelection<CR>",
+            mode = "v",
+            desc = "ZK New From Title (Visual Selection)",
+        },
+    },
 }
-
