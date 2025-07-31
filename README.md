@@ -1,4 +1,4 @@
-# Nvim/
+# Marty Buchaus' Neovim Configuration Based on LazyVim
 
 <a href="https://dotfyle.com/snuffop/nvim"><img src="https://dotfyle.com/snuffop/nvim/badges/plugins?style=flat" /></a>
 <a href="https://dotfyle.com/snuffop/nvim"><img src="https://dotfyle.com/snuffop/nvim/badges/leaderkey?style=flat" /></a>
