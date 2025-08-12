@@ -20,7 +20,11 @@ Open Neovim with this config:
 
 ```sh
 NVIM_APPNAME=snuffop/Nvim/ nvim
+
 ```
+
+## Notes:
+### Run 
 
 ## Plugins
 
