@@ -178,25 +178,7 @@ end, { desc = "Convert Org to Markdown with Pandoc" })
 ----------------------------------------------------------------------
 --                              Notes                               --
 ----------------------------------------------------------------------
-map("n", "<leader>noi", "<cmd>e ~/Zettelkasten/Inbox/inbox.md<cr>", { desc = "Open INBOX" })
-map("n", "<leader>nog", "<cmd>e ~/Zettelkasten/Inbox/tasks.md<cr>", { desc = "Open Tasks" })
 
-
--- Key map from copilot. son of a bitch. it worked.
-vim.keymap.set("n", "<leader>nzj", function()
-    local file = vim.fn.system("daily-file.sh")
-    file = vim.fn.trim(file) -- Remove any trailing newline characters
-    if vim.fn.filereadable(file) == 1 then
-        vim.cmd("edit " .. file)
-    else
-        print("File not found: " .. file)
-        require("zk.commands").get("ZkNew")({ dir = "journals" })
-    end
-end, { desc = "ZK Daily Today" })
-
-map("v", "<leader>nzf", "<Cmd>:'<,'>ZkMatch<CR>", { desc = "ZK Match" })
-map("v", "<leader>nzi", "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>", { desc = "ZK Insert Link" })
-map("v", "<leader>nzN", "<Cmd>'<,'>ZkNewFromTitleSelection<CR>", { desc = "ZK New" })
 
 map("n", "<leader>nh", function() Snacks.picker.notifications() end, { desc = "Notification History" })
 map("n", "<leader>fP", function() Snacks.picker.projects() end, { desc = "Projects" })
