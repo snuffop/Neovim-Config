@@ -5,142 +5,142 @@
 -- ZK config
 
 return {
-    "zk-org/zk-nvim",
-    lazy = false,
-    config = function ()
-        require("zk").setup({
-            picker = "snacks_picker",
-            picker_options = {
-                snacks_picker = {
-                    layout = {
-                        preset = "ivy",
-                    },
-                },
-            },
-            lsp = {
-                config = {
-                    name = "zk",
-                    cmd = {"zk", "lsp"},
-                    filetypes = { "markdown" },
-                }
-            },
-            auto_attach = {
-                enable = true,
-            }
-        })
-
-        local zk = require("zk")
-        local zk_ui = require("zk.ui")
-        local zk_commands = require("zk.commands")
-        local function make_edit_fn(defaults, picker_options)
-            return function(options)
-                options = vim.tbl_extend("force", defaults, options or {})
-                zk.edit(options, picker_options)
-            end
-        end
-
-        zk_commands.add("ZkOrphans", make_edit_fn({ orphan = true }, { title = "Zk Orphans" }))
-        zk_commands.add("ZkRecents", make_edit_fn({ createdAfter = "2 weeks ago" }, { title = "Zk Recents" }))
-
-        vim.api.nvim_create_user_command('ZkUpdate', function(opts)
-            -- Get the Zettelkasten base directory from Neovim's expanded path
-            -- This assumes ZK_NOTEBOOK_DIR is typically your main ~/Zettelkasten
-            local zk_dir = vim.fn.expand('~/Zettelkasten')
-            local commit_message = opts.args ~= '' and opts.args or 'updating'
-            local cmd_string = 'cd ' .. vim.shellescape(zk_dir) .. ' && git add -A && git commit -am ' .. vim.shellescape(commit_message) .. ' && git push && cd -'
-
-            print('Running Git Update for Zettelkasten...')
-            -- Use vim.cmd('term ...') to run in a terminal buffer for visibility
-            vim.cmd('split | term ' .. cmd_string)
-        end, { nargs = '?', complete = 'file', desc = 'ZK: Update Git Notebook' })
-
-        vim.keymap.set("n", "<leader>nzj", function()
-            local file = vim.fn.system("daily-file.sh")
-            file = vim.fn.trim(file) -- Remove any trailing newline characters
-            if vim.fn.filereadable(file) == 1 then
-                vim.cmd("edit " .. file)
-            else
-                print("File not found: " .. file)
-                require("zk.commands").get("ZkNew")({ dir = "journals" })
-            end
-        end, { desc = "ZK Daily Today" })
-
-        -- ZK Tags Picker (<leader>nzt)
-        vim.keymap.set("n", "<leader>nzt", function()
-            zk_commands.get("ZkTags")({}, function(tags)
-                zk_ui.pick_tags(tags, {}, function(selected)
-                    if selected then
-                        zk_commands.get("ZkNotes")({ tags = { selected } }, function(notes)
-                            zk_ui.pick_notes(notes, { title = "Notes with tag: " .. selected }, function(note)
-                                if note then
-                                    vim.cmd("edit " .. note.path)
-                                end
-                            end)
-                        end)
-                    end
-                end)
-            end)
-        end, { desc = "ZK Tags Picker" })
-
-        -- ZK All Notes Picker, sorted by modified (<leader>nzz)
-        vim.keymap.set("n", "<leader>nzz", function()
-            zk_commands.get("ZkNotes")({ sort = { "modified" } }, function(notes)
-                zk_ui.pick_notes(notes, { title = "ZK All Notes (by modified)" }, function(selected)
-                    if selected then
-                        vim.cmd("edit " .. selected.path)
-                    end
-                end)
-            end)
-        end, { desc = "ZK All Notes (sorted by modified)" })
-
-        -- ZK Recent Notes Picker (<leader>nzr)
-        vim.keymap.set("n", "<leader>nzr", function()
-            zk_commands.get("ZkNotes")({ createdAfter = '3 days ago' }, function(notes)
-                zk_ui.pick_notes(notes, { title = "ZK Recent Notes" }, function(selected)
-                    if selected then
-                        vim.cmd("edit " .. selected.path)
-                    end
-                end)
-            end)
-        end, { desc = "ZK Recent Notes" })
-    end,
-    keys = {
-        { '<leader>nzU', '<Cmd>ZkUpdate<CR>', desc = "ZK Git Update" },
-        { '<leader>nzN', function() require('zk').new({ title = vim.fn.input('Title: ') }) end, desc = "ZK New (Prompt)" },
-        { '<leader>nzc', function() require('zk').cd() end, desc = "ZK CD" },
-        { '<leader>nzI', function() require('zk').index() end, desc = "ZK Index" },
-        {   '<leader>nzl',
-            "<Cmd>ZkLinks<CR>",
-            mode = "n",
-            desc = "ZK Links"
-        },
-        {   '<leader>nzi', 
-            "<Cmd>ZkInsertLink<CR>",
-            mode = "n",
-            desc = "ZK Insert Link (Picker)", 
-        },
-        {   '<leader>nzb', 
-            "<Cmd>ZkBacklinks<CR>",
-            mode = "n",
-            desc = "ZK Backlinks",
-        },
-        {
-            '<leader>nzf',
-            "<Cmd>:'<,'>ZkMatch<CR>",
-            mode = "v",
-            desc = "ZK Match (Visual Selection)",
-        },
-        {
-            '<leader>nzi', -- Re-using <leader>nzi for visual mode, as it's common for context-sensitive actions
-            "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>",
-            mode = "v",
-            desc = "ZK Insert Link (Visual Selection)",
-        },
-        {
-            '<leader>nzN', -- Re-using <leader>nzN for visual mode
-            "<Cmd>:'<,'>ZkNewFromTitleSelection<CR>",
-            mode = "v",
-            desc = "ZK New From Title (Visual Selection)",
-        },
-    },
+--     "zk-org/zk-nvim",
+--     lazy = false,
+--     config = function ()
+--         require("zk").setup({
+--             picker = "snacks_picker",
+--             picker_options = {
+--                 snacks_picker = {
+--                     layout = {
+--                         preset = "ivy",
+--                     },
+--                 },
+--             },
+--             lsp = {
+--                 config = {
+--                     name = "zk",
+--                     cmd = {"zk", "lsp"},
+--                     filetypes = { "markdown" },
+--                 }
+--             },
+--             auto_attach = {
+--                 enable = true,
+--             }
+--         })
+--
+--         local zk = require("zk")
+--         local zk_ui = require("zk.ui")
+--         local zk_commands = require("zk.commands")
+--         local function make_edit_fn(defaults, picker_options)
+--             return function(options)
+--                 options = vim.tbl_extend("force", defaults, options or {})
+--                 zk.edit(options, picker_options)
+--             end
+--         end
+--
+--         zk_commands.add("ZkOrphans", make_edit_fn({ orphan = true }, { title = "Zk Orphans" }))
+--         zk_commands.add("ZkRecents", make_edit_fn({ createdAfter = "2 weeks ago" }, { title = "Zk Recents" }))
+--
+--         vim.api.nvim_create_user_command('ZkUpdate', function(opts)
+--             -- Get the Zettelkasten base directory from Neovim's expanded path
+--             -- This assumes ZK_NOTEBOOK_DIR is typically your main ~/Zettelkasten
+--             local zk_dir = vim.fn.expand('~/Zettelkasten')
+--             local commit_message = opts.args ~= '' and opts.args or 'updating'
+--             local cmd_string = 'cd ' .. vim.shellescape(zk_dir) .. ' && git add -A && git commit -am ' .. vim.shellescape(commit_message) .. ' && git push && cd -'
+--
+--             print('Running Git Update for Zettelkasten...')
+--             -- Use vim.cmd('term ...') to run in a terminal buffer for visibility
+--             vim.cmd('split | term ' .. cmd_string)
+--         end, { nargs = '?', complete = 'file', desc = 'ZK: Update Git Notebook' })
+--
+--         vim.keymap.set("n", "<leader>nzj", function()
+--             local file = vim.fn.system("daily-file.sh")
+--             file = vim.fn.trim(file) -- Remove any trailing newline characters
+--             if vim.fn.filereadable(file) == 1 then
+--                 vim.cmd("edit " .. file)
+--             else
+--                 print("File not found: " .. file)
+--                 require("zk.commands").get("ZkNew")({ dir = "journals" })
+--             end
+--         end, { desc = "ZK Daily Today" })
+--
+--         -- ZK Tags Picker (<leader>nzt)
+--         vim.keymap.set("n", "<leader>nzt", function()
+--             zk_commands.get("ZkTags")({}, function(tags)
+--                 zk_ui.pick_tags(tags, {}, function(selected)
+--                     if selected then
+--                         zk_commands.get("ZkNotes")({ tags = { selected } }, function(notes)
+--                             zk_ui.pick_notes(notes, { title = "Notes with tag: " .. selected }, function(note)
+--                                 if note then
+--                                     vim.cmd("edit " .. note.path)
+--                                 end
+--                             end)
+--                         end)
+--                     end
+--                 end)
+--             end)
+--         end, { desc = "ZK Tags Picker" })
+--
+--         -- ZK All Notes Picker, sorted by modified (<leader>nzz)
+--         vim.keymap.set("n", "<leader>nzz", function()
+--             zk_commands.get("ZkNotes")({ sort = { "modified" } }, function(notes)
+--                 zk_ui.pick_notes(notes, { title = "ZK All Notes (by modified)" }, function(selected)
+--                     if selected then
+--                         vim.cmd("edit " .. selected.path)
+--                     end
+--                 end)
+--             end)
+--         end, { desc = "ZK All Notes (sorted by modified)" })
+--
+--         -- ZK Recent Notes Picker (<leader>nzr)
+--         vim.keymap.set("n", "<leader>nzr", function()
+--             zk_commands.get("ZkNotes")({ createdAfter = '3 days ago' }, function(notes)
+--                 zk_ui.pick_notes(notes, { title = "ZK Recent Notes" }, function(selected)
+--                     if selected then
+--                         vim.cmd("edit " .. selected.path)
+--                     end
+--                 end)
+--             end)
+--         end, { desc = "ZK Recent Notes" })
+--     end,
+--     keys = {
+--         { '<leader>nzU', '<Cmd>ZkUpdate<CR>', desc = "ZK Git Update" },
+--         { '<leader>nzN', function() require('zk').new({ title = vim.fn.input('Title: ') }) end, desc = "ZK New (Prompt)" },
+--         { '<leader>nzc', function() require('zk').cd() end, desc = "ZK CD" },
+--         { '<leader>nzI', function() require('zk').index() end, desc = "ZK Index" },
+--         {   '<leader>nzl',
+--             "<Cmd>ZkLinks<CR>",
+--             mode = "n",
+--             desc = "ZK Links"
+--         },
+--         {   '<leader>nzi', 
+--             "<Cmd>ZkInsertLink<CR>",
+--             mode = "n",
+--             desc = "ZK Insert Link (Picker)", 
+--         },
+--         {   '<leader>nzb', 
+--             "<Cmd>ZkBacklinks<CR>",
+--             mode = "n",
+--             desc = "ZK Backlinks",
+--         },
+--         {
+--             '<leader>nzf',
+--             "<Cmd>:'<,'>ZkMatch<CR>",
+--             mode = "v",
+--             desc = "ZK Match (Visual Selection)",
+--         },
+--         {
+--             '<leader>nzi', -- Re-using <leader>nzi for visual mode, as it's common for context-sensitive actions
+--             "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>",
+--             mode = "v",
+--             desc = "ZK Insert Link (Visual Selection)",
+--         },
+--         {
+--             '<leader>nzN', -- Re-using <leader>nzN for visual mode
+--             "<Cmd>:'<,'>ZkNewFromTitleSelection<CR>",
+--             mode = "v",
+--             desc = "ZK New From Title (Visual Selection)",
+--         },
+--     },
 }
