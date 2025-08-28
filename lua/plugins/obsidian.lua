@@ -109,7 +109,7 @@ return {
         { "<leader>nL",  "<cmd>ObsidianLinkNew<cr>",  desc = "Link New" },
         { "<leader>nT",  "<cmd>ObsidianTemplate<cr>",  desc = "Add Template" },
         { "<leader>nbb", "<cmd>ObsidianBacklinks<cr>",  desc = "Find Backlinks" },
-        { "<leader>nbt", "<cmd>ObsidianBridgeTelescopeCommand<cr>", desc = "Bridge Telescope" },
+        { "<leader>nbt", "<cmd>ObsidianBridgeTelescopeCommand<cr>",desc = "Bridge Telescope" },
         { "<leader>nbv", "<cmd>ObsidianBridgeOpenGraph<cr>",  desc = "Bridge Open Graph" },
         { "<leader>nbv", "<cmd>ObsidianBridgeOpenVaultMenu<cr>",  desc = "Bridge Vault Menu" },
         { "<leader>ndd", "<cmd>ObsidianDailies -30 2<cr>",  desc = "Open Dailies" },
