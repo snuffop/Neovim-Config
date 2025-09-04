@@ -146,6 +146,13 @@ map("n", "<leader>fo", "<cmd>FuzzyOil<cr>", { desc = "Fuzzy Oil" })
 map("n", "<leader>fs", "<cmd>up<cr>", { desc = "File Save" })
 map("n", "<leader>fS", "<cmd>w !sudo tee %<CR>", { desc = "Sudo Write" })
 
+-- Copy Path
+vim.keymap.set("n", "<leader>fC", function()
+  local path = vim.api.nvim_buf_get_name(0)
+  vim.fn.setreg("+", path) -- copy to system clipboard
+  print("Copied: " .. path)
+end, { desc = "Copy file path" })
+
 ----------------------------------------------------------------------
 --                               GIT                                --
 ----------------------------------------------------------------------
@@ -194,6 +201,7 @@ map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
 --                                UI                                --
 ----------------------------------------------------------------------
 
+map("n", "<leader>uH", "<cmd>Hardtime toggle<cr>", { desc = "Toggle Hardtime Mode"})
 map("n", "<leader>uM", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" })
 map("n", "<leader>un", function() Snacks.notifier.hide() end, { desc = "Dismiss All Notification" })
 map("n", "<leader>uB", "<cmd>GitBlameToggle<cr>", { desc = "Toggle Git Blame" })
@@ -223,7 +231,5 @@ vim.keymap.set('n',']h',function ()
     if not node then return end
     require'nvim-treesitter.ts_utils'.goto_node(node)
 end)
+
 -- EOF
-
-
-
