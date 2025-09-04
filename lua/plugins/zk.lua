@@ -103,6 +103,55 @@ return {
                 end)
             end)
         end, { desc = "ZK Recent Notes" })
+
+
+-- [[filename-stem|Title]] link inserter with zero side-effects
+do
+  local function insert(text)
+    vim.api.nvim_put({ text }, "c", true, true)
+  end
+
+  local function stem(path)
+    return vim.fn.fnamemodify(path, ":t:r")
+  end
+
+  local function list_notes()
+    -- path \t title
+    local lines = vim.fn.systemlist({ "zk", "list", "--format", "{{path}}\t{{title}}" })
+    local items = {}
+    for _, ln in ipairs(lines) do
+      local p, t = ln:match("^(.-)\t(.*)$")
+      if p and p ~= "" then
+        table.insert(items, { path = p, title = (t ~= "" and t) or stem(p) })
+      end
+    end
+    return items
+  end
+
+  local function pick_and_insert()
+    local items = list_notes()
+    if #items == 0 then
+      vim.notify("ZK: no notes found", vim.log.levels.WARN)
+      return
+    end
+    vim.ui.select(
+      items,
+      {
+        prompt = "Insert ZK link",
+        format_item = function(it) return string.format("%s — %s", it.title, it.path) end,
+      },
+      function(choice)
+        if not choice then return end
+        local link = string.format("[[%s|%s]]", stem(choice.path), choice.title)
+        insert(link)
+      end
+    )
+  end
+
+  vim.api.nvim_create_user_command("ZkInsertLinkWiki", pick_and_insert, {})
+  vim.keymap.set("n", "<leader>nzq", "<Cmd>ZkInsertLinkWiki<CR>", { desc = "ZK Insert Link ([[stem|title]])" })
+end
+
     end,
     keys = {
         { '<leader>nzU', '<Cmd>ZkUpdate<CR>', desc = "ZK Git Update" },

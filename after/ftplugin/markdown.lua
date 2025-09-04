@@ -5,7 +5,7 @@ if require("zk.util").notebook_root(vim.fn.expand('%:p')) ~= nil then
 
     -- Open the link under the caret.
     map("n", "<CR>", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
-    map("i", "<M-i>", "<Cmd>ZkInsertLink<CR>", opts)
+    map("i", "<M-i>", "<Cmd>ZkInsertLinkWiki<CR>", opts)
     -- Preview a linked note.
     map("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
 end
