@@ -8,7 +8,7 @@
 ----------------------------------------------------------------------
 return {
     {
-        "echasnovski/mini.files",
+        "nvim-mini/mini.files",
         opts = {
             windows = {
                 width_preview = 90 
@@ -20,7 +20,7 @@ return {
     },
 
     {
-        "echasnovski/mini.surround",
+        "nvim-mini/mini.surround",
         opts = {
             mappings = {
                 add = "gsa", -- Add surrounding in Normal and Visual modes
@@ -35,7 +35,7 @@ return {
     },
 
     {
-        "echasnovski/mini.pairs",
+        "nvim-mini/mini.pairs",
         event = "VeryLazy",
         opts = {
             modes = { insert = true, command = true, terminal = false },
@@ -55,34 +55,8 @@ return {
             })
         end,
     },
-    -- {
-    --     "echasnovski/mini.pairs",
-    --     event = "VeryLazy",
-    --     opts = {
-    --         modes = { insert = true, command = true, terminal = false },
-    --         -- skip autopair when next character is one of these
-    --         skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
-    --         -- skip autopair when the cursor is inside these treesitter nodes
-    --         skip_ts = { "string" },
-    --         -- skip autopair when next character is closing pair
-    --         -- and there are more closing pairs than opening pairs
-    --         skip_unbalanced = true,
-    --         -- better deal with markdown code blocks
-    --         markdown = true,
-    --         mappings = {
-    --             ["`"] = false,
-    --         },
-    --         rules = {
-    --
-    --         }
-    --     },
-    --     config = function(_, opts)
-    --         LazyVim.mini.pairs(opts)
-    --     end,
-    -- },
-
     {
-        "echasnovski/mini.indentscope",
+        "nvim-mini/mini.indentscope",
         version = false, -- wait till new 0.7.0 release to put it back on semver
         event = "LazyFile",
         opts = {
