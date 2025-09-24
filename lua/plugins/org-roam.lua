@@ -19,7 +19,7 @@ return {
             },
             extensions = {
                 dailies = {
-                    directory = "Daily",
+                    directory = "journals",
                 },
             },
             bindings = {
