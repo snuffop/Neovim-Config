@@ -2,6 +2,9 @@
 --  │ Marty Buchaus Neovim Configuration                       │
 --  ╰──────────────────────────────────────────────────────────╯
 
-vim.g.lazyvim_json = vim.fn.stdpath("config") .. "/etc/lazyvim.json"
+-- https://github.com/OXY2DEV/helpview.nvim
 
-require("config.lazy")
+return {
+    "OXY2DEV/helpview.nvim",
+    lazy = false, 
+}

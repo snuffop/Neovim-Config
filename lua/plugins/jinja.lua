@@ -2,6 +2,10 @@
 --  │ Marty Buchaus Neovim Configuration                       │
 --  ╰──────────────────────────────────────────────────────────╯
 
-vim.g.lazyvim_json = vim.fn.stdpath("config") .. "/etc/lazyvim.json"
+--   Jinja2 detect underlying file type as well
+--"Glench/Vim-Jinja2-Syntax",
 
-require("config.lazy")
+return {
+    "HiPhish/jinja.vim",
+    lazy = false,
+}

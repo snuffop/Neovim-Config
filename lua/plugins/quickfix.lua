@@ -2,6 +2,10 @@
 --  │ Marty Buchaus Neovim Configuration                       │
 --  ╰──────────────────────────────────────────────────────────╯
 
-vim.g.lazyvim_json = vim.fn.stdpath("config") .. "/etc/lazyvim.json"
-
-require("config.lazy")
+return {
+    "stevearc/quicker.nvim",
+    event = "FileType qf",
+    config = function ()
+        require("quicker").setup()
+    end,
+}

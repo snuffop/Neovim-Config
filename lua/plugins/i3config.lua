@@ -2,6 +2,8 @@
 --  │ Marty Buchaus Neovim Configuration                       │
 --  ╰──────────────────────────────────────────────────────────╯
 
-vim.g.lazyvim_json = vim.fn.stdpath("config") .. "/etc/lazyvim.json"
+-- I3 Config syntax etc
 
-require("config.lazy")
+return {
+    "mboughaba/i3config.vim",
+}
