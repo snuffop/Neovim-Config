@@ -6,3 +6,6 @@ debug
 foo.*
 *.log
 data
+etc/backup
+etc/undodir
+lazy-lock.json

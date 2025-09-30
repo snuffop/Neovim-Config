@@ -197,22 +197,20 @@ end, { desc = "Convert Org to Markdown with Pandoc" })
 map("n", "<leader>nh", function()
   Snacks.picker.notifications()
 end, { desc = "Notification History" })
-map("n", "<leader>fP", function()
-  Snacks.picker.projects()
-end, { desc = "Projects" })
+-- map("n", "<leader>fP", function()
+--   Snacks.picker.projects()
+-- end, { desc = "Projects" })
 
 ----------------------------------------------------------------------
 --                         Search Telescope                         --
 ----------------------------------------------------------------------
 
 map("n", "<leader>sf", "<cmd>Telescope filetypes<cr>", { desc = "Search Filetype" })
-map("n", "<leader>sN", "<cmd>Telescope nerdy<cr>", { desc = "Search Nerdy" })
 
 ----------------------------------------------------------------------
 --                                UI                                --
 ----------------------------------------------------------------------
 
-map("n", "<leader>uH", "<cmd>Hardtime toggle<cr>", { desc = "Toggle Hardtime Mode" })
 map("n", "<leader>uM", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" })
 map("n", "<leader>un", function()
   Snacks.notifier.hide()
