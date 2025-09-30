@@ -1,6 +1,8 @@
+tt.*
+.tests
 doc/tags
-etc/*
+debug
+.repro
+foo.*
 *.log
-lazy-lock.json
-lazyvim.json
-.envrc
+data
