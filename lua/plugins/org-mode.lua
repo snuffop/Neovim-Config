@@ -3,72 +3,72 @@
 --  ╰──────────────────────────────────────────────────────────╯
 
 return {
-        'nvim-orgmode/orgmode',
-        lazy = false,
-        ft = { 'org' },
-        dependencies = {
-            "danilshvalov/org-modern.nvim",
-            'nvim-orgmode/org-bullets.nvim',
-        },
-        config = function() 
-            local Menu = require("org-modern.menu")
-            require("orgmode").setup({
-                emacs_config = "~/.config/doom/config.el",
-                org_agenda_files = '~/Nextcloud/Org/Orgzly/**/*',
-                org_default_notes_file = '~/Nextcloud/Org/Orgzly/Inbox.org',
-                org_todo_keywords = {"TODO(t)", "STARTED(s)", "WAITING(w)", "DELEGATED(D)", "|", "ASSIGNED(a)", "CANCELLED(c)", "DONE(d)"},
-                org_todo_keyword_faces = {
-                    TODO       = ':foreground red     :weight bold',
-                    STARTED    = ':foreground #E35DBF :weight bold',
-                    WAITING    = ':foreground #008080 :weight bold',
-                    WAIT       = ':foreground #008080 :weight bold',
-                    DELEGATED  = ':foreground pink    :weight bold',
-                    CANCELLED  = ':foreground white   :weight bold',
-                    ASSIGNED   = ':foreground white   :weight bold',
-                    DONE       = ':foreground green   :weight bold',
-                },
-                org_startup_folded = "content",
-                org_startup_indented = true,
-                org_log_done = 'time',
-                org_hide_leading_stars = true,
-                org_log_repeat = true,
-                org_log_into_drawer = {"LOGBOOK"} ,
-                ui = {
-                    menu = {
-                        handler = function(data)
-                            Menu:new({
-                                window = {
-                                    margin = { 1, 0, 1, 0 },
-                                    padding = { 0, 1, 0, 1 },
-                                    title_pos = "center",
-                                    border = "single",
-                                    zindex = 1000,
-                                },
-                                icons = {
-                                    separator = "➜",
-                                },
-                            }):open(data)
-                        end,
-                    },
-                },
-                mappings = {
-                    global = {
-                        org_capture = {'gC', desc = "Org Capture"},
-                    },
-                    org = {
-                        org_refile = {"<localleader>r", desc = "Refile"},
-                        org_clock_in = {"<localleader>ci", desc = "Clock In"},
-                        org_clock_out = {"<localleader>co", desc = "Clock Out"},
-                        org_clock_cancel = {"<localleader>cc", desc = "Clock Cancel"},
-                        org_clock_goto = {"<localleader>cj", desc = "Clock Goto"},
-                        org_todo = {"<localleader>tt", desc = "Org TODO"},
-                        org_todo_prev = "<localleader>tT",
-                        org_change_date = "<localleader>td",
-                        org_priority_up = "<localleader>tR",
-                        org_priority_down = "<localleader>tr",
-                    }
-                },
-            })
-            require('org-bullets').setup()
-        end,
+        -- 'nvim-orgmode/orgmode',
+        -- lazy = false,
+        -- ft = { 'org' },
+        -- dependencies = {
+        --     "danilshvalov/org-modern.nvim",
+        --     'nvim-orgmode/org-bullets.nvim',
+        -- },
+        -- config = function() 
+        --     local Menu = require("org-modern.menu")
+        --     require("orgmode").setup({
+        --         emacs_config = "~/.config/doom/config.el",
+        --         org_agenda_files = '~/Nextcloud/Org/Orgzly/**/*',
+        --         org_default_notes_file = '~/Nextcloud/Org/Orgzly/Inbox.org',
+        --         org_todo_keywords = {"TODO(t)", "STARTED(s)", "WAITING(w)", "DELEGATED(D)", "|", "ASSIGNED(a)", "CANCELLED(c)", "DONE(d)"},
+        --         org_todo_keyword_faces = {
+        --             TODO       = ':foreground red     :weight bold',
+        --             STARTED    = ':foreground #E35DBF :weight bold',
+        --             WAITING    = ':foreground #008080 :weight bold',
+        --             WAIT       = ':foreground #008080 :weight bold',
+        --             DELEGATED  = ':foreground pink    :weight bold',
+        --             CANCELLED  = ':foreground white   :weight bold',
+        --             ASSIGNED   = ':foreground white   :weight bold',
+        --             DONE       = ':foreground green   :weight bold',
+        --         },
+        --         org_startup_folded = "content",
+        --         org_startup_indented = true,
+        --         org_log_done = 'time',
+        --         org_hide_leading_stars = true,
+        --         org_log_repeat = true,
+        --         org_log_into_drawer = {"LOGBOOK"} ,
+        --         ui = {
+        --             menu = {
+        --                 handler = function(data)
+        --                     Menu:new({
+        --                         window = {
+        --                             margin = { 1, 0, 1, 0 },
+        --                             padding = { 0, 1, 0, 1 },
+        --                             title_pos = "center",
+        --                             border = "single",
+        --                             zindex = 1000,
+        --                         },
+        --                         icons = {
+        --                             separator = "➜",
+        --                         },
+        --                     }):open(data)
+        --                 end,
+        --             },
+        --         },
+        --         mappings = {
+        --             global = {
+        --                 org_capture = {'gC', desc = "Org Capture"},
+        --             },
+        --             org = {
+        --                 org_refile = {"<localleader>r", desc = "Refile"},
+        --                 org_clock_in = {"<localleader>ci", desc = "Clock In"},
+        --                 org_clock_out = {"<localleader>co", desc = "Clock Out"},
+        --                 org_clock_cancel = {"<localleader>cc", desc = "Clock Cancel"},
+        --                 org_clock_goto = {"<localleader>cj", desc = "Clock Goto"},
+        --                 org_todo = {"<localleader>tt", desc = "Org TODO"},
+        --                 org_todo_prev = "<localleader>tT",
+        --                 org_change_date = "<localleader>td",
+        --                 org_priority_up = "<localleader>tR",
+        --                 org_priority_down = "<localleader>tr",
+        --             }
+        --         },
+        --     })
+        --     require('org-bullets').setup()
+        -- end,
 }

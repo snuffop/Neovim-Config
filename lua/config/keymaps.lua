@@ -206,6 +206,7 @@ map("n", "<leader>uM", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" 
 map("n", "<leader>un", function() Snacks.notifier.hide() end, { desc = "Dismiss All Notification" })
 map("n", "<leader>uB", "<cmd>GitBlameToggle<cr>", { desc = "Toggle Git Blame" })
 
+
 -- Check if Marksman LSP is running, start it if not, otherwise restart lamw26wmal
 vim.keymap.set("n", "<leader>uR", function()
   local is_running = false

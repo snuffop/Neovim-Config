@@ -7,3 +7,4 @@ vim.g.general_info = {
   email = "marty@dabuke.com",
   github = "https://github.com/snuffop",
 }
+

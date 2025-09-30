@@ -4,9 +4,8 @@
 
 vim.g.mail = "marty@dabuke.com"
 vim.g.user = "Mbuchaus (Snuffop)"
-
-vim.g.mapleader = " "
 vim.g.maplocalleader = ","
+vim.g.mapleader = " "
 
 ----------------------------------------------------------------------
 --                           Snacks 
