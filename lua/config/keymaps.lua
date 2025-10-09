@@ -112,6 +112,7 @@ local wk = require("which-key")
 wk.add({
   { "<leader>R", group = "+Reload" },
   { "<leader>T", group = "+Checkmate" },
+  { "<leader>p", group = "+Projects" },
   { "<leader>z", group = "+ZK" },
   { "<leader>zn", group = "+ZK New" },
   { "<leader>z<space>", group = "+ZK Dailies" },
@@ -183,28 +184,11 @@ map("n", "<leader>mm", function()
   vim.cmd('!pandoc "' .. input .. '" -f org -t markdown -o "' .. output .. '"')
 end, { desc = "Convert Org to Markdown with Pandoc" })
 
-----------------------------------------------------------------------
---                              Notes                               --
-----------------------------------------------------------------------
-
-map("n", "<leader>nh", function()
-  Snacks.picker.notifications()
-end, { desc = "Notification History" })
--- map("n", "<leader>fP", function()
---   Snacks.picker.projects()
--- end, { desc = "Projects" })
-
-----------------------------------------------------------------------
---                         Search Telescope                         --
-----------------------------------------------------------------------
-
-map("n", "<leader>sf", "<cmd>Telescope filetypes<cr>", { desc = "Search Filetype" })
 
 ----------------------------------------------------------------------
 --                                UI                                --
 ----------------------------------------------------------------------
 
-map("n", "<leader>uM", "<cmd>TableModeToggle<cr>", { desc = "Toggle Table Mode" })
 map("n", "<leader>un", function()
   Snacks.notifier.hide()
 end, { desc = "Dismiss All Notification" })

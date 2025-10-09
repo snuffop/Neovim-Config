@@ -54,13 +54,14 @@ return {
             end
         end
 
-        local function zk_new(dir, opts)
-            opts = opts or {}
-            opts.dir = dir
-            -- use commands API (works across zk-nvim versions)
-            zk_commands.get("ZkNew")(opts)
+        local function zk_new_prompt(dir)
+            local title = vim.fn.input("Title: ")
+            if title == "" then return end
+            zk_commands.get("ZkNew")({
+                dir = dir,
+                title = title,
+            })
         end
-
         zk_commands.add("ZkOrphans", make_edit_fn({ orphan = true }, { title = "Zk Orphans" }))
         zk_commands.add("ZkRecents", make_edit_fn({ createdAfter = "2 weeks ago" }, { title = "Zk Recents" }))
 
@@ -87,7 +88,7 @@ return {
         end, { desc = "ZK: List all journal files" })
 
         -- ZK Tags Picker (<leader>nzt)
-        vim.keymap.set("n", "<leader>zt", function()
+        vim.keymap.set("n", "<leader>zts", function()
             zk_commands.get("ZkTags")({}, function(tags)
                 zk_ui.pick_tags(tags, {}, function(selected)
                     if selected then
@@ -136,6 +137,10 @@ return {
         vim.keymap.set("n", "<leader>znt", function()
             zk_new_prompt("Resources/TipJar")
         end, { desc = "ZK: New TipJar note (prompt title)" })
+
+        vim.keymap.set("n", "<leader>znc", function()
+            zk_new_prompt("Resources/Corporations")
+        end, { desc = "ZK: New Corporations note (prompt title)" })
 
         vim.keymap.set("n", "<leader>znj", function()
             zk_new_prompt("Area/Joyent")
