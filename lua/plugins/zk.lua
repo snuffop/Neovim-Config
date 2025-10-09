@@ -1,9 +1,10 @@
 --  ╭──────────────────────────────────────────────────────────╮
 --  │ Marty Buchaus Neovim Configuration                       │
 --  ╰──────────────────────────────────────────────────────────╯
-
+--
 -- ZK config
 --  LOG  2025 10 09  Update with Nextcloud Notes being the new location
+--
 
 return {
     "zk-org/zk-nvim",
@@ -45,11 +46,19 @@ return {
         local zk = require("zk")
         local zk_ui = require("zk.ui")
         local zk_commands = require("zk.commands")
+
         local function make_edit_fn(defaults, picker_options)
             return function(options)
                 options = vim.tbl_extend("force", defaults, options or {})
                 zk.edit(options, picker_options)
             end
+        end
+
+        local function zk_new(dir, opts)
+            opts = opts or {}
+            opts.dir = dir
+            -- use commands API (works across zk-nvim versions)
+            zk_commands.get("ZkNew")(opts)
         end
 
         zk_commands.add("ZkOrphans", make_edit_fn({ orphan = true }, { title = "Zk Orphans" }))
@@ -66,15 +75,19 @@ return {
             vim.cmd('split | term ' .. cmd_string)
         end, { nargs = '?', complete = 'file', desc = 'ZK: Update Git Notebook' })
 
-        vim.keymap.set("n", "<leader>nzj", function()
+        vim.keymap.set("n", "<leader>z<Space>z", function()
             require("zk.commands").get("ZkNew")({
                 dir = "journals",
                 title = os.date("%Y-%m-%d"),
             })
         end, { desc = "ZK: New journal note (today)" })
 
+        vim.keymap.set("n", "<leader>z<Space>d", function()
+            require("zk.commands").get("ZkNotes")({ dir = "journals" })
+        end, { desc = "ZK: List all journal files" })
+
         -- ZK Tags Picker (<leader>nzt)
-        vim.keymap.set("n", "<leader>nzt", function()
+        vim.keymap.set("n", "<leader>zt", function()
             zk_commands.get("ZkTags")({}, function(tags)
                 zk_ui.pick_tags(tags, {}, function(selected)
                     if selected then
@@ -91,7 +104,7 @@ return {
         end, { desc = "ZK Tags Picker" })
 
         -- ZK All Notes Picker, sorted by modified (<leader>nzz)
-        vim.keymap.set("n", "<leader>nzz", function()
+        vim.keymap.set("n", "<leader>zz", function()
             zk_commands.get("ZkNotes")({ sort = { "modified" } }, function(notes)
                 zk_ui.pick_notes(notes, { title = "ZK All Notes (by modified)" }, function(selected)
                     if selected then
@@ -102,7 +115,7 @@ return {
         end, { desc = "ZK All Notes (sorted by modified)" })
 
         -- ZK Recent Notes Picker (<leader>nzr)
-        vim.keymap.set("n", "<leader>nzr", function()
+        vim.keymap.set("n", "<leader>zr", function()
             zk_commands.get("ZkNotes")({ createdAfter = '3 days ago' }, function(notes)
                 zk_ui.pick_notes(notes, { title = "ZK Recent Notes" }, function(selected)
                     if selected then
@@ -111,41 +124,57 @@ return {
                 end)
             end)
         end, { desc = "ZK Recent Notes" })
+
+        vim.keymap.set("n", "<leader>znn", function()
+            zk_new_prompt("inbox")
+        end, { desc = "ZK: New inbox (prompt title)" })
+
+        vim.keymap.set("n", "<leader>znp", function()
+            zk_new_prompt("Resources/People")
+        end, { desc = "ZK: New People note (prompt title)" })
+
+        vim.keymap.set("n", "<leader>znt", function()
+            zk_new_prompt("Resources/TipJar")
+        end, { desc = "ZK: New TipJar note (prompt title)" })
+
+        vim.keymap.set("n", "<leader>znj", function()
+            zk_new_prompt("Area/Joyent")
+        end, { desc = "ZK: New Joyent note (prompt title)" })
     end,
     keys = {
-        { '<leader>nzU', '<Cmd>ZkUpdate<CR>', desc = "ZK Git Update" },
-        { '<leader>nzN', function() require('zk').new({ title = vim.fn.input('Title: ') }) end, desc = "ZK New (Prompt)" },
-        { '<leader>nzc', function() require('zk').cd() end, desc = "ZK CD" },
-        { '<leader>nzI', function() require('zk').index() end, desc = "ZK Index" },
-        {   '<leader>nzl',
+        { '<leader>zU', '<Cmd>ZkUpdate<CR>', desc = "ZK Git Update" },
+        { '<leader>zN', function() require('zk').new({ title = vim.fn.input('Title: ') }) end, desc = "ZK New (Prompt)" },
+        { '<leader>zc', function() require('zk').cd() end, desc = "ZK CD" },
+        { '<leader>zI', function() require('zk').index() end, desc = "ZK Index" },
+        {   '<leader>zl',
             "<Cmd>ZkLinks<CR>",
             mode = "n",
             desc = "ZK Links"
         },
-        {   '<leader>nzi', 
+        {   '<leader>zi',
             "<Cmd>ZkInsertLink<CR>",
             mode = "n",
-            desc = "ZK Insert Link (Picker)", 
+            desc = "ZK Insert Link (Picker)",
         },
-        {   '<leader>nzb', 
+        {   '<leader>zb',
             "<Cmd>ZkBacklinks<CR>",
             mode = "n",
             desc = "ZK Backlinks",
         },
         {
-            '<leader>nzf',
+            '<leader>zf',
             "<Cmd>:'<,'>ZkMatch<CR>",
             mode = "v",
             desc = "ZK Match (Visual Selection)",
         },
         {
-            '<leader>nzi', -- Re-using <leader>nzi for visual mode, as it's common for context-sensitive actions
+            '<leader>zi', -- Re-using <leader>nzi for visual mode, as it's common for context-sensitive actions
             "<Cmd>:'<,'>ZkInsertLinkAtSelection<CR>",
             mode = "v",
             desc = "ZK Insert Link (Visual Selection)",
         },
         {
-            '<leader>nzN', -- Re-using <leader>nzN for visual mode
+            '<leader>zN', -- Re-using <leader>nzN for visual mode
             "<Cmd>:'<,'>ZkNewFromTitleSelection<CR>",
             mode = "v",
             desc = "ZK New From Title (Visual Selection)",

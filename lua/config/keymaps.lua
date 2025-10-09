@@ -112,7 +112,9 @@ local wk = require("which-key")
 wk.add({
   { "<leader>R", group = "+Reload" },
   { "<leader>T", group = "+Checkmate" },
-  { "<leader>nz", group = "+ZK" },
+  { "<leader>z", group = "+ZK" },
+  { "<leader>zn", group = "+ZK New" },
+  { "<leader>z<space>", group = "+ZK Dailies" },
 })
 
 local map = LazyVim.safe_keymap_set
