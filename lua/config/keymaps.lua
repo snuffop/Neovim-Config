@@ -110,16 +110,9 @@ vim.api.nvim_set_keymap(
 
 local wk = require("which-key")
 wk.add({
-  { "<leader>n", group = "+Notes" },
-  { "<leader>nz", group = "+ZK" },
-  { "<leader>no", group = "+Open" },
-  -- { "<leader>o"  , group = "+Org-Mode"},
-  -- { "<leader>ob" , group = "+Org-Babel"},
-  -- { "<leader>od" , group = "+Org Date"},
-  -- { "<leader>oi" , group = "+Org Insert"},
-  -- { "<leader>ol" , group = "+Org Link"},
-  -- { "<leader>on" , group = "+Org Note"},
-  -- { "<leader>ox" , group = "+Org Misc"},
+  { "<leader>o", group = "+Obsidian" },
+  { "<leader>ob", group = "+Bridge" },
+  { "<leader>od", group = "+Daily" },
   { "<leader>R", group = "+Reload" },
   { "<leader>T", group = "+Checkmate" },
 })
