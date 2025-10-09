@@ -110,11 +110,9 @@ vim.api.nvim_set_keymap(
 
 local wk = require("which-key")
 wk.add({
-  { "<leader>o", group = "+Obsidian" },
-  { "<leader>ob", group = "+Bridge" },
-  { "<leader>od", group = "+Daily" },
   { "<leader>R", group = "+Reload" },
   { "<leader>T", group = "+Checkmate" },
+  { "<leader>nz", group = "+ZK" },
 })
 
 local map = LazyVim.safe_keymap_set

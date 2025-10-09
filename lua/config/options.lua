@@ -98,23 +98,6 @@ vim.o.guifont = "DejaVu Sans Mono:h14"
 vim.diagnostic.enable(false)
 
 ----------------------------------------------------------------------
---                         Markdown Options                         --
-----------------------------------------------------------------------
-
-vim.diagnostic.config({
-  virtual_text = { spacing = 2, prefix = "●" },
-  underline = true,
-  severity_sort = true,
-  update_in_insert = false,
-})
-
-vim.g.markdown_fenced_languages = {
-  "bash=sh", "sh", "zsh",
-  "lua", "vim", "python", "javascript", "typescript", "tsx",
-  "json", "yaml", "toml", "mermaid=mermaid",
-}
-
-----------------------------------------------------------------------
 --                         LazyVim Options                          --
 ----------------------------------------------------------------------
 
