@@ -4,7 +4,7 @@
 
 -- ~/.config/nvim/lua/plugins/frontmatter-tags.lua
 return {
-  {
+  --{
   --   -- no external plugin; just your helper module & commands
   --   "lazyvim.frontmatter-tags",
   --   dev = true,
