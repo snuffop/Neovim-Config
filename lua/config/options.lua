@@ -7,6 +7,8 @@ vim.g.user = "Mbuchaus (Snuffop)"
 vim.g.maplocalleader = ","
 vim.g.mapleader = " "
 
+vim.opt.clipboard = "unnamedplus"
+
 ----------------------------------------------------------------------
 --                           Snacks
 ----------------------------------------------------------------------
