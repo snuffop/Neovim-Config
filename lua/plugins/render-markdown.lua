@@ -15,6 +15,9 @@ return {
     },
     opts = {
         render_modes = { 'n', 'v', 'i', 'c' },
+        win_options = {
+            conceallevel = { default = 2, rendered = 3, raw = 2 },
+        },
         injections = {
             gitcommit = {
                 enabled = true,
