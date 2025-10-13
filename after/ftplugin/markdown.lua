@@ -9,13 +9,3 @@ if require("zk.util").notebook_root(vim.fn.expand('%:p')) ~= nil then
     -- Preview a linked note.
     map("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
 end
-
--- after/ftplugin/markdown.lua
-vim.opt_local.conceallevel = 2
-vim.opt_local.concealcursor = "nc"
-
-vim.cmd [[
-  " Conceal the URL part of [text](url)
-  syn match ZkHideLinkParen /\[[^]]\+]\zs([^)\r\n]*)/ conceal containedin=ALL
-  highlight default link ZkHideLinkParen Conceal
-]]
