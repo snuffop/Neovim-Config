@@ -25,12 +25,9 @@ vim.keymap.set({ "n", "v", "i" }, "<M-q>", "<cmd>qa<cr>", { desc = "[P]Quit All"
 --                   Snippet Jump in insert mode                    --
 ----------------------------------------------------------------------
 
-vim.keymap.set({ "i", "s" }, "<C-j>", function()
-  vim.snippet.jump(1)
-end)
-vim.keymap.set({ "i", "s" }, "<C-k>", function()
-  vim.snippet.jump(-1)
-end)
+vim.keymap.set({ "i", "s" }, "<C-k>", function() require("luasnip").expand_or_jump() end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<C-j>", function() require("luasnip").jump(-1) end, { silent = true })
+
 
 ----------------------------------------------------------------------
 --                Start Peek for the current session                --

@@ -2,6 +2,8 @@
 --  │ Marty Buchaus Neovim Configuration                       │
 --  ╰──────────────────────────────────────────────────────────╯
 
+-- Orgmode type demote and promote for markdown
+
 return {
   "chimay/organ",
   ft = "markdown",

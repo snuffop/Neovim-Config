@@ -38,9 +38,6 @@ return {
             on_attach = function(client, bufnr)
                 -- your keymaps here
             end,
-            root_dir = function(fname)
-                return vim.fn.expand("~/Nextcloud/Notes")
-            end,
         })
 
         local zk = require("zk")
@@ -131,20 +128,29 @@ return {
         end, { desc = "ZK: New inbox (prompt title)" })
 
         vim.keymap.set("n", "<leader>znp", function()
-            zk_new_prompt("Resources/People")
+            zk_new_prompt("Resource/People")
         end, { desc = "ZK: New People note (prompt title)" })
 
         vim.keymap.set("n", "<leader>znt", function()
-            zk_new_prompt("Resources/TipJar")
+            zk_new_prompt("Resource/TipJar")
         end, { desc = "ZK: New TipJar note (prompt title)" })
 
         vim.keymap.set("n", "<leader>znc", function()
-            zk_new_prompt("Resources/Corporations")
+            zk_new_prompt("Resource/Corporations")
         end, { desc = "ZK: New Corporations note (prompt title)" })
 
         vim.keymap.set("n", "<leader>znj", function()
             zk_new_prompt("Area/Joyent")
         end, { desc = "ZK: New Joyent note (prompt title)" })
+
+        vim.keymap.set("i", "<C-S-i>", function()
+            require("zk.commands").get("ZkInsertLink")()
+        end, { desc = "Insert or create ZK link" })
+
+        vim.keymap.set("v", "<C-S-i>", function()
+            require("zk.commands").get("ZkInsertLink")()
+        end, { desc = "Insert or create ZK link from selection" })
+
     end,
     keys = {
         { '<leader>zU', '<Cmd>ZkUpdate<CR>', desc = "ZK Git Update" },
