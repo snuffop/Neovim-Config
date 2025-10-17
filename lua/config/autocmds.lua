@@ -195,3 +195,27 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     vim.bo.filetype = "bash"
   end,
 })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    -- args or args.data may be nil depending on who fires LspAttach
+    local client_id = args and args.data and args.data.client_id
+    if not client_id then return end
+
+    local client = vim.lsp.get_client_by_id(client_id)
+    if not client or client.name ~= "obsidian" then return end
+
+    -- Cap tables differ across nvim versions; handle both
+    local caps = client.server_capabilities or client.resolved_capabilities
+    if not caps then return end
+
+    -- New-style capability
+    if caps.renameProvider ~= nil then
+      caps.renameProvider = false
+    end
+    -- Old-style (pre-0.10) compatibility
+    if caps.rename ~= nil then
+      caps.rename = false
+    end
+  end,
+})
