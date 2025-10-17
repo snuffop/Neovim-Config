@@ -173,3 +173,25 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", { pattern = "markdown", command = "set awa" })
 -- Use the following if your buffer is set to become hidden
 vim.api.nvim_create_autocmd("BufLeave", { pattern = "*.md", command = "silent! wall" })
+
+-- ~/.config/nvim/lua/config/autocmds.lua
+-- https://chatgpt.com/c/68f00a44-5820-832c-b8f3-522e3de7df63 
+vim.filetype.add({
+  pattern = {
+    -- Match chezmoi template names like "dot_bashrc.tmpl" or "dot_bash_profile.tmpl"
+    ["dot_bashrc%.tmpl"]       = "bash",
+    ["dot_bash_profile%.tmpl"] = "bash",
+    ["dot_bash_login%.tmpl"]   = "bash",
+    ["dot_bash_aliases%.tmpl"] = "bash",
+    ["dot_bash_exports%.tmpl"] = "bash",
+    ["dot_profile%.tmpl"]      = "bash",
+  },
+})
+
+-- Optional catch-all fallback if you have many dot_bash*.tmpl files
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "dot_bash*.tmpl",
+  callback = function()
+    vim.bo.filetype = "bash"
+  end,
+})
