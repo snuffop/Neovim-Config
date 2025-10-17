@@ -101,6 +101,7 @@ return {
 
         bullet = {
             enabled = true,
+            render_modes = false,
             icons = { '●', '○', '◆', '◇' },
             left_pad = 0,
             right_pad = 1,
@@ -146,6 +147,7 @@ return {
         dash = {
             enabled = true,
             icon = '─',
+            right_pad = 1,
             width = 'full',
             highlight = 'RenderMarkdownDash',
         },
