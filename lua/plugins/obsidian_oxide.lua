@@ -85,8 +85,10 @@ return {
             { "<leader>n",  "", desc = "+notes" },
 
             -- dailies & today
-            { "<leader>nt", "<cmd>Obsidian today<cr>",             desc = "Daily (today)" },
-            { "<leader>nd", "<cmd>Obsidian dailies -7 7<cr>",      desc = "Dailies (±14d)" },
+            { "<leader>n<space>n", "<cmd>Obsidian today<cr>",             desc = "Daily (today)" },
+            { "<leader>n<space>t", "<cmd>Obsidian tomorrow<cr>",             desc = "Daily (tomorrow)" },
+            { "<leader>n<space>y", "<cmd>Obsidian yesterday<cr>",             desc = "Daily (yesterday)" },
+            { "<leader>n<space>d", "<cmd>Obsidian dailies -7 7<cr>",      desc = "Dailies (±14d)" },
 
             -- new notes / templates / quick switch
             { "<leader>nNN", "<cmd>Obsidian new<cr>",               desc = "New note" },

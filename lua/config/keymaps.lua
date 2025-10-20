@@ -35,11 +35,6 @@ vim.keymap.set({ "i", "s" }, "<C-j>", function() require("luasnip").jump(-1) end
 
 vim.keymap.set("n", "<F3>", "<cmd>PeekOpen<cr>", { desc = "Peek Open" })
 
-----------------------------------------------------------------------
---                               oil                                --
-----------------------------------------------------------------------
-
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "OIL open parent" })
 
 ----------------------------------------------------------------------
 --                          reload keymaps                          --
@@ -135,13 +130,11 @@ map("n", "<leader>cj", "<cmd>lua require('jq').run()<cr>", { desc = "JQ Interfac
 ----------------------------------------------------------------------
 
 map("n", "<leader>dd", '"_d', { desc = "Delete to the void register" })
-map("n", "<leader>dj", "<CMD>Oil<CR>", { desc = "DIRED Jump binding alias to OIL" })
 
 ----------------------------------------------------------------------
 --                               File                               --
 ----------------------------------------------------------------------
 
-map("n", "<leader>fo", "<cmd>FuzzyOil<cr>", { desc = "Fuzzy Oil" })
 map("n", "<leader>fs", "<cmd>up<cr>", { desc = "File Save" })
 map("n", "<leader>fS", "<cmd>w !sudo tee %<CR>", { desc = "Sudo Write" })
 
