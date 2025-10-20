@@ -21,18 +21,6 @@ return {
                 folder = "Resource/attach/{{title}}"
             },
             notes_subdir = "Resource",
-            note_frontmatter_func = function(note)
-                -- only apply for notes in Inbox (your notes_subdir)
-                if note.dir:match("Inbox$") then
-                    note.template = "note.md"   -- Template name in Templates/
-                end
-                -- always include a basic frontmatter structure
-                return {
-                    title = note.title,
-                    date  = os.date("%Y-%m-%d %H:%M"),
-                    tags  = { "fleeting" },
-                }
-            end,
             daily_notes = {
                 folder = "journals",
                 date_format = "%Y-%m-%d",
