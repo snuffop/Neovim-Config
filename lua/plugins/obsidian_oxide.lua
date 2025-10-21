@@ -1,5 +1,5 @@
 --  ╭──────────────────────────────────────────────────────────╮
---  │ Obsidian.nvim + Markdown-Oxide (LazyVim v15 + blink.cmp) │
+--  │ Obsidian.nvim + Markdown-Oxide                           |
 --  ╰──────────────────────────────────────────────────────────╯
 
 return {
@@ -31,6 +31,8 @@ return {
             notes_subdir = "Resource",
 
             disable_frontmatter = false,
+
+            legacy_commands = false,
 
             daily_notes = {
                 folder = "journals",
@@ -84,47 +86,48 @@ return {
             { "<leader>n",  "", desc = "+notes" },
 
             -- dailies & today
-            { "<leader>n<space>n", "<cmd>Obsidian today<cr>",             desc = "Daily (today)" },
-            { "<leader>n<space>t", "<cmd>Obsidian tomorrow<cr>",             desc = "Daily (tomorrow)" },
-            { "<leader>n<space>y", "<cmd>Obsidian yesterday<cr>",             desc = "Daily (yesterday)" },
-            { "<leader>n<space>d", "<cmd>Obsidian dailies -7 7<cr>",      desc = "Dailies (±14d)" },
+            { "<leader>n<space>n", "<cmd>Obsidian today<cr>",        desc = "Daily (today)" },
+            { "<leader>n<space>t", "<cmd>Obsidian tomorrow<cr>",     desc = "Daily (tomorrow)" },
+            { "<leader>n<space>y", "<cmd>Obsidian yesterday<cr>",    desc = "Daily (yesterday)" },
+            { "<leader>n<space>d", "<cmd>Obsidian dailies -7 7<cr>", desc = "Dailies (±14d)" },
 
             -- new notes / templates / quick switch
-            { "<leader>nNN", "<cmd>Obsidian new<cr>",               desc = "New note" },
-            { "<leader>nNT", "<cmd>Obsidian new_from_template<cr>", desc = "New from template" },
-            { "<leader>nn", "<cmd>Obsidian quick_switch<cr>",      desc = "Quick switch" },
+            { "<leader>nNN", "<cmd>Obsidian new<cr>",                desc = "New note" },
+            { "<leader>nNT", "<cmd>Obsidian new_from_template<cr>",  desc = "New from template" },
+            { "<leader>nn", "<cmd>Obsidian quick_switch<cr>",        desc = "Quick switch" },
 
             -- search & tags
-            { "<leader>ns", "<cmd>Obsidian search<cr>",            desc = "Search notes" },
-            { "<leader>nT", "<cmd>Obsidian tags<cr>",              desc = "Tags picker" },
+            { "<leader>n/", "<cmd>Obsidian search<cr>",              desc = "Search notes" },
+            { "<leader>nT", "<cmd>Obsidian tags<cr>",                desc = "Tags picker" },
 
             -- open in Obsidian app (current or query)
-            { "<leader>no", "<cmd>Obsidian open<cr>",              desc = "Open in Obsidian app" },
+            { "<leader>no", "<cmd>Obsidian open<cr>",                desc = "Open in Obsidian app" },
 
             -- backlinks / links / TOC (current buffer context)
-            { "<leader>nb", "<cmd>Obsidian backlinks<cr>",         desc = "Backlinks" },
-            { "<leader>nl", "<cmd>Obsidian links<cr>",             desc = "Links in note" },
-            { "<leader>nc", "<cmd>Obsidian toc<cr>",               desc = "Table of contents" },
+            { "<leader>nb", "<cmd>Obsidian backlinks<cr>",           desc = "Backlinks" },
+            { "<leader>nl", "<cmd>Obsidian links<cr>",               desc = "Links in note" },
+            { "<leader>nO", "<cmd>Obsidian toc<cr>",                 desc = "Outline Picker" },
+            { "<leader>nc", "<cmd>Obsidian check<cr>",               desc = "Obsidian Check" },
 
             -- follow link (kept on leader to avoid stomping your gf if you’ve remapped it)
-            { "<leader>nf", "<cmd>Obsidian follow_link<cr>",       desc = "Follow link" },
+            { "<leader>nf", "<cmd>Obsidian follow_link<cr>",         desc = "Follow link" },
 
             -- rename note (updates backlinks); also available via LSP rename if Oxide is attached
             -- { "<leader>or", "<cmd>Obsidian rename<cr>",            desc = "Rename note (update links)" },
             -- Use Oxide rename (updates links across the vault)
-            { "<leader>nr", function() vim.lsp.buf.rename() end,  desc = "Oxide Rename (update links)" },
+            { "<leader>nr", function() vim.lsp.buf.rename() end,     desc = "Oxide Rename (update links)" },
 
             -- images & templates (insert)
-            { "<leader>np", "<cmd>Obsidian paste_img<cr>",         desc = "Paste image" },
-            { "<leader>ni", "<cmd>Obsidian template<cr>",          desc = "Insert template" },
+            { "<leader>np", "<cmd>Obsidian paste_img<cr>",           desc = "Paste image" },
+            { "<leader>ni", "<cmd>Obsidian template<cr>",            desc = "Insert template" },
 
             -- workspaces (if you use more than one)
-            { "<leader>nw", "<cmd>Obsidian workspace<cr>",         desc = "Switch workspace" },
+            { "<leader>nw", "<cmd>Obsidian workspace<cr>",           desc = "Switch workspace" },
 
             -- visual-mode helpers
-            { "<leader>nl", ":Obsidian link<cr>",                  mode = "v", desc = "Link selection" },
-            { "<leader>nL", ":Obsidian link_new<cr>",              mode = "v", desc = "Link selection as NEW note" },
-            { "<leader>ne", ":Obsidian extract_note<cr>",          mode = "v", desc = "Extract selection → note" },
+            { "<leader>nl", ":Obsidian link<cr>",                    mode = "v", desc = "Link selection" },
+            { "<leader>nL", ":Obsidian link_new<cr>",                mode = "v", desc = "Link selection as NEW note" },
+            { "<leader>ne", ":Obsidian extract_note<cr>",            mode = "v", desc = "Extract selection → note" },
         },
     },
 

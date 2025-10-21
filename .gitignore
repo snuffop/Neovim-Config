@@ -9,3 +9,4 @@ data
 etc/backup
 etc/undodir
 lazy-lock.json
+node_modules
