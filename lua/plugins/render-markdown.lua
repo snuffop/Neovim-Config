@@ -104,7 +104,7 @@ return {
             render_modes = false,
             icons = { '●', '○', '◆', '◇' },
             left_pad = 0,
-            right_pad = 1,
+            right_pad = 0,
             highlight = 'RenderMarkdownBullet',
         },
 
@@ -129,8 +129,8 @@ return {
         checkbox = {
             enabled = true,
             position = 'inline',
-            left_pad = 2,
-            right_pad = 3,
+            left_pad = 0,
+            right_pad = 0,
             unchecked = {
                 icon = '󰄱 ',
                 highlight = 'RenderMarkdownUnchecked',

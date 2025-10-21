@@ -12,7 +12,11 @@ return {
         },
         opts = {
             lsp = {
-                enabled = false,
+                enable = false,
+            },
+            -- disable UI to not clash with  markdown-nvim
+            ui = {  
+                enable = false,
             },
             workspaces = {
                 { name = "default", path = "~/Nextcloud/Oxide/default" },
