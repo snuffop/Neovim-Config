@@ -14,22 +14,30 @@ return {
             lsp = {
                 enable = false,
             },
+
             -- disable UI to not clash with  markdown-nvim
             ui = {  
                 enable = false,
             },
+
             workspaces = {
                 { name = "default", path = "~/Nextcloud/Oxide/default" },
             },
+
             attachments = {
                 folder = "Resource/attach/{{title}}"
             },
+
             notes_subdir = "Resource",
+
+            disable_frontmatter = false,
+
             daily_notes = {
                 folder = "journals",
                 date_format = "%Y-%m-%d",
                 template = "daily.md",
             },
+
             templates = {
                 folder = "Templates",
                 substitutions = {
@@ -49,11 +57,10 @@ return {
                     end,
                 },
             },
-            disable_frontmatter = false,
+
             note_id_func = function(title)
                 -- timestamp
                 local ts = os.date("%Y%m%d%H%M%S")
-
                 -- slugify helper
                 local function slugify(s)
                     s = (s or "untitled")
@@ -67,11 +74,11 @@ return {
                     s = s:gsub("^%-+", ""):gsub("%-+$", "")
                     return s ~= "" and s or "untitled"
                 end
-
                 local slug = slugify(title)
                 return string.format("%s--%s", ts, slug)
             end,
         },
+
         keys = {
             -- group header for which-key: <leader>o → +obsidian
             { "<leader>n",  "", desc = "+notes" },
