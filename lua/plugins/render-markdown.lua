@@ -14,10 +14,13 @@ return {
         "RenderMarkdown",
     },
     opts = {
+
         render_modes = { 'n', 'v', 'i', 'c' },
+
         win_options = {
             conceallevel = { default = 2, rendered = 3, raw = 2 },
         },
+
         injections = {
             gitcommit = {
                 enabled = true,
@@ -29,6 +32,7 @@ return {
                         ]],
             },
         },
+
         heading = {
             enabled = true,
             sign = true,
@@ -51,6 +55,7 @@ return {
                 'RenderMarkdownH5Bg',
                 'RenderMarkdownH6Bg',
             },
+
             foregrounds = {
                 'RenderMarkdownH1',
                 'RenderMarkdownH2',
