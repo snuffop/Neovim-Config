@@ -10,3 +10,4 @@ etc/backup
 etc/undodir
 lazy-lock.json
 node_modules
+tasks.ndjson

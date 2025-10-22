@@ -3,20 +3,17 @@
 --  ╰──────────────────────────────────────────────────────────╯
 
 ----------------------------------------------------------------------
---                       Visual Mode Movement                        --
-----------------------------------------------------------------------
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 ----------------------------------------------------------------------
 --                           Quick Escape                           --
 ----------------------------------------------------------------------
 
-local escape_keys = { "jj", "jk", "kj" }
-for _, key in ipairs(escape_keys) do
-    vim.keymap.set("i", key, "<ESC>", { silent = true })
-end
+vim.keymap.set("i", "jj", "<ESC>", { silent = true })
+vim.keymap.set("i", "jk", "<ESC>", { silent = true })
+vim.keymap.set("i", "kj", "<ESC>", { silent = true })
 
 ----------------------------------------------------------------------
 --                           Quit Quickly                           --
@@ -67,37 +64,39 @@ vim.keymap.set(
 --            Which-key  Alt-K top level keymaps display            --
 ----------------------------------------------------------------------
 
-local whichkey_modes = {
-    { "n", "<cmd>WhichKey<cr>" },
-    { "v", "<cmd>WhichKey<space>v<cr>" },
-    { "i", "<cmd>WhichKey<space>i<cr>" },
-    { "c", "<cmd>WhichKey<space>c<cr>" },
-}
-for _, mode_config in ipairs(whichkey_modes) do
-    vim.keymap.set(mode_config[1], "<M-k>", mode_config[2], { silent = true })
-end
+vim.api.nvim_set_keymap("n", "<M-k>", "<cmd>WhichKey<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<M-k>", "<cmd>WhichKey<space>v<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<M-k>", "<cmd>WhichKey<space>i<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("c", "<M-k>", "<cmd>WhichKey<space>c<cr>", { noremap = true, silent = true })
 
-----------------------------------------------------------------------
---                           Treewalker                             --
-----------------------------------------------------------------------
+-- movement
+vim.keymap.set({ "n", "v" }, "gk", "<cmd>Treewalker Up<cr>", { silent = true })
+vim.keymap.set({ "n", "v" }, "gj", "<cmd>Treewalker Down<cr>", { silent = true })
+vim.keymap.set({ "n", "v" }, "gh", "<cmd>Treewalker Left<cr>", { silent = true })
+vim.keymap.set({ "n", "v" }, "gl", "<cmd>Treewalker Right<cr>", { silent = true })
 
-local treewalker_movements = {
-    { "gk", "Up" },
-    { "gj", "Down" },
-    { "gh", "Left" },
-    { "gl", "Right" },
-}
-for _, movement in ipairs(treewalker_movements) do
-    vim.keymap.set({ "n", "v" }, movement[1], "<cmd>Treewalker " .. movement[2] .. "<cr>", { silent = true })
-    vim.keymap.set("n", string.upper(movement[1]:sub(2)), "<cmd>Treewalker Swap" .. movement[2] .. "<cr>", { silent = true })
-end
+-- swapping
+vim.keymap.set("n", "gK", "<cmd>Treewalker SwapUp<cr>", { silent = true })
+vim.keymap.set("n", "gJ", "<cmd>Treewalker SwapDown<cr>", { silent = true })
+vim.keymap.set("n", "gH", "<cmd>Treewalker SwapLeft<cr>", { silent = true })
+vim.keymap.set("n", "gL", "<cmd>Treewalker SwapRight<cr>", { silent = true })
 
 ----------------------------------------------------------------------
 --                          Comment Block                           --
 ----------------------------------------------------------------------
 
-vim.keymap.set("n", "gcb", ":lua require('nvim-comment-frame').add_comment()<CR>", { desc = "Comment Block Add", silent = true })
-vim.keymap.set("n", "gcC", ":lua require('nvim-comment-frame').add_multiline_comment()<CR>", { desc = "Comment Multi Block", silent = true })
+vim.api.nvim_set_keymap(
+    "n",
+    "gcb",
+    ":lua require('nvim-comment-frame').add_comment()<CR>",
+    { desc = "Comment Block Add", noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+    "n",
+    "gcC",
+    ":lua require('nvim-comment-frame').add_multiline_comment()<CR>",
+    { desc = "Comment Multi Block", noremap = true, silent = true }
+)
 
 ----------------------------------------------------------------------
 --                    Which-Key Top level labels                    --
@@ -167,7 +166,7 @@ map("n", "<leader>gg", function()
 end, { noremap = true, desc = "LazyGit /w confirm" })
 
 ----------------------------------------------------------------------
---                          Miscellaneous                           --
+--                    My Open Functions keymaps                     --
 ----------------------------------------------------------------------
 
 map("n", "<leader>mm", function()
@@ -175,7 +174,7 @@ map("n", "<leader>mm", function()
     local input = vim.fn.expand("%:p")
     local output = vim.fn.expand("%:p:r") .. ".md"
     vim.cmd('!pandoc "' .. input .. '" -f org -t markdown -o "' .. output .. '"')
-end, { desc = "Convert Org to Markdown" })
+end, { desc = "Convert Org to Markdown with Pandoc" })
 
 ----------------------------------------------------------------------
 --                                UI                                --
@@ -185,7 +184,9 @@ map("n", "<leader>un", function()
     Snacks.notifier.hide()
 end, { desc = "Dismiss All Notification" })
 map("n", "<leader>uB", "<cmd>GitBlameToggle<cr>", { desc = "Toggle Git Blame" })
-map("n", "<leader>uR", function()
+
+-- Check if Marksman LSP is running, start it if not, otherwise restart lamw26wmal
+vim.keymap.set("n", "<leader>uR", function()
     local is_running = false
     for _, client in ipairs(vim.lsp.get_clients()) do
         if client.name == "marksman" then
@@ -200,19 +201,16 @@ map("n", "<leader>uR", function()
         vim.cmd("LspStart marksman")
         vim.notify("Marksman LSP started", vim.log.levels.INFO)
     end
-end, { desc = "Start/Restart Marksman LSP" })
-
-----------------------------------------------------------------------
---                      Markdown Navigation                         --
-----------------------------------------------------------------------
+end, { desc = "[P]Start/Restart Marksman LSP" })
 
 local query = vim.treesitter.query.parse("markdown", "((atx_heading) @header)")
-map("n", "]h", function()
+vim.keymap.set("n", "]h", function()
     local root = vim.treesitter.get_parser():parse()[1]:root()
     local _, node, _ = query:iter_captures(root, 0, vim.fn.line("."), -1)()
-    if node then
-        require("nvim-treesitter.ts_utils").goto_node(node)
+    if not node then
+        return
     end
-end, { desc = "Next Markdown Heading" })
+    require("nvim-treesitter.ts_utils").goto_node(node)
+end)
 
 -- EOF
