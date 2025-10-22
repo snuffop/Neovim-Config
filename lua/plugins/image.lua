@@ -20,7 +20,7 @@ return {
                     filetypes = { "markdown", "vimwiki" }, -- markdown extensions (ie. quarto) can go here
                 },
                 neorg = {
-                    enabled = true,
+                    enabled = false,
                     filetypes = { "norg" },
                 },
                 typst = {
