@@ -25,10 +25,10 @@ return {
             },
 
             attachments = {
-                folder = "Resource/attach/{{title}}"
+                folder = "Attach/{{title}}"
             },
 
-            notes_subdir = "Resource",
+            notes_subdir = "Inbox",
 
             disable_frontmatter = false,
 
@@ -163,14 +163,12 @@ return {
             end
 
             opts.servers.markdown_oxide = {
-                cmd = { "markdown-oxide" },      -- ensure in $PATH (AUR/Cargo)
+                cmd = { "markdown-oxide" },      
                 filetypes = { "markdown" },
                 capabilities = blink_caps,
                 single_file_support = true,
                 root_dir = oxide_root_dir,
                 on_attach = function(_, bufnr)
-                    vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename,
-                        { buffer = bufnr, desc = "Oxide Rename (update links)" })
                     vim.keymap.set("n", "gR", vim.lsp.buf.references,
                         { buffer = bufnr, desc = "Oxide References/Backlinks" })
                 end,
