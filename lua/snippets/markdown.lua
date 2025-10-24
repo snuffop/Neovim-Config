@@ -19,8 +19,8 @@ return {
     s("ttime", f(current_time, {})),
     s("ddate", f(current_date, {})),
     s("fulldate", f(full_date, {})),
-    s({ trig = ";due", wordTrig = true }, { t("📅 "), f(function() return os.date("%Y-%m-%d") end) }),
-    s({ trig = ";sch", wordTrig = true }, { t("⏳ "), f(function() return os.date("%Y-%m-%d") end) }),
-    s({ trig = ";done", wordTrig = true }, { t("✅ "), f(function() return os.date("%Y-%m-%d") end) }),
+    s({ trig = ";due", wordTrig = true }, { t("📅 "), f(current_date, {}) }),
+    s({ trig = ";sch", wordTrig = true }, { t("⏳ "), f(current_date, {}) }),
+    s({ trig = ";done", wordTrig = true }, { t("✅ "), f(current_date, {}) }),
     s({ trig = ";prio", wordTrig = true }, { t("🔼") }),
 }
