@@ -33,14 +33,36 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-  pattern = {
-    "**nagios*/*/*.cfg.j2",
-  },
+-- lua/config/autocmds.lua
+local grp = vim.api.nvim_create_augroup("ft_jinja_overrides", { clear = true })
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufReadPost" }, {
+  group = grp,
+  pattern = "*.j2",
   callback = function()
-    vim.bo.filetype = "nagios.jinja"
+    local path = vim.fn.expand("%:p")
+    local name = vim.fn.expand("%:t")
+
+    -- 1) Special case: any .../nagios*/.../*.cfg.j2 => nagios.jinja
+    local in_nagios = path:match("/nagios[^/]*/") ~= nil
+    local is_cfgj2  = name:match("%.cfg%.j2$") ~= nil
+    if in_nagios and is_cfgj2 then
+      vim.bo.filetype = "nagios.jinja"
+      return
+    end
+
+    -- 2) Generic: <filename>.<ext>.j2 => filetype=<ext>
+    local ext = name:match(".*%.([^.]+)%.j2$")
+    if ext then
+      vim.bo.filetype = ext
+      return
+    end
+
+    -- 3) Fallback: plain *.j2 => jinja
+    vim.bo.filetype = "jinja"
   end,
 })
+
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = {
