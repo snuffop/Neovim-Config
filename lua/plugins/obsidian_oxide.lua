@@ -174,16 +174,17 @@ return {
 
             { "<leader>nm", "", desc = "+Move/Modify" },
 
+            { "<leader>nmb", function() oxide_move_to("Resource/Bookmark") end, desc = "Move note → Resource/Bookmark" },
+            { "<leader>nmh", function() oxide_move_to("Area/Homelab") end, desc = "Move note → Area/Homelab" },
+            { "<leader>nmi", function() oxide_move_to("Area/Inventory") end, desc = "Move note → Area/Inventory" },
+            { "<leader>nmj", function() oxide_move_to("Area/Joyent") end, desc = "Move note → Area/Joyent" },
+            { "<leader>nml", function() vim.cmd([=[%s/\[\[\(https[^]]*\)\]\[\([^]]*\)\]\]/[\2](\1)/g]=]) end, desc = "Convert Org→MD links" },
+            { "<leader>nml", function() vim.cmd([=['<,'>s/\[\[\(https[^]]*\)\]\[\([^]]*\)\]\]/[\2](\1)/g]=]) end, mode = "v", desc = "Convert Org→MD links (selection)" },
+            { "<leader>nmp", function() oxide_move_to("Resource/Corporation") end, desc = "Move note → Resource/Corporation" },
+            { "<leader>nmp", function() oxide_move_to("Resource/People") end, desc = "Move note → Resource/People" },
             { "<leader>nmr", function() oxide_move_to("Resource") end, desc = "Move note → Resource" },
             { "<leader>nmt", function() oxide_move_to("Resource/TipJar") end, desc = "Move note → Resource/TipJar" },
-            { "<leader>nmp", function() oxide_move_to("Resource/People") end, desc = "Move note → Resource/People" },
-            { "<leader>nmj", function() oxide_move_to("Area/Joyent") end, desc = "Move note → Area/Joyent" },
-
-            -- Convert Org [[url][text]] → Markdown [text](url) across the whole buffer
-            -- buffer-wide
-            { "<leader>nml", function() vim.cmd([=[%s/\[\[\(https[^]]*\)\]\[\([^]]*\)\]\]/[\2](\1)/g]=]) end, desc = "Convert Org→MD links" },
-            -- visual selection only
-            { "<leader>nMl", function() vim.cmd([=['<,'>s/\[\[\(https[^]]*\)\]\[\([^]]*\)\]\]/[\2](\1)/g]=]) end, mode = "v", desc = "Convert Org→MD links (selection)" },
+            { "<leader>nmu", function() oxide_move_to("Area/Utilities") end, desc = "Move note → Area/Utilities" },
         },
     },
 
