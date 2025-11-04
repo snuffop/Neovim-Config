@@ -152,15 +152,6 @@ end, { desc = "Copy file path" })
 ----------------------------------------------------------------------
 
 map("n", "<leader>gT", "<cmd>Tardis<cr>", { desc = "Tardis (TimeMachine)" })
-map("n", "<leader>gm", "<cmd>GitMessenger<cr>", { desc = "Git Messenger" })
-map("n", "<leader>gz", "<cmd>Telescope git_branches<cr>", { desc = "Git Branches" })
-map("n", "<leader>gv", function()
-    if next(require("diffview.lib").views) == nil then
-        vim.cmd("DiffviewOpen")
-    else
-        vim.cmd("DiffviewClose")
-    end
-end, { desc = "Git DiffView" })
 map("n", "<leader>gg", function()
     require("lazygit-confirm").confirm()
 end, { noremap = true, desc = "LazyGit /w confirm" })
